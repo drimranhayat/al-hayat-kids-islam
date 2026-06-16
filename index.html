@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Al-Hayat Kids Islam | Islamic Learning for Children Ages 3–8</title>
-  <meta name="description" content="Al-Hayat Kids Islam is a safe, structured Islamic learning dashboard for children ages 3–8 with 3,000 short questions, activities, games, practice, stars, badges, and parent guidance." />
-  <meta name="keywords" content="Islam for kids, Islamic learning for children, kids duas, short surahs for kids, Islamic manners, Salah for kids, Arabic letters for kids, Muslim children learning" />
+  <title>Al-Hayat Kids Islam | Mobile-Friendly Islamic Learning for Children Ages 3–8</title>
+  <meta name="description" content="Al-Hayat Kids Islam is a mobile-friendly Islamic learning website for children ages 3–8 with 3,000 short questions, symbols, connected tasks, activities, games, practice, stars, badges, and parent guidance." />
+  <meta name="keywords" content="Islam for kids, Islamic learning for children, mobile friendly kids Islam, kids duas, short surahs for kids, Islamic manners, Salah for kids, Arabic letters for kids" />
   <meta name="robots" content="index, follow" />
   <meta property="og:title" content="Al-Hayat Kids Islam" />
-  <meta property="og:description" content="Structured Islamic learning for children ages 3–8: questions, activities, practice, games, stars, badges, and gradual learning paths." />
+  <meta property="og:description" content="Safe, structured, symbol-based Islamic learning for children ages 3–8." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#0f766e" />
   <link rel="canonical" href="https://drimranhayat.github.io/al-hayat-kids-islam/" />
@@ -17,16 +17,19 @@
     :root{
       --navy:#17324d;
       --teal:#0f766e;
+      --teal-dark:#0a5a54;
       --gold:#c8912b;
+      --gold-soft:#ffe7ad;
       --cream:#fff8ec;
-      --mint:#e8fbf5;
-      --rose:#fff0f3;
+      --mint:#ebfff7;
       --sky:#eef7ff;
+      --rose:#fff1f4;
+      --ink:#233245;
+      --muted:#637284;
+      --line:#e8dcc8;
       --card:#ffffff;
-      --ink:#243044;
-      --muted:#5d6b7a;
-      --line:#e7dcc9;
-      --shadow:0 18px 45px rgba(23,50,77,.13);
+      --shadow:0 16px 40px rgba(23,50,77,.12);
+      --shadow-soft:0 10px 24px rgba(23,50,77,.08);
       --radius:26px;
     }
     *{box-sizing:border-box}
@@ -36,220 +39,351 @@
       font-family:Arial,system-ui,-apple-system,"Segoe UI",sans-serif;
       color:var(--ink);
       background:
-        radial-gradient(circle at top left,rgba(200,145,43,.18),transparent 28rem),
-        radial-gradient(circle at top right,rgba(15,118,110,.14),transparent 25rem),
-        linear-gradient(180deg,#fff8ec 0%,#f6fffc 48%,#eef7ff 100%);
+        radial-gradient(circle at top left,rgba(200,145,43,.18),transparent 24rem),
+        radial-gradient(circle at top right,rgba(15,118,110,.12),transparent 22rem),
+        linear-gradient(180deg,#fff8ec 0%,#f5fff9 40%,#eef7ff 100%);
       line-height:1.6;
+      padding-bottom:86px;
     }
     a{color:inherit}
-    .skip-link{position:absolute;left:-999px;top:8px;background:var(--navy);color:#fff;padding:10px 14px;border-radius:12px;z-index:20}
+    img{max-width:100%;display:block}
+    .skip-link{position:absolute;left:-999px;top:8px;background:var(--navy);color:#fff;padding:10px 14px;border-radius:12px;z-index:30}
     .skip-link:focus{left:12px}
-    .wrap{max-width:1180px;margin:auto;padding:18px}
+    .wrap{max-width:1180px;margin:auto;padding:16px}
+
     .site-header{
-      position:sticky;top:0;z-index:15;
-      background:rgba(255,255,255,.9);
+      position:sticky;top:0;z-index:30;
+      background:rgba(255,255,255,.92);
       backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(231,220,201,.9);
+      border-bottom:1px solid rgba(232,220,200,.95);
     }
-    .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:950;color:var(--navy);font-size:1.15rem}
-    .brand-mark{display:grid;place-items:center;width:46px;height:46px;border-radius:18px;background:linear-gradient(135deg,var(--navy),var(--teal));color:#fff;box-shadow:0 8px 20px rgba(15,118,110,.25)}
-    .brand small{display:block;color:var(--gold);font-weight:850;font-size:.82rem;line-height:1.1}
-    .brand-ar{font-family:Georgia,serif;font-size:.95rem;color:var(--teal);font-weight:900}
-    .main-nav{display:flex;gap:6px;flex-wrap:wrap;align-items:center;justify-content:flex-end}
-    .main-nav a,.sound-toggle{
-      text-decoration:none;border:0;cursor:pointer;
-      padding:10px 12px;border-radius:999px;
-      background:#f5efe4;color:var(--navy);font-weight:850;font-size:.94rem;
-      transition:.18s ease;
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--navy);font-weight:950}
+    .brand-mark{
+      width:52px;height:52px;border-radius:18px;
+      display:grid;place-items:center;color:#fff;font-size:1.5rem;
+      background:linear-gradient(135deg,var(--navy),var(--teal));
+      box-shadow:0 10px 22px rgba(15,118,110,.25);
+      position:relative;
     }
-    .main-nav a:hover,.sound-toggle:hover{background:#dff7f1;transform:translateY(-1px)}
-    .sound-toggle{background:#17324d;color:#fff}
-    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center;padding:34px 0 18px}
-    .hero-card{
-      background:linear-gradient(135deg,#17324d,#0f766e);
-      color:#fff;border-radius:36px;padding:34px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+    .brand-mark:after{content:"★";position:absolute;right:-6px;top:-8px;color:#ffd26a;font-size:1rem}
+    .brand-text{display:flex;flex-direction:column;line-height:1.1}
+    .brand-title{font-size:1.15rem}
+    .brand-sub{font-size:1.55rem;color:var(--gold);font-weight:900;letter-spacing:.02em}
+    .brand-sub{font-size:.92rem}
+    .header-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .sound-toggle,.mini-top-link{
+      border:0;cursor:pointer;text-decoration:none;
+      padding:10px 14px;border-radius:999px;font-weight:900;
+      background:#f5efe4;color:var(--navy);box-shadow:var(--shadow-soft);
     }
-    .hero-card:after{content:"";position:absolute;right:-80px;top:-80px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.12)}
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 12px;font-weight:900}
-    h1{font-size:clamp(2.25rem,6vw,5rem);line-height:1;margin:16px 0 14px;letter-spacing:-.04em}
-    h2{color:var(--navy);font-size:clamp(1.55rem,3vw,2.45rem);line-height:1.12;margin:0 0 12px}
-    h3{color:var(--navy);line-height:1.2;margin:0 0 8px}
-    .hero-card p{font-size:1.1rem;max-width:760px;margin:0 0 20px;color:#eefdf9}
+    .sound-toggle{background:var(--navy);color:#fff}
+    .mini-top-link:hover,.sound-toggle:hover{transform:translateY(-1px)}
+
+    .desktop-nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;margin-top:10px}
+    .desktop-nav a{
+      text-decoration:none;background:#f7f1e6;color:var(--navy);
+      padding:10px 12px;border-radius:999px;font-weight:900;font-size:.94rem;
+      border:1px solid #efe1c1;
+    }
+
+    .hero{display:grid;grid-template-columns:1.08fr .92fr;gap:18px;align-items:stretch;padding:18px 0 10px}
+    .hero-main{
+      background:linear-gradient(135deg,var(--navy),var(--teal));
+      color:#fff;border-radius:34px;padding:24px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+    }
+    .hero-main:before{content:"";position:absolute;right:-70px;top:-70px;width:190px;height:190px;border-radius:50%;background:rgba(255,255,255,.12)}
+    .hero-main:after{content:"";position:absolute;left:-40px;bottom:-40px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,.08)}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);padding:8px 12px;border-radius:999px;font-weight:900}
+    h1{font-size:clamp(2rem,5vw,4.5rem);line-height:1.02;letter-spacing:-.04em;margin:14px 0 12px}
+    h2{font-size:clamp(1.5rem,3vw,2.35rem);line-height:1.12;margin:0 0 10px;color:var(--navy)}
+    h3{margin:0 0 8px;color:var(--navy);line-height:1.2}
+    .hero-main p{font-size:1.05rem;margin:0 0 16px;color:#effcf9;max-width:58rem}
     .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;border:0;cursor:pointer;border-radius:999px;padding:12px 16px;font-weight:950;transition:.18s ease}
+    .btn:hover{transform:translateY(-2px)}
     .btn-primary{background:#fff;color:var(--navy)}
-    .btn-secondary{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.3)}
-    .btn-gold{background:#ffe4a6;color:#4c3607}
-    .btn:hover{transform:translateY(-2px);filter:brightness(1.03)}
+    .btn-secondary{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.28)}
+    .btn-gold{background:var(--gold-soft);color:#5d4209}
+
+    .symbol-strip{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+    .symbol-strip span{background:#fff7df;border:1px solid #f4dc9e;color:#61490c;border-radius:999px;padding:8px 10px;font-weight:900}
+
     .hero-side{display:grid;gap:14px}
-    .stat-panel,.quick-card,.promise-card,.section-card{
-      background:rgba(255,255,255,.9);border:1px solid rgba(231,220,201,.95);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)
+    .panel,.learning-visual,.section-card,.dashboard-shell,.feature-card,.launcher-card,.how-card,.visual-card,.step-card{
+      background:rgba(255,255,255,.96);
+      border:1px solid rgba(232,220,200,.95);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-soft);
     }
-    .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    .stat{background:linear-gradient(180deg,#fff,#f7fffc);border-radius:22px;padding:16px;text-align:center;border:1px solid #e6f0eb}
-    .stat strong{display:block;font-size:1.8rem;color:var(--teal);line-height:1}
-    .stat span{font-weight:850;color:var(--navy);font-size:.92rem}
-    .symbol-strip{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-    .symbol-strip span{background:#fff7df;border:1px solid #f2daa4;border-radius:999px;padding:7px 10px;font-weight:900}
-    .section{padding:30px 0}
-    .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:16px}
-    .section-head p{max-width:760px;color:var(--muted);margin:0;font-weight:650}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-    .learning-card{position:relative;overflow:hidden;background:#fff;border:1px solid #e7dcc9;border-radius:26px;padding:20px;box-shadow:0 14px 34px rgba(23,50,77,.09);min-height:190px}
-    .learning-card .icon{font-size:2.4rem;display:inline-grid;place-items:center;width:60px;height:60px;border-radius:22px;background:#f2fffb;margin-bottom:12px}
-    .learning-card p{color:var(--muted);font-weight:650;margin:0 0 14px}
-    .card-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+    .panel{padding:18px}
+    .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .stat{padding:16px;border-radius:22px;background:linear-gradient(180deg,#fff,#f6fffc);border:1px solid #e4efe8;text-align:center}
+    .stat strong{display:block;font-size:1.65rem;color:var(--teal);line-height:1}
+    .stat span{font-size:.9rem;color:var(--navy);font-weight:850}
+
+    .learning-visual{padding:18px;background:linear-gradient(180deg,#ffffff,#f8fffd)}
+    .visual-board{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
+    .visual-tile{
+      min-height:110px;border-radius:24px;padding:12px;position:relative;overflow:hidden;
+      display:flex;flex-direction:column;justify-content:flex-end;color:var(--navy);font-weight:900;
+      border:1px solid rgba(23,50,77,.06);
+    }
+    .visual-tile .emoji{font-size:2rem;position:absolute;left:12px;top:10px}
+    .visual-tile small{display:block;font-size:.78rem;color:var(--muted);font-weight:800;line-height:1.25;margin-top:3px}
+    .tile-dua{background:linear-gradient(135deg,#fff4d4,#fffdfa)}
+    .tile-quran{background:linear-gradient(135deg,#e7fff7,#ffffff)}
+    .tile-salah{background:linear-gradient(135deg,#e8f4ff,#ffffff)}
+    .tile-arabic{background:linear-gradient(135deg,#f3edff,#ffffff)}
+    .tile-games{background:linear-gradient(135deg,#ffeef4,#ffffff)}
+    .tile-practice{background:linear-gradient(135deg,#eef8e6,#ffffff)}
+
+    .mobile-launcher{display:none;margin-top:14px}
+    .launcher-card{padding:14px}
+    .launcher-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .launch-link{
+      text-decoration:none;padding:12px 8px;border-radius:22px;background:#fff8ea;
+      border:1px solid #efddb7;display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:6px;text-align:center;color:var(--navy);font-weight:900;min-height:88px;
+    }
+    .launch-link span:first-child{font-size:1.5rem}
+    .launch-link small{font-size:.76rem;line-height:1.2}
+
+    .section{padding:22px 0}
+    .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+    .section-head p{margin:0;max-width:760px;color:var(--muted);font-weight:700}
+
+    .journey-rail{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:stretch}
+    .step-card{padding:16px;position:relative;text-align:center}
+    .step-card .big{font-size:2rem;display:block;margin-bottom:8px}
+    .step-card p{margin:0;color:var(--muted);font-weight:700;font-size:.95rem}
+    .step-card:not(:last-child):after{
+      content:"➜";position:absolute;right:-10px;top:50%;transform:translateY(-50%);
+      color:var(--gold);font-size:1.6rem;font-weight:900;z-index:2;
+    }
+
+    .guidance-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .how-card{padding:16px;background:linear-gradient(180deg,#fff,#fbfffd)}
+    .how-card h3{display:flex;align-items:center;gap:8px}
+    .how-card p{margin:0;color:var(--muted);font-weight:700}
+
+    .visual-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .visual-card{padding:18px;position:relative;overflow:hidden;background:#fff}
+    .visual-card:before{content:"";position:absolute;right:-28px;top:-28px;width:100px;height:100px;border-radius:50%;background:rgba(15,118,110,.08)}
+    .visual-badge{width:64px;height:64px;border-radius:22px;display:grid;place-items:center;font-size:1.9rem;margin-bottom:12px}
+    .visual-card p{margin:0;color:var(--muted);font-weight:700}
+    .visual-card .mini-link-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
     .mini-link{display:inline-flex;text-decoration:none;background:#f4efe4;border-radius:999px;padding:8px 10px;font-weight:900;color:var(--navy);font-size:.9rem}
-    .mini-link:hover{background:#dff7f1}
-    .path{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;counter-reset:path}
-    .step{background:#fff;border:1px solid #e6ede9;border-radius:24px;padding:18px;box-shadow:0 10px 26px rgba(0,0,0,.05)}
-    .step:before{counter-increment:path;content:counter(path);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;font-weight:950;margin-bottom:10px}
-    .filter-preview{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-    .filter-pill{background:#fff;border:1px solid #e7dcc9;border-radius:22px;padding:16px;font-weight:900;color:var(--navy)}
-    .filter-pill small{display:block;color:var(--muted);font-weight:700;margin-top:4px}
-    .dashboard-shell{background:#fff;border:1px solid #e7dcc9;border-radius:34px;padding:18px;box-shadow:var(--shadow)}
-    .dashboard-note{padding:18px;border-radius:24px;background:linear-gradient(135deg,#fff6dd,#eafff7);margin-bottom:12px}
+
+    .topic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+    .feature-card{padding:18px;background:#fff}
+    .feature-card .icon{font-size:2.2rem;width:58px;height:58px;display:grid;place-items:center;border-radius:20px;margin-bottom:10px;background:#f2fffb}
+    .feature-card p{margin:0;color:var(--muted);font-weight:700}
+
+    .filter-preview{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+    .filter-pill{background:#fff;border:1px solid var(--line);border-radius:20px;padding:16px;font-weight:900;color:var(--navy)}
+    .filter-pill small{display:block;color:var(--muted);font-weight:700;margin-top:5px}
+
+    .dashboard-shell{padding:18px}
+    .dashboard-note{padding:16px;border-radius:22px;background:linear-gradient(135deg,#fff7df,#ebfff8);margin-bottom:12px}
+    .dashboard-note h3{margin-bottom:6px}
     .dashboard-note p{margin:0;color:var(--muted);font-weight:700}
-    .ak-hero{background:linear-gradient(135deg,#17324d,#0f766e);color:white;border-radius:28px;padding:28px;margin:18px 0;box-shadow:0 16px 40px rgba(23,50,77,.18)}
-    .ak-hero h1{margin:0 0 8px;font-size:clamp(2rem,5vw,4rem)}
-    .ak-hero p{font-size:1.05rem;max-width:820px}
-    .ak-stats{display:flex;gap:10px;flex-wrap:wrap}
-    .ak-stats span,.ak-hero button{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:10px 14px;border-radius:999px;color:white;font-weight:850}
-    .ak-filter-panel{background:#fff;border-radius:24px;padding:18px;margin:18px 0;box-shadow:0 12px 30px rgba(0,0,0,.07)}
-    .ak-filter-grid{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:12px}
-    .ak-filter-grid label{font-weight:850;color:var(--navy)}
-    select,input{width:100%;box-sizing:border-box;margin-top:6px;padding:12px;border-radius:14px;border:1px solid #ddd;font-size:1rem}
-    .ak-quick-buttons button,.ak-options button,.ak-complete,.ak-mini-list button{cursor:pointer;border:0;border-radius:999px;background:#eaf7f4;color:var(--navy);padding:10px 14px;margin:6px;font-weight:850}
-    .ak-quick-buttons button:hover,.ak-options button:hover,.ak-complete:hover{background:#ffe7b1}
-    .ak-card-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-    .ak-card{background:#fff;border-radius:24px;padding:18px;box-shadow:0 14px 34px rgba(0,0,0,.08);border:2px solid transparent}
-    .ak-card.is-done{border-color:#42b883;background:#f3fff7}
-    .ak-card-top{display:flex;justify-content:space-between;gap:8px;font-weight:850;color:#557}
-    .ak-icon{font-size:1.8rem}.ak-card h3{font-size:1.15rem}.ak-arabic{font-size:1.8rem;font-family:Georgia,serif;text-align:center;background:#fff8ec;border-radius:18px;padding:12px}.ak-explain,.ak-action{background:#f7fafc;border-radius:16px;padding:10px}.ak-complete{background:#17324d;color:white;width:100%}.ak-count{font-weight:950;color:var(--navy);margin:18px 0}.ak-more,.ak-error{background:#fff3cd;padding:14px;border-radius:16px}.ak-daily{background:#fff;border-radius:22px;padding:16px;margin:18px 0}
-    .footer{background:#17324d;color:#eefdf9;margin-top:40px}.footer .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}.footer a{color:#fff;text-decoration:none;font-weight:850}.footer-links{display:flex;gap:8px;flex-wrap:wrap}.footer-links a{background:rgba(255,255,255,.12);padding:8px 10px;border-radius:999px}
-    .back-top{position:fixed;right:16px;bottom:16px;width:46px;height:46px;border-radius:50%;border:0;background:var(--navy);color:#fff;font-size:1.3rem;box-shadow:0 10px 28px rgba(0,0,0,.2);cursor:pointer}
-    @media(max-width:860px){.hero{grid-template-columns:1fr}.ak-filter-grid{grid-template-columns:1fr}.footer .wrap{grid-template-columns:1fr}.main-nav{justify-content:flex-start}.hero-card{padding:24px}.stats{grid-template-columns:1fr 1fr}}
-    @media(max-width:560px){.wrap{padding:12px}.main-nav a,.sound-toggle{font-size:.86rem;padding:8px 10px}.stats{grid-template-columns:1fr}.hero-actions .btn{width:100%}}
+
+    .parent-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .section-card{padding:18px}
+    .section-card p{margin:0 0 12px;color:var(--muted);font-weight:700}
+
+    .footer{background:#17324d;color:#eefdf9;margin-top:34px}
+    .footer .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;padding-top:22px;padding-bottom:22px}
+    .footer-links{display:flex;flex-wrap:wrap;gap:8px}
+    .footer-links a{text-decoration:none;color:#fff;background:rgba(255,255,255,.12);padding:8px 10px;border-radius:999px;font-weight:900}
+
+    .back-top{position:fixed;right:16px;bottom:92px;width:48px;height:48px;border-radius:50%;border:0;background:var(--navy);color:#fff;font-size:1.2rem;box-shadow:0 10px 28px rgba(0,0,0,.18);cursor:pointer;z-index:25}
+
+    .mobile-dock{
+      position:fixed;left:12px;right:12px;bottom:10px;z-index:24;
+      background:rgba(255,255,255,.96);backdrop-filter:blur(12px);
+      border:1px solid rgba(232,220,200,.95);border-radius:24px;
+      box-shadow:0 16px 40px rgba(23,50,77,.18);
+      display:none;grid-template-columns:repeat(5,1fr);gap:6px;padding:8px;
+    }
+    .dock-link{text-decoration:none;color:var(--navy);font-weight:900;text-align:center;padding:8px 4px;border-radius:18px}
+    .dock-link span{display:block;font-size:1.15rem;line-height:1.1;margin-bottom:2px}
+    .dock-link small{font-size:.72rem;line-height:1.1;display:block}
+    .dock-link.active{background:#eef9f6}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .journey-rail{grid-template-columns:repeat(5,minmax(120px,1fr));overflow:auto;padding-bottom:2px}
+      .journey-rail::-webkit-scrollbar{height:8px}
+      .journey-rail::-webkit-scrollbar-thumb{background:#d8c8a5;border-radius:999px}
+      .guidance-row{grid-template-columns:repeat(2,1fr)}
+      .parent-grid,.footer .wrap{grid-template-columns:1fr}
+    }
+    @media (max-width:760px){
+      body{padding-bottom:98px}
+      .wrap{padding:12px}
+      .desktop-nav{display:none}
+      .mobile-launcher{display:block}
+      .header-actions .mini-top-link{display:none}
+      .hero-main,.panel,.learning-visual,.dashboard-shell,.feature-card,.launcher-card,.how-card,.visual-card,.section-card,.step-card{border-radius:22px}
+      .hero-main{padding:18px}
+      .hero-actions .btn{width:100%}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .visual-board{grid-template-columns:repeat(3,1fr)}
+      .topic-grid{grid-template-columns:1fr}
+      .mobile-dock{display:grid}
+      .back-top{bottom:106px}
+    }
+    @media (max-width:560px){
+      .brand-title{font-size:1.05rem}
+      .brand-sub{font-size:.86rem}
+      .topbar{align-items:flex-start}
+      .header-actions{justify-content:flex-end}
+      .sound-toggle{padding:10px 12px;font-size:.92rem}
+      h1{font-size:2rem}
+      h2{font-size:1.45rem}
+      .visual-board{grid-template-columns:repeat(2,1fr)}
+      .stats{grid-template-columns:1fr 1fr}
+      .launcher-grid{grid-template-columns:repeat(4,1fr)}
+      .journey-rail{grid-template-columns:repeat(5,150px)}
+      .journey-rail .step-card:not(:last-child):after{right:-12px}
+      .guidance-row{grid-template-columns:1fr 1fr}
+      .filter-preview{grid-template-columns:1fr 1fr}
+      .dock-link small{font-size:.66rem}
+    }
+    @media (max-width:400px){
+      .launcher-grid{grid-template-columns:repeat(2,1fr)}
+      .visual-board{grid-template-columns:1fr 1fr}
+      .guidance-row,.filter-preview{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <div class="wrap topbar">
-      <a class="brand" href="index.html" aria-label="Al-Hayat Kids Islam Home">
-        <span class="brand-mark">☾</span>
-        <span>Al-Hayat Kids Islam <small class="brand-ar">الحیات اسلامی اطفال</small></span>
-      </a>
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="curriculum.html">Curriculum</a>
-        <a href="activities/">Activities</a>
-        <a href="games/">Games</a>
-        <a href="practice/">Practice</a>
-        <a href="progress/">Progress</a>
-        <a href="badges/">Badges</a>
-        <a href="parents/">Parents</a>
-        <button class="sound-toggle" type="button" data-sound-toggle>🔊 Sounds</button>
+    <div class="wrap">
+      <div class="topbar">
+        <a class="brand" href="index.html" aria-label="Al-Hayat Kids Islam Home">
+          <span class="brand-mark">☾</span>
+          <span class="brand-text">
+            <span class="brand-title">Al-Hayat Kids Islam</span>
+            <small class="brand-sub">الحیات اسلامی اطفال</small>
+          </span>
+        </a>
+        <div class="header-actions">
+          <a class="mini-top-link" href="#start-here">🌱 Start</a>
+          <a class="mini-top-link" href="#learning-bank">❓ Questions</a>
+          <button class="sound-toggle" type="button" data-sound-toggle>🔊 Sounds</button>
+        </div>
+      </div>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="index.html">🏠 Home</a>
+        <a href="curriculum.html">🧭 Curriculum</a>
+        <a href="activities/">🎯 Activities</a>
+        <a href="games/">🎮 Games</a>
+        <a href="practice/">✍️ Practice</a>
+        <a href="progress/">⭐ Progress</a>
+        <a href="badges/">🏆 Badges</a>
+        <a href="parents/">👨‍👩‍👧 Parents</a>
       </nav>
+      <div class="mobile-launcher">
+        <div class="launcher-card">
+          <div class="launcher-grid">
+            <a class="launch-link" href="index.html"><span>🏠</span><small>Home</small></a>
+            <a class="launch-link" href="curriculum.html"><span>🧭</span><small>Learn</small></a>
+            <a class="launch-link" href="activities/"><span>🎯</span><small>Do</small></a>
+            <a class="launch-link" href="games/"><span>🎮</span><small>Play</small></a>
+            <a class="launch-link" href="practice/"><span>✍️</span><small>Practice</small></a>
+            <a class="launch-link" href="progress/"><span>⭐</span><small>Progress</small></a>
+            <a class="launch-link" href="badges/"><span>🏆</span><small>Badges</small></a>
+            <a class="launch-link" href="parents/"><span>👨‍👩‍👧</span><small>Parents</small></a>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
   <main id="main" class="wrap">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-card">
-        <span class="eyebrow">🌱 Start learning • Ages 3–8</span>
-        <h1 id="hero-title">Learn Islam with joy, symbols, stars, and daily practice.</h1>
-        <p>A safe child-first Islamic learning dashboard with 3,000 short questions, Arabic words, duas, Surahs, manners, Salah, Prophet stories, activities, mini games, whiteboard practice, typing board practice, stars, badges, and parent guidance.</p>
+      <div class="hero-main">
+        <span class="eyebrow">🌱 Ages 3–8 • Mobile-friendly • Child-first</span>
+        <h1 id="hero-title">A child can tap, learn, practice, play, and move forward independently.</h1>
+        <p>Al-Hayat Kids Islam is designed especially for phone users. Big symbols, clear buttons, connected learning steps, and visual topic cards help a child understand what to do next with less reading and more guided action.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#learning-bank">🚀 Start Today</a>
-          <a class="btn btn-secondary" href="activities/">🎯 Activities</a>
-          <a class="btn btn-secondary" href="games/">🎮 Games</a>
-          <a class="btn btn-gold" href="parents/">👨‍👩‍👧 Parent Guide</a>
+          <a class="btn btn-primary" href="#start-here">🚀 Start Here</a>
+          <a class="btn btn-secondary" href="#learning-bank">❓ Open Questions</a>
+          <a class="btn btn-gold" href="curriculum.html">🧭 Learning Map</a>
         </div>
         <div class="symbol-strip" aria-label="Learning symbols">
-          <span>🌱 New</span><span>👆 Tap</span><span>✍️ Practice</span><span>🎮 Game</span><span>⭐ Star</span><span>🏆 Badge</span><span>🔓 Next</span>
+          <span>🌱 New</span>
+          <span>👆 Tap</span>
+          <span>✍️ Practice</span>
+          <span>🎮 Play</span>
+          <span>⭐ Star</span>
+          <span>🏆 Badge</span>
+          <span>🔓 Next</span>
         </div>
       </div>
 
-      <aside class="hero-side" aria-label="Learning summary">
-        <div class="stat-panel">
-          <h2>Learning System</h2>
+      <aside class="hero-side" aria-label="Home summary">
+        <div class="panel">
+          <h2>Quick picture idea</h2>
           <div class="stats">
             <div class="stat"><strong>3,000</strong><span>Short Q/A</span></div>
             <div class="stat"><strong>5</strong><span>Levels</span></div>
-            <div class="stat"><strong>3–8</strong><span>Age Range</span></div>
-            <div class="stat"><strong>100%</strong><span>Structured</span></div>
+            <div class="stat"><strong>8+</strong><span>Main Topics</span></div>
+            <div class="stat"><strong>Phone</strong><span>Easy Use</span></div>
           </div>
         </div>
-        <div class="quick-card">
-          <h3>Today’s Learning Path</h3>
-          <p>Auto-updated daily from the full question bank. The child follows symbols and earns stars after each completed task.</p>
-          <a class="btn btn-primary" href="#learning-bank">🌞 Open Today’s Cards</a>
-        </div>
-        <div class="promise-card">
-          <h3>Safety Promise</h3>
-          <p>No ads, no login, no tracking, no child chat, no camera, no microphone. Progress stays in this browser.</p>
+        <div class="learning-visual">
+          <h3>This site helps kids learn:</h3>
+          <div class="visual-board" aria-label="Learning visual board">
+            <div class="visual-tile tile-dua"><span class="emoji">🤲</span><div>Duas<small>Daily words to say</small></div></div>
+            <div class="visual-tile tile-quran"><span class="emoji">📖</span><div>Qur’an<small>Short Surahs and respect</small></div></div>
+            <div class="visual-tile tile-salah"><span class="emoji">🕌</span><div>Salah<small>Prayer and wudu basics</small></div></div>
+            <div class="visual-tile tile-arabic"><span class="emoji">🔤</span><div>Arabic<small>Letters and words</small></div></div>
+            <div class="visual-tile tile-games"><span class="emoji">🎮</span><div>Games<small>Review through play</small></div></div>
+            <div class="visual-tile tile-practice"><span class="emoji">✍️</span><div>Practice<small>Trace, type, and repeat</small></div></div>
+          </div>
         </div>
       </aside>
     </section>
 
-    <section class="section" id="explore">
+    <section class="section" id="start-here">
       <div class="section-head">
         <div>
-          <h2>Choose what you want to learn</h2>
-          <p>Big symbols help the child decide independently. Every card connects question, answer, activity, practice, game, star, and next task.</p>
+          <h2>Start here: the child journey</h2>
+          <p>These direction connectors help the child move through the website step by step. Every lesson should connect to the next clear action.</p>
         </div>
       </div>
-      <div class="grid">
-        <article class="learning-card">
-          <span class="icon">🤲</span>
-          <h3>Daily Duas</h3>
-          <p>Bismillah, Alhamdulillah, eating, sleeping, waking, parents, knowledge, and gratitude.</p>
-          <div class="card-links"><a class="mini-link" href="duas.html">Lesson</a><a class="mini-link" href="practice/">Practice</a><a class="mini-link" href="games/">Game</a></div>
+      <div class="journey-rail" aria-label="Child journey">
+        <article class="step-card">
+          <span class="big">🧭</span>
+          <h3>Choose</h3>
+          <p>Pick a topic like Duas, Qur’an, Salah, Arabic, or Stories.</p>
         </article>
-        <article class="learning-card">
-          <span class="icon">📖</span>
-          <h3>Qur’an & Short Surahs</h3>
-          <p>Respect for Qur’an, Al-Fatihah, Al-Ikhlas, Al-Falaq, An-Nas, Al-Kawthar, and simple meanings.</p>
-          <div class="card-links"><a class="mini-link" href="surahs.html">Lesson</a><a class="mini-link" href="activities/">Activity</a><a class="mini-link" href="practice/">Practice</a></div>
+        <article class="step-card">
+          <span class="big">❓</span>
+          <h3>Answer</h3>
+          <p>Read or hear one short question and tap the answer.</p>
         </article>
-        <article class="learning-card">
-          <span class="icon">🌸</span>
-          <h3>Islamic Manners</h3>
-          <p>Salam, truth, kindness, sharing, clean habits, respect for parents, mercy, and good words.</p>
-          <div class="card-links"><a class="mini-link" href="islamic-manners.html">Lesson</a><a class="mini-link" href="activities/">Activity</a><a class="mini-link" href="games/">Game</a></div>
+        <article class="step-card">
+          <span class="big">✍️</span>
+          <h3>Practice</h3>
+          <p>Trace, type, match, arrange, or repeat the same idea.</p>
         </article>
-        <article class="learning-card">
-          <span class="icon">☝️</span>
-          <h3>Allah & Iman</h3>
-          <p>Allah made me, Allah is One, gratitude, angels, prophets, books, Jannah, and loving belief.</p>
-          <div class="card-links"><a class="mini-link" href="curriculum.html">Curriculum</a><a class="mini-link" href="#learning-bank">Questions</a></div>
+        <article class="step-card">
+          <span class="big">🎮</span>
+          <h3>Play</h3>
+          <p>Use a game card to review in a fun and easy way.</p>
         </article>
-        <article class="learning-card">
-          <span class="icon">🕌</span>
-          <h3>Salah & Wudu</h3>
-          <p>Five prayers, prayer names, wudu steps, clean clothes, Qiblah, prayer manners, and review tasks.</p>
-          <div class="card-links"><a class="mini-link" href="prayer-basics.html">Lesson</a><a class="mini-link" href="practice/">Practice</a><a class="mini-link" href="games/">Game</a></div>
-        </article>
-        <article class="learning-card">
-          <span class="icon">🔤</span>
-          <h3>Arabic Letters</h3>
-          <p>Arabic alphabet, sounds, tracing, typing, simple Islamic words, and visual recognition cards.</p>
-          <div class="card-links"><a class="mini-link" href="arabic-letters.html">Lesson</a><a class="mini-link" href="practice/">Trace</a><a class="mini-link" href="activities/">Activity</a></div>
-        </article>
-        <article class="learning-card">
-          <span class="icon">🌙</span>
-          <h3>Ramadan, Eid & Hajj</h3>
-          <p>Ramadan, fasting awareness, Qur’an, charity, Eid al-Fitr, Eid al-Adha, Hajj, and Islamic months.</p>
-          <div class="card-links"><a class="mini-link" href="ramadan-eid.html">Lesson</a><a class="mini-link" href="games/">Game</a></div>
-        </article>
-        <article class="learning-card">
-          <span class="icon">⭐</span>
-          <h3>Prophets & Seerah</h3>
-          <p>Child-safe lessons from Prophet Muhammad ﷺ and Prophets’ stories without invented details.</p>
-          <div class="card-links"><a class="mini-link" href="prophet-stories.html">Stories</a><a class="mini-link" href="activities/">Activity</a></div>
+        <article class="step-card">
+          <span class="big">⭐</span>
+          <h3>Earn & Next</h3>
+          <p>Get a star, unlock the next task, and keep moving.</p>
         </article>
       </div>
     </section>
@@ -257,16 +391,127 @@
     <section class="section">
       <div class="section-head">
         <div>
-          <h2>Gradual learning path</h2>
-          <p>The child moves from recognition to daily-life use. Each task unlocks the next step through simple symbols.</p>
+          <h2>What the symbols mean</h2>
+          <p>These guidance connectors make the site easier for a child who cannot read much yet.</p>
         </div>
       </div>
-      <div class="path">
-        <article class="step"><h3>Recognize</h3><p>See the symbol, picture, Arabic word, or Islamic phrase.</p></article>
-        <article class="step"><h3>Choose</h3><p>Answer a short MCQ, tap task, yes/no, or picture question.</p></article>
-        <article class="step"><h3>Practice</h3><p>Trace, type, repeat, match, arrange, or complete a mini activity.</p></article>
-        <article class="step"><h3>Play</h3><p>Use a game card to review the same idea in a joyful way.</p></article>
-        <article class="step"><h3>Earn</h3><p>Get stars and badges, then unlock the next connected task.</p></article>
+      <div class="guidance-row">
+        <article class="how-card">
+          <h3>🌱 New</h3>
+          <p>A fresh lesson card the child has not done yet.</p>
+        </article>
+        <article class="how-card">
+          <h3>👆 Tap</h3>
+          <p>Touch the correct answer, button, or choice.</p>
+        </article>
+        <article class="how-card">
+          <h3>🔁 Again</h3>
+          <p>Practice the same idea once more for confidence.</p>
+        </article>
+        <article class="how-card">
+          <h3>🔓 Next</h3>
+          <p>This shows the child which activity opens next.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Explore by visual topics</h2>
+          <p>Children understand faster when the homepage shows what the site is about through playful learning graphics.</p>
+        </div>
+      </div>
+      <div class="visual-grid">
+        <article class="visual-card">
+          <div class="visual-badge" style="background:#fff3d1;">🤲</div>
+          <h3>Duas & Daily Words</h3>
+          <p>Before eating, after eating, before sleeping, waking up, parents, gratitude, and good words to say every day.</p>
+          <div class="mini-link-row">
+            <a class="mini-link" href="duas.html">Open Duas</a>
+            <a class="mini-link" href="practice/">Practice</a>
+          </div>
+        </article>
+        <article class="visual-card">
+          <div class="visual-badge" style="background:#e6fff8;">📖</div>
+          <h3>Qur’an & Short Surahs</h3>
+          <p>Respect for the Qur’an, simple recitation learning, short Surahs, and child-friendly questions.</p>
+          <div class="mini-link-row">
+            <a class="mini-link" href="surahs.html">Open Surahs</a>
+            <a class="mini-link" href="activities/">Activity</a>
+          </div>
+        </article>
+        <article class="visual-card">
+          <div class="visual-badge" style="background:#edf5ff;">🕌</div>
+          <h3>Salah & Wudu</h3>
+          <p>Prayer names, simple wudu steps, clean habits, and connected practice tasks for daily worship.</p>
+          <div class="mini-link-row">
+            <a class="mini-link" href="prayer-basics.html">Open Salah</a>
+            <a class="mini-link" href="games/">Game</a>
+          </div>
+        </article>
+        <article class="visual-card">
+          <div class="visual-badge" style="background:#f4edff;">🔤</div>
+          <h3>Arabic Letters</h3>
+          <p>Arabic alphabet, sounds, tracing, typing, and simple Islamic words for early recognition.</p>
+          <div class="mini-link-row">
+            <a class="mini-link" href="arabic-letters.html">Open Arabic</a>
+            <a class="mini-link" href="practice/">Trace</a>
+          </div>
+        </article>
+        <article class="visual-card">
+          <div class="visual-badge" style="background:#fff0f4;">🌸</div>
+          <h3>Manners & Character</h3>
+          <p>Truthfulness, kindness, sharing, respect for parents, clean habits, and good Muslim behavior.</p>
+          <div class="mini-link-row">
+            <a class="mini-link" href="islamic-manners.html">Open Manners</a>
+            <a class="mini-link" href="activities/">Activity</a>
+          </div>
+        </article>
+        <article class="visual-card">
+          <div class="visual-badge" style="background:#eef8e6;">⭐</div>
+          <h3>Stories, Play & Rewards</h3>
+          <p>Prophets’ stories, mini-games, stars, badges, and clear “what comes next” reward guidance.</p>
+          <div class="mini-link-row">
+            <a class="mini-link" href="prophet-stories.html">Stories</a>
+            <a class="mini-link" href="badges/">Badges</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Quick action cards</h2>
+          <p>Large action cards make the next step obvious even on a phone screen.</p>
+        </div>
+      </div>
+      <div class="topic-grid">
+        <article class="feature-card">
+          <div class="icon">🎯</div>
+          <h3>Activities</h3>
+          <p>Do one simple Islamic task, then follow the connector to the next one.</p>
+          <div class="mini-link-row"><a class="mini-link" href="activities/">Open Activities</a></div>
+        </article>
+        <article class="feature-card">
+          <div class="icon">🎮</div>
+          <h3>Games</h3>
+          <p>Review learning through matching, choosing, tapping, and mini challenge play.</p>
+          <div class="mini-link-row"><a class="mini-link" href="games/">Open Games</a></div>
+        </article>
+        <article class="feature-card">
+          <div class="icon">✍️</div>
+          <h3>Practice</h3>
+          <p>Trace Arabic, type words, arrange steps, and repeat a lesson to learn better.</p>
+          <div class="mini-link-row"><a class="mini-link" href="practice/">Open Practice</a></div>
+        </article>
+        <article class="feature-card">
+          <div class="icon">⭐</div>
+          <h3>Progress</h3>
+          <p>See what is done, which stars are earned, and which task is waiting next.</p>
+          <div class="mini-link-row"><a class="mini-link" href="progress/">Open Progress</a></div>
+        </article>
       </div>
     </section>
 
@@ -274,15 +519,16 @@
       <div class="section-head">
         <div>
           <h2>Powerful filter system</h2>
-          <p>Use the live dashboard below to filter the 3,000-question bank by level, topic, question type, and search word.</p>
+          <p>The filter should help both the child and parent find the right learning content quickly.</p>
         </div>
       </div>
       <div class="filter-preview">
-        <div class="filter-pill">Age <small>3–4, 4–5, 5–6, 6–7, 7–8</small></div>
-        <div class="filter-pill">Level <small>Starter to Champion</small></div>
-        <div class="filter-pill">Topic <small>Duas, Salah, Qur’an, Manners, Arabic</small></div>
-        <div class="filter-pill">Type <small>MCQ, match, tap, trace, type, review</small></div>
-        <div class="filter-pill">Progress <small>New, completed, stars, badges</small></div>
+        <div class="filter-pill">Age<small>3–4, 4–5, 5–6, 6–7, 7–8</small></div>
+        <div class="filter-pill">Level<small>Starter to Champion</small></div>
+        <div class="filter-pill">Topic<small>Duas, Qur’an, Salah, Arabic, Manners</small></div>
+        <div class="filter-pill">Task Type<small>Question, practice, activity, game</small></div>
+        <div class="filter-pill">Status<small>New, in progress, completed</small></div>
+        <div class="filter-pill">Reward<small>Stars, badges, next unlock</small></div>
       </div>
     </section>
 
@@ -290,30 +536,31 @@
       <div class="section-head">
         <div>
           <h2 id="bank-title">Live 3,000-question learning dashboard</h2>
-          <p>This section loads from your new JSON files in <strong>/assets/data/</strong> and uses the new JavaScript engines in <strong>/assets/js/</strong>.</p>
+          <p>This area loads the structured question bank. The ideal child route is: <strong>❓ Question → 👆 Tap → ✍️ Practice → 🎮 Game → ⭐ Star → 🔓 Next</strong>.</p>
         </div>
         <a class="btn btn-gold" href="progress/">⭐ View Progress</a>
       </div>
       <div class="dashboard-shell">
         <div class="dashboard-note">
-          <h3>Child route: ❓ Question → 👆 Answer → 🎯 Activity → ✍️ Practice → 🎮 Game → ⭐ Star → 🔓 Next</h3>
-          <p>If this area shows “Content could not load,” check that <code>/assets/data/levels/levels.json</code>, <code>/assets/data/topics/topics.json</code>, and all five question JSON files are uploaded with real content.</p>
+          <h3>Helpful note</h3>
+          <p>If this area ever shows “Content could not load,” check whether all files inside <code>/assets/data/</code> and <code>/assets/js/</code> contain real content and are uploaded to the correct paths.</p>
         </div>
         <div id="alhayat-bank-app" data-bank-page="home"></div>
       </div>
     </section>
 
     <section class="section">
-      <div class="grid">
+      <div class="parent-grid">
         <article class="section-card">
           <h2>For parents</h2>
-          <p>Let the child choose one symbol. Keep learning short: 5–15 minutes. Praise effort, repeat the same Islamic word in real life, and use the progress page to see completed cards.</p>
-          <a class="btn btn-primary" href="parents/">Open Parent Guide</a>
+          <p>Let the child choose one topic icon, keep the session short, and praise every step. Repetition is good. Try one lesson, one practice task, and one game on the phone.</p>
+          <a class="btn btn-primary" href="parents/">👨‍👩‍👧 Parent Guide</a>
         </article>
         <article class="section-card">
           <h2>Quick pages</h2>
-          <p>Open dedicated pages for activities, games, practice, progress, and badges.</p>
-          <div class="card-links">
+          <p>Open the main sections directly from here if the child wants to move quickly.</p>
+          <div class="mini-link-row">
+            <a class="mini-link" href="curriculum.html">🧭 Curriculum</a>
             <a class="mini-link" href="activities/">🎯 Activities</a>
             <a class="mini-link" href="games/">🎮 Games</a>
             <a class="mini-link" href="practice/">✍️ Practice</a>
@@ -329,7 +576,7 @@
     <div class="wrap">
       <div>
         <h2>Al-Hayat Kids Islam</h2>
-        <p>Safe, joyful, structured Islamic learning for young Muslim children ages 3–8.</p>
+        <p>Safe, visual, structured Islamic learning for young Muslim children ages 3–8, with mobile-first navigation and symbol-based guidance.</p>
         <p>© <span id="year"></span> Al-Hayat Kids Islam. All rights reserved.</p>
       </div>
       <div class="footer-links" aria-label="Footer links">
@@ -347,6 +594,14 @@
 
   <button class="back-top" type="button" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
+  <nav class="mobile-dock" aria-label="Mobile quick navigation">
+    <a class="dock-link active" href="index.html"><span>🏠</span><small>Home</small></a>
+    <a class="dock-link" href="curriculum.html"><span>🧭</span><small>Learn</small></a>
+    <a class="dock-link" href="games/"><span>🎮</span><small>Play</small></a>
+    <a class="dock-link" href="practice/"><span>✍️</span><small>Do</small></a>
+    <a class="dock-link" href="progress/"><span>⭐</span><small>Track</small></a>
+  </nav>
+
   <script src="assets/js/sound-engine.js"></script>
   <script src="assets/js/progress-engine.js"></script>
   <script src="assets/js/reward-engine.js"></script>
@@ -358,6 +613,7 @@
   <script src="script.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
     document.addEventListener('click', function (event) {
       const interactive = event.target.closest('a, button');
       if (interactive && window.AlHayatSound && typeof window.AlHayatSound.beep === 'function') {
