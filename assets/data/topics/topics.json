@@ -1,1 +1,649 @@
-
+{
+  "appName": "Al-Hayat Kids Islam",
+  "fileType": "topics",
+  "version": "1.0.0",
+  "targetAgeRange": "3-8",
+  "totalQuestionTarget": 3000,
+  "filters": {
+    "ageRange": [
+      "3-4",
+      "4-5",
+      "5-6",
+      "6-7",
+      "7-8"
+    ],
+    "levels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "questionTypes": [
+      "arrange",
+      "arrange_steps",
+      "complete_word",
+      "fill_blank",
+      "final_challenge",
+      "habit_choice",
+      "listen_choose",
+      "match",
+      "mcq",
+      "multi_step_activity",
+      "picture_choice",
+      "picture_question",
+      "repeat_after_me",
+      "review_challenge",
+      "revision_quiz",
+      "scenario_choice",
+      "short_answer",
+      "tap",
+      "trace",
+      "true_false",
+      "type",
+      "type_short_answer",
+      "yes_no"
+    ],
+    "status": [
+      "new",
+      "in_progress",
+      "completed",
+      "needs_practice"
+    ],
+    "difficulty": [
+      "very_easy",
+      "easy",
+      "easy_medium",
+      "medium",
+      "medium_challenge"
+    ]
+  },
+  "symbols": {
+    "new": "🌱",
+    "listen": "👂",
+    "tap": "👆",
+    "practice": "✍️",
+    "game": "🎮",
+    "completed": "✅",
+    "star": "⭐",
+    "badge": "🏆",
+    "locked": "🔒",
+    "unlocked": "🔓"
+  },
+  "topics": [
+    {
+      "id": "allah_iman",
+      "order": 1,
+      "title": "Allah and Iman",
+      "arabicTitle": "الله اور ایمان",
+      "icon": "☝️",
+      "route": "curriculum.html",
+      "questionTarget": 305,
+      "levels": {
+        "1": 60,
+        "2": 60,
+        "3": 60,
+        "4": 55,
+        "5": 70
+      },
+      "description": "Child-friendly learning cards for Allah and Iman.",
+      "childActionSymbols": [
+        "🌱",
+        "👂",
+        "👆",
+        "✍️",
+        "🎮",
+        "⭐",
+        "🔓"
+      ],
+      "filterTags": [
+        "allah iman",
+        "allah and iman",
+        "الله اور ایمان"
+      ],
+      "learningSteps": [
+        "learn",
+        "answer",
+        "activity",
+        "practice",
+        "game",
+        "review",
+        "next"
+      ],
+      "safetyNote": "Keep examples gentle, authentic, non-sectarian, and age-appropriate."
+    },
+    {
+      "id": "quran_surahs",
+      "order": 2,
+      "title": "Qur’an and Short Surahs",
+      "arabicTitle": "قرآن اور چھوٹی سورتیں",
+      "icon": "📖",
+      "route": "surahs.html",
+      "questionTarget": 300,
+      "levels": {
+        "1": 45,
+        "2": 55,
+        "3": 55,
+        "4": 70,
+        "5": 75
+      },
+      "description": "Child-friendly learning cards for Qur’an and Short Surahs.",
+      "childActionSymbols": [
+        "🌱",
+        "👂",
+        "👆",
+        "✍️",
+        "🎮",
+        "⭐",
+        "🔓"
+      ],
+      "filterTags": [
+        "quran surahs",
+        "qur’an and short surahs",
+        "قرآن اور چھوٹی سورتیں"
+      ],
+      "learningSteps": [
+        "learn",
+        "answer",
+        "activity",
+        "practice",
+        "game",
+        "review",
+        "next"
+      ],
+      "safetyNote": "Keep examples gentle, authentic, non-sectarian, and age-appropriate."
+    },
+    {
+      "id": "arabic_letters_words",
+      "order": 3,
+      "title": "Arabic Letters and Islamic Words",
+      "arabicTitle": "عربی حروف اور اسلامی الفاظ",
+      "icon": "🔤",
+      "route": "arabic-letters.html",
+      "questionTarget": 310,
+      "levels": {
+        "1": 70,
+        "2": 80,
+        "3": 60,
+        "4": 50,
+        "5": 50
+      },
+      "description": "Child-friendly learning cards for Arabic Letters and Islamic Words.",
+      "childActionSymbols": [
+        "🌱",
+        "👂",
+        "👆",
+        "✍️",
+        "🎮",
+        "⭐",
+        "🔓"
+      ],
+      "filterTags": [
+        "arabic letters words",
+        "arabic letters and islamic words",
+        "عربی حروف اور اسلامی الفاظ"
+      ],
+      "learningSteps": [
+        "learn",
+        "answer",
+        "activity",
+        "practice",
+        "game",
+        "review",
+        "next"
+      ],
+      "safetyNote": "Keep examples gentle, authentic, non-sectarian, and age-appropriate."
+    },
+    {
+      "id": "daily_duas_adhkar",
+      "order": 4,
+      "title": "Daily Duas and Adhkar",
+      "arabicTitle": "روزانہ دعائیں اور اذکار",
+      "icon": "🤲",
+      "route": "duas.html",
+      "questionTarget": 305,
+      "levels": {
+        "1": 45,
+        "2": 70,
+        "3": 65,
+        "4": 55,
+        "5": 70
+      },
+      "description": "Child-friendly learning cards for Daily Duas and Adhkar.",
+      "childActionSymbols": [
+        "🌱",
+        "👂",
+        "👆",
+        "✍️",
+        "🎮",
+        "⭐",
+        "🔓"
+      ],
+      "filterTags": [
+        "daily duas adhkar",
+        "daily duas and adhkar",
+        "روزانہ دعائیں اور اذکار"
+      ],
+      "learningSteps": [
+        "learn",
+        "answer",
+        "activity",
+        "practice",
+        "game",
+        "review",
+        "next"
+      ],
+      "safetyNote": "Keep examples gentle, authentic, non-sectarian, and age-appropriate."
+    },
+    {
+      "id": "prophet_seerah",
+      "order": 5,
+      "title": "Prophet Muhammad ﷺ and Seerah",
+      "arabicTitle": "سیرت النبی ﷺ",
+      "icon": "🌙",
+      "route": "prophet-stories.html",
+      "questionTarget": 290,
+      "levels": {
+        "1": 35,
+        "2": 45,
+        "3": 60,
+        "4": 75,
+        "5": 75
+      },
+      "description": "Child-friendly learning cards for Prophet Muhammad ﷺ and Seerah.",
+      "childActionSymbols": [
+        "🌱",
+        "👂",
+        "👆",
+        "✍️",
+        "🎮",
+        "⭐",
+        "🔓"
+      ],
+      "filterTags": [
+        "prophet seerah",
+        "prophet muhammad ﷺ and seerah",
+        "سیرت النبی ﷺ"
+      ],
+      "learningSteps": [
+        "learn",
+        "answer",
+        "activity",
+        "practice",
+        "game",
+        "review",
+        "next"
+      ],
+      "safetyNote": "Keep examples gentle, authentic, non-sectarian, and age-appropriate."
+    },
+    {
+      "id": "prophets_stories",
+      "order": 6,
+      "title": "Prophets’ Stories",
+      "arabicTitle": "انبیاء علیہم السلام کے واقعات",
+      "icon": "🕋",
+      "route": "prophet-stories.html",
+      "questionTarget": 210,
+      "levels": {
+        "1": 0,
+        "2": 0,
+        "3": 60,
+        "4": 70,
+        "5": 80
+      },
+      "description": "Child-friendly learning cards for Prophets’ Stories.",
+      "childActionSymbols": [
+        "🌱",
+        "👂",
+        "👆",
+        "✍️",
+        "🎮",
+        "⭐",
+        "🔓"
+      ],
+      "filterTags": [
+        "prophets stories",
+        "prophets’ stories",
+        "انبیاء علیہم السلام کے واقعات"
+      ],
+      "learningSteps": [
+        "learn",
+        "answer",
+        "activity",
+        "practice",
+        "game",
+        "review",
+        "next"
+      ],
+      "safetyNote": "Keep examples gentle, authentic, non-sectarian, and age-appropriate."
+    },
+    {
+      "id": "salah",
+      "order": 7,
+      "title": "Salah",
+      "arabicTitle": "نماز",
+      "icon": "🕌",
+      "route": "prayer-basics.html",
+      "questionTarget": 270,
+      "levels": {
+        "1": 25,
+        "2": 45,
+        "3": 60,
+        "4": 65,
+        "5": 75
+      },
+      "description": "Child-friendly learning cards for Salah.",
+      "childActionSymbols": [
+        "🌱",
+        "👂",
+        "👆",
+        "✍️",
+        "🎮",
+        "⭐",
+        "🔓"
+      ],
+      "filterTags": [
+        "salah",
+        "salah",
+        "نماز"
+      ],
+      "learningSteps": [
+        "learn",
+        "answer",
+        "activity",
+        "practice",
+        "game",
+        "review",
+        "next"
+      ],
+      "safetyNote": "Keep examples gentle, authentic, non-sectarian, and age-appropriate."
+    },
+    {
+      "id": "wudu_cleanliness",
+      "order": 8,
+      "title": "Wudu and Cleanliness",
+      "arabicTitle": "وضو اور پاکیزگی",
+      "icon": "💧",
+      "route": "prayer-basics.html",
+      "questionTarget": 140,
+      "levels": {
+        "1": 0,
+        "2": 0,
+        "3": 45,
+        "4": 50,
+        "5": 45
+      },
+      "description": "Child-friendly learning cards for Wudu and Cleanliness.",
+      "childActionSymbols": [
+        "🌱",
+        "👂",
+        "👆",
+        "✍️",
+        "🎮",
+        "⭐",
+        "🔓"
+      ],
+      "filterTags": [
+        "wudu cleanliness",
+        "wudu and cleanliness",
+        "وضو اور پاکیزگی"
+      ],
+      "learningSteps": [
+        "learn",
+        "answer",
+        "activity",
+        "practice",
+        "game",
+        "review",
+        "next"
+      ],
+      "safetyNote": "Keep examples gentle, authentic, non-sectarian, and age-appropriate."
+    },
+    {
+      "id": "manners_character",
+      "order": 9,
+      "title": "Islamic Manners and Character",
+      "arabicTitle": "اسلامی آداب اور اخلاق",
+      "icon": "🌸",
+      "route": "islamic-manners.html",
+      "questionTarget": 380,
+      "levels": {
+        "1": 65,
+        "2": 80,
+        "3": 65,
+        "4": 85,
+        "5": 85
+      },
+      "description": "Child-friendly learning cards for Islamic Manners and Character.",
+      "childActionSymbols": [
+        "🌱",
+        "👂",
+        "👆",
+        "✍️",
+        "🎮",
+        "⭐",
+        "🔓"
+      ],
+      "filterTags": [
+        "manners character",
+        "islamic manners and character",
+        "اسلامی آداب اور اخلاق"
+      ],
+      "learningSteps": [
+        "learn",
+        "answer",
+        "activity",
+        "practice",
+        "game",
+        "review",
+        "next"
+      ],
+      "safetyNote": "Keep examples gentle, authentic, non-sectarian, and age-appropriate."
+    },
+    {
+      "id": "parents_family",
+      "order": 10,
+      "title": "Parents, Family, and Friends",
+      "arabicTitle": "والدین، خاندان اور دوست",
+      "icon": "👨‍👩‍👧",
+      "route": "parents-corner.html",
+      "questionTarget": 185,
+      "levels": {
+        "1": 35,
+        "2": 40,
+        "3": 35,
+        "4": 35,
+        "5": 40
+      },
+      "description": "Child-friendly learning cards for Parents, Family, and Friends.",
+      "childActionSymbols": [
+        "🌱",
+        "👂",
+        "👆",
+        "✍️",
+        "🎮",
+        "⭐",
+        "🔓"
+      ],
+      "filterTags": [
+        "parents family",
+        "parents, family, and friends",
+        "والدین، خاندان اور دوست"
+      ],
+      "learningSteps": [
+        "learn",
+        "answer",
+        "activity",
+        "practice",
+        "game",
+        "review",
+        "next"
+      ],
+      "safetyNote": "Keep examples gentle, authentic, non-sectarian, and age-appropriate."
+    },
+    {
+      "id": "ramadan_eid_hajj_months",
+      "order": 11,
+      "title": "Ramadan, Eid, Hajj, and Islamic Months",
+      "arabicTitle": "رمضان، عید، حج اور اسلامی مہینے",
+      "icon": "🌙",
+      "route": "ramadan-eid.html",
+      "questionTarget": 185,
+      "levels": {
+        "1": 20,
+        "2": 25,
+        "3": 35,
+        "4": 50,
+        "5": 55
+      },
+      "description": "Child-friendly learning cards for Ramadan, Eid, Hajj, and Islamic Months.",
+      "childActionSymbols": [
+        "🌱",
+        "👂",
+        "👆",
+        "✍️",
+        "🎮",
+        "⭐",
+        "🔓"
+      ],
+      "filterTags": [
+        "ramadan eid hajj months",
+        "ramadan, eid, hajj, and islamic months",
+        "رمضان، عید، حج اور اسلامی مہینے"
+      ],
+      "learningSteps": [
+        "learn",
+        "answer",
+        "activity",
+        "practice",
+        "game",
+        "review",
+        "next"
+      ],
+      "safetyNote": "Keep examples gentle, authentic, non-sectarian, and age-appropriate."
+    },
+    {
+      "id": "masjid_jumuah",
+      "order": 12,
+      "title": "Masjid, Jumu‘ah, and Islamic Places",
+      "arabicTitle": "مسجد، جمعہ اور اسلامی مقامات",
+      "icon": "🕌",
+      "route": "curriculum.html",
+      "questionTarget": 50,
+      "levels": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 20,
+        "5": 30
+      },
+      "description": "Child-friendly learning cards for Masjid, Jumu‘ah, and Islamic Places.",
+      "childActionSymbols": [
+        "🌱",
+        "👂",
+        "👆",
+        "✍️",
+        "🎮",
+        "⭐",
+        "🔓"
+      ],
+      "filterTags": [
+        "masjid jumuah",
+        "masjid, jumu‘ah, and islamic places",
+        "مسجد، جمعہ اور اسلامی مقامات"
+      ],
+      "learningSteps": [
+        "learn",
+        "answer",
+        "activity",
+        "practice",
+        "game",
+        "review",
+        "next"
+      ],
+      "safetyNote": "Keep examples gentle, authentic, non-sectarian, and age-appropriate."
+    },
+    {
+      "id": "halal_daily_life",
+      "order": 13,
+      "title": "Halal Daily Life",
+      "arabicTitle": "روز مرہ حلال زندگی",
+      "icon": "🍽️",
+      "route": "curriculum.html",
+      "questionTarget": 30,
+      "levels": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 30
+      },
+      "description": "Child-friendly learning cards for Halal Daily Life.",
+      "childActionSymbols": [
+        "🌱",
+        "👂",
+        "👆",
+        "✍️",
+        "🎮",
+        "⭐",
+        "🔓"
+      ],
+      "filterTags": [
+        "halal daily life",
+        "halal daily life",
+        "روز مرہ حلال زندگی"
+      ],
+      "learningSteps": [
+        "learn",
+        "answer",
+        "activity",
+        "practice",
+        "game",
+        "review",
+        "next"
+      ],
+      "safetyNote": "Keep examples gentle, authentic, non-sectarian, and age-appropriate."
+    },
+    {
+      "id": "mixed_review",
+      "order": 14,
+      "title": "Mixed Revision Challenges",
+      "arabicTitle": "مخلوط دہرائی چیلنجز",
+      "icon": "🏆",
+      "route": "badges/index.html",
+      "questionTarget": 40,
+      "levels": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 20,
+        "5": 20
+      },
+      "description": "Child-friendly learning cards for Mixed Revision Challenges.",
+      "childActionSymbols": [
+        "🌱",
+        "👂",
+        "👆",
+        "✍️",
+        "🎮",
+        "⭐",
+        "🔓"
+      ],
+      "filterTags": [
+        "mixed review",
+        "mixed revision challenges",
+        "مخلوط دہرائی چیلنجز"
+      ],
+      "learningSteps": [
+        "learn",
+        "answer",
+        "activity",
+        "practice",
+        "game",
+        "review",
+        "next"
+      ],
+      "safetyNote": "Keep examples gentle, authentic, non-sectarian, and age-appropriate."
+    }
+  ]
+}
