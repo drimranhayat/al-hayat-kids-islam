@@ -1,49 +1,1214 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Practice | Al-Hayat Kids Islam</title>
-  <meta name="description" content="Whiteboard, typing board, tracing, and Islamic practice tasks.">
-  <link rel="stylesheet" href="../styles.css">
-  
-<style>
-  :root{--navy:#17324d;--teal:#0f766e;--gold:#c8912b;--cream:#fff8ec;--card:#ffffff;--ink:#243044;}
-  body{margin:0;font-family:Arial,system-ui,sans-serif;background:linear-gradient(180deg,#fff8ec,#eefaf7);color:var(--ink);}
-  header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e8dcc7;}
-  .wrap{max-width:1180px;margin:auto;padding:18px;}
-  .top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
-  .brand{font-weight:900;color:var(--navy);font-size:1.25rem}.brand span{color:var(--gold)}
-  nav a{display:inline-block;margin:4px;padding:10px 12px;border-radius:999px;background:#f4efe4;text-decoration:none;color:var(--navy);font-weight:700}
-  nav a:hover{background:#dff7f1;transform:translateY(-1px)}
-  .ak-hero{background:linear-gradient(135deg,#17324d,#0f766e);color:white;border-radius:28px;padding:28px;margin:22px 0;box-shadow:0 16px 40px rgba(23,50,77,.18)}
-  .ak-hero h1{margin:0 0 8px;font-size:clamp(2rem,5vw,4rem)}.ak-hero p{font-size:1.1rem;max-width:780px}.ak-stats{display:flex;gap:10px;flex-wrap:wrap}.ak-stats span,.ak-hero button{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:10px 14px;border-radius:999px;color:white;font-weight:800}
-  .ak-filter-panel{background:#fff;border-radius:24px;padding:18px;margin:18px 0;box-shadow:0 12px 30px rgba(0,0,0,.07)}
-  .ak-filter-grid{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:12px}.ak-filter-grid label{font-weight:800;color:var(--navy)} select,input{width:100%;box-sizing:border-box;margin-top:6px;padding:12px;border-radius:14px;border:1px solid #ddd;font-size:1rem}.ak-quick-buttons button,.ak-options button,.ak-complete,.ak-mini-list button{cursor:pointer;border:0;border-radius:999px;background:#eaf7f4;color:var(--navy);padding:10px 14px;margin:6px;font-weight:800}.ak-quick-buttons button:hover,.ak-options button:hover,.ak-complete:hover{background:#ffe7b1}
-  .ak-card-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}.ak-card{background:var(--card);border-radius:24px;padding:18px;box-shadow:0 14px 34px rgba(0,0,0,.08);border:2px solid transparent}.ak-card.is-done{border-color:#42b883;background:#f3fff7}.ak-card-top{display:flex;justify-content:space-between;gap:8px;font-weight:800;color:#557}.ak-icon{font-size:1.8rem}.ak-card h3{color:var(--navy);font-size:1.2rem}.ak-arabic{font-size:1.8rem;font-family:serif;text-align:center;background:#fff8ec;border-radius:18px;padding:12px}.ak-explain,.ak-action{background:#f7fafc;border-radius:16px;padding:10px}.ak-complete{background:#17324d;color:white;width:100%}.ak-count{font-weight:900;color:var(--navy);margin:18px 0}.ak-more,.ak-error{background:#fff3cd;padding:14px;border-radius:16px}.ak-daily{background:#fff;border-radius:22px;padding:16px;margin:18px 0}.ak-badge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.ak-badge{background:white;border-radius:24px;padding:20px;text-align:center;box-shadow:0 14px 34px rgba(0,0,0,.08)}.ak-badge div{font-size:3rem}progress{width:100%;height:18px}
-  .practice-tools{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}.tool{background:white;border-radius:24px;padding:18px;box-shadow:0 14px 34px rgba(0,0,0,.08)}canvas{width:100%;height:240px;border:3px dashed #cbd5e1;border-radius:18px;background:white}
-  @media(max-width:760px){.ak-filter-grid,.practice-tools{grid-template-columns:1fr}nav a{font-size:.9rem}.wrap{padding:12px}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practice Board for Islamic Learning | Al-Hayat Kids Islam</title>
+  <meta name="description" content="A child-friendly Islamic practice page for Muslim children ages 3 to 8 with typing board, whiteboard, questions, activities, stars and progress tracking." />
 
+  <style>
+    :root {
+      --bg: #fff8e8;
+      --bg2: #effff9;
+      --card: #ffffff;
+      --ink: #17324d;
+      --muted: #61758a;
+      --teal: #0f766e;
+      --teal2: #14b8a6;
+      --gold: #f5b942;
+      --rose: #ff7b7b;
+      --sky: #7dd3fc;
+      --mint: #9af0c5;
+      --line: rgba(23, 50, 77, 0.13);
+      --shadow: 0 18px 45px rgba(23, 50, 77, 0.12);
+      --radius: 26px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 8%, rgba(125, 211, 252, 0.28), transparent 30%),
+        radial-gradient(circle at 90% 4%, rgba(245, 185, 66, 0.24), transparent 28%),
+        linear-gradient(180deg, var(--bg), #fffdf7 48%, var(--bg2));
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 253, 247, 0.93);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 950;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--teal), #22c55e);
+      color: white;
+      box-shadow: 0 12px 26px rgba(15, 118, 110, 0.24);
+      font-size: 1.35rem;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 750;
+      margin-top: 2px;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .nav a {
+      padding: 10px 13px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.08);
+      color: #115e59;
+      font-weight: 900;
+      transition: 0.2s ease;
+    }
+
+    .nav a:hover,
+    .nav a:focus {
+      transform: translateY(-2px);
+      background: rgba(15, 118, 110, 0.16);
+      outline: none;
+    }
+
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 42px 18px 20px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .hero-card, .side-card, .panel, .practice-card, .board-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+
+    .hero-card {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "✍️";
+      position: absolute;
+      right: 22px;
+      top: 12px;
+      font-size: 5rem;
+      opacity: 0.11;
+      transform: rotate(10deg);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: #ecfff7;
+      border: 1px solid rgba(15, 118, 110, 0.16);
+      color: #115e59;
+      font-weight: 950;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.1rem, 5vw, 4.3rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      color: #12314d;
+    }
+
+    .hero p {
+      margin: 18px 0 0;
+      max-width: 780px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-weight: 650;
+      font-size: 1.08rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn, .small-btn, .chip-btn {
+      border: none;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 950;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+
+    .btn {
+      padding: 12px 17px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.98rem;
+    }
+
+    .btn:hover, .small-btn:hover, .chip-btn:hover { transform: translateY(-2px); }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--teal), #22c55e);
+      color: white;
+      box-shadow: 0 14px 24px rgba(15, 118, 110, 0.22);
+    }
+
+    .btn.gold {
+      background: linear-gradient(135deg, #f59e0b, #ffd166);
+      color: #4b3400;
+      box-shadow: 0 14px 24px rgba(245, 158, 11, 0.18);
+    }
+
+    .btn.soft {
+      background: #f0fbff;
+      color: #0b5171;
+      border: 1px solid rgba(11, 81, 113, 0.12);
+    }
+
+    .side-card {
+      padding: 24px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .big-symbol {
+      min-height: 160px;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at top left, rgba(154, 240, 197, 0.58), transparent 34%),
+        linear-gradient(135deg, #e8fffb, #fff7db);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 20px;
+      border: 1px solid var(--line);
+    }
+
+    .big-symbol strong { display: block; font-size: 3rem; margin-bottom: 8px; }
+    .big-symbol span { display: block; font-weight: 950; color: #115e59; font-size: 1.08rem; }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .mini-stat {
+      border-radius: 18px;
+      padding: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .mini-stat b { display: block; font-size: 1.45rem; color: #115e59; }
+    .mini-stat span { font-weight: 850; color: var(--muted); font-size: 0.84rem; }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    .panel {
+      padding: 24px;
+      margin-bottom: 22px;
+    }
+
+    .panel-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .panel-title h2 {
+      margin: 0;
+      font-size: clamp(1.35rem, 3vw, 2.05rem);
+      letter-spacing: -0.03em;
+    }
+
+    .status-pill {
+      background: #fff8df;
+      color: #744b00;
+      border: 1px solid rgba(245, 185, 66, 0.36);
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-weight: 950;
+    }
+
+    .filter-grid {
+      display: grid;
+      grid-template-columns: 1.2fr repeat(4, 0.75fr);
+      gap: 12px;
+      align-items: end;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      color: #115e59;
+      font-weight: 950;
+      font-size: 0.92rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid rgba(23, 50, 77, 0.18);
+      border-radius: 15px;
+      padding: 12px 13px;
+      font: inherit;
+      background: #fff;
+      color: var(--ink);
+      font-weight: 750;
+    }
+
+    textarea { resize: vertical; min-height: 122px; line-height: 1.65; }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 3px solid rgba(15, 118, 110, 0.18);
+      border-color: rgba(15, 118, 110, 0.4);
+    }
+
+    .quick-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 16px;
+    }
+
+    .chip-btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: #115e59;
+      padding: 9px 12px;
+    }
+
+    .practice-zone {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .board-card {
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .board-card h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .focus-word {
+      border-radius: 20px;
+      background: linear-gradient(135deg, #ecfff7, #fff8df);
+      border: 1px solid var(--line);
+      padding: 16px;
+      display: grid;
+      gap: 8px;
+      min-height: 110px;
+    }
+
+    .focus-word .label { color: var(--muted); font-weight: 900; font-size: 0.86rem; }
+    .focus-word .word { font-size: 1.55rem; font-weight: 950; color: #12314d; line-height: 1.35; }
+    .focus-word .arabic-text { direction: rtl; text-align: right; font-size: 2rem; font-weight: 950; }
+
+    .typing-feedback {
+      border-radius: 15px;
+      padding: 11px 12px;
+      background: #f7fbff;
+      border: 1px solid rgba(23, 50, 77, 0.1);
+      color: var(--muted);
+      font-weight: 850;
+      min-height: 45px;
+    }
+
+    .canvas-wrap {
+      background: #fff;
+      border: 2px dashed rgba(15, 118, 110, 0.22);
+      border-radius: 18px;
+      overflow: hidden;
+      touch-action: none;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 260px;
+      background:
+        linear-gradient(#fff, #fff),
+        repeating-linear-gradient(0deg, transparent, transparent 38px, rgba(15,118,110,.08) 39px);
+      cursor: crosshair;
+    }
+
+    .practice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .practice-card {
+      padding: 18px;
+      border-radius: 24px;
+      display: grid;
+      gap: 12px;
+      overflow: hidden;
+    }
+
+    .practice-card.done {
+      border-color: rgba(34, 197, 94, 0.52);
+      background: linear-gradient(180deg, #fff, #f0fff5);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .topic-badge, .level-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-weight: 950;
+      font-size: 0.81rem;
+    }
+
+    .topic-badge { background: #ecfff7; color: #115e59; }
+    .level-badge { background: #fff3c4; color: #6b4300; white-space: nowrap; }
+
+    .question-text {
+      margin: 0;
+      font-weight: 950;
+      font-size: 1.08rem;
+      line-height: 1.45;
+      color: #122b45;
+    }
+
+    .answer-line {
+      border-radius: 16px;
+      padding: 12px;
+      background: #fff8df;
+      border: 1px solid rgba(245, 185, 66, 0.34);
+      color: #4c3900;
+      line-height: 1.6;
+      font-weight: 800;
+    }
+
+    .micro {
+      background: #f7fbff;
+      border: 1px solid rgba(23, 50, 77, 0.1);
+      border-radius: 16px;
+      padding: 12px;
+      color: var(--muted);
+      font-weight: 800;
+      line-height: 1.55;
+    }
+
+    .small-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .small-btn {
+      padding: 9px 11px;
+      background: #ecfff7;
+      color: #115e59;
+    }
+
+    .small-btn.gold { background: #fff3c4; color: #6b4300; }
+    .small-btn.blue { background: #eef7ff; color: #0b5171; }
+    .small-btn.rose { background: #fff0f0; color: #913333; }
+
+    .loading, .empty {
+      text-align: center;
+      padding: 42px 18px;
+      font-weight: 950;
+      color: var(--muted);
+      grid-column: 1 / -1;
+    }
+
+    .footer-note {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 20px 18px 42px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 650;
+      text-align: center;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      background: #12314d;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-weight: 950;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.25s ease;
+      z-index: 100;
+      text-align: center;
+      max-width: calc(100% - 26px);
+    }
+
+    .toast.show { opacity: 1; bottom: 26px; }
+
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+      .filter-grid { grid-template-columns: 1fr 1fr; }
+      .practice-zone { grid-template-columns: 1fr; }
+      .practice-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner { align-items: flex-start; flex-direction: column; }
+      .nav { width: 100%; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; }
+      .nav a { white-space: nowrap; }
+      .hero { padding-top: 24px; }
+      .hero-card, .side-card, .panel, .board-card { padding: 20px; border-radius: 22px; }
+      .hero-actions .btn { width: 100%; }
+      .filter-grid, .practice-grid, .mini-grid { grid-template-columns: 1fr; }
+      .card-top { flex-direction: column; }
+      canvas { height: 230px; }
+    }
+  </style>
 </head>
+
 <body>
-  <header><div class="wrap top"><div class="brand">Al-Hayat <span>Kids Islam</span></div><nav><a href="../index.html">Home</a><a href="../curriculum.html">Curriculum</a><a href="../activities/">Activities</a><a href="../games/">Games</a><a href="../practice/">Practice</a><a href="../progress/">Progress</a><a href="../badges/">Badges</a><a href="../parents/">Parents</a></nav></div></header>
-  <main class="wrap">
-    
-    <section class="practice-tools">
-      <div class="tool"><h2>✍️ Whiteboard</h2><p>Child can trace Arabic words or draw symbols.</p><canvas width="800" height="320" data-whiteboard></canvas><button onclick="location.reload()">Clear Board</button></div>
-      <div class="tool" data-typing-board><h2>⌨️ Typing Board</h2><p>Type the target word:</p><p class="ak-arabic" dir="rtl" data-typing-target>بِسْمِ اللَّهِ</p><input data-typing-input placeholder="Type here"><p data-typing-result>✍️ Start typing</p></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-icon">☾</span>
+        <span>
+          Al-Hayat Kids Islam
+          <small>Practice, repeat and shine</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="../index.html">🏠 Home</a>
+        <a href="../curriculum.html">📚 Curriculum</a>
+        <a href="../questions.html">❓ Questions</a>
+        <a href="../activities/">🎯 Activities</a>
+        <a href="../games/">🎮 Games</a>
+        <a href="../practice/">✍️ Practice</a>
+        <a href="../progress/">⭐ Progress</a>
+        <a href="../parents/">👨‍👩‍👧 Parents</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-card">
+      <span class="eyebrow">✍️ Practice Page Connected</span>
+      <h1>Islamic Practice Board</h1>
+      <p>
+        Children can read, copy, type, draw, repeat and complete Islamic learning cards.
+        This page uses your uploaded question bank and turns it into daily practice tasks.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#practiceCards">✍️ Start Practice</a>
+        <button class="btn gold" type="button" id="randomPracticeBtn">🎲 Random Practice</button>
+        <button class="btn soft" type="button" id="clearBoardBtnTop">🧽 Clear Whiteboard</button>
+      </div>
+    </div>
+
+    <aside class="side-card">
+      <div class="big-symbol">
+        <div>
+          <strong>✍️ 🧠 ⭐</strong>
+          <span>Read → Type → Draw → Complete</span>
+        </div>
+      </div>
+
+      <div class="mini-grid">
+        <div class="mini-stat"><b id="totalItems">—</b><span>Total Cards</span></div>
+        <div class="mini-stat"><b id="visibleItems">—</b><span>Showing</span></div>
+        <div class="mini-stat"><b id="doneItems">0</b><span>Completed</span></div>
+        <div class="mini-stat"><b id="starItems">0</b><span>Stars</span></div>
+      </div>
+    </aside>
+  </section>
+
+  <main>
+    <section class="panel">
+      <div class="panel-title">
+        <h2>🔎 Choose practice</h2>
+        <span class="status-pill" id="loadStatus">Loading practice cards...</span>
+      </div>
+
+      <div class="filter-grid">
+        <label>
+          Search
+          <input id="searchInput" type="search" placeholder="Search: Allah, Salah, Qur’an, Dua, manners..." />
+        </label>
+
+        <label>
+          Level
+          <select id="levelFilter"><option value="">All Levels</option></select>
+        </label>
+
+        <label>
+          Topic
+          <select id="topicFilter"><option value="">All Topics</option></select>
+        </label>
+
+        <label>
+          Practice Type
+          <select id="practiceTypeFilter">
+            <option value="">All Practice</option>
+            <option value="copy">Copy answer</option>
+            <option value="type">Type answer</option>
+            <option value="say">Say aloud</option>
+            <option value="draw">Draw/trace</option>
+          </select>
+        </label>
+
+        <label>
+          Difficulty
+          <select id="difficultyFilter"><option value="">All Difficulty</option></select>
+        </label>
+      </div>
+
+      <div class="quick-tags" id="quickTags"></div>
+
+      <div class="hero-actions">
+        <button class="btn primary" id="applyFiltersBtn" type="button">✅ Apply Filters</button>
+        <button class="btn soft" id="clearFiltersBtn" type="button">🧹 Clear Filters</button>
+        <button class="btn gold" id="showMoreBtn" type="button">⬇️ Show More</button>
+      </div>
     </section>
-    
-    <div id="alhayat-bank-app" data-bank-page="practice"></div>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>🧒 Today’s Practice Board</h2>
+        <span class="status-pill">One screen, one task</span>
+      </div>
+
+      <div class="practice-zone">
+        <div class="board-card">
+          <h3>⌨️ Typing Board</h3>
+          <div class="focus-word">
+            <span class="label">Current practice answer</span>
+            <span class="word" id="focusAnswer">Choose a practice card below.</span>
+            <span class="arabic-text" id="focusArabic"></span>
+          </div>
+
+          <label>
+            Type or copy here
+            <textarea id="typingBox" placeholder="Child types the answer, Arabic word, dua, or key sentence here..."></textarea>
+          </label>
+
+          <div class="typing-feedback" id="typingFeedback">Pick a card, then type the answer here.</div>
+
+          <div class="small-actions">
+            <button class="small-btn blue" type="button" id="checkTypingBtn">✅ Check Typing</button>
+            <button class="small-btn" type="button" id="copyAnswerBtn">📋 Copy Answer</button>
+            <button class="small-btn rose" type="button" id="clearTypingBtn">🧹 Clear Typing</button>
+          </div>
+        </div>
+
+        <div class="board-card">
+          <h3>🖍️ Whiteboard</h3>
+          <div class="canvas-wrap">
+            <canvas id="whiteboard" width="700" height="320" aria-label="Child drawing whiteboard"></canvas>
+          </div>
+          <div class="small-actions">
+            <button class="small-btn" type="button" id="penThinBtn">✏️ Thin Pen</button>
+            <button class="small-btn" type="button" id="penThickBtn">🖍️ Thick Pen</button>
+            <button class="small-btn rose" type="button" id="clearBoardBtn">🧽 Clear Board</button>
+          </div>
+          <div class="typing-feedback">Use this board for Arabic letters, tracing, drawing mosque, stars, moon, prayer mat, or memory practice.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="practiceCards">
+      <div class="panel-title">
+        <h2>✍️ Practice Cards</h2>
+        <span class="status-pill" id="resultCount">Loading...</span>
+      </div>
+
+      <div class="practice-grid" id="practiceGrid">
+        <div class="loading">Please wait. Practice cards are opening...</div>
+      </div>
+    </section>
   </main>
-  <script src="../assets/js/sound-engine.js"></script>
-  <script src="../assets/js/progress-engine.js"></script>
-  <script src="../assets/js/reward-engine.js"></script>
-  <script src="../assets/js/filter-engine.js"></script>
-  <script src="../assets/js/learning-path.js"></script>
-  <script src="../assets/js/whiteboard.js"></script>
-  <script src="../assets/js/typing-board.js"></script>
-  <script src="../assets/js/question-bank.js"></script>
+
+  <p class="footer-note">
+    Parent note: this page stores stars only on the current device using browser storage. Please guide younger children gently and review Arabic pronunciation with a trusted teacher or parent.
+  </p>
+
+  <div class="toast" id="toast">Saved</div>
+
+  <script>
+    const DATA_PATHS = {
+      levels: "../assets/data/levels/levels.json",
+      topics: "../assets/data/topics/topics.json",
+      questions: [
+        "../assets/data/questions/questions-level-1.json",
+        "../assets/data/questions/questions-level-2.json",
+        "../assets/data/questions/questions-level-3.json",
+        "../assets/data/questions/questions-level-4.json",
+        "../assets/data/questions/questions-level-5.json"
+      ]
+    };
+
+    const STORAGE_KEY = "alHayatKidsIslamPracticeProgress";
+
+    const state = {
+      all: [],
+      filtered: [],
+      levels: [],
+      topics: [],
+      visibleLimit: 48,
+      selected: null,
+      penSize: 4,
+      progress: readProgress()
+    };
+
+    const els = {
+      totalItems: document.getElementById("totalItems"),
+      visibleItems: document.getElementById("visibleItems"),
+      doneItems: document.getElementById("doneItems"),
+      starItems: document.getElementById("starItems"),
+      loadStatus: document.getElementById("loadStatus"),
+      resultCount: document.getElementById("resultCount"),
+      searchInput: document.getElementById("searchInput"),
+      levelFilter: document.getElementById("levelFilter"),
+      topicFilter: document.getElementById("topicFilter"),
+      practiceTypeFilter: document.getElementById("practiceTypeFilter"),
+      difficultyFilter: document.getElementById("difficultyFilter"),
+      quickTags: document.getElementById("quickTags"),
+      applyFiltersBtn: document.getElementById("applyFiltersBtn"),
+      clearFiltersBtn: document.getElementById("clearFiltersBtn"),
+      showMoreBtn: document.getElementById("showMoreBtn"),
+      randomPracticeBtn: document.getElementById("randomPracticeBtn"),
+      practiceGrid: document.getElementById("practiceGrid"),
+      focusAnswer: document.getElementById("focusAnswer"),
+      focusArabic: document.getElementById("focusArabic"),
+      typingBox: document.getElementById("typingBox"),
+      typingFeedback: document.getElementById("typingFeedback"),
+      checkTypingBtn: document.getElementById("checkTypingBtn"),
+      copyAnswerBtn: document.getElementById("copyAnswerBtn"),
+      clearTypingBtn: document.getElementById("clearTypingBtn"),
+      whiteboard: document.getElementById("whiteboard"),
+      clearBoardBtn: document.getElementById("clearBoardBtn"),
+      clearBoardBtnTop: document.getElementById("clearBoardBtnTop"),
+      penThinBtn: document.getElementById("penThinBtn"),
+      penThickBtn: document.getElementById("penThickBtn"),
+      toast: document.getElementById("toast")
+    };
+
+    document.addEventListener("DOMContentLoaded", init);
+
+    async function init() {
+      setupWhiteboard();
+      setupBoardControls();
+
+      try {
+        els.loadStatus.textContent = "Loading JSON files...";
+        const [levelsData, topicsData, ...questionFiles] = await Promise.all([
+          fetchJson(DATA_PATHS.levels),
+          fetchJson(DATA_PATHS.topics),
+          ...DATA_PATHS.questions.map(fetchJson)
+        ]);
+
+        state.levels = Array.isArray(levelsData.levels) ? levelsData.levels : [];
+        state.topics = Array.isArray(topicsData.topics) ? topicsData.topics : [];
+        state.all = questionFiles.flatMap(file => Array.isArray(file.items) ? file.items : []);
+        state.filtered = [...state.all];
+
+        buildFilters(topicsData);
+        renderStats();
+        renderCards();
+        pickFirstPractice();
+
+        els.loadStatus.textContent = "Practice bank loaded";
+        showToast("Practice page loaded");
+      } catch (error) {
+        console.error(error);
+        els.loadStatus.textContent = "Could not load practice cards";
+        els.practiceGrid.innerHTML = `
+          <div class="empty">
+            <h3>Practice cards could not load.</h3>
+            <p>Please check that your JSON files are uploaded inside <b>assets/data/questions/</b>.</p>
+            <p>Error: ${escapeHTML(error.message)}</p>
+          </div>
+        `;
+      }
+    }
+
+    async function fetchJson(path) {
+      const response = await fetch(path, { cache: "no-store" });
+      if (!response.ok) throw new Error(`${response.status} — ${path}`);
+      return response.json();
+    }
+
+    function buildFilters(topicsData) {
+      state.levels.forEach(level => {
+        const option = document.createElement("option");
+        option.value = level.levelNumber;
+        option.textContent = `Level ${level.levelNumber}: ${level.title || "Learning"} (${level.ageRange || ""})`;
+        els.levelFilter.appendChild(option);
+      });
+
+      state.topics.forEach(topic => {
+        const option = document.createElement("option");
+        option.value = topic.id;
+        option.textContent = `${topic.icon || "📌"} ${topic.title || topic.id}`;
+        els.topicFilter.appendChild(option);
+      });
+
+      const difficulties = topicsData.filters?.difficulty || uniqueValues(state.all, "difficulty");
+      difficulties.forEach(diff => {
+        const option = document.createElement("option");
+        option.value = diff;
+        option.textContent = labelize(diff);
+        els.difficultyFilter.appendChild(option);
+      });
+
+      const quickTopics = [
+        ["allah_iman", "☝️ Allah & Iman"],
+        ["quran_surahs", "📖 Qur’an"],
+        ["daily_duas_adhkar", "🤲 Duas"],
+        ["salah", "🕌 Salah"],
+        ["manners_character", "❤️ Manners"],
+        ["arabic_letters_words", "🔤 Arabic"],
+        ["prophet_seerah", "ﷺ Seerah"]
+      ];
+
+      els.quickTags.innerHTML = quickTopics.map(([id, label]) => `
+        <button class="chip-btn" type="button" data-topic="${escapeHTML(id)}">${escapeHTML(label)}</button>
+      `).join("");
+
+      els.quickTags.querySelectorAll("[data-topic]").forEach(button => {
+        button.addEventListener("click", () => {
+          els.topicFilter.value = button.dataset.topic;
+          applyFilters();
+        });
+      });
+
+      [els.searchInput, els.levelFilter, els.topicFilter, els.practiceTypeFilter, els.difficultyFilter].forEach(input => {
+        input.addEventListener("input", debounce(applyFilters, 180));
+        input.addEventListener("change", applyFilters);
+      });
+
+      els.applyFiltersBtn.addEventListener("click", applyFilters);
+      els.clearFiltersBtn.addEventListener("click", clearFilters);
+      els.showMoreBtn.addEventListener("click", showMore);
+      els.randomPracticeBtn.addEventListener("click", randomPractice);
+    }
+
+    function applyFilters() {
+      const search = els.searchInput.value.trim().toLowerCase();
+      const level = els.levelFilter.value;
+      const topic = els.topicFilter.value;
+      const type = els.practiceTypeFilter.value;
+      const difficulty = els.difficultyFilter.value;
+
+      state.filtered = state.all.filter(item => {
+        if (level && String(item.level) !== String(level)) return false;
+        if (topic && item.topicId !== topic) return false;
+        if (difficulty && item.difficulty !== difficulty) return false;
+
+        if (type) {
+          const blob = `${item.practice || ""} ${item.activity || ""} ${item.game || ""} ${item.type || ""}`.toLowerCase();
+          if (type === "copy" && !blob.includes("copy") && !blob.includes("write")) return false;
+          if (type === "type" && !blob.includes("type") && !blob.includes("write")) return false;
+          if (type === "say" && !blob.includes("say") && !blob.includes("repeat")) return false;
+          if (type === "draw" && !blob.includes("draw") && !blob.includes("trace")) return false;
+        }
+
+        if (search) {
+          const blob = [
+            item.id,
+            item.question,
+            item.answer,
+            item.topicTitle,
+            item.subtopic,
+            item.arabic,
+            item.simpleExplanation,
+            item.practice,
+            item.activity,
+            item.game
+          ].join(" ").toLowerCase();
+          if (!blob.includes(search)) return false;
+        }
+
+        return true;
+      });
+
+      state.visibleLimit = 48;
+      renderStats();
+      renderCards();
+      pickFirstPractice();
+    }
+
+    function clearFilters() {
+      els.searchInput.value = "";
+      els.levelFilter.value = "";
+      els.topicFilter.value = "";
+      els.practiceTypeFilter.value = "";
+      els.difficultyFilter.value = "";
+      state.filtered = [...state.all];
+      state.visibleLimit = 48;
+      renderStats();
+      renderCards();
+      pickFirstPractice();
+      showToast("Filters cleared");
+    }
+
+    function showMore() {
+      state.visibleLimit += 48;
+      renderCards();
+      showToast("More practice cards opened");
+    }
+
+    function randomPractice() {
+      const list = state.filtered.length ? state.filtered : state.all;
+      if (!list.length) return;
+      const item = list[Math.floor(Math.random() * list.length)];
+      selectPractice(item.id);
+      document.getElementById("practiceCards").scrollIntoView({ behavior: "smooth" });
+      showToast("Random practice selected");
+    }
+
+    function pickFirstPractice() {
+      const first = state.filtered[0] || state.all[0];
+      if (first) setFocus(first);
+    }
+
+    function renderStats() {
+      const completedCount = Object.keys(state.progress.completed || {}).length;
+      els.totalItems.textContent = state.all.length.toLocaleString();
+      els.visibleItems.textContent = state.filtered.length.toLocaleString();
+      els.doneItems.textContent = completedCount.toLocaleString();
+      els.starItems.textContent = (state.progress.stars || 0).toLocaleString();
+      els.resultCount.textContent = `${state.filtered.length.toLocaleString()} practice cards`;
+    }
+
+    function renderCards() {
+      if (!state.filtered.length) {
+        els.practiceGrid.innerHTML = `
+          <div class="empty">
+            <h3>No practice card found.</h3>
+            <p>Try another level, topic, or search word.</p>
+          </div>
+        `;
+        return;
+      }
+
+      const visible = state.filtered.slice(0, state.visibleLimit);
+      els.practiceGrid.innerHTML = visible.map(cardTemplate).join("");
+      els.showMoreBtn.style.display = state.filtered.length > state.visibleLimit ? "inline-flex" : "none";
+      bindCardEvents();
+    }
+
+    function cardTemplate(item) {
+      const done = Boolean(state.progress.completed?.[item.id]);
+      const icon = item.symbol || findTopicIcon(item.topicId) || "✍️";
+      return `
+        <article class="practice-card ${done ? "done" : ""}" data-id="${escapeHTML(item.id)}">
+          <div class="card-top">
+            <span class="topic-badge">${escapeHTML(icon)} ${escapeHTML(item.topicTitle || "Islamic Practice")}</span>
+            <span class="level-badge">Level ${escapeHTML(item.level || "")} • Age ${escapeHTML(item.ageRange || "")}</span>
+          </div>
+
+          <p class="question-text">${escapeHTML(item.question || "Practice this card.")}</p>
+
+          ${item.arabic ? `<div class="focus-word"><span class="label">Arabic</span><span class="arabic-text">${escapeHTML(item.arabic)}</span></div>` : ""}
+
+          <div class="answer-line"><b>Answer:</b> ${escapeHTML(item.answer || "")}</div>
+          <div class="micro"><b>✍️ Practice:</b> ${escapeHTML(item.practice || "Copy the answer and say it gently.")}</div>
+          <div class="micro"><b>🎯 Activity:</b> ${escapeHTML(item.activity || "Read, repeat and remember.")}</div>
+
+          <div class="small-actions">
+            <button class="small-btn blue" type="button" data-focus="${escapeHTML(item.id)}">⌨️ Use on Board</button>
+            <button class="small-btn gold" type="button" data-complete="${escapeHTML(item.id)}">⭐ Complete</button>
+            ${item.nextId ? `<button class="small-btn" type="button" data-next="${escapeHTML(item.nextId)}">➡️ Next</button>` : ""}
+          </div>
+        </article>
+      `;
+    }
+
+    function bindCardEvents() {
+      document.querySelectorAll("[data-focus]").forEach(button => {
+        button.addEventListener("click", () => selectPractice(button.dataset.focus));
+      });
+
+      document.querySelectorAll("[data-complete]").forEach(button => {
+        button.addEventListener("click", () => completePractice(button.dataset.complete));
+      });
+
+      document.querySelectorAll("[data-next]").forEach(button => {
+        button.addEventListener("click", () => {
+          els.searchInput.value = button.dataset.next;
+          applyFilters();
+        });
+      });
+    }
+
+    function selectPractice(id) {
+      const item = state.all.find(q => q.id === id);
+      if (!item) return;
+      setFocus(item);
+      showToast("Practice card sent to board");
+    }
+
+    function setFocus(item) {
+      state.selected = item;
+      els.focusAnswer.textContent = item.answer || item.question || "Practice this card.";
+      els.focusArabic.textContent = item.arabic || "";
+      els.typingFeedback.textContent = "Now type the answer or key word. Then tap Check Typing.";
+    }
+
+    function completePractice(id) {
+      if (!state.progress.completed) state.progress.completed = {};
+      if (!state.progress.completed[id]) {
+        state.progress.completed[id] = { completedAt: new Date().toISOString() };
+        state.progress.stars = (state.progress.stars || 0) + 1;
+        saveProgress();
+        renderStats();
+        renderCards();
+        showToast("Practice complete! ⭐");
+      } else {
+        showToast("Already completed");
+      }
+    }
+
+    function setupBoardControls() {
+      els.checkTypingBtn.addEventListener("click", checkTyping);
+      els.copyAnswerBtn.addEventListener("click", copyAnswerToBox);
+      els.clearTypingBtn.addEventListener("click", () => {
+        els.typingBox.value = "";
+        els.typingFeedback.textContent = "Typing cleared. Try again gently.";
+      });
+      els.penThinBtn.addEventListener("click", () => { state.penSize = 4; showToast("Thin pen selected"); });
+      els.penThickBtn.addEventListener("click", () => { state.penSize = 10; showToast("Thick pen selected"); });
+    }
+
+    function checkTyping() {
+      if (!state.selected) {
+        els.typingFeedback.textContent = "Choose a practice card first.";
+        return;
+      }
+
+      const typed = normalize(els.typingBox.value);
+      const answer = normalize(state.selected.answer || "");
+      const arabic = normalize(state.selected.arabic || "");
+
+      if (!typed) {
+        els.typingFeedback.textContent = "Please type something first.";
+      } else if (typed === answer || typed === arabic || typed.includes(answer) || (arabic && typed.includes(arabic))) {
+        els.typingFeedback.textContent = "Excellent practice! You may mark this card complete. ⭐";
+        showToast("Excellent typing");
+      } else {
+        els.typingFeedback.textContent = "Good try. Look at the answer and try one more time gently.";
+        showToast("Try once more");
+      }
+    }
+
+    function copyAnswerToBox() {
+      if (!state.selected) {
+        els.typingFeedback.textContent = "Choose a practice card first.";
+        return;
+      }
+      els.typingBox.value = state.selected.arabic || state.selected.answer || "";
+      els.typingFeedback.textContent = "Answer copied. Now read it and type it again if needed.";
+      showToast("Answer copied");
+    }
+
+    function setupWhiteboard() {
+      const canvas = els.whiteboard;
+      const ctx = canvas.getContext("2d");
+      let drawing = false;
+      let last = null;
+
+      function resizeCanvas() {
+        const rect = canvas.getBoundingClientRect();
+        const data = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        canvas.width = Math.max(500, Math.floor(rect.width * window.devicePixelRatio));
+        canvas.height = Math.floor(260 * window.devicePixelRatio);
+        ctx.putImageData(data, 0, 0);
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+        ctx.strokeStyle = "#17324d";
+      }
+
+      function point(event) {
+        const rect = canvas.getBoundingClientRect();
+        const clientX = event.touches ? event.touches[0].clientX : event.clientX;
+        const clientY = event.touches ? event.touches[0].clientY : event.clientY;
+        return {
+          x: (clientX - rect.left) * (canvas.width / rect.width),
+          y: (clientY - rect.top) * (canvas.height / rect.height)
+        };
+      }
+
+      function start(event) {
+        event.preventDefault();
+        drawing = true;
+        last = point(event);
+      }
+
+      function move(event) {
+        if (!drawing) return;
+        event.preventDefault();
+        const current = point(event);
+        ctx.lineWidth = state.penSize * window.devicePixelRatio;
+        ctx.beginPath();
+        ctx.moveTo(last.x, last.y);
+        ctx.lineTo(current.x, current.y);
+        ctx.stroke();
+        last = current;
+      }
+
+      function end() {
+        drawing = false;
+        last = null;
+      }
+
+      canvas.addEventListener("mousedown", start);
+      canvas.addEventListener("mousemove", move);
+      window.addEventListener("mouseup", end);
+      canvas.addEventListener("touchstart", start, { passive: false });
+      canvas.addEventListener("touchmove", move, { passive: false });
+      window.addEventListener("touchend", end);
+
+      function clearCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        showToast("Whiteboard cleared");
+      }
+
+      els.clearBoardBtn.addEventListener("click", clearCanvas);
+      els.clearBoardBtnTop.addEventListener("click", clearCanvas);
+
+      window.addEventListener("resize", debounce(resizeCanvas, 300));
+      setTimeout(resizeCanvas, 100);
+    }
+
+    function readProgress() {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || { stars: 0, completed: {} };
+      } catch {
+        return { stars: 0, completed: {} };
+      }
+    }
+
+    function saveProgress() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state.progress));
+    }
+
+    function findTopicIcon(topicId) {
+      const topic = state.topics.find(t => t.id === topicId);
+      return topic?.icon || "";
+    }
+
+    function uniqueValues(items, key) {
+      return [...new Set(items.map(item => item[key]).filter(Boolean))].sort();
+    }
+
+    function labelize(value) {
+      return String(value || "").replaceAll("_", " ").replace(/\b\w/g, c => c.toUpperCase());
+    }
+
+    function normalize(value) {
+      return String(value || "").trim().toLowerCase().replace(/\s+/g, " ");
+    }
+
+    function escapeHTML(value) {
+      return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      }[char]));
+    }
+
+    function debounce(fn, delay = 200) {
+      let timer;
+      return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), delay);
+      };
+    }
+
+    function showToast(message) {
+      els.toast.textContent = message;
+      els.toast.classList.add("show");
+      setTimeout(() => els.toast.classList.remove("show"), 1800);
+    }
+  </script>
 </body>
 </html>
