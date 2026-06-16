@@ -1,58 +1,1342 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Qur’an and Short Surahs | Al-Hayat Kids Islam</title>
-  <meta name="description" content="Qur’an basics and short Surahs for young children.">
-  <link rel="canonical" href="https://drimranhayat.github.io/al-hayat-kids-islam/qur’an-and-short-surahs">
-  <link rel="stylesheet" href="styles.css?v=8">
-  
-<style>
-  :root{--navy:#17324d;--teal:#0f766e;--gold:#c8912b;--cream:#fff8ec;--mint:#eefaf7;--card:#fff;--ink:#243044;--soft:#f7fbfa;--shadow:0 14px 34px rgba(23,50,77,.10)}
-  *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,system-ui,sans-serif;background:radial-gradient(circle at top left,#fff4d8 0,#fff8ec 28%,#eefaf7 100%);color:var(--ink);line-height:1.6}.wrap{max-width:1180px;margin:auto;padding:18px}
-  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e9ddc8}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.brand{font-weight:900;color:var(--navy);font-size:1.28rem;text-decoration:none}.brand span{color:var(--gold)}nav{display:flex;flex-wrap:wrap;gap:6px}nav a{display:inline-block;padding:9px 12px;border-radius:999px;background:#f4efe4;text-decoration:none;color:var(--navy);font-weight:800;font-size:.94rem}nav a:hover{background:#dff7f1;transform:translateY(-1px)}
-  .hero,.ak-hero{background:linear-gradient(135deg,#17324d,#0f766e);color:white;border-radius:30px;padding:32px;margin:22px 0;box-shadow:0 18px 45px rgba(23,50,77,.18);position:relative;overflow:hidden}.hero:after,.ak-hero:after{content:'☪︎';position:absolute;right:28px;top:10px;font-size:8rem;opacity:.08}.hero h1,.ak-hero h1{margin:0 0 8px;font-size:clamp(2rem,5vw,4.2rem);line-height:1.05}.hero p,.ak-hero p{font-size:1.1rem;max-width:800px}.pillbar,.ak-stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.pillbar span,.ak-stats span,.ak-hero button{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:10px 14px;border-radius:999px;color:white;font-weight:900}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}.panel,.card,.ak-filter-panel,.ak-daily,.ak-card,.ak-badge{background:white;border-radius:24px;padding:18px;box-shadow:var(--shadow)}.panel h2,.card h2,.card h3{color:var(--navy);margin-top:0}.shortcut{display:block;text-decoration:none;color:var(--navy);background:white;border-radius:24px;padding:20px;box-shadow:var(--shadow);font-weight:900}.shortcut b{display:block;font-size:1.22rem}.shortcut span{color:#556;font-weight:700}.shortcut:hover{transform:translateY(-3px);background:#fff7e5}
-  .ak-filter-grid{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:12px}.ak-filter-grid label{font-weight:900;color:var(--navy)}select,input,textarea{width:100%;box-sizing:border-box;margin-top:6px;padding:12px;border-radius:14px;border:1px solid #d8dfe4;font-size:1rem;background:white}.ak-quick-buttons button,.ak-options button,.ak-complete,.ak-mini-list button,.btn{cursor:pointer;border:0;border-radius:999px;background:#eaf7f4;color:var(--navy);padding:10px 14px;margin:6px 6px 6px 0;font-weight:900;text-decoration:none;display:inline-block}.ak-quick-buttons button:hover,.ak-options button:hover,.ak-complete:hover,.btn:hover{background:#ffe7b1;transform:translateY(-1px)}
-  .ak-card-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(286px,1fr));gap:16px}.ak-card{border:2px solid transparent}.ak-card.is-done{border-color:#42b883;background:#f3fff7}.ak-card-top{display:flex;justify-content:space-between;gap:8px;font-weight:900;color:#52616f;flex-wrap:wrap}.ak-icon{font-size:1.8rem}.ak-card h3{color:var(--navy);font-size:1.18rem}.ak-arabic{font-size:1.65rem;font-family:serif;text-align:center;background:#fff8ec;border-radius:18px;padding:12px}.ak-explain,.ak-action,.ak-trail{background:#f7fafc;border-radius:16px;padding:10px}.ak-options{display:flex;flex-wrap:wrap}.ak-complete{background:#17324d;color:white;width:100%}.ak-count{font-weight:900;color:var(--navy);margin:18px 0}.ak-more,.ak-error{background:#fff3cd;padding:14px;border-radius:16px}.ak-badge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.ak-badge{text-align:center}.ak-badge div{font-size:3rem}progress{width:100%;height:18px}.practice-tools{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}.tool{background:white;border-radius:24px;padding:18px;box-shadow:var(--shadow)}canvas{width:100%;height:240px;border:3px dashed #cbd5e1;border-radius:18px;background:white}.note{background:#fff8ec;border-left:6px solid var(--gold);padding:16px;border-radius:18px;margin:18px 0}footer{margin-top:30px;background:#17324d;color:white}footer a{color:#ffe7b1}.mini-title{color:var(--teal);font-weight:900;text-transform:uppercase;letter-spacing:.08em}.arabic{font-family:serif;font-size:1.6rem;direction:rtl}.hidden{display:none!important}
-  @media(max-width:760px){.ak-filter-grid,.practice-tools{grid-template-columns:1fr}nav a{font-size:.84rem;padding:8px 10px}.wrap{padding:12px}.hero,.ak-hero{padding:22px;border-radius:24px}.ak-card-list{grid-template-columns:1fr}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Short Surahs for Kids | Al-Hayat Kids Islam</title>
+  <meta name="description" content="A child-friendly Qur'an surah learning page for Muslim children ages 3 to 8 with short surahs, Arabic reading, simple meanings, practice, quiz cards, stars and progress." />
+  <meta name="keywords" content="short surahs for kids, Quran for kids, Islamic learning for children, Surah Ikhlas for kids, Surah Fatiha for kids, Muslim kids Quran" />
 
+  <style>
+    :root {
+      --bg: #fff8e8;
+      --paper: #fffdf7;
+      --card: #ffffff;
+      --ink: #17324d;
+      --muted: #60758b;
+      --brand: #0f766e;
+      --brand-dark: #115e59;
+      --gold: #f5b942;
+      --rose: #ff7b7b;
+      --sky: #6ec7ff;
+      --mint: #9af0c5;
+      --line: rgba(23, 50, 77, 0.12);
+      --shadow: 0 18px 45px rgba(23, 50, 77, 0.12);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(110, 199, 255, 0.26), transparent 32%),
+        radial-gradient(circle at top right, rgba(245, 185, 66, 0.22), transparent 30%),
+        linear-gradient(180deg, var(--bg) 0%, var(--paper) 46%, #f0fffb 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 253, 247, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 950;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--brand), #22c55e);
+      color: white;
+      box-shadow: 0 12px 26px rgba(15, 118, 110, 0.24);
+      font-size: 1.35rem;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 2px;
+      font-weight: 750;
+      color: var(--muted);
+      font-size: 0.76rem;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .nav a {
+      padding: 10px 13px;
+      border-radius: 999px;
+      font-weight: 900;
+      color: var(--brand-dark);
+      background: rgba(15, 118, 110, 0.08);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .nav a:hover,
+    .nav a:focus {
+      transform: translateY(-2px);
+      background: rgba(15, 118, 110, 0.16);
+      outline: none;
+    }
+
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 42px 18px 22px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .side-card,
+    .panel,
+    .surah-card,
+    .question-card,
+    .routine-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-xl);
+    }
+
+    .hero-card {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "📖";
+      position: absolute;
+      right: 22px;
+      top: 12px;
+      font-size: 5rem;
+      opacity: 0.12;
+      transform: rotate(12deg);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ecfff7;
+      color: var(--brand-dark);
+      border: 1px solid rgba(15, 118, 110, 0.16);
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-weight: 950;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.1rem, 5vw, 4.25rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      color: #12314d;
+    }
+
+    .hero-card p,
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 790px;
+      margin: 18px 0 0;
+      font-weight: 700;
+    }
+
+    .hero-actions,
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .btn,
+    .small-btn,
+    .choice-btn,
+    .tag-btn {
+      border: none;
+      cursor: pointer;
+      border-radius: 999px;
+      font-weight: 950;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      font-family: inherit;
+    }
+
+    .btn {
+      padding: 12px 17px;
+      font-size: 0.98rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn:hover,
+    .btn:focus,
+    .small-btn:hover,
+    .choice-btn:hover,
+    .tag-btn:hover {
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--brand), #22c55e);
+      color: white;
+      box-shadow: 0 14px 24px rgba(15, 118, 110, 0.22);
+    }
+
+    .btn.gold {
+      background: linear-gradient(135deg, #f59e0b, #ffd166);
+      color: #4b3400;
+      box-shadow: 0 14px 24px rgba(245, 158, 11, 0.18);
+    }
+
+    .btn.soft {
+      background: #f0fbff;
+      color: #0b5171;
+      border: 1px solid rgba(11, 81, 113, 0.12);
+    }
+
+    .side-card {
+      padding: 24px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .big-symbol {
+      min-height: 160px;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at top left, rgba(154, 240, 197, 0.58), transparent 34%),
+        linear-gradient(135deg, #e8fffb, #fff7db);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 20px;
+      border: 1px solid var(--line);
+    }
+
+    .big-symbol strong {
+      display: block;
+      font-size: 3.25rem;
+      margin-bottom: 8px;
+    }
+
+    .big-symbol span {
+      display: block;
+      font-weight: 950;
+      color: var(--brand-dark);
+      font-size: 1.1rem;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .mini-stat {
+      border-radius: 18px;
+      padding: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .mini-stat b {
+      display: block;
+      font-size: 1.4rem;
+      color: var(--brand-dark);
+    }
+
+    .mini-stat span {
+      font-weight: 850;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    .panel {
+      padding: 24px;
+      margin-bottom: 22px;
+    }
+
+    .panel-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .panel-title h2 {
+      margin: 0;
+      font-size: clamp(1.35rem, 3vw, 2.05rem);
+      letter-spacing: -0.03em;
+    }
+
+    .status-pill {
+      background: #fff8df;
+      color: #744b00;
+      border: 1px solid rgba(245, 185, 66, 0.36);
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-weight: 950;
+    }
+
+    .learning-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .routine-card {
+      padding: 16px;
+      display: grid;
+      gap: 7px;
+      background: linear-gradient(180deg, #ffffff, #f5fffc);
+      min-height: 126px;
+      align-content: center;
+    }
+
+    .routine-card strong {
+      font-size: 2rem;
+      display: block;
+    }
+
+    .routine-card b {
+      color: var(--brand-dark);
+      font-size: 1rem;
+    }
+
+    .routine-card span {
+      color: var(--muted);
+      font-weight: 750;
+      line-height: 1.45;
+      font-size: 0.88rem;
+    }
+
+    .surah-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .surah-card {
+      padding: 20px;
+      border-radius: 26px;
+      display: grid;
+      gap: 13px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .surah-card.done {
+      border-color: rgba(34, 197, 94, 0.5);
+      background: linear-gradient(180deg, #ffffff, #f0fff5);
+    }
+
+    .surah-top,
+    .question-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: start;
+      flex-wrap: wrap;
+    }
+
+    .surah-name {
+      display: grid;
+      gap: 3px;
+    }
+
+    .surah-name h3 {
+      margin: 0;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+    }
+
+    .surah-name span {
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 0.9rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #ecfff7;
+      color: var(--brand-dark);
+      font-weight: 950;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+
+    .badge.gold {
+      background: #fff3c4;
+      color: #6b4300;
+    }
+
+    .arabic-box {
+      direction: rtl;
+      text-align: right;
+      font-family: "Amiri", "Scheherazade New", "Noto Naskh Arabic", "Traditional Arabic", serif;
+      font-size: clamp(1.45rem, 3.2vw, 2.1rem);
+      line-height: 2.18;
+      font-weight: 700;
+      background: #f8fbff;
+      border: 1px dashed rgba(23, 50, 77, 0.18);
+      border-radius: 20px;
+      padding: 16px;
+    }
+
+    .meaning-box,
+    .practice-box,
+    .mini-note {
+      border-radius: 17px;
+      padding: 13px;
+      line-height: 1.62;
+      font-weight: 780;
+    }
+
+    .meaning-box {
+      background: #fff8df;
+      border: 1px solid rgba(245, 185, 66, 0.34);
+      color: #4c3900;
+    }
+
+    .practice-box {
+      background: #f1fffb;
+      border: 1px solid rgba(15, 118, 110, 0.14);
+      color: var(--brand-dark);
+    }
+
+    .mini-note {
+      background: #f7fbff;
+      border: 1px solid rgba(23, 50, 77, 0.1);
+      color: var(--muted);
+    }
+
+    .small-btn {
+      padding: 9px 11px;
+      background: #ecfff7;
+      color: var(--brand-dark);
+    }
+
+    .small-btn.answer {
+      background: #eef7ff;
+      color: #0b5171;
+    }
+
+    .small-btn.star {
+      background: #fff3c4;
+      color: #6b4300;
+    }
+
+    .small-btn.rose {
+      background: #fff1f1;
+      color: #9f1239;
+    }
+
+    .filters {
+      display: grid;
+      grid-template-columns: 1.3fr repeat(3, 0.8fr);
+      gap: 12px;
+      align-items: end;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      font-weight: 950;
+      color: var(--brand-dark);
+      font-size: 0.92rem;
+    }
+
+    input,
+    select {
+      width: 100%;
+      border: 1px solid rgba(23, 50, 77, 0.18);
+      border-radius: 15px;
+      padding: 12px 13px;
+      font: inherit;
+      background: white;
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    input:focus,
+    select:focus {
+      outline: 3px solid rgba(15, 118, 110, 0.18);
+      border-color: rgba(15, 118, 110, 0.4);
+    }
+
+    .quick-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 15px;
+    }
+
+    .tag-btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 9px 12px;
+      color: var(--brand-dark);
+    }
+
+    .question-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .question-card {
+      padding: 18px;
+      border-radius: 24px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .question-text {
+      margin: 0;
+      font-weight: 950;
+      line-height: 1.45;
+      font-size: 1.05rem;
+    }
+
+    .choice-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .choice-btn {
+      text-align: left;
+      background: #fff;
+      border: 1px solid rgba(23, 50, 77, 0.13);
+      border-radius: 14px;
+      padding: 10px 11px;
+      color: var(--ink);
+    }
+
+    .choice-btn.correct {
+      background: #edfff4;
+      border-color: rgba(34, 197, 94, 0.65);
+    }
+
+    .choice-btn.wrong {
+      background: #fff1f1;
+      border-color: rgba(239, 68, 68, 0.55);
+    }
+
+    .answer-box {
+      display: none;
+      border-radius: 17px;
+      padding: 13px;
+      background: #fff8df;
+      border: 1px solid rgba(245, 185, 66, 0.34);
+      line-height: 1.6;
+      color: #4c3900;
+      font-weight: 780;
+    }
+
+    .answer-box.show { display: block; }
+
+    .loading,
+    .empty {
+      text-align: center;
+      padding: 34px 18px;
+      font-weight: 900;
+      color: var(--muted);
+      grid-column: 1 / -1;
+    }
+
+    .parent-note {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 22px 18px 42px;
+      color: var(--muted);
+      line-height: 1.72;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      background: #12314d;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-weight: 950;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.25s ease;
+      z-index: 100;
+    }
+
+    .toast.show {
+      opacity: 1;
+      bottom: 26px;
+    }
+
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+      .learning-strip { grid-template-columns: repeat(2, 1fr); }
+      .surah-grid { grid-template-columns: 1fr; }
+      .filters { grid-template-columns: 1fr 1fr; }
+      .question-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 4px;
+      }
+
+      .nav a { white-space: nowrap; }
+      .hero { padding-top: 24px; }
+
+      .hero-card,
+      .side-card,
+      .panel,
+      .surah-card {
+        padding: 20px;
+        border-radius: 22px;
+      }
+
+      .hero-actions .btn { width: 100%; }
+      .learning-strip,
+      .mini-grid,
+      .filters,
+      .question-grid { grid-template-columns: 1fr; }
+      .arabic-box { padding: 14px; }
+    }
+  </style>
 </head>
 <body>
-<header><div class="wrap top"><a class="brand" href="index.html">Al-Hayat <span>Kids Islam</span></a><nav>
-      <a href="index.html">Home</a><a href="curriculum.html">Curriculum</a><a href="duas.html">Duas</a><a href="surahs.html">Qur’an</a><a href="prayer-basics.html">Salah</a><a href="arabic-letters.html">Arabic</a><a href="activities/">Activities</a><a href="games/">Games</a><a href="practice/">Practice</a><a href="progress/">Progress</a>
-    </nav></div></header>
-<main class="wrap">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-icon">☾</span>
+        <span>
+          Al-Hayat Kids Islam
+          <small>Islamic learning for ages 3–8</small>
+        </span>
+      </a>
 
-<section class="hero">
-  <p class="mini-title">Structured Islamic learning path</p>
-  <h1>Qur’an and Short Surahs</h1>
-  <p>Respect for the Qur’an, simple Qur’an manners, short Surah recognition, and gentle memorization support.</p>
-  <div class="pillbar"><span>❓ 3,000 Q/A</span><span>🌱 Gradual levels</span><span>👆 Child-friendly symbols</span><span>⭐ Stars and badges</span></div>
-</section>
-<section class="grid">
-  <a class="shortcut" href="activities/"><b>🎯 Activities</b><span>Question → task → next card</span></a>
-  <a class="shortcut" href="games/"><b>🎮 Games</b><span>Mini challenges from the same bank</span></a>
-  <a class="shortcut" href="practice/"><b>✍️ Practice</b><span>Whiteboard, typing, tracing</span></a>
-  <a class="shortcut" href="progress/"><b>⭐ Progress</b><span>Completed cards, stars, badges</span></a>
-</section>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">🏠 Home</a>
+        <a href="curriculum.html">📚 Curriculum</a>
+        <a href="questions.html">❓ Questions</a>
+        <a href="activities/">🎯 Activities</a>
+        <a href="games/">🎮 Games</a>
+        <a href="practice/">✍️ Practice</a>
+        <a href="progress/">⭐ Progress</a>
+        <a href="parents/">👨‍👩‍👧 Parents</a>
+      </nav>
+    </div>
+  </header>
 
-<div id="alhayat-bank-app" data-bank-page="curriculum" data-title="Qur’an and Short Surahs" data-description="Respect for the Qur’an, simple Qur’an manners, short Surah recognition, and gentle memorization support." data-topic-ids="quran_surahs"></div>
+  <section class="hero">
+    <div class="hero-card">
+      <span class="eyebrow">📖 Qur’an Learning Path</span>
+      <h1>Short Surahs for Kids</h1>
+      <p>
+        A gentle Qur’an learning page for young children. Learn short surahs step by step:
+        look, listen with a parent, repeat, understand the main message, practise, answer a tiny question,
+        and earn stars.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#surahCards">📖 Start Surahs</a>
+        <a class="btn gold" href="questions.html">❓ Open Qur’an Questions</a>
+        <a class="btn soft" href="practice/">✍️ Practice Board</a>
+      </div>
+    </div>
 
-</main>
-<footer><div class="wrap"><strong>Al-Hayat Kids Islam</strong><p>Safe, parent-guided Islamic learning for children ages 3–8. No child chat, no login, no ads, and no tracking scripts.</p><p><a href="safety-privacy.html">Safety</a> · <a href="privacy-policy.html">Privacy</a> · <a href="contact.html">Contact</a></p></div></footer>
+    <aside class="side-card">
+      <div class="big-symbol">
+        <div>
+          <strong>📖 🌙 ⭐</strong>
+          <span>Read → Repeat → Practise → Star</span>
+        </div>
+      </div>
 
-  <script src="assets/js/sound-engine.js"></script>
-  <script src="assets/js/progress-engine.js"></script>
-  <script src="assets/js/reward-engine.js"></script>
-  <script src="assets/js/filter-engine.js"></script>
-  <script src="assets/js/learning-path.js"></script>
-  <script src="assets/js/whiteboard.js"></script>
-  <script src="assets/js/typing-board.js"></script>
-  <script src="assets/js/question-bank.js"></script>
+      <div class="mini-grid">
+        <div class="mini-stat">
+          <b id="surahCount">8</b>
+          <span>Short Surahs</span>
+        </div>
+        <div class="mini-stat">
+          <b id="questionCount">—</b>
+          <span>Qur’an Cards</span>
+        </div>
+        <div class="mini-stat">
+          <b id="completedCount">0</b>
+          <span>Completed</span>
+        </div>
+        <div class="mini-stat">
+          <b id="starCount">0</b>
+          <span>Stars</span>
+        </div>
+      </div>
+    </aside>
+  </section>
 
-<script src="script.js?v=8"></script>
+  <main>
+    <section class="panel">
+      <div class="panel-title">
+        <h2>🧭 One-screen daily routine</h2>
+        <span class="status-pill">5 tiny steps</span>
+      </div>
+      <div class="learning-strip">
+        <div class="routine-card"><strong>👀</strong><b>Look</b><span>Point to the Arabic words with a parent.</span></div>
+        <div class="routine-card"><strong>👂</strong><b>Listen</b><span>Listen to a reliable teacher or parent recitation.</span></div>
+        <div class="routine-card"><strong>🗣️</strong><b>Repeat</b><span>Repeat one short line gently.</span></div>
+        <div class="routine-card"><strong>💬</strong><b>Meaning</b><span>Learn the main message in simple words.</span></div>
+        <div class="routine-card"><strong>⭐</strong><b>Star</b><span>Mark complete after a calm practice.</span></div>
+      </div>
+    </section>
+
+    <section class="panel" id="surahCards">
+      <div class="panel-title">
+        <h2>📖 Short Surah Cards</h2>
+        <span class="status-pill">Arabic + child task</span>
+      </div>
+      <p class="lead">
+        These are learning cards, not a replacement for a qualified Qur’an teacher. Children should learn correct pronunciation, tajwīd and memorisation with a parent or teacher.
+      </p>
+      <div class="surah-grid" id="surahGrid"></div>
+    </section>
+
+    <section class="panel" id="quranQuestions">
+      <div class="panel-title">
+        <h2>❓ Qur’an & Surah Questions</h2>
+        <span class="status-pill" id="loadStatus">Loading bank...</span>
+      </div>
+
+      <div class="filters">
+        <label>
+          Search
+          <input id="searchInput" type="search" placeholder="Search: Fatiha, Ikhlas, Qur’an, Allah..." />
+        </label>
+        <label>
+          Level
+          <select id="levelFilter">
+            <option value="">All Levels</option>
+          </select>
+        </label>
+        <label>
+          Type
+          <select id="typeFilter">
+            <option value="">All Types</option>
+          </select>
+        </label>
+        <label>
+          Difficulty
+          <select id="difficultyFilter">
+            <option value="">All Difficulty</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="quick-tags">
+        <button class="tag-btn" type="button" data-search="Fatiha">📖 Fatiha</button>
+        <button class="tag-btn" type="button" data-search="Ikhlas">☝️ Ikhlas</button>
+        <button class="tag-btn" type="button" data-search="Quran">🌙 Qur’an</button>
+        <button class="tag-btn" type="button" data-search="Allah">💚 Allah</button>
+        <button class="tag-btn" type="button" data-search="Surah">✨ Surah</button>
+      </div>
+
+      <div class="hero-actions">
+        <button class="btn primary" type="button" id="applyBtn">✅ Apply</button>
+        <button class="btn soft" type="button" id="clearBtn">🧹 Clear</button>
+        <button class="btn gold" type="button" id="randomBtn">🎲 Random Qur’an Card</button>
+        <button class="btn soft" type="button" id="showMoreBtn">⬇️ Show More</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>🌟 Practice Cards</h2>
+        <span class="status-pill" id="resultCount">Loading...</span>
+      </div>
+      <div class="question-grid" id="questionGrid">
+        <div class="loading">Opening Qur’an question cards...</div>
+      </div>
+    </section>
+  </main>
+
+  <p class="parent-note">
+    Parent note: Qur’an text must be treated with respect. Please guide children gently, check pronunciation with a qualified teacher, and avoid forcing long memorisation sessions. Small, loving repetition is better for ages 3–8.
+  </p>
+
+  <div class="toast" id="toast">Saved</div>
+
+  <script>
+    const SURAH_CARDS = [
+      {
+        id: "surah-fatihah",
+        icon: "🌟",
+        title: "Surah Al-Fātiḥah",
+        subtitle: "The Opening • Prayer Surah",
+        age: "Ages 5–8",
+        lines: [
+          "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+          "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
+          "الرَّحْمَٰنِ الرَّحِيمِ",
+          "مَالِكِ يَوْمِ الدِّينِ",
+          "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",
+          "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",
+          "صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ",
+          "غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ"
+        ],
+        message: "We praise Allah, ask Him for help, and ask Him to guide us to the straight path.",
+        practice: "Repeat only one line at a time. Point to the words while a parent recites.",
+        miniQuiz: "Which surah do we recite in every rak‘ah of ṣalāh?",
+        answer: "Surah Al-Fātiḥah"
+      },
+      {
+        id: "surah-ikhlas",
+        icon: "☝️",
+        title: "Surah Al-Ikhlāṣ",
+        subtitle: "Sincerity • Allah is One",
+        age: "Ages 4–8",
+        lines: [
+          "قُلْ هُوَ اللَّهُ أَحَدٌ",
+          "اللَّهُ الصَّمَدُ",
+          "لَمْ يَلِدْ وَلَمْ يُولَدْ",
+          "وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ"
+        ],
+        message: "Allah is One. He is perfect and nothing is like Him.",
+        practice: "Raise one finger gently and say: Allah is One.",
+        miniQuiz: "What does this surah teach us about Allah?",
+        answer: "Allah is One."
+      },
+      {
+        id: "surah-falaq",
+        icon: "🛡️",
+        title: "Surah Al-Falaq",
+        subtitle: "Seeking Allah’s protection",
+        age: "Ages 5–8",
+        lines: [
+          "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ",
+          "مِن شَرِّ مَا خَلَقَ",
+          "وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ",
+          "وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ",
+          "وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ"
+        ],
+        message: "We ask Allah to protect us from harm.",
+        practice: "Make a shield shape with your hands and say: Allah protects me.",
+        miniQuiz: "Who do we ask for protection?",
+        answer: "Allah"
+      },
+      {
+        id: "surah-nas",
+        icon: "🤲",
+        title: "Surah An-Nās",
+        subtitle: "The Lord of people",
+        age: "Ages 5–8",
+        lines: [
+          "قُلْ أَعُوذُ بِرَبِّ النَّاسِ",
+          "مَلِكِ النَّاسِ",
+          "إِلَٰهِ النَّاسِ",
+          "مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ",
+          "الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ",
+          "مِنَ الْجِنَّةِ وَالنَّاسِ"
+        ],
+        message: "Allah is the Lord, King and God of all people. We ask Him to keep our hearts safe.",
+        practice: "Put your hand on your heart and say: Allah keeps my heart safe.",
+        miniQuiz: "Who is the Lord of all people?",
+        answer: "Allah"
+      },
+      {
+        id: "surah-asr",
+        icon: "⏰",
+        title: "Surah Al-‘Aṣr",
+        subtitle: "Time and good deeds",
+        age: "Ages 5–8",
+        lines: [
+          "وَالْعَصْرِ",
+          "إِنَّ الْإِنسَانَ لَفِي خُسْرٍ",
+          "إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ",
+          "وَتَوَاصَوْا بِالْحَقِّ",
+          "وَتَوَاصَوْا بِالصَّبْرِ"
+        ],
+        message: "Use time well: believe, do good, speak truth and be patient.",
+        practice: "Name one good deed you can do today.",
+        miniQuiz: "Name one good thing mentioned in this surah.",
+        answer: "Good deeds, truth, or patience."
+      },
+      {
+        id: "surah-kawthar",
+        icon: "💧",
+        title: "Surah Al-Kawthar",
+        subtitle: "A gift from Allah",
+        age: "Ages 5–8",
+        lines: [
+          "إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ",
+          "فَصَلِّ لِرَبِّكَ وَانْحَرْ",
+          "إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ"
+        ],
+        message: "Allah gives great gifts, so we worship and thank Him.",
+        practice: "Say one thing Allah gave you, then say Alhamdulillah.",
+        miniQuiz: "Who gives us blessings?",
+        answer: "Allah"
+      },
+      {
+        id: "surah-nasr",
+        icon: "🌈",
+        title: "Surah An-Naṣr",
+        subtitle: "Help and gratitude",
+        age: "Ages 6–8",
+        lines: [
+          "إِذَا جَاءَ نَصْرُ اللَّهِ وَالْفَتْحُ",
+          "وَرَأَيْتَ النَّاسَ يَدْخُلُونَ فِي دِينِ اللَّهِ أَفْوَاجًا",
+          "فَسَبِّحْ بِحَمْدِ رَبِّكَ وَاسْتَغْفِرْهُ",
+          "إِنَّهُ كَانَ تَوَّابًا"
+        ],
+        message: "When Allah helps us, we praise Him and ask for forgiveness.",
+        practice: "Say: SubḥānAllah, Alḥamdulillah, Astaghfirullah.",
+        miniQuiz: "What should we do when Allah helps us?",
+        answer: "Praise Allah and ask forgiveness."
+      },
+      {
+        id: "surah-qadr",
+        icon: "🌙",
+        title: "Surah Al-Qadr",
+        subtitle: "The blessed night",
+        age: "Ages 6–8",
+        lines: [
+          "إِنَّا أَنزَلْنَاهُ فِي لَيْلَةِ الْقَدْرِ",
+          "وَمَا أَدْرَاكَ مَا لَيْلَةُ الْقَدْرِ",
+          "لَيْلَةُ الْقَدْرِ خَيْرٌ مِّنْ أَلْفِ شَهْرٍ",
+          "تَنَزَّلُ الْمَلَائِكَةُ وَالرُّوحُ فِيهَا بِإِذْنِ رَبِّهِم مِّن كُلِّ أَمْرٍ",
+          "سَلَامٌ هِيَ حَتَّىٰ مَطْلَعِ الْفَجْرِ"
+        ],
+        message: "Laylatul Qadr is a very blessed night. We worship Allah and make du‘ā.",
+        practice: "Draw a moon and say: O Allah, accept my du‘ā.",
+        miniQuiz: "Which blessed night is mentioned in this surah?",
+        answer: "Laylatul Qadr"
+      }
+    ];
+
+    const DATA_PATHS = [
+      "assets/data/questions/questions-level-1.json",
+      "assets/data/questions/questions-level-2.json",
+      "assets/data/questions/questions-level-3.json",
+      "assets/data/questions/questions-level-4.json",
+      "assets/data/questions/questions-level-5.json"
+    ];
+
+    const state = {
+      allQuestions: [],
+      filteredQuestions: [],
+      visibleLimit: 24,
+      progress: readProgress()
+    };
+
+    const els = {
+      surahGrid: document.getElementById("surahGrid"),
+      questionGrid: document.getElementById("questionGrid"),
+      questionCount: document.getElementById("questionCount"),
+      completedCount: document.getElementById("completedCount"),
+      starCount: document.getElementById("starCount"),
+      loadStatus: document.getElementById("loadStatus"),
+      resultCount: document.getElementById("resultCount"),
+      searchInput: document.getElementById("searchInput"),
+      levelFilter: document.getElementById("levelFilter"),
+      typeFilter: document.getElementById("typeFilter"),
+      difficultyFilter: document.getElementById("difficultyFilter"),
+      applyBtn: document.getElementById("applyBtn"),
+      clearBtn: document.getElementById("clearBtn"),
+      randomBtn: document.getElementById("randomBtn"),
+      showMoreBtn: document.getElementById("showMoreBtn"),
+      toast: document.getElementById("toast")
+    };
+
+    document.addEventListener("DOMContentLoaded", init);
+
+    async function init() {
+      renderSurahs();
+      renderStats();
+      bindStaticEvents();
+
+      try {
+        els.loadStatus.textContent = "Loading Qur’an cards...";
+        const files = await Promise.all(DATA_PATHS.map(fetchJson));
+        const bank = files.flatMap(file => file.items || []);
+
+        state.allQuestions = bank.filter(q => {
+          const blob = [q.topicId, q.topicTitle, q.subtopic, q.question, q.answer, q.simpleExplanation].join(" ").toLowerCase();
+          return blob.includes("quran") || blob.includes("qur’an") || blob.includes("surah") || q.topicId === "quran_surahs";
+        });
+
+        state.filteredQuestions = [...state.allQuestions];
+        buildQuestionFilters();
+        renderStats();
+        renderQuestions();
+        els.loadStatus.textContent = "Qur’an cards loaded";
+      } catch (error) {
+        console.error(error);
+        els.loadStatus.textContent = "Static surah cards ready";
+        els.resultCount.textContent = "Question bank not loaded";
+        els.questionGrid.innerHTML = `
+          <div class="empty">
+            <h3>Surah cards are ready.</h3>
+            <p>Question-bank cards could not load. Check the JSON files in <b>assets/data/questions/</b>.</p>
+          </div>
+        `;
+      }
+    }
+
+    async function fetchJson(path) {
+      const response = await fetch(path, { cache: "no-store" });
+      if (!response.ok) throw new Error(`${response.status} — ${path}`);
+      return response.json();
+    }
+
+    function renderSurahs() {
+      els.surahGrid.innerHTML = SURAH_CARDS.map(card => {
+        const done = Boolean(state.progress.completed?.[card.id]);
+        return `
+          <article class="surah-card ${done ? "done" : ""}" data-surah-id="${escapeHTML(card.id)}">
+            <div class="surah-top">
+              <div class="surah-name">
+                <h3>${escapeHTML(card.icon)} ${escapeHTML(card.title)}</h3>
+                <span>${escapeHTML(card.subtitle)}</span>
+              </div>
+              <span class="badge gold">${escapeHTML(card.age)}</span>
+            </div>
+
+            <div class="arabic-box">${card.lines.map(line => `<div>${escapeHTML(line)}</div>`).join("")}</div>
+
+            <div class="meaning-box"><b>💬 Main message:</b> ${escapeHTML(card.message)}</div>
+            <div class="practice-box"><b>✍️ Child task:</b> ${escapeHTML(card.practice)}</div>
+            <div class="mini-note"><b>❓ Tiny question:</b> ${escapeHTML(card.miniQuiz)}</div>
+
+            <div class="answer-box" id="answer-${safeId(card.id)}"><b>Answer:</b> ${escapeHTML(card.answer)}</div>
+
+            <div class="card-actions">
+              <button class="small-btn answer" type="button" data-surah-answer="${escapeHTML(card.id)}">👀 Show Answer</button>
+              <button class="small-btn star" type="button" data-surah-complete="${escapeHTML(card.id)}">⭐ Mark Complete</button>
+              <button class="small-btn" type="button" data-copy="${escapeHTML(card.title)}">📋 Copy Name</button>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      bindSurahEvents();
+    }
+
+    function bindSurahEvents() {
+      document.querySelectorAll("[data-surah-answer]").forEach(button => {
+        button.addEventListener("click", () => {
+          const box = document.getElementById(`answer-${safeId(button.dataset.surahAnswer)}`);
+          if (box) box.classList.toggle("show");
+        });
+      });
+
+      document.querySelectorAll("[data-surah-complete]").forEach(button => {
+        button.addEventListener("click", () => completeItem(button.dataset.surahComplete));
+      });
+
+      document.querySelectorAll("[data-copy]").forEach(button => {
+        button.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(button.dataset.copy);
+            showToast("Surah name copied");
+          } catch {
+            showToast("Copy not available");
+          }
+        });
+      });
+    }
+
+    function bindStaticEvents() {
+      els.applyBtn.addEventListener("click", applyFilters);
+      els.clearBtn.addEventListener("click", clearFilters);
+      els.randomBtn.addEventListener("click", randomQuestion);
+      els.showMoreBtn.addEventListener("click", () => {
+        state.visibleLimit += 24;
+        renderQuestions();
+        showToast("More cards opened");
+      });
+
+      [els.searchInput, els.levelFilter, els.typeFilter, els.difficultyFilter].forEach(input => {
+        input.addEventListener("input", debounce(applyFilters, 180));
+        input.addEventListener("change", applyFilters);
+      });
+
+      document.querySelectorAll("[data-search]").forEach(button => {
+        button.addEventListener("click", () => {
+          els.searchInput.value = button.dataset.search;
+          applyFilters();
+        });
+      });
+    }
+
+    function buildQuestionFilters() {
+      addOptions(els.levelFilter, uniqueValues(state.allQuestions, "level"), value => `Level ${value}`);
+      addOptions(els.typeFilter, uniqueValues(state.allQuestions, "type"), labelize);
+      addOptions(els.difficultyFilter, uniqueValues(state.allQuestions, "difficulty"), labelize);
+    }
+
+    function addOptions(select, values, labelFn) {
+      values.forEach(value => {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = labelFn(value);
+        select.appendChild(option);
+      });
+    }
+
+    function applyFilters() {
+      const search = els.searchInput.value.trim().toLowerCase();
+      const level = els.levelFilter.value;
+      const type = els.typeFilter.value;
+      const difficulty = els.difficultyFilter.value;
+
+      state.filteredQuestions = state.allQuestions.filter(q => {
+        if (level && String(q.level) !== String(level)) return false;
+        if (type && q.type !== type) return false;
+        if (difficulty && q.difficulty !== difficulty) return false;
+
+        if (search) {
+          const blob = [
+            q.id, q.question, q.answer, q.topicTitle, q.subtopic,
+            q.arabic, q.simpleExplanation, q.activity, q.practice, q.game
+          ].join(" ").toLowerCase();
+          if (!blob.includes(search)) return false;
+        }
+
+        return true;
+      });
+
+      state.visibleLimit = 24;
+      renderStats();
+      renderQuestions();
+    }
+
+    function clearFilters() {
+      els.searchInput.value = "";
+      els.levelFilter.value = "";
+      els.typeFilter.value = "";
+      els.difficultyFilter.value = "";
+      state.filteredQuestions = [...state.allQuestions];
+      state.visibleLimit = 24;
+      renderStats();
+      renderQuestions();
+      showToast("Filters cleared");
+    }
+
+    function randomQuestion() {
+      const list = state.filteredQuestions.length ? state.filteredQuestions : state.allQuestions;
+      if (!list.length) return showToast("No cards loaded yet");
+      const q = list[Math.floor(Math.random() * list.length)];
+      els.searchInput.value = q.id;
+      applyFilters();
+      document.getElementById("quranQuestions").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function renderQuestions() {
+      if (!state.filteredQuestions.length) {
+        els.questionGrid.innerHTML = `<div class="empty"><h3>No Qur’an cards found.</h3><p>Try a different search word or clear filters.</p></div>`;
+        els.resultCount.textContent = "0 cards found";
+        return;
+      }
+
+      const visible = state.filteredQuestions.slice(0, state.visibleLimit);
+      els.resultCount.textContent = `${state.filteredQuestions.length.toLocaleString()} cards found`;
+      els.questionGrid.innerHTML = visible.map(questionCard).join("");
+      els.showMoreBtn.style.display = state.filteredQuestions.length > state.visibleLimit ? "inline-flex" : "none";
+      bindQuestionEvents();
+    }
+
+    function questionCard(q) {
+      const options = Array.isArray(q.options) ? q.options : [];
+      return `
+        <article class="question-card" data-question-id="${escapeHTML(q.id)}">
+          <div class="question-top">
+            <span class="badge">📖 ${escapeHTML(q.topicTitle || "Qur’an")}</span>
+            <span class="badge gold">Level ${escapeHTML(q.level || "")}</span>
+          </div>
+          <p class="question-text">${escapeHTML(q.question || "")}</p>
+          ${q.arabic ? `<div class="arabic-box">${escapeHTML(q.arabic)}</div>` : ""}
+          ${options.length ? `<div class="choice-list">${options.map(option => `<button class="choice-btn" type="button" data-option="${escapeHTML(option)}" data-answer="${escapeHTML(q.answer || "")}">${escapeHTML(option)}</button>`).join("")}</div>` : ""}
+          <div class="answer-box" id="answer-${safeId(q.id)}"><b>Answer:</b> ${escapeHTML(q.answer || "")} ${q.simpleExplanation ? `<br><b>Meaning:</b> ${escapeHTML(q.simpleExplanation)}` : ""}</div>
+          <div class="practice-box"><b>🎯 Activity:</b> ${escapeHTML(q.activity || "Repeat the answer with a parent.")}</div>
+          <div class="mini-note"><b>✍️ Practice:</b> ${escapeHTML(q.practice || "Say the key word three times.")}</div>
+          <div class="card-actions">
+            <button class="small-btn answer" type="button" data-show-answer="${escapeHTML(q.id)}">👀 Show Answer</button>
+            <button class="small-btn star" type="button" data-question-complete="${escapeHTML(q.id)}">⭐ Mark Complete</button>
+          </div>
+        </article>
+      `;
+    }
+
+    function bindQuestionEvents() {
+      document.querySelectorAll("[data-show-answer]").forEach(button => {
+        button.addEventListener("click", () => {
+          const box = document.getElementById(`answer-${safeId(button.dataset.showAnswer)}`);
+          if (box) box.classList.toggle("show");
+        });
+      });
+
+      document.querySelectorAll("[data-question-complete]").forEach(button => {
+        button.addEventListener("click", () => completeItem(button.dataset.questionComplete));
+      });
+
+      document.querySelectorAll("[data-option]").forEach(button => {
+        button.addEventListener("click", () => {
+          const selected = normalize(button.dataset.option);
+          const answer = normalize(button.dataset.answer);
+          button.parentElement.querySelectorAll(".choice-btn").forEach(btn => btn.classList.remove("correct", "wrong"));
+          if (selected === answer) {
+            button.classList.add("correct");
+            showToast("Correct! ⭐");
+          } else {
+            button.classList.add("wrong");
+            showToast("Try again gently");
+          }
+        });
+      });
+    }
+
+    function completeItem(id) {
+      if (!state.progress.completed) state.progress.completed = {};
+      if (!state.progress.completed[id]) {
+        state.progress.completed[id] = { completedAt: new Date().toISOString(), page: "surahs" };
+        state.progress.stars = (state.progress.stars || 0) + 1;
+        saveProgress();
+        renderStats();
+        renderSurahs();
+        showToast("Completed! ⭐ Star added");
+      } else {
+        showToast("Already completed");
+      }
+    }
+
+    function renderStats() {
+      const completed = Object.keys(state.progress.completed || {}).filter(id => id.includes("surah") || id.includes("quran") || id.includes("QUR") || id.includes("question")).length;
+      document.getElementById("surahCount").textContent = SURAH_CARDS.length;
+      els.questionCount.textContent = state.allQuestions.length ? state.allQuestions.length.toLocaleString() : "—";
+      els.completedCount.textContent = completed.toLocaleString();
+      els.starCount.textContent = (state.progress.stars || 0).toLocaleString();
+    }
+
+    function readProgress() {
+      try {
+        return JSON.parse(localStorage.getItem("alHayatKidsIslamProgress")) || { stars: 0, completed: {} };
+      } catch {
+        return { stars: 0, completed: {} };
+      }
+    }
+
+    function saveProgress() {
+      localStorage.setItem("alHayatKidsIslamProgress", JSON.stringify(state.progress));
+    }
+
+    function uniqueValues(items, key) {
+      return [...new Set(items.map(item => item[key]).filter(Boolean))].sort((a, b) => String(a).localeCompare(String(b), undefined, { numeric: true }));
+    }
+
+    function labelize(value) {
+      return String(value || "").replaceAll("_", " ").replace(/\b\w/g, letter => letter.toUpperCase());
+    }
+
+    function safeId(value) {
+      return String(value || "").replace(/[^a-zA-Z0-9_-]/g, "-");
+    }
+
+    function normalize(value) {
+      return String(value || "").trim().toLowerCase();
+    }
+
+    function escapeHTML(value) {
+      return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      }[char]));
+    }
+
+    function debounce(fn, delay = 200) {
+      let timer;
+      return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), delay);
+      };
+    }
+
+    function showToast(message) {
+      els.toast.textContent = message;
+      els.toast.classList.add("show");
+      setTimeout(() => els.toast.classList.remove("show"), 1800);
+    }
+  </script>
 </body>
 </html>
