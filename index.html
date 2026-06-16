@@ -3,1552 +3,349 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#fff7df" />
-  <meta name="description" content="Al-Hayat Kids Islam is a mobile-first Islamic learning website for ages 3 to 8 with Duas, Qur'an, Salah, Arabic, practice games, badges, and guided learning steps." />
-  <title>Al-Hayat Kids Islam | Tap, Learn, Practice and Play</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@500;700;800;900&family=Noto+Naskh+Arabic:wght@600;700&display=swap" rel="stylesheet">
-
+  <title>Al-Hayat Kids Islam | Fun Islamic Learning for Children Ages 3–8</title>
+  <meta name="description" content="Al-Hayat Kids Islam is a colourful, mobile-friendly Islamic learning homepage for children ages 3–8 with Duas, Quran, Salah, Arabic, games, practice, stars, and parent guidance." />
+  <meta name="keywords" content="Islam for kids, Islamic learning for children, kids duas, Quran for kids, Salah for kids, Arabic letters for kids, Islamic games for kids, Muslim children learning" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f766e" />
+  <link rel="canonical" href="https://drimranhayat.github.io/al-hayat-kids-islam/" />
+  <meta property="og:title" content="Al-Hayat Kids Islam" />
+  <meta property="og:description" content="Tap, learn, practice, play, and grow in Islam." />
+  <meta property="og:type" content="website" />
   <style>
     :root{
-      --ink:#10233d;
-      --muted:#64748b;
-      --white:#ffffff;
-      --cream:#fff7df;
-      --sun:#ffe59f;
-      --sun-2:#fff0bf;
-      --orange:#ffb45e;
-      --teal:#17b9ac;
-      --teal-dark:#087b75;
-      --sky:#dff4ff;
-      --blue:#4f8cff;
-      --pink:#ffe4ef;
-      --purple:#eee8ff;
-      --green:#e7f9df;
-      --mint:#defcf4;
-      --card:#fffdf7;
-      --line:rgba(16,35,61,.11);
-      --shadow:0 20px 55px rgba(17,34,64,.13);
-      --soft-shadow:0 12px 28px rgba(17,34,64,.10);
-      --radius-xl:34px;
-      --radius-lg:26px;
-      --radius-md:20px;
-      --max:1180px;
-      --bottom-nav:0px;
+      --navy:#10284a;
+      --navy-2:#183b65;
+      --teal:#04a88a;
+      --teal-dark:#087467;
+      --green:#18a66a;
+      --purple:#7357d9;
+      --coral:#ff5d64;
+      --orange:#f59e0b;
+      --gold:#ffd36b;
+      --cream:#fff7e6;
+      --cream-2:#fffdf7;
+      --mint:#eafff6;
+      --sky:#edf8ff;
+      --lav:#f4edff;
+      --rose:#fff0f5;
+      --peach:#fff4df;
+      --ink:#17324d;
+      --muted:#5e6f82;
+      --line:rgba(24,59,101,.12);
+      --shadow:0 18px 45px rgba(16,40,74,.14);
+      --shadow-soft:0 10px 28px rgba(16,40,74,.10);
+      --radius:28px;
     }
-
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth; overflow-x:hidden;}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      overflow-x:hidden;
       color:var(--ink);
-      font-family:"Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family:Inter, ui-rounded, "Segoe UI", Arial, system-ui, sans-serif;
       background:
-        radial-gradient(circle at 10% 5%, rgba(255,229,159,.75), transparent 26rem),
-        radial-gradient(circle at 88% 12%, rgba(223,244,255,.9), transparent 28rem),
-        linear-gradient(180deg, #fff8e7 0%, #fffdf7 44%, #f7fffb 100%);
-      padding-bottom:calc(var(--bottom-nav) + env(safe-area-inset-bottom));
+        radial-gradient(circle at top left,rgba(255,211,107,.55),transparent 23rem),
+        radial-gradient(circle at 85% 5%,rgba(4,168,138,.18),transparent 20rem),
+        radial-gradient(circle at 20% 90%,rgba(115,87,217,.12),transparent 24rem),
+        linear-gradient(180deg,#fff8ea 0%,#fffdf7 48%,#eef9ff 100%);
+      min-height:100vh;
+      padding-bottom:92px;
+      overflow-x:hidden;
     }
-
-    body::before{
+    body:before{
       content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      opacity:.37;
+      position:fixed;inset:0;pointer-events:none;z-index:-1;
       background-image:
-        radial-gradient(circle, rgba(16,35,61,.10) 1.2px, transparent 1.2px),
-        radial-gradient(circle, rgba(23,185,172,.10) 1.2px, transparent 1.2px);
-      background-size:36px 36px, 54px 54px;
-      background-position:0 0, 12px 18px;
-      z-index:-1;
+        radial-gradient(circle,rgba(255,211,107,.35) 0 2px,transparent 3px),
+        radial-gradient(circle,rgba(4,168,138,.16) 0 2px,transparent 3px);
+      background-size:70px 70px,110px 110px;
+      background-position:8px 14px,30px 50px;
+      opacity:.6;
     }
-
-    a{color:inherit; text-decoration:none}
-    img,svg{max-width:100%; display:block}
-    button{font:inherit}
-
-    .skip-link{
-      position:absolute;
-      left:1rem;
-      top:-4rem;
-      padding:.8rem 1rem;
-      background:var(--ink);
-      color:white;
-      border-radius:14px;
-      z-index:50;
-    }
-    .skip-link:focus{top:1rem}
+    a{color:inherit;text-decoration:none}
+    button,a{touch-action:manipulation}
+    .wrap{max-width:1240px;margin:0 auto;padding:18px}
+    .skip-link{position:absolute;left:-999px;top:10px;background:var(--navy);color:#fff;padding:10px 14px;border-radius:14px;z-index:100}
+    .skip-link:focus{left:12px}
 
     .site-header{
-      position:sticky;
-      top:0;
-      z-index:30;
+      position:sticky;top:0;z-index:40;
+      background:rgba(255,253,247,.88);
       backdrop-filter:blur(16px);
-      background:rgba(255,247,223,.82);
-      border-bottom:1px solid rgba(16,35,61,.08);
+      border-bottom:1px solid rgba(24,59,101,.08);
     }
-    .header-inner{
-      width:min(var(--max), calc(100% - 28px));
-      margin:auto;
-      min-height:74px;
-      display:flex;
-      align-items:center;
-      gap:14px;
-      justify-content:space-between;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:11px;
-      min-width:0;
-    }
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:950;color:var(--navy)}
     .brand-mark{
-      width:54px;
-      height:54px;
-      border-radius:20px;
-      display:grid;
-      place-items:center;
-      font-size:1.75rem;
-      background:linear-gradient(135deg, #fff, var(--sun));
-      border:2px solid rgba(16,35,61,.08);
-      box-shadow:0 10px 25px rgba(255,180,94,.20);
-      flex:0 0 auto;
+      width:56px;height:56px;border-radius:20px;display:grid;place-items:center;position:relative;
+      background:linear-gradient(145deg,#0c4a6e,#04a88a);color:#fff;font-size:1.65rem;box-shadow:var(--shadow-soft);
     }
-    .brand-title{
-      display:flex;
-      flex-direction:column;
-      line-height:1.02;
-      min-width:0;
+    .brand-mark:after{content:"★";position:absolute;right:-7px;top:-9px;color:#ffd36b;font-size:1.1rem;filter:drop-shadow(0 3px 4px rgba(0,0,0,.18))}
+    .brand-title{display:block;font-size:1.1rem;line-height:1.1}
+    .brand-sub{display:block;color:var(--teal-dark);font-weight:900;font-size:.86rem;margin-top:2px;direction:rtl}
+    .header-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+    .pill-link,.sound-toggle{
+      border:1px solid rgba(24,59,101,.1);border-radius:999px;background:#fff;box-shadow:0 8px 22px rgba(16,40,74,.08);
+      padding:10px 13px;font-weight:950;color:var(--navy);cursor:pointer;
     }
-    .brand-title strong{
-      font-family:"Baloo 2", "Nunito", sans-serif;
-      font-size:clamp(1.05rem, 2.5vw, 1.45rem);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .brand-title span{
-      font-size:.77rem;
-      font-weight:900;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      color:var(--teal-dark);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
+    .sound-toggle{background:var(--navy);color:#fff;border-color:var(--navy)}
+    .desktop-nav{display:flex;justify-content:flex-end;gap:8px;margin-top:12px;flex-wrap:wrap}
+    .desktop-nav a{padding:9px 12px;border-radius:999px;background:#fffaf0;border:1px solid #efe1bd;font-weight:950;color:var(--navy);font-size:.93rem}
+    .desktop-nav a:hover,.pill-link:hover,.sound-toggle:hover{transform:translateY(-1px)}
 
-    .desktop-nav{
-      display:flex;
-      align-items:center;
-      gap:8px;
+    .hero-shell{
+      margin-top:16px;background:rgba(255,255,255,.82);border:1px solid rgba(24,59,101,.1);border-radius:34px;
+      padding:22px;box-shadow:var(--shadow);position:relative;overflow:hidden;
     }
-    .desktop-nav a,
-    .mini-action{
-      min-height:42px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:.35rem;
-      padding:.72rem .95rem;
-      border-radius:999px;
-      font-weight:900;
-      color:#15304e;
-      border:1px solid transparent;
-      transition:transform .18s ease, background .18s ease, border-color .18s ease;
-      white-space:nowrap;
-    }
-    .desktop-nav a:hover,
-    .desktop-nav a:focus-visible,
-    .mini-action:hover,
-    .mini-action:focus-visible{
-      transform:translateY(-2px);
-      background:white;
-      border-color:var(--line);
-      outline:none;
-    }
-    .mini-action{
-      background:var(--ink);
-      color:white;
-      box-shadow:0 10px 20px rgba(16,35,61,.16);
-    }
-    .menu-toggle{
-      display:none;
-      width:48px;
-      height:48px;
-      border:0;
-      border-radius:18px;
-      background:#fff;
-      box-shadow:var(--soft-shadow);
-      color:var(--ink);
-      font-size:1.35rem;
-      cursor:pointer;
-    }
-
-    .mobile-menu{
-      display:none;
-      width:min(var(--max), calc(100% - 28px));
-      margin:0 auto 14px;
-      padding:10px;
-      border-radius:22px;
-      background:white;
-      box-shadow:var(--soft-shadow);
-      border:1px solid var(--line);
-    }
-    .mobile-menu[data-open="true"]{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
-    .mobile-menu a{
-      border-radius:16px;
-      padding:.9rem;
-      font-weight:900;
-      background:#f8fafc;
-      text-align:center;
-    }
-
-    .page{
-      width:min(var(--max), calc(100% - 28px));
-      margin:auto;
-      padding:18px 0 64px;
-    }
-
-    .hero{
-      display:grid;
-      grid-template-columns:minmax(0, 1.06fr) minmax(320px, .94fr);
-      gap:22px;
-      align-items:stretch;
-      margin-top:8px;
-    }
-
-    .hero-card{
-      position:relative;
-      overflow:hidden;
-      border-radius:42px;
-      background:
-        radial-gradient(circle at 82% 8%, rgba(255,255,255,.55) 0 92px, transparent 93px),
-        radial-gradient(circle at 10% 92%, rgba(255,229,159,.36) 0 100px, transparent 101px),
-        linear-gradient(135deg, #31d2c0 0%, #56c9ff 42%, #fff1a8 100%);
-      min-height:560px;
-      padding:clamp(22px, 3.4vw, 42px);
-      box-shadow:var(--shadow);
-      border:1px solid rgba(255,255,255,.65);
-      isolation:isolate;
-    }
-    .hero-card::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.48), rgba(255,255,255,.10) 52%, rgba(255,255,255,.38)),
-        radial-gradient(circle at 25% 20%, rgba(255,255,255,.58), transparent 12rem);
-      z-index:-1;
-    }
-    .hero-card::after{
-      content:"";
-      position:absolute;
-      width:220px;
-      height:220px;
-      right:-72px;
-      bottom:-72px;
-      border-radius:50%;
-      background:rgba(255,255,255,.28);
-      border:24px solid rgba(255,255,255,.22);
-      z-index:-1;
-    }
-
-    .hero-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:.55rem;
-      padding:.78rem 1rem;
-      border-radius:999px;
-      color:#084f52;
-      background:rgba(255,255,255,.67);
-      border:1px solid rgba(255,255,255,.78);
-      box-shadow:0 12px 25px rgba(16,35,61,.08);
-      font-weight:1000;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-size:.82rem;
-    }
-
-    h1,h2,h3,p{margin-top:0}
-    .hero-title{
-      margin:24px 0 12px;
-      max-width:760px;
-      font-family:"Baloo 2", "Nunito", sans-serif;
-      font-size:clamp(3rem, 7.7vw, 6.35rem);
-      line-height:.86;
-      letter-spacing:-.055em;
-      color:#10233d;
-      text-wrap:balance;
-    }
-    .hero-title .spark{
-      display:inline-block;
-      color:#fff;
-      text-shadow:0 7px 22px rgba(16,35,61,.20);
-    }
-    .hero-lead{
-      max-width:680px;
-      margin:0 0 22px;
-      color:#12324d;
-      font-size:clamp(1.05rem, 2.1vw, 1.35rem);
-      line-height:1.55;
-      font-weight:850;
-    }
-    .hero-lead b{color:#074d50}
-
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin:20px 0 18px;
-    }
+    .hero-shell:before{content:"☾";position:absolute;right:24px;top:8px;font-size:8rem;color:rgba(255,211,107,.25);font-weight:900;line-height:1}
+    .hero{display:grid;grid-template-columns:1.02fr .98fr;gap:22px;align-items:center;position:relative;z-index:2}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(8,116,103,.18);background:#fffdf7;border-radius:999px;padding:9px 14px;color:var(--teal-dark);font-weight:950;letter-spacing:.03em;font-size:.86rem;text-transform:uppercase}
+    h1{font-size:clamp(2.45rem,6.5vw,5.5rem);line-height:.98;letter-spacing:-.055em;margin:18px 0 14px;color:var(--navy);max-width:720px}
+    .word-green{color:var(--green)}.word-purple{color:var(--purple)}.word-coral{color:var(--coral)}
+    .lead{font-size:clamp(1rem,1.35vw,1.18rem);line-height:1.65;color:var(--navy-2);font-weight:750;max-width:520px;margin:0 0 18px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
     .btn{
-      min-height:54px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:.65rem;
-      padding:.95rem 1.18rem;
-      border:0;
-      border-radius:999px;
-      font-weight:1000;
-      font-size:1.02rem;
-      cursor:pointer;
-      transition:transform .18s ease, filter .18s ease, box-shadow .18s ease, background .18s ease;
-      box-shadow:0 12px 24px rgba(16,35,61,.13);
-      touch-action:manipulation;
-      text-align:center;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:24px;padding:14px 19px;
+      font-weight:950;box-shadow:var(--shadow-soft);transition:.18s ease;min-height:60px;cursor:pointer;
     }
-    .btn:hover,.btn:focus-visible{transform:translateY(-3px) scale(1.01); filter:saturate(1.08); outline:none}
-    .btn-primary{background:#fff; color:#10233d; min-width:180px;}
-    .btn-sun{background:linear-gradient(135deg, var(--sun), #fff3c1); color:#442d08;}
-    .btn-teal{background:rgba(8,123,117,.78); color:#fff; border:1px solid rgba(255,255,255,.35);}
+    .btn:hover{transform:translateY(-2px) scale(1.01)}
+    .btn small{display:block;font-weight:800;opacity:.9;font-size:.78rem;line-height:1.1;text-align:left}
+    .btn strong{display:block;font-size:1.03rem;line-height:1.1;text-align:left}
+    .btn .ico{font-size:1.55rem}
+    .btn-primary{background:linear-gradient(135deg,#05b897,#078372);color:#fff}
+    .btn-question{background:linear-gradient(135deg,#8966ff,#5f3bc5);color:#fff}
+    .btn-cream{background:#fff;color:var(--navy);border:1px solid rgba(24,59,101,.1)}
 
-    .picture-strip{
-      display:grid;
-      grid-template-columns:repeat(5, minmax(72px, 1fr));
-      gap:10px;
-      margin-top:22px;
-      max-width:690px;
-    }
-    .picture-pill{
-      min-height:72px;
-      border-radius:24px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex-direction:column;
-      gap:2px;
-      background:rgba(255,255,255,.72);
-      border:1px solid rgba(255,255,255,.9);
-      box-shadow:0 10px 18px rgba(16,35,61,.08);
-      font-weight:1000;
-      color:#15304e;
-      text-align:center;
-      line-height:1.02;
-    }
-    .picture-pill span{font-size:1.7rem; line-height:1}
-    .picture-pill small{font-size:.78rem}
+    .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+    .stat-card{display:flex;align-items:center;gap:13px;border:1px solid var(--line);border-radius:22px;padding:15px;background:#fff;min-height:104px;box-shadow:0 8px 20px rgba(16,40,74,.06)}
+    .stat-icon{width:56px;height:56px;border-radius:20px;display:grid;place-items:center;font-size:2rem;flex:0 0 auto;background:#fff4c8}
+    .stat-card strong{display:block;color:var(--teal-dark);font-size:1.65rem;line-height:1}.stat-card span{display:block;color:var(--navy);font-weight:950;line-height:1.2}.stat-card small{color:var(--muted);font-weight:800;font-size:.75rem}
+    .stat-card:nth-child(2) .stat-icon{background:#e9f5ff}.stat-card:nth-child(3) .stat-icon{background:#f3edff}.stat-card:nth-child(4) .stat-icon{background:#fff0d7}
 
-    .mini-road{
-      position:relative;
-      display:grid;
-      grid-template-columns:repeat(6, minmax(0, 1fr));
-      gap:8px;
-      margin-top:18px;
-      padding:16px;
-      border-radius:30px;
-      background:rgba(255,255,255,.55);
-      border:1px solid rgba(255,255,255,.75);
-      box-shadow:0 12px 22px rgba(16,35,61,.08);
-      max-width:720px;
+    .hero-art{
+      min-height:430px;border-radius:34px;position:relative;overflow:hidden;padding:18px;background:
+        radial-gradient(circle at 70% 20%,rgba(255,211,107,.45),transparent 11rem),
+        linear-gradient(180deg,#0b4d87 0%,#0c79a3 54%,#eafdff 54%,#fffdf7 100%);
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.28),var(--shadow-soft);
     }
-    .road-step{
-      position:relative;
-      z-index:1;
-      min-height:76px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex-direction:column;
-      gap:3px;
-      border-radius:24px;
-      background:#fff;
-      color:var(--ink);
-      font-weight:1000;
-      text-align:center;
-      box-shadow:0 8px 16px rgba(16,35,61,.07);
-      border:1px solid rgba(16,35,61,.06);
-    }
-    .road-step::after{
-      content:"→";
-      position:absolute;
-      right:-12px;
-      top:50%;
-      transform:translateY(-50%);
-      color:#087b75;
-      font-size:1.35rem;
-      z-index:2;
-    }
-    .road-step:last-child::after{display:none}
-    .road-step .emoji{font-size:1.55rem; line-height:1}
-    .road-step small{font-size:.72rem; color:#49627f}
+    .sky-star{position:absolute;color:#ffd36b;text-shadow:0 3px 9px rgba(0,0,0,.18);font-size:1.4rem;animation:twinkle 2.8s infinite alternate}.s1{left:8%;top:12%}.s2{left:25%;top:18%;font-size:1rem}.s3{right:18%;top:11%;font-size:1.7rem}.s4{right:12%;top:34%;font-size:1rem}.s5{left:48%;top:8%;font-size:.95rem}
+    @keyframes twinkle{from{transform:scale(.92);opacity:.7}to{transform:scale(1.08);opacity:1}}
+    .moon{position:absolute;left:32%;top:34px;width:70px;height:70px;border-radius:50%;background:#ffd36b;box-shadow:0 0 26px rgba(255,211,107,.45)}
+    .moon:after{content:"";position:absolute;left:24px;top:-5px;width:64px;height:72px;border-radius:50%;background:#0b4d87}
+    .lantern{position:absolute;right:13%;top:0;width:54px;height:96px}.lantern:before{content:"";position:absolute;left:25px;top:0;width:3px;height:32px;background:#f7b445}.lantern:after{content:"🏮";position:absolute;top:22px;left:0;font-size:3.2rem;filter:drop-shadow(0 8px 12px rgba(0,0,0,.25))}
+    .mosque{position:absolute;left:8%;right:7%;top:116px;height:160px;opacity:.85}
+    .dome{position:absolute;bottom:0;left:38%;width:140px;height:100px;background:#74d4c5;border-radius:100px 100px 22px 22px;border:5px solid rgba(255,255,255,.25)}
+    .dome:before{content:"";position:absolute;left:56px;top:-25px;border-left:14px solid transparent;border-right:14px solid transparent;border-bottom:30px solid #74d4c5}.small-dome{position:absolute;bottom:0;width:72px;height:58px;background:#8ce0d3;border-radius:60px 60px 14px 14px}.sd1{left:10%}.sd2{right:10%}.minaret{position:absolute;bottom:0;width:28px;height:128px;background:#72cabc;border-radius:18px 18px 6px 6px}.m1{left:0}.m2{right:0}.minaret:before{content:"";position:absolute;top:-22px;left:5px;border-left:9px solid transparent;border-right:9px solid transparent;border-bottom:24px solid #ffd36b}.cloud{position:absolute;left:-4%;right:-4%;bottom:146px;height:52px;background:#f0fcff;border-radius:50px;box-shadow:35px -16px 0 #f0fcff,95px 6px 0 #f0fcff,160px -14px 0 #f0fcff,245px 7px 0 #f0fcff,330px -10px 0 #f0fcff,430px 5px 0 #f0fcff}
+    .desk{position:absolute;left:19%;right:10%;bottom:22px;height:62px;background:linear-gradient(180deg,#b87a3e,#875329);border-radius:28px;box-shadow:0 18px 28px rgba(62,37,16,.23)}
+    .kid{position:absolute;bottom:65px;width:155px;height:205px}.kid .head{position:absolute;left:34px;top:18px;width:94px;height:94px;border-radius:50%;background:#ffd4aa;border:4px solid #efb88a;z-index:3}.kid .eyes{position:absolute;left:57px;top:52px;width:9px;height:14px;border-radius:50%;background:#1f2937;box-shadow:28px 0 0 #1f2937;z-index:4}.kid .smile{position:absolute;left:70px;top:83px;width:27px;height:12px;border-bottom:4px solid #7f1d1d;border-radius:0 0 28px 28px;z-index:4}.kid .body{position:absolute;left:22px;top:104px;width:120px;height:106px;border-radius:40px 40px 24px 24px;background:#07977f;z-index:2}.boy{left:16%}.boy .cap{position:absolute;left:42px;top:0;width:78px;height:42px;background:#fff;border-radius:50px 50px 18px 18px;border:3px solid #e5e7eb;z-index:5}.boy .tablet{position:absolute;left:88px;top:118px;width:72px;height:92px;border-radius:12px;background:#384152;border:4px solid #222a36;transform:rotate(-8deg);z-index:6}.boy .tablet:after{content:"";position:absolute;left:30px;bottom:7px;width:10px;height:10px;border-radius:50%;background:#94a3b8}
+    .girl{right:14%;width:170px}.girl .scarf{position:absolute;left:20px;top:4px;width:124px;height:156px;border-radius:70px 70px 55px 55px;background:#ffd05a;z-index:2}.girl .head{left:48px;top:30px}.girl .body{left:32px;background:#f05f86}.girl .hand{position:absolute;left:28px;top:100px;font-size:2.4rem;z-index:7;transform:rotate(18deg)}
+    .quran{position:absolute;left:43%;bottom:75px;width:128px;height:72px;background:#ffeec3;border-radius:16px;transform:skewX(-10deg);z-index:8;border:4px solid #b77c34;box-shadow:0 8px 14px rgba(0,0,0,.14)}.quran:before{content:"";position:absolute;left:48%;top:8px;bottom:8px;border-left:3px solid #d7a14e}.quran:after{content:"〰 〰 〰";position:absolute;left:16px;top:22px;color:#bc8c35;font-weight:900;font-size:.9rem}.books{position:absolute;right:8%;bottom:75px;font-size:4.4rem;z-index:8}.plant{position:absolute;left:6%;bottom:75px;font-size:4.2rem;z-index:8}.arabic-bubble{position:absolute;width:58px;height:58px;border-radius:50%;background:#e9f5ff;display:grid;place-items:center;color:#078372;font-weight:950;font-size:2rem;box-shadow:var(--shadow-soft)}.ab1{left:5%;top:46%;}.ab2{right:8%;top:49%;color:#ff5d64;background:#fff0f5}.ab3{left:18%;top:58%;color:#7357d9;background:#f4edff}
 
-    .hero-side{
-      display:grid;
-      grid-template-rows:auto 1fr;
-      gap:18px;
-    }
-    .start-panel,
-    .topic-panel,
-    .soft-panel{
-      border-radius:var(--radius-xl);
-      background:rgba(255,255,255,.86);
-      box-shadow:var(--soft-shadow);
-      border:1px solid rgba(16,35,61,.08);
-      padding:24px;
-    }
-    .start-panel{
-      background:
-        radial-gradient(circle at 92% 0%, rgba(255,229,159,.65), transparent 12rem),
-        rgba(255,255,255,.88);
-    }
-    .panel-title{
-      font-family:"Baloo 2", "Nunito", sans-serif;
-      font-size:clamp(1.65rem, 3vw, 2.65rem);
-      line-height:.94;
-      letter-spacing:-.03em;
-      margin-bottom:14px;
-      color:var(--ink);
-    }
-    .today-card{
-      display:grid;
-      grid-template-columns:auto 1fr auto;
-      align-items:center;
-      gap:14px;
-      padding:16px;
-      border-radius:26px;
-      background:linear-gradient(135deg, #fff9df, #e6fbf7);
-      border:1px solid rgba(16,35,61,.08);
-    }
-    .today-icon{
-      width:58px;
-      height:58px;
-      display:grid;
-      place-items:center;
-      border-radius:22px;
-      background:#fff;
-      box-shadow:0 10px 20px rgba(16,35,61,.08);
-      font-size:1.9rem;
-    }
-    .today-card strong{display:block; font-size:1.12rem; font-weight:1000; margin-bottom:2px;}
-    .today-card span{display:block; color:#49627f; font-weight:900; line-height:1.25}
-    .tiny-btn{
-      border:0;
-      background:var(--ink);
-      color:white;
-      border-radius:999px;
-      padding:.75rem .9rem;
-      font-weight:1000;
-      cursor:pointer;
-      white-space:nowrap;
-    }
+    .section{padding:26px 0}.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:16px;flex-wrap:wrap}.section-head h2{font-size:clamp(1.55rem,3vw,2.1rem);line-height:1.1;margin:0;color:var(--navy)}.section-head p{margin:6px 0 0;color:var(--muted);font-weight:800;max-width:720px}.see-all{font-weight:950;color:var(--teal-dark);display:inline-flex;align-items:center;gap:6px}
+    .topic-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}.topic-card{border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow-soft);padding:16px 13px;text-align:center;min-height:210px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;position:relative;overflow:hidden;transition:.18s ease}.topic-card:hover{transform:translateY(-4px)}.topic-card:before{content:"";position:absolute;right:-34px;top:-34px;width:90px;height:90px;border-radius:50%;background:rgba(255,211,107,.24)}.topic-emoji{font-size:3.4rem;line-height:1;margin-top:8px;filter:drop-shadow(0 8px 12px rgba(16,40,74,.14))}.topic-card h3{font-size:1.35rem;margin:8px 0 3px;color:var(--teal-dark)}.topic-card p{margin:0;color:var(--navy-2);font-weight:850;font-size:.92rem;line-height:1.28}.arrow-dot{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--teal);color:#fff;margin-top:9px;font-weight:950}.quran-card{background:linear-gradient(180deg,#f3fff9,#fff)}.salah-card{background:linear-gradient(180deg,#fff7e9,#fff)}.arabic-card{background:linear-gradient(180deg,#f6f0ff,#fff)}.game-card{background:linear-gradient(180deg,#fff0f5,#fff)}.practice-card{background:linear-gradient(180deg,#eef8ff,#fff)}.salah-card h3{color:#f97316}.arabic-card h3{color:#7357d9}.game-card h3{color:#ff4d6d}.practice-card h3{color:#2094e7}
 
-    .stat-grid{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:10px;
-      margin-top:14px;
-    }
-    .stat{
-      min-height:96px;
-      display:grid;
-      place-items:center;
-      text-align:center;
-      border-radius:26px;
-      background:rgba(255,255,255,.88);
-      border:1px solid rgba(16,35,61,.08);
-    }
-    .stat b{
-      display:block;
-      color:#087b75;
-      font-family:"Baloo 2", "Nunito", sans-serif;
-      font-size:2.1rem;
-      line-height:.9;
-    }
-    .stat span{font-weight:1000; font-size:.95rem;}
+    .mission{display:grid;grid-template-columns:280px 1fr;gap:20px;align-items:center;border:1px solid rgba(255,188,52,.32);border-radius:28px;background:linear-gradient(135deg,#fff6d6,#effff7);padding:18px;box-shadow:var(--shadow-soft);position:relative;overflow:hidden}.mission:after{content:"☁ ☁ ☁";position:absolute;left:20px;bottom:-17px;color:#fff;font-size:3rem;letter-spacing:8px}.mission-intro{display:flex;align-items:center;gap:15px;position:relative;z-index:2}.star-face{font-size:4.2rem;filter:drop-shadow(0 10px 14px rgba(245,158,11,.25));animation:floaty 3s ease-in-out infinite}.mission h2{margin:0;color:var(--teal-dark);font-size:1.6rem}.mission p{margin:4px 0 0;color:var(--navy-2);font-weight:800}.mission-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;position:relative;z-index:2}.mission-step{text-align:center;font-weight:950;color:var(--navy)}.round-icon{width:64px;height:64px;margin:0 auto 8px;border-radius:50%;display:grid;place-items:center;background:#fff;border:2px solid #fde4a8;box-shadow:0 8px 18px rgba(16,40,74,.08);font-size:2rem;position:relative}.mission-step:not(:last-child) .round-icon:after{content:"···›";position:absolute;right:-52px;top:20px;color:#91b27b;font-size:1.7rem;letter-spacing:3px}.mission-step small{display:block;color:var(--muted);font-weight:850}.mission-progress{height:10px;background:#fff;border-radius:999px;margin-top:14px;overflow:hidden;border:1px solid rgba(24,59,101,.08)}.mission-progress span{display:block;height:100%;width:20%;background:linear-gradient(90deg,#05b897,#ffd36b)}
+    @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
-    .topic-panel{
-      background:
-        radial-gradient(circle at 8% 12%, rgba(255,228,239,.8), transparent 12rem),
-        radial-gradient(circle at 92% 88%, rgba(223,244,255,.9), transparent 13rem),
-        rgba(255,255,255,.88);
-    }
-    .topic-panel h2{font-size:1.35rem; margin-bottom:13px;}
-    .quick-grid{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:12px;
-    }
-    .quick-card{
-      min-height:128px;
-      padding:14px;
-      border-radius:26px;
-      border:1px solid rgba(16,35,61,.08);
-      background:#fff;
-      box-shadow:0 10px 18px rgba(16,35,61,.06);
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      overflow:hidden;
-      position:relative;
-      transition:transform .18s ease, box-shadow .18s ease;
-    }
-    .quick-card:hover,.quick-card:focus-visible{transform:translateY(-4px); box-shadow:0 18px 28px rgba(16,35,61,.11); outline:none}
-    .quick-card .big{font-size:2.1rem; line-height:1}
-    .quick-card strong{font-size:1.05rem; line-height:1.04; font-weight:1000; color:#10233d;}
-    .quick-card small{display:block; color:#5c6f85; font-weight:900; margin-top:2px; line-height:1.16;}
-    .quick-card.quran{background:linear-gradient(135deg, #e6fbf7, #ffffff)}
-    .quick-card.dua{background:linear-gradient(135deg, #fff3cd, #ffffff)}
-    .quick-card.salah{background:linear-gradient(135deg, #eaf3ff, #ffffff)}
-    .quick-card.arabic{background:linear-gradient(135deg, #f2edff, #ffffff)}
-    .quick-card.games{background:linear-gradient(135deg, #ffeaf2, #ffffff)}
-    .quick-card.practice{background:linear-gradient(135deg, #effbe8, #ffffff)}
+    .quick-panels{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.quick-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:18px;box-shadow:var(--shadow-soft);min-height:170px}.quick-card .big{font-size:2.6rem}.quick-card h3{margin:8px 0 6px;font-size:1.25rem;color:var(--navy)}.quick-card p{margin:0;color:var(--muted);font-weight:800}.quick-card .mini{display:inline-flex;margin-top:12px;background:#fff8ea;border-radius:999px;padding:8px 12px;font-weight:950;color:var(--teal-dark)}
+    .qa-section{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}.qa-card,.parent-card{background:#fff;border:1px solid var(--line);border-radius:28px;padding:20px;box-shadow:var(--shadow-soft)}.qa-card h2,.parent-card h2{margin:0 0 8px;color:var(--navy)}.qa-card p,.parent-card p{color:var(--muted);font-weight:800;margin:0 0 12px}.sample-question{background:#fff8ea;border:1px dashed #e8c36a;border-radius:20px;padding:14px;margin-top:12px}.sample-question strong{color:var(--teal-dark)}.choice-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.choice{padding:9px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);font-weight:950}.choice.correct{background:#eafff6;color:var(--teal-dark);border-color:#a5ecd9}
 
-    .section{
-      margin-top:32px;
-    }
-    .section-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom:16px;
-    }
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:.45rem;
-      padding:.45rem .72rem;
-      border-radius:999px;
-      background:#fff;
-      color:#087b75;
-      font-weight:1000;
-      font-size:.84rem;
-      box-shadow:0 8px 18px rgba(16,35,61,.06);
-      border:1px solid rgba(16,35,61,.06);
-      margin-bottom:8px;
-    }
-    .section-title{
-      margin:0;
-      font-family:"Baloo 2", "Nunito", sans-serif;
-      font-size:clamp(2rem, 4.2vw, 3.35rem);
-      line-height:.93;
-      letter-spacing:-.035em;
-    }
-    .section-lead{
-      color:#5c6f85;
-      margin:8px 0 0;
-      font-size:1.04rem;
-      font-weight:850;
-      max-width:680px;
-      line-height:1.45;
-    }
+    .mobile-dock{position:fixed;left:12px;right:12px;bottom:10px;z-index:60;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border:1px solid rgba(24,59,101,.12);border-radius:26px;box-shadow:0 18px 40px rgba(16,40,74,.18);display:none;grid-template-columns:repeat(5,1fr);gap:6px;padding:8px}.dock-link{text-align:center;border-radius:20px;padding:8px 4px;font-weight:950;color:var(--navy)}.dock-link span{display:block;font-size:1.25rem;line-height:1.1}.dock-link small{display:block;font-size:.7rem}.dock-link.active{background:#eafff6;color:var(--teal-dark)}.back-top{position:fixed;right:16px;bottom:102px;width:50px;height:50px;border-radius:50%;border:0;background:var(--navy);color:#fff;font-size:1.25rem;box-shadow:var(--shadow);cursor:pointer;z-index:55}
+    footer{background:#10284a;color:#eef7ff;margin-top:34px}.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding-top:26px;padding-bottom:26px}footer h2{margin:0 0 8px;color:#fff}footer p{color:#d5e8f7;font-weight:750}.footer-links{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}.footer-links a{background:rgba(255,255,255,.12);padding:9px 12px;border-radius:999px;font-weight:950;color:#fff}
 
-    .phone-path{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:16px;
-    }
-    .mission-card{
-      min-height:220px;
-      padding:22px;
-      border-radius:34px;
-      background:#fff;
-      border:1px solid rgba(16,35,61,.08);
-      box-shadow:var(--soft-shadow);
-      position:relative;
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-    }
-    .mission-card::after{
-      content:"";
-      width:128px;
-      height:128px;
-      border-radius:50%;
-      position:absolute;
-      right:-36px;
-      top:-38px;
-      background:rgba(255,229,159,.45);
-      z-index:0;
-    }
-    .mission-card > *{position:relative; z-index:1;}
-    .mission-top{display:flex; align-items:center; justify-content:space-between; gap:10px;}
-    .mission-num{
-      width:48px;
-      height:48px;
-      border-radius:18px;
-      background:#10233d;
-      color:white;
-      display:grid;
-      place-items:center;
-      font-weight:1000;
-      box-shadow:0 10px 18px rgba(16,35,61,.16);
-    }
-    .mission-emoji{font-size:2.6rem; line-height:1}
-    .mission-card h3{font-size:1.35rem; margin:18px 0 7px; line-height:1.05;}
-    .mission-card p{color:#5c6f85; font-weight:850; line-height:1.35; margin:0;}
-    .mission-actions{display:flex; gap:8px; flex-wrap:wrap; margin-top:16px;}
-    .chip{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:.35rem;
-      border:0;
-      min-height:40px;
-      border-radius:999px;
-      padding:.65rem .8rem;
-      background:#f8fafc;
-      color:var(--ink);
-      font-weight:1000;
-      cursor:pointer;
-    }
-    .chip.complete{background:#e6fbf7; color:#087b75;}
-
-    .learning-map{
-      background:
-        radial-gradient(circle at 8% 20%, rgba(223,244,255,.85), transparent 17rem),
-        radial-gradient(circle at 92% 86%, rgba(255,228,239,.85), transparent 16rem),
-        #fff;
-      border:1px solid rgba(16,35,61,.08);
-      border-radius:38px;
-      box-shadow:var(--soft-shadow);
-      padding:24px;
-      overflow:hidden;
-    }
-    .map-track{
-      display:grid;
-      grid-template-columns:repeat(5, 1fr);
-      gap:12px;
-      position:relative;
-    }
-    .level-card{
-      position:relative;
-      min-height:184px;
-      border-radius:30px;
-      padding:18px;
-      background:#fff;
-      border:1px solid rgba(16,35,61,.08);
-      box-shadow:0 10px 18px rgba(16,35,61,.06);
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      transition:transform .18s ease;
-    }
-    .level-card:hover{transform:translateY(-5px)}
-    .level-card::after{
-      content:"➜";
-      position:absolute;
-      right:-17px;
-      top:50%;
-      width:30px;
-      height:30px;
-      border-radius:999px;
-      display:grid;
-      place-items:center;
-      background:#fff3c1;
-      border:1px solid rgba(16,35,61,.08);
-      box-shadow:0 8px 14px rgba(16,35,61,.08);
-      z-index:2;
-    }
-    .level-card:last-child::after{display:none}
-    .level-icon{
-      width:62px;
-      height:62px;
-      border-radius:24px;
-      display:grid;
-      place-items:center;
-      font-size:2rem;
-      background:linear-gradient(135deg, #e6fbf7, #fff3c1);
-      box-shadow:0 10px 20px rgba(16,35,61,.08);
-    }
-    .level-card h3{font-size:1.2rem; margin:14px 0 4px; line-height:1.06;}
-    .level-card p{margin:0; color:#5c6f85; font-weight:850; line-height:1.25;}
-    .progress-line{
-      width:100%;
-      height:10px;
-      border-radius:999px;
-      background:#edf2f7;
-      overflow:hidden;
-      margin-top:12px;
-    }
-    .progress-line span{display:block; height:100%; width:var(--w, 20%); border-radius:999px; background:linear-gradient(90deg, #17b9ac, #ffe59f);}
-
-    .topic-grid{
-      display:grid;
-      grid-template-columns:repeat(4, minmax(0, 1fr));
-      gap:16px;
-    }
-    .subject-card{
-      min-height:250px;
-      border-radius:34px;
-      background:#fff;
-      border:1px solid rgba(16,35,61,.08);
-      box-shadow:var(--soft-shadow);
-      padding:20px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      position:relative;
-      overflow:hidden;
-      transition:transform .18s ease, box-shadow .18s ease;
-    }
-    .subject-card:hover,.subject-card:focus-visible{transform:translateY(-6px); box-shadow:0 20px 35px rgba(16,35,61,.13); outline:none;}
-    .subject-card::before{
-      content:"";
-      position:absolute;
-      inset:auto -40px -70px auto;
-      width:160px;
-      height:160px;
-      border-radius:50%;
-      background:rgba(255,229,159,.5);
-      z-index:0;
-    }
-    .subject-card > *{position:relative; z-index:1}
-    .subject-visual{
-      height:90px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:8px;
-    }
-    .subject-icon{
-      width:78px;
-      height:78px;
-      display:grid;
-      place-items:center;
-      border-radius:28px;
-      background:#fff;
-      font-size:2.7rem;
-      box-shadow:0 12px 22px rgba(16,35,61,.08);
-    }
-    .subject-bubbles{display:flex; gap:6px; align-items:flex-end; height:100%; opacity:.9}
-    .bubble{width:18px; border-radius:999px; background:rgba(16,35,61,.10)}
-    .bubble:nth-child(1){height:34px}
-    .bubble:nth-child(2){height:58px; background:rgba(23,185,172,.18)}
-    .bubble:nth-child(3){height:44px; background:rgba(255,180,94,.25)}
-    .subject-card h3{font-size:1.35rem; margin:14px 0 6px; line-height:1.04;}
-    .subject-card p{margin:0; color:#5c6f85; font-weight:850; line-height:1.35;}
-    .card-footer{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:18px;}
-    .age-tag{font-weight:1000; color:#087b75; background:#e6fbf7; border-radius:999px; padding:.5rem .65rem; font-size:.78rem; white-space:nowrap;}
-    .go{width:44px; height:44px; border-radius:16px; background:#10233d; color:white; display:grid; place-items:center; font-weight:1000; box-shadow:0 10px 16px rgba(16,35,61,.15);}
-    .subject-card[data-theme="quran"]{background:linear-gradient(135deg, #e5fbf6, #fff)}
-    .subject-card[data-theme="duas"]{background:linear-gradient(135deg, #fff1bd, #fff)}
-    .subject-card[data-theme="salah"]{background:linear-gradient(135deg, #e8f3ff, #fff)}
-    .subject-card[data-theme="arabic"]{background:linear-gradient(135deg, #f0e9ff, #fff)}
-    .subject-card[data-theme="stories"]{background:linear-gradient(135deg, #ffe9f1, #fff)}
-    .subject-card[data-theme="manners"]{background:linear-gradient(135deg, #edfae7, #fff)}
-    .subject-card[data-theme="questions"]{background:linear-gradient(135deg, #fff4dc, #fff)}
-    .subject-card[data-theme="practice"]{background:linear-gradient(135deg, #e9fbff, #fff)}
-
-    .playground{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-      align-items:stretch;
-    }
-    .game-board{
-      min-height:360px;
-      border-radius:38px;
-      padding:24px;
-      background:
-        radial-gradient(circle at 12% 14%, rgba(255,229,159,.7), transparent 11rem),
-        radial-gradient(circle at 86% 80%, rgba(223,244,255,.9), transparent 12rem),
-        #fff;
-      border:1px solid rgba(16,35,61,.08);
-      box-shadow:var(--soft-shadow);
-      overflow:hidden;
-    }
-    .tap-grid{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:12px;
-      margin-top:18px;
-    }
-    .tap-card{
-      min-height:116px;
-      border:0;
-      border-radius:28px;
-      background:#f8fafc;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex-direction:column;
-      gap:6px;
-      font-weight:1000;
-      color:#10233d;
-      cursor:pointer;
-      box-shadow:inset 0 0 0 1px rgba(16,35,61,.07);
-      transition:transform .18s ease, background .18s ease;
-    }
-    .tap-card:hover,.tap-card:focus-visible{transform:scale(1.03); background:#fff3c1; outline:none}
-    .tap-card.done{background:#e6fbf7; color:#087b75;}
-    .tap-card .tap-emoji{font-size:2.4rem; line-height:1}
-
-    .whiteboard{
-      min-height:360px;
-      border-radius:38px;
-      padding:24px;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.9), rgba(255,255,255,.72)),
-        repeating-linear-gradient(0deg, transparent 0 33px, rgba(16,35,61,.055) 34px 35px),
-        #fff;
-      border:1px solid rgba(16,35,61,.08);
-      box-shadow:var(--soft-shadow);
-    }
-    .board-box{
-      min-height:165px;
-      border:3px dashed rgba(23,185,172,.35);
-      border-radius:28px;
-      display:grid;
-      place-items:center;
-      text-align:center;
-      padding:20px;
-      color:#49627f;
-      font-weight:1000;
-      margin-top:18px;
-      background:rgba(255,255,255,.58);
-    }
-    .trace-word{
-      font-family:"Noto Naskh Arabic", serif;
-      font-size:clamp(2.6rem, 7vw, 4.6rem);
-      color:#10233d;
-      line-height:1.1;
-      direction:rtl;
-    }
-
-    .parents-strip{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:18px;
-      align-items:stretch;
-    }
-    .parent-card{
-      border-radius:38px;
-      background:#10233d;
-      color:white;
-      padding:28px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .parent-card::after{
-      content:"🌙";
-      position:absolute;
-      right:28px;
-      bottom:18px;
-      font-size:8rem;
-      opacity:.12;
-      line-height:1;
-    }
-    .parent-card h2{font-family:"Baloo 2"; font-size:clamp(2rem, 4vw, 3rem); line-height:.96; margin-bottom:10px;}
-    .parent-card p{font-weight:800; line-height:1.55; color:rgba(255,255,255,.86); max-width:670px;}
-    .parent-points{display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; margin-top:18px; position:relative; z-index:1;}
-    .parent-point{background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.16); border-radius:22px; padding:14px; font-weight:1000;}
-    .progress-card{
-      border-radius:38px;
-      background:linear-gradient(135deg, #fff1bd, #fff);
-      border:1px solid rgba(16,35,61,.08);
-      box-shadow:var(--soft-shadow);
-      padding:28px;
-    }
-    .stars{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      margin:16px 0;
-    }
-    .star{
-      width:48px;
-      height:48px;
-      border-radius:18px;
-      display:grid;
-      place-items:center;
-      background:#fff;
-      box-shadow:0 10px 18px rgba(16,35,61,.08);
-      font-size:1.6rem;
-    }
-    .progress-count{font-size:1.05rem; font-weight:1000; color:#087b75;}
-
-    .site-footer{
-      margin-top:38px;
-      border-radius:34px;
-      padding:28px;
-      background:#fff;
-      border:1px solid rgba(16,35,61,.08);
-      color:#49627f;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      box-shadow:0 12px 24px rgba(16,35,61,.06);
-    }
-    .footer-links{display:flex; flex-wrap:wrap; gap:10px; font-weight:1000;}
-    .footer-links a{padding:.6rem .8rem; border-radius:999px; background:#f8fafc;}
-
-    .floating-top{
-      position:fixed;
-      right:18px;
-      bottom:calc(22px + var(--bottom-nav));
-      width:56px;
-      height:56px;
-      border-radius:22px;
-      background:#10233d;
-      color:white;
-      display:grid;
-      place-items:center;
-      font-weight:1000;
-      box-shadow:0 14px 28px rgba(16,35,61,.22);
-      z-index:20;
-    }
-
-    .mobile-bottom-nav{
-      display:none;
-    }
-
-    .arabic-word{
-      font-family:"Noto Naskh Arabic", serif;
-      direction:rtl;
-      unicode-bidi:plaintext;
-    }
-
-    [data-reveal]{animation:popIn .55s ease both}
-    @keyframes popIn{
-      from{opacity:0; transform:translateY(18px) scale(.98)}
-      to{opacity:1; transform:translateY(0) scale(1)}
-    }
-
-    @media (max-width: 1060px){
-      .hero{grid-template-columns:1fr;}
-      .hero-card{min-height:auto;}
-      .hero-side{grid-template-columns:1fr 1fr; grid-template-rows:auto;}
-      .topic-grid{grid-template-columns:repeat(3, 1fr);}
-      .map-track{grid-template-columns:repeat(3, 1fr);}
-      .level-card:nth-child(3)::after{display:none}
-    }
-
-    @media (max-width: 820px){
-      :root{--bottom-nav:86px;}
-      .desktop-nav{display:none}
-      .menu-toggle{display:grid; place-items:center;}
-      .header-inner{min-height:68px; width:min(100% - 20px, var(--max));}
-      .brand-mark{width:48px; height:48px; border-radius:18px; font-size:1.55rem;}
-      .page{width:min(100% - 18px, var(--max)); padding-top:12px; padding-bottom:34px;}
-      .hero{gap:16px;}
-      .hero-card{
-        border-radius:32px;
-        padding:24px 18px 20px;
-        background:
-          radial-gradient(circle at 86% 0%, rgba(255,255,255,.45) 0 86px, transparent 88px),
-          linear-gradient(135deg, #60ddcf 0%, #88ddff 50%, #fff1a8 100%);
-      }
-      .hero-badge{
-        width:100%;
-        justify-content:center;
-        white-space:normal;
-        text-align:center;
-        font-size:.74rem;
-        letter-spacing:.06em;
-        padding:.72rem .8rem;
-      }
-      .hero-title{
-        margin:20px 0 12px;
-        font-size:clamp(2.75rem, 12.6vw, 4.25rem);
-        line-height:.88;
-        letter-spacing:-.05em;
-      }
-      .hero-lead{
-        font-size:1.08rem;
-        line-height:1.55;
-        margin-bottom:14px;
-      }
-      .hero-actions{display:grid; grid-template-columns:1fr; gap:10px; margin-top:16px;}
-      .btn{width:100%; min-height:60px; font-size:1.08rem;}
-      .picture-strip{
-        grid-template-columns:repeat(5, minmax(64px, 1fr));
-        gap:7px;
-        margin-top:16px;
-      }
-      .picture-pill{min-height:66px; border-radius:22px;}
-      .picture-pill span{font-size:1.45rem}
-      .picture-pill small{font-size:.66rem}
-      .mini-road{
-        grid-template-columns:repeat(3, 1fr);
-        gap:8px;
-        padding:12px;
-        border-radius:26px;
-      }
-      .road-step{min-height:68px; border-radius:20px; font-size:.85rem;}
-      .road-step::after{content:"↓"; right:auto; left:50%; top:auto; bottom:-18px; transform:translateX(-50%);}
-      .road-step:nth-child(3)::after{display:none}
-      .road-step:nth-child(4)::after,.road-step:nth-child(5)::after{content:"→"; top:50%; bottom:auto; right:-12px; left:auto; transform:translateY(-50%);}
-      .road-step .emoji{font-size:1.35rem}
-
-      .hero-side{grid-template-columns:1fr; gap:14px;}
-      .start-panel,.topic-panel,.soft-panel{border-radius:30px; padding:18px;}
-      .today-card{grid-template-columns:auto 1fr;}
-      .today-card .tiny-btn{grid-column:1 / -1; width:100%; min-height:46px;}
-      .stat-grid{grid-template-columns:repeat(2, minmax(0, 1fr));}
-      .stat{min-height:86px;}
-      .stat b{font-size:1.75rem}
-      .quick-grid{grid-template-columns:repeat(2, minmax(0, 1fr)); gap:10px;}
-      .quick-card{min-height:112px; border-radius:24px; padding:12px;}
-      .quick-card .big{font-size:1.75rem;}
-      .quick-card strong{font-size:.98rem;}
-      .quick-card small{font-size:.78rem;}
-
-      .section{margin-top:24px;}
-      .section-head{display:block;}
-      .section-title{font-size:clamp(2rem, 9vw, 2.75rem);}
-      .section-lead{font-size:.98rem;}
-      .phone-path{grid-template-columns:1fr; gap:12px;}
-      .mission-card{min-height:180px; border-radius:30px; padding:18px;}
-      .mission-card h3{font-size:1.22rem;}
-      .learning-map{border-radius:32px; padding:16px;}
-      .map-track{grid-template-columns:1fr; gap:10px;}
-      .level-card{min-height:148px; border-radius:26px;}
-      .level-card::after{content:"↓"; right:auto; left:50%; top:auto; bottom:-19px; transform:translateX(-50%);}
-      .level-card:nth-child(3)::after{display:grid}
-      .level-card:last-child::after{display:none}
-      .topic-grid{grid-template-columns:1fr 1fr; gap:12px;}
-      .subject-card{min-height:220px; border-radius:30px; padding:16px;}
-      .subject-icon{width:66px; height:66px; border-radius:24px; font-size:2.2rem;}
-      .subject-visual{height:72px;}
-      .subject-card h3{font-size:1.14rem;}
-      .subject-card p{font-size:.88rem;}
-      .card-footer{margin-top:14px;}
-      .age-tag{font-size:.7rem; padding:.46rem .55rem;}
-      .go{width:40px; height:40px; border-radius:15px;}
-      .playground{grid-template-columns:1fr; gap:14px;}
-      .game-board,.whiteboard{min-height:310px; border-radius:32px; padding:18px;}
-      .tap-card{min-height:96px; border-radius:24px;}
-      .parents-strip{grid-template-columns:1fr; gap:14px;}
-      .parent-card,.progress-card{border-radius:32px; padding:22px;}
-      .parent-points{grid-template-columns:1fr;}
-      .site-footer{display:block; border-radius:28px; padding:22px; margin-bottom:14px;}
-      .footer-links{margin-top:16px;}
-      .floating-top{right:16px; bottom:calc(104px + env(safe-area-inset-bottom)); width:52px; height:52px; border-radius:20px;}
-      .mobile-bottom-nav{
-        position:fixed;
-        left:10px;
-        right:10px;
-        bottom:calc(10px + env(safe-area-inset-bottom));
-        min-height:72px;
-        display:grid;
-        grid-template-columns:repeat(5, 1fr);
-        gap:4px;
-        z-index:31;
-        padding:8px;
-        border-radius:28px;
-        background:rgba(255,255,255,.94);
-        border:1px solid rgba(16,35,61,.10);
-        box-shadow:0 18px 40px rgba(16,35,61,.18);
-        backdrop-filter:blur(16px);
-      }
-      .mobile-bottom-nav a{
-        min-width:0;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        flex-direction:column;
-        gap:2px;
-        border-radius:22px;
-        font-size:.73rem;
-        font-weight:1000;
-        color:#10233d;
-        line-height:1;
-      }
-      .mobile-bottom-nav a:focus-visible,.mobile-bottom-nav a:hover{background:#e6fbf7; outline:none;}
-      .mobile-bottom-nav .nav-emoji{font-size:1.5rem; line-height:1;}
-    }
-
-    @media (max-width: 430px){
-      .page{width:calc(100% - 14px);}
-      .hero-card{border-radius:28px; padding:20px 14px 18px;}
-      .hero-title{font-size:clamp(2.35rem, 13vw, 3.42rem);}
-      .hero-lead{font-size:1rem;}
-      .picture-strip{grid-template-columns:repeat(5, 1fr);}
-      .picture-pill{min-height:58px; border-radius:18px;}
-      .picture-pill small{display:none;}
-      .mini-road{grid-template-columns:repeat(2, 1fr)}
-      .road-step:nth-child(2)::after,.road-step:nth-child(4)::after{display:none}
-      .road-step:nth-child(3)::after{display:grid}
-      .road-step:nth-child(5)::after{content:"→"; top:50%; bottom:auto; right:-12px; left:auto; transform:translateY(-50%);}
-      .quick-grid{grid-template-columns:1fr 1fr;}
-      .topic-grid{grid-template-columns:1fr;}
-      .subject-card{min-height:190px;}
-      .tap-grid{grid-template-columns:1fr 1fr; gap:9px;}
-      .tap-card{min-height:90px; font-size:.88rem;}
-      .trace-word{font-size:3rem;}
-      .brand-title strong{font-size:1.03rem;}
-      .brand-title span{font-size:.66rem;}
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      *,*::before,*::after{animation-duration:.001ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.001ms !important;}
-    }
+    @media (max-width:1120px){.hero{grid-template-columns:1fr}.hero-art{min-height:460px}.stat-row{grid-template-columns:repeat(2,1fr)}.topic-grid{grid-template-columns:repeat(3,1fr)}.quick-panels{grid-template-columns:repeat(2,1fr)}.mission{grid-template-columns:1fr}.qa-section{grid-template-columns:1fr}}
+    @media (max-width:760px){.wrap{padding:12px}.desktop-nav,.header-actions .pill-link{display:none}.mobile-dock{display:grid}.hero-shell{padding:14px;border-radius:28px;margin-top:10px}.eyebrow{font-size:.7rem;padding:8px 10px;letter-spacing:.02em}.lead{font-size:1rem}.hero-actions{display:grid;grid-template-columns:1fr;gap:10px}.btn{width:100%;justify-content:flex-start;border-radius:22px}.stat-row{grid-template-columns:repeat(2,1fr);gap:10px}.stat-card{min-height:86px;padding:11px;gap:9px}.stat-icon{width:46px;height:46px;font-size:1.65rem;border-radius:16px}.stat-card strong{font-size:1.25rem}.stat-card span{font-size:.85rem}.hero-art{min-height:390px;border-radius:28px}.moon{left:42%;top:28px;width:52px;height:52px}.moon:after{left:19px;width:52px;height:56px}.lantern{right:8%}.mosque{top:96px;opacity:.75}.kid{transform:scale(.78);transform-origin:bottom}.boy{left:7%;bottom:58px}.girl{right:5%;bottom:58px}.quran{left:38%;bottom:64px;transform:scale(.82) skewX(-10deg);transform-origin:bottom}.books{right:2%;bottom:62px;font-size:3.4rem}.plant{left:1%;bottom:60px;font-size:3.2rem}.arabic-bubble{width:44px;height:44px;font-size:1.45rem}.topic-grid{grid-template-columns:repeat(3,1fr);gap:10px}.topic-card{min-height:142px;padding:11px 8px;border-radius:20px}.topic-emoji{font-size:2.35rem}.topic-card h3{font-size:.98rem;margin:4px 0 2px}.topic-card p{font-size:.72rem}.arrow-dot{width:22px;height:22px;font-size:.8rem;margin-top:6px}.mission{padding:13px;border-radius:24px}.mission-intro{gap:9px}.star-face{font-size:3rem}.mission h2{font-size:1.15rem}.mission p{font-size:.83rem}.mission-steps{grid-template-columns:repeat(5,90px);overflow-x:auto;padding-bottom:4px}.round-icon{width:54px;height:54px;font-size:1.6rem}.mission-step:not(:last-child) .round-icon:after{right:-38px}.quick-panels{grid-template-columns:1fr 1fr}.quick-card{padding:14px;min-height:150px}.quick-card .big{font-size:2rem}.footer-grid{grid-template-columns:1fr}.footer-links{justify-content:flex-start}}
+    @media (max-width:450px){h1{font-size:2.4rem}.brand-title{font-size:.95rem}.brand-sub{font-size:.76rem}.brand-mark{width:48px;height:48px;border-radius:17px}.stat-row{grid-template-columns:1fr 1fr}.stat-card{display:block;text-align:center}.stat-icon{margin:0 auto 6px}.hero-art{min-height:365px}.topic-grid{grid-template-columns:repeat(2,1fr)}.quick-panels{grid-template-columns:1fr}.qa-card,.parent-card{padding:16px;border-radius:22px}.footer-links a{font-size:.86rem}.dock-link small{font-size:.64rem}}
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to learning</a>
-
-  <header class="site-header" id="top">
-    <div class="header-inner">
-      <a class="brand sound-click" href="index.html" aria-label="Al-Hayat Kids Islam Home">
-        <span class="brand-mark" aria-hidden="true">🌙</span>
-        <span class="brand-title">
-          <strong>Al-Hayat Kids Islam</strong>
-          <span>Ages 3–8 • Mobile-first</span>
-        </span>
-      </a>
-
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="topbar">
+        <a class="brand" href="index.html" aria-label="Al-Hayat Kids Islam home">
+          <span class="brand-mark">☾</span>
+          <span><span class="brand-title">Al-Hayat Kids Islam</span><span class="brand-sub">الحیات اسلامی اطفال</span></span>
+        </a>
+        <div class="header-actions">
+          <a class="pill-link" href="#topics">🧸 Topics</a>
+          <a class="pill-link" href="#mission">⭐ Mission</a>
+          <button class="sound-toggle" type="button" id="soundBtn" aria-pressed="false">🔊 Click Sounds</button>
+        </div>
+      </div>
       <nav class="desktop-nav" aria-label="Main navigation">
-        <a class="sound-click" href="#start">🚀 Start</a>
-        <a class="sound-click" href="#learn">📚 Learn</a>
-        <a class="sound-click" href="#play">🎮 Play</a>
-        <a class="sound-click" href="#practice">✍️ Practice</a>
-        <a class="sound-click" href="#track">⭐ Track</a>
-        <a class="mini-action sound-click" href="parents/index.html">👨‍👩‍👧 Parents</a>
+        <a href="index.html">🏠 Home</a>
+        <a href="#topics">📚 Learn</a>
+        <a href="#questions">❓ Questions</a>
+        <a href="#practice">✍️ Practice</a>
+        <a href="#games">🎮 Games</a>
+        <a href="#mission">⭐ Progress</a>
+        <a href="#parents">👨‍👩‍👧 Parents</a>
       </nav>
-
-      <button class="menu-toggle sound-click" type="button" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">☰</button>
     </div>
-    <nav class="mobile-menu" id="mobileMenu" data-open="false" aria-label="Mobile menu">
-      <a class="sound-click" href="#start">🚀 Start</a>
-      <a class="sound-click" href="#learn">📚 Learn</a>
-      <a class="sound-click" href="#play">🎮 Play</a>
-      <a class="sound-click" href="#practice">✍️ Practice</a>
-      <a class="sound-click" href="#track">⭐ Track</a>
-      <a class="sound-click" href="parents/index.html">👨‍👩‍👧 Parents</a>
-    </nav>
   </header>
 
-  <main class="page" id="main">
-    <section class="hero" id="start" aria-labelledby="heroTitle">
-      <div class="hero-card" data-reveal>
-        <div class="hero-badge">🌱 Ages 3–8 • Big pictures • Easy taps • No confusion</div>
-        <h1 class="hero-title" id="heroTitle">Tap, learn, play, <span class="spark">shine.</span></h1>
-        <p class="hero-lead">
-          A bright Islamic learning home where every child can follow simple picture steps: <b>listen</b>, <b>tap</b>, <b>practice</b>, <b>play</b>, and earn a happy star.
-        </p>
-
-        <div class="hero-actions" aria-label="Quick actions">
-          <a class="btn btn-primary sound-click" href="#today">🚀 Start Today</a>
-          <a class="btn btn-teal sound-click" href="questions/index.html">❓ Open Q/A</a>
-          <a class="btn btn-sun sound-click" href="#map">🧭 Learning Map</a>
-        </div>
-
-        <div class="picture-strip" aria-label="Learning symbols">
-          <a class="picture-pill sound-click" href="duas/index.html"><span>🤲</span><small>Duas</small></a>
-          <a class="picture-pill sound-click" href="quran/index.html"><span>📖</span><small>Qur’an</small></a>
-          <a class="picture-pill sound-click" href="salah/index.html"><span>🕌</span><small>Salah</small></a>
-          <a class="picture-pill sound-click" href="arabic/index.html"><span>🔤</span><small>Arabic</small></a>
-          <a class="picture-pill sound-click" href="games/index.html"><span>🎮</span><small>Games</small></a>
-        </div>
-
-        <div class="mini-road" aria-label="How a child moves through the website">
-          <a class="road-step sound-click" href="#today"><span class="emoji">🌱</span>Start<small>One task</small></a>
-          <a class="road-step sound-click" href="#learn"><span class="emoji">👂</span>Listen<small>Hear it</small></a>
-          <a class="road-step sound-click" href="#learn"><span class="emoji">👆</span>Tap<small>Choose</small></a>
-          <a class="road-step sound-click" href="#practice"><span class="emoji">✍️</span>Trace<small>Try it</small></a>
-          <a class="road-step sound-click" href="#play"><span class="emoji">🎮</span>Play<small>Review</small></a>
-          <a class="road-step sound-click" href="#track"><span class="emoji">⭐</span>Star<small>Reward</small></a>
-        </div>
-      </div>
-
-      <aside class="hero-side" aria-label="Quick start panels">
-        <div class="start-panel" data-reveal>
-          <h2 class="panel-title">Today’s happy mission</h2>
-          <div class="today-card" id="todayCard">
-            <div class="today-icon" aria-hidden="true">🤲</div>
-            <div>
-              <strong id="todayTitle">Learn Bismillah</strong>
-              <span id="todayText">Say it, tap it, and earn one star.</span>
-            </div>
-            <button class="tiny-btn sound-click" type="button" id="todayDone">Done ⭐</button>
+  <main class="wrap" id="main">
+    <section class="hero-shell" aria-labelledby="home-title">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">🌱 Ages 3–8 • Mobile-friendly • Child-first</span>
+          <h1 id="home-title">Tap, learn, <span class="word-green">practice</span>, <span class="word-purple">play</span>, and <span class="word-coral">grow</span> in Islam!</h1>
+          <p class="lead">Al-Hayat Kids Islam makes Islamic learning easy and fun for little hearts. Big buttons, clear steps, beautiful pictures, and daily missions help kids understand, remember, and apply every day.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#topics"><span class="ico">🚀</span><span><strong>Start Learning</strong><small>Begin your adventure</small></span></a>
+            <a class="btn btn-question" href="#questions"><span class="ico">❔</span><span><strong>Open Questions</strong><small>Ask and get answers</small></span></a>
+            <a class="btn btn-cream" href="#mission"><span class="ico">⭐</span><span><strong>Today’s Mission</strong><small>Earn stars step by step</small></span></a>
           </div>
-          <div class="stat-grid" aria-label="Website highlights">
-            <div class="stat"><div><b>3,000+</b><span>Tiny Q/A</span></div></div>
-            <div class="stat"><div><b>5</b><span>Levels</span></div></div>
-            <div class="stat"><div><b>8+</b><span>Main Topics</span></div></div>
-            <div class="stat"><div><b>📱</b><span>Phone Easy</span></div></div>
+          <div class="stat-row" aria-label="Homepage highlights">
+            <div class="stat-card"><span class="stat-icon">🌟</span><div><strong>3,000+</strong><span>Short Q/A</span><small>Kid-friendly answers</small></div></div>
+            <div class="stat-card"><span class="stat-icon">📚</span><div><strong>8+</strong><span>Main Topics</span><small>Quran, Duas, Salah & more</small></div></div>
+            <div class="stat-card"><span class="stat-icon">🏅</span><div><strong>5</strong><span>Learning Levels</span><small>Step-by-step progress</small></div></div>
+            <div class="stat-card"><span class="stat-icon">📱</span><div><strong>100%</strong><span>Phone Friendly</span><small>Tap, learn, and go</small></div></div>
           </div>
         </div>
 
-        <div class="topic-panel" data-reveal>
-          <h2>Pick a picture and begin:</h2>
-          <div class="quick-grid">
-            <a class="quick-card dua sound-click" href="duas/index.html"><span class="big">🤲</span><span><strong>Duas</strong><small>Daily words to say</small></span></a>
-            <a class="quick-card quran sound-click" href="quran/index.html"><span class="big">📖</span><span><strong>Qur’an</strong><small>Short Surahs and respect</small></span></a>
-            <a class="quick-card salah sound-click" href="salah/index.html"><span class="big">🕌</span><span><strong>Salah</strong><small>Prayer and wudu basics</small></span></a>
-            <a class="quick-card arabic sound-click" href="arabic/index.html"><span class="big">🔤</span><span><strong>Arabic</strong><small>Letters and words</small></span></a>
-            <a class="quick-card games sound-click" href="games/index.html"><span class="big">🎮</span><span><strong>Games</strong><small>Review through play</small></span></a>
-            <a class="quick-card practice sound-click" href="practice/index.html"><span class="big">✍️</span><span><strong>Practice</strong><small>Trace, type, repeat</small></span></a>
-          </div>
-        </div>
-      </aside>
-    </section>
-
-    <section class="section" id="today" aria-labelledby="todayHeading">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">📱 One screen • One task</span>
-          <h2 class="section-title" id="todayHeading">Start with 3 tiny steps</h2>
-          <p class="section-lead">Made for phone screens: the child sees one clear action, completes it, then moves to the next symbol.</p>
-        </div>
-      </div>
-
-      <div class="phone-path">
-        <article class="mission-card" data-step-card>
-          <div class="mission-top"><span class="mission-num">1</span><span class="mission-emoji">👂</span></div>
-          <div>
-            <h3>Listen and repeat</h3>
-            <p>Hear a short Islamic word, then say it softly.</p>
-            <div class="mission-actions">
-              <button class="chip sound-click speak-word" type="button" data-say="Bismillah">🔊 Listen</button>
-              <button class="chip complete sound-click mark-done" type="button">Done ⭐</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="mission-card" data-step-card>
-          <div class="mission-top"><span class="mission-num">2</span><span class="mission-emoji">👆</span></div>
-          <div>
-            <h3>Tap the right picture</h3>
-            <p>Choose the picture that matches the lesson.</p>
-            <div class="mission-actions">
-              <a class="chip sound-click" href="questions/index.html">Open Q/A</a>
-              <button class="chip complete sound-click mark-done" type="button">Done ⭐</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="mission-card" data-step-card>
-          <div class="mission-top"><span class="mission-num">3</span><span class="mission-emoji">✍️</span></div>
-          <div>
-            <h3>Trace and play</h3>
-            <p>Trace one word, type one answer, and unlock a badge.</p>
-            <div class="mission-actions">
-              <a class="chip sound-click" href="#practice">Practice</a>
-              <button class="chip complete sound-click mark-done" type="button">Done ⭐</button>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="map" aria-labelledby="mapHeading">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">🧭 Connected learning map</span>
-          <h2 class="section-title" id="mapHeading">A child always knows the next step</h2>
-          <p class="section-lead">Levels are connected like a road. Each level has pictures, practice, play, and a visible reward.</p>
-        </div>
-      </div>
-
-      <div class="learning-map">
-        <div class="map-track">
-          <a class="level-card sound-click" href="levels/level-1.html">
-            <span class="level-icon">🌱</span>
-            <div><h3>Level 1: I can tap</h3><p>Big symbols, simple Duas, and first Arabic sounds.</p><div class="progress-line"><span style="--w:28%"></span></div></div>
-          </a>
-          <a class="level-card sound-click" href="levels/level-2.html">
-            <span class="level-icon">🌼</span>
-            <div><h3>Level 2: I can choose</h3><p>Picture questions, matching, and daily manners.</p><div class="progress-line"><span style="--w:36%"></span></div></div>
-          </a>
-          <a class="level-card sound-click" href="levels/level-3.html">
-            <span class="level-icon">📖</span>
-            <div><h3>Level 3: I can repeat</h3><p>Short Surahs, key words, and Salah actions.</p><div class="progress-line"><span style="--w:52%"></span></div></div>
-          </a>
-          <a class="level-card sound-click" href="levels/level-4.html">
-            <span class="level-icon">✍️</span>
-            <div><h3>Level 4: I can practice</h3><p>Trace, type, sort, circle, and speak.</p><div class="progress-line"><span style="--w:68%"></span></div></div>
-          </a>
-          <a class="level-card sound-click" href="levels/level-5.html">
-            <span class="level-icon">🏆</span>
-            <div><h3>Level 5: I can shine</h3><p>Review games, badges, and parent celebration.</p><div class="progress-line"><span style="--w:82%"></span></div></div>
-          </a>
+        <div class="hero-art" role="img" aria-label="Two children learning Islam with a tablet, an open Quran, stars, moon, mosque, and lantern">
+          <span class="sky-star s1">★</span><span class="sky-star s2">✦</span><span class="sky-star s3">★</span><span class="sky-star s4">✦</span><span class="sky-star s5">★</span>
+          <span class="moon"></span><span class="lantern"></span>
+          <div class="mosque"><span class="minaret m1"></span><span class="small-dome sd1"></span><span class="dome"></span><span class="small-dome sd2"></span><span class="minaret m2"></span></div>
+          <div class="cloud"></div>
+          <span class="arabic-bubble ab1">ا</span><span class="arabic-bubble ab2">ج</span><span class="arabic-bubble ab3">ب</span>
+          <span class="plant">🪴</span>
+          <div class="kid boy"><span class="cap"></span><span class="head"></span><span class="eyes"></span><span class="smile"></span><span class="body"></span><span class="tablet"></span></div>
+          <div class="kid girl"><span class="scarf"></span><span class="head"></span><span class="eyes"></span><span class="smile"></span><span class="body"></span><span class="hand">🤲</span></div>
+          <span class="quran"></span><span class="books">📚</span><span class="desk"></span>
         </div>
       </div>
     </section>
 
-    <section class="section" id="learn" aria-labelledby="learnHeading">
+    <section class="section" id="topics">
       <div class="section-head">
         <div>
-          <span class="eyebrow">📚 Main learning rooms</span>
-          <h2 class="section-title" id="learnHeading">Big picture cards for little learners</h2>
-          <p class="section-lead">No long menus. Each subject has a clear picture, short text, and a friendly action button.</p>
+          <h2>Explore by Topic</h2>
+          <p>Picture cards help children know what to do without reading long instructions.</p>
         </div>
+        <a class="see-all" href="#questions">See all ›</a>
       </div>
-
       <div class="topic-grid">
-        <a class="subject-card sound-click" data-theme="quran" href="quran/index.html">
-          <div class="subject-visual"><span class="subject-icon">📖</span><span class="subject-bubbles"><i class="bubble"></i><i class="bubble"></i><i class="bubble"></i></span></div>
-          <div><h3>Qur’an Room</h3><p>Short Surahs, respect for the Qur’an, and easy revision.</p></div>
-          <div class="card-footer"><span class="age-tag">Ages 3–8</span><span class="go">→</span></div>
-        </a>
-        <a class="subject-card sound-click" data-theme="duas" href="duas/index.html">
-          <div class="subject-visual"><span class="subject-icon">🤲</span><span class="subject-bubbles"><i class="bubble"></i><i class="bubble"></i><i class="bubble"></i></span></div>
-          <div><h3>Duas Room</h3><p>Morning, eating, sleeping, travelling, and kindness Duas.</p></div>
-          <div class="card-footer"><span class="age-tag">Daily use</span><span class="go">→</span></div>
-        </a>
-        <a class="subject-card sound-click" data-theme="salah" href="salah/index.html">
-          <div class="subject-visual"><span class="subject-icon">🕌</span><span class="subject-bubbles"><i class="bubble"></i><i class="bubble"></i><i class="bubble"></i></span></div>
-          <div><h3>Salah Room</h3><p>Wudu, prayer times, movements, and respect in Salah.</p></div>
-          <div class="card-footer"><span class="age-tag">Step by step</span><span class="go">→</span></div>
-        </a>
-        <a class="subject-card sound-click" data-theme="arabic" href="arabic/index.html">
-          <div class="subject-visual"><span class="subject-icon">🔤</span><span class="subject-bubbles"><i class="bubble"></i><i class="bubble"></i><i class="bubble"></i></span></div>
-          <div><h3>Arabic Room</h3><p>Letters, sounds, shapes, and first Islamic words.</p></div>
-          <div class="card-footer"><span class="age-tag">Trace + say</span><span class="go">→</span></div>
-        </a>
-        <a class="subject-card sound-click" data-theme="stories" href="stories/index.html">
-          <div class="subject-visual"><span class="subject-icon">📚</span><span class="subject-bubbles"><i class="bubble"></i><i class="bubble"></i><i class="bubble"></i></span></div>
-          <div><h3>Story Room</h3><p>Short moral stories with good habits and gentle reflection.</p></div>
-          <div class="card-footer"><span class="age-tag">Read aloud</span><span class="go">→</span></div>
-        </a>
-        <a class="subject-card sound-click" data-theme="manners" href="manners/index.html">
-          <div class="subject-visual"><span class="subject-icon">💚</span><span class="subject-bubbles"><i class="bubble"></i><i class="bubble"></i><i class="bubble"></i></span></div>
-          <div><h3>Manners Room</h3><p>Salam, truth, sharing, cleanliness, family, and kindness.</p></div>
-          <div class="card-footer"><span class="age-tag">Good habits</span><span class="go">→</span></div>
-        </a>
-        <a class="subject-card sound-click" data-theme="questions" href="questions/index.html">
-          <div class="subject-visual"><span class="subject-icon">❓</span><span class="subject-bubbles"><i class="bubble"></i><i class="bubble"></i><i class="bubble"></i></span></div>
-          <div><h3>Q/A Room</h3><p>Tiny questions, picture choices, and quick review cards.</p></div>
-          <div class="card-footer"><span class="age-tag">3,000+</span><span class="go">→</span></div>
-        </a>
-        <a class="subject-card sound-click" data-theme="practice" href="practice/index.html">
-          <div class="subject-visual"><span class="subject-icon">✍️</span><span class="subject-bubbles"><i class="bubble"></i><i class="bubble"></i><i class="bubble"></i></span></div>
-          <div><h3>Practice Room</h3><p>Whiteboard, typing board, tracing, matching, and sorting.</p></div>
-          <div class="card-footer"><span class="age-tag">Hands-on</span><span class="go">→</span></div>
-        </a>
+        <a class="topic-card" href="#duas"><span class="topic-emoji">🤲</span><div><h3>Duas</h3><p>Daily words<br>to say</p></div><span class="arrow-dot">›</span></a>
+        <a class="topic-card quran-card" href="#quran"><span class="topic-emoji">📖</span><div><h3>Quran</h3><p>Short Surahs<br>and meaning</p></div><span class="arrow-dot">›</span></a>
+        <a class="topic-card salah-card" href="#salah"><span class="topic-emoji">🕌</span><div><h3>Salah</h3><p>Prayer and<br>wudu basics</p></div><span class="arrow-dot">›</span></a>
+        <a class="topic-card arabic-card" href="#arabic"><span class="topic-emoji">🔠</span><div><h3>Arabic</h3><p>Letters and<br>simple words</p></div><span class="arrow-dot">›</span></a>
+        <a class="topic-card game-card" href="#games"><span class="topic-emoji">🎮</span><div><h3>Games</h3><p>Review through<br>fun play</p></div><span class="arrow-dot">›</span></a>
+        <a class="topic-card practice-card" href="#practice"><span class="topic-emoji">📝</span><div><h3>Practice</h3><p>Trace, type,<br>and repeat</p></div><span class="arrow-dot">›</span></a>
       </div>
     </section>
 
-    <section class="section" id="play" aria-labelledby="playHeading">
+    <section class="section" id="mission">
+      <div class="mission">
+        <div class="mission-intro">
+          <span class="star-face">🌟</span>
+          <div><h2>Today’s Mission</h2><p>Complete small steps every day and earn stars!</p><div class="mission-progress"><span id="missionBar"></span></div></div>
+        </div>
+        <div class="mission-steps" aria-label="Daily mission steps">
+          <a class="mission-step" href="#topics"><span class="round-icon">📗</span>Learn<small>1 Topic</small></a>
+          <a class="mission-step" href="#quran"><span class="round-icon">📘</span>Read<small>1 Surah</small></a>
+          <a class="mission-step" href="#duas"><span class="round-icon">🤲</span>Dua<small>1 Time</small></a>
+          <a class="mission-step" href="#games"><span class="round-icon">🎮</span>Play<small>1 Game</small></a>
+          <a class="mission-step" href="#progress"><span class="round-icon">🎁</span>Earn Stars<small>Keep going!</small></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="questions">
       <div class="section-head">
         <div>
-          <span class="eyebrow">🎮 Play-based review</span>
-          <h2 class="section-title" id="playHeading">Tap games that feel like learning toys</h2>
-          <p class="section-lead">Children can review Duas, Salah, Arabic, and manners through quick tap activities.</p>
+          <h2>Quick Learning Bank</h2>
+          <p>Short questions keep learning light, easy, and child-friendly.</p>
         </div>
       </div>
-
-      <div class="playground">
-        <div class="game-board">
-          <span class="eyebrow">👆 Tap and collect stars</span>
-          <h2 class="panel-title">Quick play board</h2>
-          <div class="tap-grid" aria-label="Quick game buttons">
-            <button class="tap-card sound-click" type="button"><span class="tap-emoji">🤲</span>Dua Match</button>
-            <button class="tap-card sound-click" type="button"><span class="tap-emoji">🕌</span>Salah Steps</button>
-            <button class="tap-card sound-click" type="button"><span class="tap-emoji">🔤</span>Letter Tap</button>
-            <button class="tap-card sound-click" type="button"><span class="tap-emoji">⭐</span>Star Review</button>
-          </div>
-        </div>
-
-        <div class="whiteboard" id="practice">
-          <span class="eyebrow">✍️ Whiteboard + typing board</span>
-          <h2 class="panel-title">Practice one word</h2>
-          <div class="board-box" aria-label="Practice board">
-            <div>
-              <div class="trace-word arabic-word">بِسْمِ الله</div>
-              <p style="margin:8px 0 0; color:#5c6f85; font-weight:1000;">Trace with finger. Then say: Bismillah.</p>
-            </div>
-          </div>
-          <div class="mission-actions">
-            <button class="chip sound-click speak-word" type="button" data-say="Bismillah">🔊 Hear word</button>
-            <a class="chip sound-click" href="practice/index.html">Open practice</a>
-            <button class="chip complete sound-click mark-done" type="button">I did it ⭐</button>
-          </div>
-        </div>
+      <div class="qa-section">
+        <article class="qa-card" id="duas">
+          <h2>🤲 Duas</h2>
+          <p>Small daily duas and good Islamic words for home routines.</p>
+          <div class="sample-question"><strong>Question:</strong> What do we say before eating?<div class="choice-row"><span class="choice correct">Bismillah</span><span class="choice">Good night</span><span class="choice">Thank you</span></div></div>
+        </article>
+        <article class="qa-card" id="quran">
+          <h2>📖 Quran</h2>
+          <p>Respect, short Surahs, simple meanings, and loving the Book of Allah.</p>
+          <div class="sample-question"><strong>Question:</strong> Which book did Allah reveal for guidance?<div class="choice-row"><span class="choice correct">The Quran</span><span class="choice">A toy book</span><span class="choice">A game book</span></div></div>
+        </article>
+        <article class="qa-card" id="salah">
+          <h2>🕌 Salah</h2>
+          <p>Prayer names, clean habits, wudu basics, and simple worship routines.</p>
+          <div class="sample-question"><strong>Question:</strong> What do we do before Salah to become clean?<div class="choice-row"><span class="choice correct">Wudu</span><span class="choice">Play</span><span class="choice">Sleep</span></div></div>
+        </article>
+        <article class="qa-card" id="arabic">
+          <h2>🔠 Arabic</h2>
+          <p>Letters, sounds, tracing, and simple Islamic words for little learners.</p>
+          <div class="sample-question"><strong>Tap the first Arabic letter:</strong><div class="choice-row"><span class="choice correct">ا</span><span class="choice">ب</span><span class="choice">ت</span></div></div>
+        </article>
       </div>
     </section>
 
-    <section class="section" id="track" aria-labelledby="trackHeading">
-      <div class="parents-strip">
-        <div class="parent-card">
-          <span class="eyebrow" style="background:rgba(255,255,255,.12);color:#ffe59f;border-color:rgba(255,255,255,.15)">👨‍👩‍👧 Parent-friendly</span>
-          <h2 id="trackHeading">Safe, simple, and guided for home learning</h2>
-          <p>Parents can open a level, give the phone to the child for a tiny task, and then celebrate the badge. The homepage keeps the path visible and easy.</p>
-          <div class="parent-points">
-            <div class="parent-point">✅ Less text</div>
-            <div class="parent-point">✅ Big buttons</div>
-            <div class="parent-point">✅ Clear rewards</div>
-          </div>
-        </div>
-
-        <div class="progress-card">
-          <span class="eyebrow">⭐ Learning track</span>
-          <h2 class="panel-title">Stars earned today</h2>
-          <div class="stars" id="starBox" aria-label="Stars earned">
-            <span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
-          </div>
-          <p class="progress-count" id="progressCount">0 stars collected. Tap “Done ⭐” after a task.</p>
-          <a class="btn btn-sun sound-click" href="track/index.html" style="margin-top:12px; box-shadow:none;">🏆 Open badges</a>
-        </div>
+    <section class="section" id="practice">
+      <div class="section-head"><div><h2>Practice and Play</h2><p>After every question, children should do a tiny action: trace, type, match, arrange, or repeat.</p></div></div>
+      <div class="quick-panels">
+        <article class="quick-card"><span class="big">✍️</span><h3>Trace</h3><p>Trace Arabic letters and simple words.</p><a class="mini" href="#arabic">Start tracing</a></article>
+        <article class="quick-card"><span class="big">⌨️</span><h3>Type</h3><p>Type short answers like Allah, Quran, Salah.</p><a class="mini" href="#questions">Type answer</a></article>
+        <article class="quick-card" id="games"><span class="big">🎮</span><h3>Mini Games</h3><p>Match, tap, choose, and review in a playful way.</p><a class="mini" href="#topics">Play now</a></article>
+        <article class="quick-card" id="progress"><span class="big">🏆</span><h3>Stars</h3><p>Earn stars and unlock the next task.</p><a class="mini" href="#mission">See mission</a></article>
       </div>
     </section>
 
-    <footer class="site-footer">
-      <div>
-        <strong>Al-Hayat Kids Islam</strong><br>
-        <span>Mobile-first Islamic learning for children ages 3–8.</span>
+    <section class="section" id="parents">
+      <div class="parent-card">
+        <h2>For Parents</h2>
+        <p>Use this homepage like a daily learning path: one picture topic, one short question, one practice task, one game, and one star. Keep sessions short, loving, and repeated.</p>
+        <div class="choice-row"><a class="choice correct" href="#mission">⭐ Today’s Mission</a><a class="choice" href="#questions">❓ Questions</a><a class="choice" href="#practice">✍️ Practice</a></div>
       </div>
-      <div class="footer-links">
-        <a class="sound-click" href="about.html">About</a>
-        <a class="sound-click" href="parents/index.html">Parents</a>
-        <a class="sound-click" href="contact.html">Contact</a>
-        <a class="sound-click" href="privacy-policy.html">Privacy</a>
-      </div>
-    </footer>
+    </section>
   </main>
 
-  <a class="floating-top sound-click" href="#top" aria-label="Back to top">↑</a>
+  <footer>
+    <div class="wrap footer-grid">
+      <div><h2>Al-Hayat Kids Islam</h2><p>Safe, visual, mobile-first Islamic learning for young Muslim children ages 3–8.</p><p>© <span id="year"></span> Al-Hayat Kids Islam. All rights reserved.</p></div>
+      <div class="footer-links"><a href="index.html">Home</a><a href="#topics">Topics</a><a href="#questions">Questions</a><a href="#practice">Practice</a><a href="#parents">Parents</a></div>
+    </div>
+  </footer>
 
-  <nav class="mobile-bottom-nav" aria-label="Bottom navigation">
-    <a class="sound-click" href="#top"><span class="nav-emoji">🏠</span>Home</a>
-    <a class="sound-click" href="#learn"><span class="nav-emoji">📖</span>Learn</a>
-    <a class="sound-click" href="#play"><span class="nav-emoji">🎮</span>Play</a>
-    <a class="sound-click" href="#practice"><span class="nav-emoji">✍️</span>Do</a>
-    <a class="sound-click" href="#track"><span class="nav-emoji">⭐</span>Track</a>
+  <button class="back-top" type="button" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+  <nav class="mobile-dock" aria-label="Mobile quick navigation">
+    <a class="dock-link active" href="index.html"><span>🏠</span><small>Home</small></a>
+    <a class="dock-link" href="#topics"><span>📖</span><small>Learn</small></a>
+    <a class="dock-link" href="#games"><span>🎮</span><small>Play</small></a>
+    <a class="dock-link" href="#practice"><span>✍️</span><small>Do</small></a>
+    <a class="dock-link" href="#mission"><span>⭐</span><small>Track</small></a>
   </nav>
 
   <script>
-    (function(){
-      const menuButton = document.querySelector('.menu-toggle');
-      const menu = document.getElementById('mobileMenu');
-
-      if(menuButton && menu){
-        menuButton.addEventListener('click', () => {
-          const isOpen = menu.getAttribute('data-open') === 'true';
-          menu.setAttribute('data-open', String(!isOpen));
-          menuButton.setAttribute('aria-expanded', String(!isOpen));
-          menuButton.textContent = isOpen ? '☰' : '×';
-        });
-        menu.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            menu.setAttribute('data-open','false');
-            menuButton.setAttribute('aria-expanded','false');
-            menuButton.textContent = '☰';
-          });
-        });
-      }
-
-      let audioContext;
-      function playSoftClick(){
-        try{
-          const AudioCtx = window.AudioContext || window.webkitAudioContext;
-          if(!AudioCtx) return;
-          audioContext = audioContext || new AudioCtx();
-          const now = audioContext.currentTime;
-          const osc = audioContext.createOscillator();
-          const gain = audioContext.createGain();
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(660, now);
-          osc.frequency.exponentialRampToValueAtTime(990, now + 0.07);
-          gain.gain.setValueAtTime(0.0001, now);
-          gain.gain.exponentialRampToValueAtTime(0.045, now + 0.015);
-          gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.12);
-          osc.connect(gain);
-          gain.connect(audioContext.destination);
-          osc.start(now);
-          osc.stop(now + 0.13);
-        }catch(e){}
-      }
-
-      document.addEventListener('click', (event) => {
-        const target = event.target.closest('.sound-click, button, a');
-        if(target) playSoftClick();
-      }, {passive:true});
-
-      const missions = [
-        {icon:'🤲', title:'Say Bismillah', text:'Listen, repeat, and use it before eating.'},
-        {icon:'🕌', title:'Learn one Salah action', text:'Tap the picture and copy the movement safely.'},
-        {icon:'📖', title:'Respect the Qur’an', text:'Choose the right picture and earn a star.'},
-        {icon:'🔤', title:'Trace one Arabic letter', text:'Use your finger and say the sound.'},
-        {icon:'💚', title:'Practice one good manner', text:'Say Salam and smile at home.'}
-      ];
-      const today = missions[new Date().getDate() % missions.length];
-      const todayIcon = document.querySelector('.today-icon');
-      const todayTitle = document.getElementById('todayTitle');
-      const todayText = document.getElementById('todayText');
-      if(todayIcon && todayTitle && todayText){
-        todayIcon.textContent = today.icon;
-        todayTitle.textContent = today.title;
-        todayText.textContent = today.text;
-      }
-
-      const starBox = document.getElementById('starBox');
-      const progressCount = document.getElementById('progressCount');
-      const storageKey = 'alHayatKidsStarsToday';
-      const dateKey = 'alHayatKidsStarsDate';
-      const todayString = new Date().toDateString();
-      if(localStorage.getItem(dateKey) !== todayString){
-        localStorage.setItem(dateKey, todayString);
-        localStorage.setItem(storageKey, '0');
-      }
-      function getStars(){ return Math.min(5, Math.max(0, Number(localStorage.getItem(storageKey) || 0))); }
-      function setStars(value){ localStorage.setItem(storageKey, String(Math.min(5, value))); renderStars(); }
-      function renderStars(){
-        const stars = getStars();
-        if(starBox){
-          starBox.querySelectorAll('.star').forEach((star, index) => {
-            star.textContent = index < stars ? '⭐' : '☆';
-          });
-        }
-        if(progressCount){
-          progressCount.textContent = stars === 0 ? '0 stars collected. Tap “Done ⭐” after a task.' : stars + ' star' + (stars > 1 ? 's' : '') + ' collected today. Wonderful effort!';
-        }
-      }
-      renderStars();
-
-      document.getElementById('todayDone')?.addEventListener('click', () => setStars(getStars() + 1));
-      document.querySelectorAll('.mark-done').forEach(button => {
-        button.addEventListener('click', () => {
-          button.textContent = 'Great ⭐';
-          button.disabled = true;
-          button.closest('[data-step-card]')?.classList.add('done');
-          setStars(getStars() + 1);
-        });
-      });
-
-      document.querySelectorAll('.tap-card').forEach(card => {
-        card.addEventListener('click', () => {
-          card.classList.toggle('done');
-          if(card.classList.contains('done')) setStars(getStars() + 1);
-        });
-      });
-
-      document.querySelectorAll('.speak-word').forEach(button => {
-        button.addEventListener('click', () => {
-          const text = button.getAttribute('data-say') || button.textContent.trim();
-          if('speechSynthesis' in window){
-            window.speechSynthesis.cancel();
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.rate = 0.78;
-            utterance.pitch = 1.08;
-            utterance.volume = 1;
-            window.speechSynthesis.speak(utterance);
-          }
-        });
-      });
-    })();
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const soundBtn = document.getElementById('soundBtn');
+    let soundOn = localStorage.getItem('alhayatKidSound') === 'on';
+    function updateSoundBtn(){ soundBtn.textContent = soundOn ? '🔊 Click Sounds' : '🔇 Sounds Off'; soundBtn.setAttribute('aria-pressed', String(soundOn)); }
+    updateSoundBtn();
+    soundBtn.addEventListener('click', () => { soundOn = !soundOn; localStorage.setItem('alhayatKidSound', soundOn ? 'on':'off'); updateSoundBtn(); playClick(); });
+    function playClick(){
+      if(!soundOn) return;
+      try{
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine'; osc.frequency.value = 660;
+        gain.gain.setValueAtTime(.0001, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(.08, ctx.currentTime + .015);
+        gain.gain.exponentialRampToValueAtTime(.0001, ctx.currentTime + .12);
+        osc.connect(gain); gain.connect(ctx.destination); osc.start(); osc.stop(ctx.currentTime + .13);
+      }catch(e){}
+    }
+    document.addEventListener('click', e => { if(e.target.closest('a,button') && e.target.id !== 'soundBtn') playClick(); });
+    const steps = document.querySelectorAll('.mission-step');
+    const bar = document.getElementById('missionBar');
+    let done = Number(localStorage.getItem('alhayatMissionDone') || 1);
+    function paintMission(){ bar.style.width = Math.max(20, done * 20) + '%'; steps.forEach((s,i)=>{ if(i < done) s.querySelector('.round-icon').style.background = '#eafff6'; }); }
+    steps.forEach((s,i)=>s.addEventListener('click',()=>{ done = Math.max(done, i+1); localStorage.setItem('alhayatMissionDone', done); paintMission(); }));
+    paintMission();
   </script>
 </body>
 </html>
