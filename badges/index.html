@@ -1,45 +1,1080 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Badges | Al-Hayat Kids Islam</title>
-  <meta name="description" content="Islamic learning badges and level rewards.">
-  <link rel="stylesheet" href="../styles.css">
-  
-<style>
-  :root{--navy:#17324d;--teal:#0f766e;--gold:#c8912b;--cream:#fff8ec;--card:#ffffff;--ink:#243044;}
-  body{margin:0;font-family:Arial,system-ui,sans-serif;background:linear-gradient(180deg,#fff8ec,#eefaf7);color:var(--ink);}
-  header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e8dcc7;}
-  .wrap{max-width:1180px;margin:auto;padding:18px;}
-  .top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
-  .brand{font-weight:900;color:var(--navy);font-size:1.25rem}.brand span{color:var(--gold)}
-  nav a{display:inline-block;margin:4px;padding:10px 12px;border-radius:999px;background:#f4efe4;text-decoration:none;color:var(--navy);font-weight:700}
-  nav a:hover{background:#dff7f1;transform:translateY(-1px)}
-  .ak-hero{background:linear-gradient(135deg,#17324d,#0f766e);color:white;border-radius:28px;padding:28px;margin:22px 0;box-shadow:0 16px 40px rgba(23,50,77,.18)}
-  .ak-hero h1{margin:0 0 8px;font-size:clamp(2rem,5vw,4rem)}.ak-hero p{font-size:1.1rem;max-width:780px}.ak-stats{display:flex;gap:10px;flex-wrap:wrap}.ak-stats span,.ak-hero button{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:10px 14px;border-radius:999px;color:white;font-weight:800}
-  .ak-filter-panel{background:#fff;border-radius:24px;padding:18px;margin:18px 0;box-shadow:0 12px 30px rgba(0,0,0,.07)}
-  .ak-filter-grid{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:12px}.ak-filter-grid label{font-weight:800;color:var(--navy)} select,input{width:100%;box-sizing:border-box;margin-top:6px;padding:12px;border-radius:14px;border:1px solid #ddd;font-size:1rem}.ak-quick-buttons button,.ak-options button,.ak-complete,.ak-mini-list button{cursor:pointer;border:0;border-radius:999px;background:#eaf7f4;color:var(--navy);padding:10px 14px;margin:6px;font-weight:800}.ak-quick-buttons button:hover,.ak-options button:hover,.ak-complete:hover{background:#ffe7b1}
-  .ak-card-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}.ak-card{background:var(--card);border-radius:24px;padding:18px;box-shadow:0 14px 34px rgba(0,0,0,.08);border:2px solid transparent}.ak-card.is-done{border-color:#42b883;background:#f3fff7}.ak-card-top{display:flex;justify-content:space-between;gap:8px;font-weight:800;color:#557}.ak-icon{font-size:1.8rem}.ak-card h3{color:var(--navy);font-size:1.2rem}.ak-arabic{font-size:1.8rem;font-family:serif;text-align:center;background:#fff8ec;border-radius:18px;padding:12px}.ak-explain,.ak-action{background:#f7fafc;border-radius:16px;padding:10px}.ak-complete{background:#17324d;color:white;width:100%}.ak-count{font-weight:900;color:var(--navy);margin:18px 0}.ak-more,.ak-error{background:#fff3cd;padding:14px;border-radius:16px}.ak-daily{background:#fff;border-radius:22px;padding:16px;margin:18px 0}.ak-badge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.ak-badge{background:white;border-radius:24px;padding:20px;text-align:center;box-shadow:0 14px 34px rgba(0,0,0,.08)}.ak-badge div{font-size:3rem}progress{width:100%;height:18px}
-  .practice-tools{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}.tool{background:white;border-radius:24px;padding:18px;box-shadow:0 14px 34px rgba(0,0,0,.08)}canvas{width:100%;height:240px;border:3px dashed #cbd5e1;border-radius:18px;background:white}
-  @media(max-width:760px){.ak-filter-grid,.practice-tools{grid-template-columns:1fr}nav a{font-size:.9rem}.wrap{padding:12px}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Badges & Rewards | Al-Hayat Kids Islam</title>
+  <meta name="description" content="A child-friendly Islamic learning badges and rewards page for Al-Hayat Kids Islam. Children can see stars, completed questions, unlocked badges, level badges and topic badges." />
+  <meta name="keywords" content="Islamic badges for kids, Muslim kids rewards, Islamic learning stars, kids Islamic quiz rewards, Al-Hayat Kids Islam badges" />
+
+  <style>
+    :root {
+      --bg: #fff8e8;
+      --bg2: #f1fffb;
+      --card: #ffffff;
+      --ink: #16324f;
+      --muted: #62758a;
+      --brand: #0f766e;
+      --brand-dark: #115e59;
+      --gold: #f5b942;
+      --gold-soft: #fff3c4;
+      --sky: #eaf7ff;
+      --rose: #fff0f0;
+      --mint: #ecfff7;
+      --line: rgba(22, 50, 79, 0.13);
+      --shadow: 0 18px 45px rgba(22, 50, 79, 0.12);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(110, 199, 255, 0.25), transparent 30%),
+        radial-gradient(circle at top right, rgba(245, 185, 66, 0.22), transparent 28%),
+        linear-gradient(180deg, var(--bg) 0%, #fffdf7 48%, var(--bg2) 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 253, 247, 0.93);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 950;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--brand), #22c55e);
+      color: white;
+      box-shadow: 0 12px 26px rgba(15, 118, 110, 0.24);
+      font-size: 1.35rem;
+    }
+
+    .brand small {
+      display: block;
+      font-weight: 750;
+      color: var(--muted);
+      margin-top: 2px;
+      font-size: 0.76rem;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .nav a {
+      padding: 10px 13px;
+      border-radius: 999px;
+      font-weight: 900;
+      color: var(--brand-dark);
+      background: rgba(15, 118, 110, 0.08);
+      transition: transform 0.2s ease, background 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav a:hover,
+    .nav a:focus {
+      transform: translateY(-2px);
+      background: rgba(15, 118, 110, 0.16);
+      outline: none;
+    }
+
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 42px 18px 22px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .side-card,
+    .panel,
+    .badge-card,
+    .reward-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-xl);
+    }
+
+    .hero-card {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "🏆";
+      position: absolute;
+      right: 22px;
+      top: 14px;
+      font-size: 5rem;
+      opacity: 0.12;
+      transform: rotate(12deg);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--mint);
+      color: var(--brand-dark);
+      border: 1px solid rgba(15, 118, 110, 0.16);
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-weight: 950;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.15rem, 5vw, 4.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      color: #12314d;
+    }
+
+    .hero-card p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 18px 0 0;
+      font-weight: 680;
+      max-width: 770px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 12px 17px;
+      font-weight: 950;
+      font-size: 0.98rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus { transform: translateY(-2px); outline: none; }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--brand), #22c55e);
+      color: white;
+      box-shadow: 0 14px 24px rgba(15, 118, 110, 0.22);
+    }
+
+    .btn.gold {
+      background: linear-gradient(135deg, #f59e0b, #ffd166);
+      color: #4b3400;
+      box-shadow: 0 14px 24px rgba(245, 158, 11, 0.18);
+    }
+
+    .btn.soft {
+      background: #f0fbff;
+      color: #0b5171;
+      border: 1px solid rgba(11, 81, 113, 0.12);
+    }
+
+    .side-card {
+      padding: 24px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .trophy-stage {
+      min-height: 170px;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at top left, rgba(154, 240, 197, 0.58), transparent 36%),
+        linear-gradient(135deg, #e8fffb, #fff7db);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 20px;
+      border: 1px solid var(--line);
+    }
+
+    .trophy-stage strong {
+      display: block;
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .trophy-stage span {
+      display: block;
+      font-weight: 950;
+      color: var(--brand-dark);
+      font-size: 1.08rem;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .mini-stat {
+      border-radius: 18px;
+      padding: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .mini-stat b {
+      display: block;
+      font-size: 1.55rem;
+      color: var(--brand-dark);
+    }
+
+    .mini-stat span {
+      font-weight: 850;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    .panel {
+      padding: 24px;
+      margin-bottom: 22px;
+    }
+
+    .panel-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .panel-title h2 {
+      margin: 0;
+      font-size: clamp(1.4rem, 3vw, 2.05rem);
+      letter-spacing: -0.03em;
+    }
+
+    .status-pill {
+      background: var(--gold-soft);
+      color: #744b00;
+      border: 1px solid rgba(245, 185, 66, 0.36);
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-weight: 950;
+    }
+
+    .reward-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .reward-card {
+      padding: 18px;
+      border-radius: 22px;
+      display: grid;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+      min-height: 170px;
+    }
+
+    .reward-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -20px -26px auto;
+      width: 92px;
+      height: 92px;
+      border-radius: 999px;
+      background: rgba(245, 185, 66, 0.16);
+    }
+
+    .reward-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 19px;
+      display: grid;
+      place-items: center;
+      background: var(--mint);
+      font-size: 1.8rem;
+      border: 1px solid rgba(15, 118, 110, 0.12);
+    }
+
+    .reward-card h3,
+    .badge-card h3 {
+      margin: 0;
+      color: #14314f;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .reward-card p,
+    .badge-card p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 720;
+      line-height: 1.55;
+    }
+
+    .progress-line {
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(22, 50, 79, 0.08);
+      overflow: hidden;
+      margin-top: 4px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--brand), #22c55e, var(--gold));
+      transition: width 0.35s ease;
+    }
+
+    .badge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .badge-card {
+      padding: 18px;
+      border-radius: 24px;
+      display: grid;
+      gap: 10px;
+      min-height: 210px;
+      position: relative;
+      overflow: hidden;
+      opacity: 0.62;
+      filter: grayscale(0.55);
+    }
+
+    .badge-card.unlocked {
+      opacity: 1;
+      filter: none;
+      border-color: rgba(34, 197, 94, 0.42);
+      background: linear-gradient(180deg, #ffffff, #f0fff5);
+    }
+
+    .badge-card.locked {
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+    }
+
+    .badge-symbol {
+      width: 70px;
+      height: 70px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      font-size: 2.25rem;
+      background: var(--gold-soft);
+      border: 1px solid rgba(245, 185, 66, 0.3);
+      box-shadow: 0 12px 24px rgba(245, 185, 66, 0.14);
+    }
+
+    .badge-card.unlocked .badge-symbol {
+      background: linear-gradient(135deg, #fff3c4, #ecfff7);
+    }
+
+    .badge-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .badge-status {
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-weight: 950;
+      font-size: 0.82rem;
+      background: #eef7ff;
+      color: #0b5171;
+      white-space: nowrap;
+    }
+
+    .badge-card.unlocked .badge-status {
+      background: var(--mint);
+      color: var(--brand-dark);
+    }
+
+    .badge-detail {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 7px 10px;
+      background: rgba(15, 118, 110, 0.08);
+      color: var(--brand-dark);
+      font-weight: 900;
+      font-size: 0.85rem;
+    }
+
+    .filter-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 999px;
+      padding: 10px 13px;
+      font-weight: 950;
+      color: var(--brand-dark);
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--mint);
+      transform: translateY(-2px);
+    }
+
+    .topic-list,
+    .level-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .row-card {
+      border-radius: 18px;
+      padding: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      display: grid;
+      gap: 8px;
+    }
+
+    .row-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-weight: 950;
+    }
+
+    .row-card span {
+      color: var(--muted);
+      font-weight: 780;
+      font-size: 0.9rem;
+    }
+
+    .empty,
+    .loading {
+      text-align: center;
+      padding: 36px 18px;
+      color: var(--muted);
+      font-weight: 900;
+      background: #fff;
+      border: 1px dashed rgba(22, 50, 79, 0.16);
+      border-radius: 22px;
+    }
+
+    .footer-note {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 22px 18px 40px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 680;
+      text-align: center;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      background: #12314d;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-weight: 950;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.25s ease;
+      z-index: 100;
+    }
+
+    .toast.show { opacity: 1; bottom: 26px; }
+
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+      .reward-grid { grid-template-columns: repeat(2, 1fr); }
+      .badge-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner { align-items: flex-start; flex-direction: column; }
+      .nav {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 4px;
+      }
+      .hero { padding-top: 24px; }
+      .hero-card, .side-card, .panel { padding: 20px; border-radius: 22px; }
+      .hero-actions .btn { width: 100%; }
+      .reward-grid, .badge-grid, .mini-grid { grid-template-columns: 1fr; }
+      .badge-card { min-height: auto; }
+      .badge-top { flex-direction: column; }
+    }
+  </style>
 </head>
+
 <body>
-  <header><div class="wrap top"><div class="brand">Al-Hayat <span>Kids Islam</span></div><nav><a href="../index.html">Home</a><a href="../curriculum.html">Curriculum</a><a href="../activities/">Activities</a><a href="../games/">Games</a><a href="../practice/">Practice</a><a href="../progress/">Progress</a><a href="../badges/">Badges</a><a href="../parents/">Parents</a></nav></div></header>
-  <main class="wrap">
-    
-    
-    <div id="alhayat-bank-app" data-bank-page="badges"></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-icon">☾</span>
+        <span>
+          Al-Hayat Kids Islam
+          <small>Badges, stars and gentle rewards</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="../index.html">🏠 Home</a>
+        <a href="../curriculum.html">📚 Curriculum</a>
+        <a href="../questions.html">❓ Questions</a>
+        <a href="../activities/">🎯 Activities</a>
+        <a href="../games/">🎮 Games</a>
+        <a href="../practice/">✍️ Practice</a>
+        <a href="../progress/">⭐ Progress</a>
+        <a href="../parents/">👨‍👩‍👧 Parents</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-card">
+      <span class="eyebrow">🏆 Reward Board Connected</span>
+      <h1>Badges & Stars</h1>
+      <p>
+        Children earn gentle Islamic learning rewards when they complete questions,
+        practise topics, and move through levels. Badges are saved on this device.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn primary" href="../questions.html">❓ Earn More Stars</a>
+        <a class="btn gold" href="../games/">🎮 Play Learning Games</a>
+        <button class="btn soft" type="button" id="celebrateBtn">🎉 Celebrate Progress</button>
+      </div>
+    </div>
+
+    <aside class="side-card">
+      <div class="trophy-stage">
+        <div>
+          <strong id="mainTrophy">🏆</strong>
+          <span id="mainMessage">Loading reward board...</span>
+        </div>
+      </div>
+
+      <div class="mini-grid">
+        <div class="mini-stat">
+          <b id="starCount">0</b>
+          <span>Stars</span>
+        </div>
+        <div class="mini-stat">
+          <b id="completedCount">0</b>
+          <span>Completed</span>
+        </div>
+        <div class="mini-stat">
+          <b id="unlockedCount">0</b>
+          <span>Badges</span>
+        </div>
+        <div class="mini-stat">
+          <b id="totalQuestions">—</b>
+          <span>Total Cards</span>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <main>
+    <section class="panel">
+      <div class="panel-title">
+        <h2>🌟 Reward Summary</h2>
+        <span class="status-pill" id="loadStatus">Loading data...</span>
+      </div>
+
+      <div class="reward-grid" id="summaryGrid">
+        <div class="loading">Opening rewards...</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>🏅 Main Badges</h2>
+        <span class="status-pill" id="badgeStatus">Checking unlocked badges...</span>
+      </div>
+
+      <div class="filter-row" aria-label="Badge filters">
+        <button class="filter-btn active" type="button" data-filter="all">All Badges</button>
+        <button class="filter-btn" type="button" data-filter="unlocked">Unlocked</button>
+        <button class="filter-btn" type="button" data-filter="locked">Locked</button>
+      </div>
+
+      <div class="badge-grid" id="badgeGrid">
+        <div class="loading">Loading badges...</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>📚 Level Badges</h2>
+        <span class="status-pill">Level-wise progress</span>
+      </div>
+      <div class="level-list" id="levelList">
+        <div class="loading">Loading levels...</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>📌 Topic Badges</h2>
+        <span class="status-pill">Topic-wise progress</span>
+      </div>
+      <div class="topic-list" id="topicList">
+        <div class="loading">Loading topics...</div>
+      </div>
+    </section>
   </main>
-  <script src="../assets/js/sound-engine.js"></script>
-  <script src="../assets/js/progress-engine.js"></script>
-  <script src="../assets/js/reward-engine.js"></script>
-  <script src="../assets/js/filter-engine.js"></script>
-  <script src="../assets/js/learning-path.js"></script>
-  <script src="../assets/js/whiteboard.js"></script>
-  <script src="../assets/js/typing-board.js"></script>
-  <script src="../assets/js/question-bank.js"></script>
+
+  <p class="footer-note">
+    Parent note: this reward board is intentionally gentle. It celebrates effort, repetition,
+    manners and Islamic learning without pressure or comparison.
+  </p>
+
+  <div class="toast" id="toast">Well done!</div>
+
+  <script>
+    const DATA_PATHS = {
+      levels: "../assets/data/levels/levels.json",
+      topics: "../assets/data/topics/topics.json",
+      questions: [
+        "../assets/data/questions/questions-level-1.json",
+        "../assets/data/questions/questions-level-2.json",
+        "../assets/data/questions/questions-level-3.json",
+        "../assets/data/questions/questions-level-4.json",
+        "../assets/data/questions/questions-level-5.json"
+      ]
+    };
+
+    const STORAGE_KEYS = [
+      "alHayatKidsIslamProgress",
+      "alHayatKidsProgress",
+      "alHayatProgress"
+    ];
+
+    const state = {
+      levels: [],
+      topics: [],
+      questions: [],
+      progress: readProgress(),
+      badges: [],
+      activeFilter: "all"
+    };
+
+    const els = {
+      starCount: document.getElementById("starCount"),
+      completedCount: document.getElementById("completedCount"),
+      unlockedCount: document.getElementById("unlockedCount"),
+      totalQuestions: document.getElementById("totalQuestions"),
+      mainTrophy: document.getElementById("mainTrophy"),
+      mainMessage: document.getElementById("mainMessage"),
+      loadStatus: document.getElementById("loadStatus"),
+      badgeStatus: document.getElementById("badgeStatus"),
+      summaryGrid: document.getElementById("summaryGrid"),
+      badgeGrid: document.getElementById("badgeGrid"),
+      levelList: document.getElementById("levelList"),
+      topicList: document.getElementById("topicList"),
+      celebrateBtn: document.getElementById("celebrateBtn"),
+      toast: document.getElementById("toast")
+    };
+
+    document.addEventListener("DOMContentLoaded", init);
+
+    async function init() {
+      bindStaticEvents();
+
+      try {
+        const [levelsData, topicsData, ...questionFiles] = await Promise.all([
+          fetchJson(DATA_PATHS.levels),
+          fetchJson(DATA_PATHS.topics),
+          ...DATA_PATHS.questions.map(fetchJson)
+        ]);
+
+        state.levels = levelsData.levels || [];
+        state.topics = topicsData.topics || [];
+        state.questions = questionFiles.flatMap(file => file.items || []);
+        state.badges = buildBadges();
+
+        renderAll();
+        els.loadStatus.textContent = "Reward data loaded";
+        showToast("Badges are ready");
+      } catch (error) {
+        console.error(error);
+        els.loadStatus.textContent = "Could not load reward data";
+        els.summaryGrid.innerHTML = errorBox(error);
+        els.badgeGrid.innerHTML = errorBox(error);
+        els.levelList.innerHTML = errorBox(error);
+        els.topicList.innerHTML = errorBox(error);
+      }
+    }
+
+    async function fetchJson(path) {
+      const response = await fetch(path, { cache: "no-store" });
+      if (!response.ok) throw new Error(`${response.status} — ${path}`);
+      return response.json();
+    }
+
+    function bindStaticEvents() {
+      els.celebrateBtn.addEventListener("click", () => {
+        const unlocked = state.badges.filter(badge => badge.unlocked).length;
+        const stars = state.progress.stars || completedIds().length;
+        if (unlocked > 0) showToast(`MashaAllah! ${unlocked} badge(s) unlocked ⭐`);
+        else if (stars > 0) showToast(`Great effort! ${stars} star(s) earned ⭐`);
+        else showToast("Start a question to earn your first star ⭐");
+      });
+
+      document.querySelectorAll("[data-filter]").forEach(button => {
+        button.addEventListener("click", () => {
+          document.querySelectorAll("[data-filter]").forEach(btn => btn.classList.remove("active"));
+          button.classList.add("active");
+          state.activeFilter = button.dataset.filter;
+          renderBadges();
+        });
+      });
+    }
+
+    function renderAll() {
+      renderHeroStats();
+      renderSummary();
+      renderBadges();
+      renderLevels();
+      renderTopics();
+    }
+
+    function renderHeroStats() {
+      const done = completedIds().length;
+      const stars = state.progress.stars || done;
+      const unlocked = state.badges.filter(badge => badge.unlocked).length;
+      const total = state.questions.length;
+
+      els.starCount.textContent = stars.toLocaleString();
+      els.completedCount.textContent = done.toLocaleString();
+      els.unlockedCount.textContent = unlocked.toLocaleString();
+      els.totalQuestions.textContent = total.toLocaleString();
+      els.badgeStatus.textContent = `${unlocked} of ${state.badges.length} main badges unlocked`;
+
+      if (done >= 100) {
+        els.mainTrophy.textContent = "🏆";
+        els.mainMessage.textContent = "MashaAllah! Strong learner!";
+      } else if (done >= 25) {
+        els.mainTrophy.textContent = "🌟";
+        els.mainMessage.textContent = "Great progress is growing!";
+      } else if (done >= 5) {
+        els.mainTrophy.textContent = "⭐";
+        els.mainMessage.textContent = "Lovely learning start!";
+      } else {
+        els.mainTrophy.textContent = "🎒";
+        els.mainMessage.textContent = "Start questions to earn badges";
+      }
+    }
+
+    function renderSummary() {
+      const done = completedIds().length;
+      const total = state.questions.length || 1;
+      const percent = Math.min(100, Math.round((done / total) * 100));
+      const topicDone = completedTopicCount();
+      const levelDone = completedLevelCount();
+      const nextBadge = state.badges.find(badge => !badge.unlocked);
+
+      const cards = [
+        {
+          icon: "⭐",
+          title: `${state.progress.stars || done} Stars`,
+          text: "Stars earned by completing learning cards.",
+          percent: Math.min(100, (state.progress.stars || done) / 100 * 100)
+        },
+        {
+          icon: "✅",
+          title: `${done} Completed`,
+          text: `${percent}% of the full question bank completed on this device.`,
+          percent
+        },
+        {
+          icon: "📚",
+          title: `${levelDone} Levels Started`,
+          text: "Levels with at least one completed learning card.",
+          percent: state.levels.length ? (levelDone / state.levels.length) * 100 : 0
+        },
+        {
+          icon: "📌",
+          title: `${topicDone} Topics Started`,
+          text: nextBadge ? `Next badge: ${nextBadge.title}` : "All main badges are unlocked!",
+          percent: state.topics.length ? (topicDone / state.topics.length) * 100 : 0
+        }
+      ];
+
+      els.summaryGrid.innerHTML = cards.map(card => `
+        <article class="reward-card">
+          <div class="reward-icon">${escapeHTML(card.icon)}</div>
+          <h3>${escapeHTML(card.title)}</h3>
+          <p>${escapeHTML(card.text)}</p>
+          <div class="progress-line"><div class="progress-fill" style="width:${Math.round(card.percent)}%"></div></div>
+        </article>
+      `).join("");
+    }
+
+    function renderBadges() {
+      let badges = state.badges;
+      if (state.activeFilter === "unlocked") badges = badges.filter(badge => badge.unlocked);
+      if (state.activeFilter === "locked") badges = badges.filter(badge => !badge.unlocked);
+
+      if (!badges.length) {
+        els.badgeGrid.innerHTML = `<div class="empty">No badges in this filter yet.</div>`;
+        return;
+      }
+
+      els.badgeGrid.innerHTML = badges.map(badge => `
+        <article class="badge-card ${badge.unlocked ? "unlocked" : "locked"}">
+          <div class="badge-top">
+            <div class="badge-symbol">${escapeHTML(badge.icon)}</div>
+            <span class="badge-status">${badge.unlocked ? "Unlocked" : "Locked"}</span>
+          </div>
+          <h3>${escapeHTML(badge.title)}</h3>
+          <p>${escapeHTML(badge.description)}</p>
+          <span class="badge-detail">${escapeHTML(badge.detail)}</span>
+          <div class="progress-line"><div class="progress-fill" style="width:${badge.percent}%"></div></div>
+        </article>
+      `).join("");
+    }
+
+    function renderLevels() {
+      const completed = new Set(completedIds());
+      if (!state.levels.length) {
+        els.levelList.innerHTML = `<div class="empty">No levels found.</div>`;
+        return;
+      }
+
+      els.levelList.innerHTML = state.levels.map(level => {
+        const levelNumber = level.levelNumber || level.id || "";
+        const levelQuestions = state.questions.filter(q => String(q.level) === String(levelNumber));
+        const done = levelQuestions.filter(q => completed.has(q.id)).length;
+        const percent = levelQuestions.length ? Math.round((done / levelQuestions.length) * 100) : 0;
+        const title = level.title || `Level ${levelNumber}`;
+        const icon = percent >= 100 ? "🏆" : percent >= 25 ? "⭐" : "🎒";
+
+        return `
+          <article class="row-card">
+            <div class="row-card-top">
+              <strong>${escapeHTML(icon)} Level ${escapeHTML(levelNumber)}: ${escapeHTML(title)}</strong>
+              <span>${done}/${levelQuestions.length} completed • ${percent}%</span>
+            </div>
+            <span>${escapeHTML(level.ageRange || "")}</span>
+            <div class="progress-line"><div class="progress-fill" style="width:${percent}%"></div></div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function renderTopics() {
+      const completed = new Set(completedIds());
+      if (!state.topics.length) {
+        els.topicList.innerHTML = `<div class="empty">No topics found.</div>`;
+        return;
+      }
+
+      const topicRows = state.topics.map(topic => {
+        const topicQuestions = state.questions.filter(q => q.topicId === topic.id);
+        const done = topicQuestions.filter(q => completed.has(q.id)).length;
+        const percent = topicQuestions.length ? Math.round((done / topicQuestions.length) * 100) : 0;
+        return { topic, topicQuestions, done, percent };
+      }).sort((a, b) => b.percent - a.percent || b.done - a.done);
+
+      els.topicList.innerHTML = topicRows.map(row => `
+        <article class="row-card">
+          <div class="row-card-top">
+            <strong>${escapeHTML(row.topic.icon || "📌")} ${escapeHTML(row.topic.title || row.topic.id)}</strong>
+            <span>${row.done}/${row.topicQuestions.length} completed • ${row.percent}%</span>
+          </div>
+          <span>${escapeHTML(row.topic.description || "Keep learning this topic step by step.")}</span>
+          <div class="progress-line"><div class="progress-fill" style="width:${row.percent}%"></div></div>
+        </article>
+      `).join("");
+    }
+
+    function buildBadges() {
+      const done = completedIds().length;
+      const stars = state.progress.stars || done;
+      const topicDone = completedTopicCount();
+      const levelDone = completedLevelCount();
+      const total = state.questions.length || 1;
+      const percent = Math.round((done / total) * 100);
+
+      const badgeRules = [
+        { icon: "🌱", title: "First Step", description: "Complete your first Islamic learning card.", need: 1, have: done, unit: "card" },
+        { icon: "⭐", title: "Five Stars", description: "Earn five stars by completing five cards.", need: 5, have: stars, unit: "stars" },
+        { icon: "🌟", title: "Ten Good Steps", description: "Complete ten gentle learning tasks.", need: 10, have: done, unit: "cards" },
+        { icon: "🤲", title: "Dua Learner", description: "Start learning across important Islamic topics.", need: 3, have: topicDone, unit: "topics" },
+        { icon: "📚", title: "Level Explorer", description: "Start at least two learning levels.", need: 2, have: levelDone, unit: "levels" },
+        { icon: "🕌", title: "Salah Helper", description: "Complete twenty-five learning cards.", need: 25, have: done, unit: "cards" },
+        { icon: "💚", title: "Good Manners Star", description: "Complete fifty learning cards with steady effort.", need: 50, have: done, unit: "cards" },
+        { icon: "🏆", title: "Hundred Star Learner", description: "Complete one hundred cards from the question bank.", need: 100, have: done, unit: "cards" },
+        { icon: "🌙", title: "Ramadan Ready", description: "Earn one hundred stars on this device.", need: 100, have: stars, unit: "stars" },
+        { icon: "🚀", title: "Big Journey", description: "Complete ten percent of the full bank.", need: 10, have: percent, unit: "%" },
+        { icon: "👑", title: "Super Learner", description: "Complete twenty-five percent of the full bank.", need: 25, have: percent, unit: "%" },
+        { icon: "💎", title: "Golden Achiever", description: "Complete half of the full question bank.", need: 50, have: percent, unit: "%" }
+      ];
+
+      return badgeRules.map(rule => {
+        const unlocked = rule.have >= rule.need;
+        const percentValue = Math.min(100, Math.round((rule.have / rule.need) * 100));
+        return {
+          ...rule,
+          unlocked,
+          percent: percentValue,
+          detail: unlocked ? `Done: ${rule.have} ${rule.unit}` : `${rule.have}/${rule.need} ${rule.unit}`
+        };
+      });
+    }
+
+    function completedIds() {
+      const completed = state.progress.completed || {};
+      if (Array.isArray(completed)) return completed;
+      return Object.keys(completed);
+    }
+
+    function completedTopicCount() {
+      const completed = new Set(completedIds());
+      const topics = new Set();
+      state.questions.forEach(question => {
+        if (completed.has(question.id) && question.topicId) topics.add(question.topicId);
+      });
+      return topics.size;
+    }
+
+    function completedLevelCount() {
+      const completed = new Set(completedIds());
+      const levels = new Set();
+      state.questions.forEach(question => {
+        if (completed.has(question.id) && question.level) levels.add(String(question.level));
+      });
+      return levels.size;
+    }
+
+    function readProgress() {
+      for (const key of STORAGE_KEYS) {
+        try {
+          const raw = localStorage.getItem(key);
+          if (!raw) continue;
+          const parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === "object") {
+            return normalizeProgress(parsed);
+          }
+        } catch {}
+      }
+      return { stars: 0, completed: {} };
+    }
+
+    function normalizeProgress(progress) {
+      const completed = progress.completed || progress.completedQuestions || progress.done || {};
+      const stars = Number(progress.stars || progress.starCount || Object.keys(completed).length || 0);
+      return { ...progress, stars, completed };
+    }
+
+    function errorBox(error) {
+      return `
+        <div class="empty">
+          <h3>Reward data could not load.</h3>
+          <p>Please check JSON paths and uploaded files.</p>
+          <p>${escapeHTML(error.message)}</p>
+        </div>
+      `;
+    }
+
+    function escapeHTML(value) {
+      return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      }[char]));
+    }
+
+    function showToast(message) {
+      els.toast.textContent = message;
+      els.toast.classList.add("show");
+      setTimeout(() => els.toast.classList.remove("show"), 1900);
+    }
+  </script>
 </body>
 </html>
