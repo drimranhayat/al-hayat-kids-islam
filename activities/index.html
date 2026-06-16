@@ -3,26 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Islamic Activities for Kids | Al-Hayat Kids Islam</title>
-  <meta name="description" content="Child-friendly Islamic activities for Muslim children ages 3 to 8. Tap, choose, match, repeat, practice and earn stars from the Al-Hayat Kids Islam question bank." />
-  <meta name="keywords" content="Islamic activities for kids, Muslim kids learning activities, Islamic studies games, duas activities, Quran activities for children, salah activities for kids" />
+
+  <title>Islamic Games for Kids | Al-Hayat Kids Islam</title>
+  <meta name="description" content="Play child-friendly Islamic learning games for ages 3 to 8 using the Al-Hayat Kids Islam question bank with levels, topics, stars and progress." />
+  <meta name="keywords" content="Islamic games for kids, Muslim kids quiz, Islamic learning games, Quran games for kids, duas game, salah quiz, Islamic manners game" />
 
   <style>
     :root {
-      --bg: #fff8e8;
-      --paper: #fffdf7;
+      --cream: #fff8e8;
+      --cream-2: #fffdf7;
+      --ink: #14304a;
+      --muted: #61768b;
+      --teal: #0f766e;
+      --teal-2: #14b8a6;
+      --green: #22c55e;
+      --gold: #f5b942;
+      --orange: #fb923c;
+      --rose: #fb7185;
+      --sky: #38bdf8;
+      --purple: #a78bfa;
       --card: #ffffff;
-      --ink: #17324d;
-      --muted: #607386;
-      --brand: #0f766e;
-      --brand-dark: #115e59;
-      --gold: #f6b73c;
-      --pink: #ff7b9c;
-      --sky: #65c7ff;
-      --mint: #91efc3;
-      --orange: #ffb35c;
-      --line: rgba(23, 50, 77, 0.13);
-      --shadow: 0 18px 44px rgba(23, 50, 77, 0.12);
+      --line: rgba(20, 48, 74, 0.12);
+      --shadow: 0 18px 48px rgba(20, 48, 74, 0.13);
       --radius-xl: 30px;
       --radius-lg: 22px;
       --radius-md: 16px;
@@ -35,36 +37,25 @@
 
     body {
       margin: 0;
-      color: var(--ink);
       font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
       background:
-        radial-gradient(circle at top left, rgba(101, 199, 255, 0.28), transparent 30%),
-        radial-gradient(circle at top right, rgba(246, 183, 60, 0.25), transparent 28%),
-        radial-gradient(circle at 20% 90%, rgba(145, 239, 195, 0.24), transparent 28%),
-        linear-gradient(180deg, #fff8e8 0%, #fffdf7 48%, #effffb 100%);
+        radial-gradient(circle at 10% 8%, rgba(56, 189, 248, 0.26), transparent 26%),
+        radial-gradient(circle at 92% 14%, rgba(245, 185, 66, 0.28), transparent 28%),
+        radial-gradient(circle at 50% 92%, rgba(34, 197, 94, 0.18), transparent 33%),
+        linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 48%, #effff9 100%);
       min-height: 100vh;
     }
 
     a { color: inherit; text-decoration: none; }
-    button, input, select { font: inherit; }
 
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: 8px;
-      background: var(--ink);
-      color: white;
-      padding: 10px 14px;
-      border-radius: 999px;
-      z-index: 999;
-    }
-    .skip-link:focus { left: 10px; }
+    button, input, select { font: inherit; }
 
     .topbar {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255, 253, 247, 0.93);
+      background: rgba(255, 253, 247, 0.92);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line);
     }
@@ -84,28 +75,27 @@
       align-items: center;
       gap: 10px;
       font-weight: 950;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.02em;
     }
 
     .brand-icon {
       width: 48px;
       height: 48px;
-      border-radius: 18px;
+      border-radius: 17px;
       display: grid;
       place-items: center;
-      color: #fff;
-      font-size: 1.4rem;
-      background: linear-gradient(135deg, var(--brand), #22c55e);
-      box-shadow: 0 14px 26px rgba(15, 118, 110, 0.24);
+      background: linear-gradient(135deg, var(--teal), var(--green));
+      color: white;
+      box-shadow: 0 14px 26px rgba(15, 118, 110, 0.23);
+      font-size: 1.5rem;
     }
 
     .brand small {
       display: block;
-      margin-top: 2px;
       color: var(--muted);
-      font-weight: 750;
-      font-size: 0.75rem;
-      letter-spacing: 0;
+      font-size: 0.76rem;
+      font-weight: 800;
+      margin-top: 2px;
     }
 
     .nav {
@@ -118,15 +108,14 @@
     .nav a {
       padding: 10px 13px;
       border-radius: 999px;
-      background: rgba(15, 118, 110, 0.08);
-      color: var(--brand-dark);
       font-weight: 900;
-      transition: 0.2s ease;
+      color: #105e58;
+      background: rgba(15, 118, 110, 0.08);
+      transition: transform 0.2s ease, background 0.2s ease;
     }
 
     .nav a:hover,
-    .nav a:focus,
-    .nav a.active {
+    .nav a:focus {
       transform: translateY(-2px);
       background: rgba(15, 118, 110, 0.16);
       outline: none;
@@ -135,36 +124,37 @@
     .hero {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 40px 18px 22px;
+      padding: 38px 18px 18px;
       display: grid;
-      grid-template-columns: 1.13fr 0.87fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 22px;
       align-items: stretch;
     }
 
     .hero-card,
+    .game-stage,
     .side-card,
     .panel,
-    .activity-card,
-    .modal-card {
-      background: rgba(255, 255, 255, 0.91);
+    .mode-card,
+    .mini-card {
+      background: rgba(255, 255, 255, 0.92);
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
+      border-radius: var(--radius-xl);
     }
 
     .hero-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius-xl);
       padding: 34px;
+      overflow: hidden;
+      position: relative;
     }
 
     .hero-card::before {
-      content: "🎯";
+      content: "🎮";
       position: absolute;
-      right: 24px;
-      top: 18px;
-      font-size: 5rem;
+      right: 18px;
+      top: 10px;
+      font-size: 5.2rem;
       opacity: 0.12;
       transform: rotate(10deg);
     }
@@ -173,34 +163,34 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      background: #ecfff7;
+      color: #105e58;
+      border: 1px solid rgba(15, 118, 110, 0.16);
       padding: 8px 13px;
       border-radius: 999px;
-      background: #ecfff7;
-      color: var(--brand-dark);
-      border: 1px solid rgba(15, 118, 110, 0.16);
       font-weight: 950;
       margin-bottom: 14px;
     }
 
     h1 {
       margin: 0;
-      color: #12314d;
-      font-size: clamp(2.15rem, 5.2vw, 4.5rem);
+      font-size: clamp(2.1rem, 5vw, 4.4rem);
       line-height: 0.96;
-      letter-spacing: -0.065em;
-      max-width: 850px;
+      letter-spacing: -0.06em;
+      color: #12314d;
     }
 
     .hero-card p {
-      margin: 18px 0 0;
-      max-width: 780px;
       color: var(--muted);
-      font-size: 1.1rem;
-      font-weight: 650;
       line-height: 1.75;
+      font-weight: 700;
+      font-size: 1.08rem;
+      max-width: 760px;
+      margin: 18px 0 0;
     }
 
-    .hero-actions {
+    .hero-actions,
+    .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
@@ -210,97 +200,101 @@
     .btn {
       border: none;
       cursor: pointer;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 950;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      min-height: 46px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-weight: 950;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     }
 
     .btn:hover,
-    .btn:focus { transform: translateY(-2px); outline: none; }
+    .btn:focus {
+      transform: translateY(-2px);
+      outline: none;
+    }
 
     .btn.primary {
+      background: linear-gradient(135deg, var(--teal), var(--green));
       color: white;
-      background: linear-gradient(135deg, var(--brand), #22c55e);
-      box-shadow: 0 14px 24px rgba(15, 118, 110, 0.23);
+      box-shadow: 0 14px 24px rgba(15, 118, 110, 0.22);
     }
 
     .btn.gold {
-      color: #503400;
       background: linear-gradient(135deg, #f59e0b, #ffd166);
+      color: #4b3400;
       box-shadow: 0 14px 24px rgba(245, 158, 11, 0.18);
     }
 
+    .btn.rose {
+      background: linear-gradient(135deg, #fb7185, #fda4af);
+      color: white;
+      box-shadow: 0 14px 24px rgba(251, 113, 133, 0.18);
+    }
+
     .btn.soft {
-      color: #0b5171;
       background: #f0fbff;
+      color: #0b5171;
       border: 1px solid rgba(11, 81, 113, 0.12);
     }
 
     .side-card {
-      border-radius: var(--radius-xl);
       padding: 24px;
       display: grid;
       gap: 14px;
     }
 
-    .mascot-box {
-      min-height: 174px;
+    .mascot {
+      min-height: 180px;
       border-radius: 25px;
-      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at top left, rgba(154, 240, 197, 0.58), transparent 34%),
+        linear-gradient(135deg, #e8fffb, #fff7db);
       display: grid;
       place-items: center;
       text-align: center;
-      padding: 20px;
-      background:
-        radial-gradient(circle at top left, rgba(145, 239, 195, 0.52), transparent 36%),
-        linear-gradient(135deg, #e8fffb, #fff7db);
+      padding: 22px;
+      border: 1px solid var(--line);
     }
 
-    .mascot-box strong {
+    .mascot strong {
       display: block;
-      font-size: 3.2rem;
+      font-size: 3.4rem;
       margin-bottom: 8px;
     }
 
-    .mascot-box span {
+    .mascot span {
+      color: #105e58;
       display: block;
-      color: var(--brand-dark);
-      font-size: 1.08rem;
       font-weight: 950;
+      font-size: 1.12rem;
     }
 
-    .mini-grid {
+    .stats {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
     }
 
-    .mini-stat {
-      border: 1px solid var(--line);
+    .stat {
       border-radius: 18px;
       padding: 14px;
       background: #fff;
+      border: 1px solid var(--line);
     }
 
-    .mini-stat b {
+    .stat b {
       display: block;
-      color: var(--brand-dark);
       font-size: 1.45rem;
-      line-height: 1.1;
+      color: #105e58;
     }
 
-    .mini-stat span {
-      display: block;
+    .stat span {
       color: var(--muted);
-      margin-top: 3px;
-      font-size: 0.84rem;
       font-weight: 850;
+      font-size: 0.84rem;
     }
 
     main {
@@ -311,80 +305,85 @@
 
     .panel {
       padding: 24px;
-      border-radius: var(--radius-xl);
       margin-bottom: 22px;
+      border-radius: var(--radius-xl);
     }
 
     .panel-title {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 15px;
       flex-wrap: wrap;
       margin-bottom: 16px;
     }
 
     .panel-title h2 {
       margin: 0;
-      font-size: clamp(1.4rem, 3vw, 2.08rem);
-      letter-spacing: -0.035em;
+      font-size: clamp(1.35rem, 3vw, 2.05rem);
+      letter-spacing: -0.03em;
     }
 
-    .status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      border-radius: 999px;
-      padding: 9px 13px;
+    .pill {
       background: #fff8df;
       color: #744b00;
-      border: 1px solid rgba(246, 183, 60, 0.36);
+      border: 1px solid rgba(245, 185, 66, 0.36);
+      padding: 9px 13px;
+      border-radius: 999px;
       font-weight: 950;
     }
 
-    .activity-types {
+    .mode-grid {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 12px;
-      margin-top: 12px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
     }
 
-    .type-tile {
-      min-height: 122px;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 16px;
-      background: linear-gradient(180deg, #ffffff, #f5fffc);
+    .mode-card {
+      padding: 18px;
+      border-radius: 24px;
       cursor: pointer;
-      text-align: left;
-      font-weight: 900;
-      transition: 0.2s ease;
+      transition: transform 0.2s ease, border 0.2s ease, background 0.2s ease;
+      min-height: 170px;
+      display: grid;
+      align-content: start;
+      gap: 8px;
     }
 
-    .type-tile:hover,
-    .type-tile.active {
-      transform: translateY(-3px);
-      background: linear-gradient(180deg, #ecfff7, #ffffff);
-      border-color: rgba(15, 118, 110, 0.28);
+    .mode-card:hover,
+    .mode-card.active {
+      transform: translateY(-4px);
+      border-color: rgba(15, 118, 110, 0.35);
+      background: linear-gradient(180deg, #ffffff, #f1fffb);
     }
 
-    .type-tile b {
-      display: block;
-      font-size: 2rem;
-      margin-bottom: 8px;
+    .mode-card .icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: #ecfff7;
+      font-size: 1.65rem;
     }
 
-    .type-tile span {
-      display: block;
+    .mode-card h3 {
+      margin: 4px 0 0;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .mode-card p {
+      margin: 0;
       color: var(--muted);
-      margin-top: 4px;
-      font-size: 0.82rem;
-      line-height: 1.35;
+      line-height: 1.5;
+      font-weight: 700;
+      font-size: 0.9rem;
     }
 
     .filter-grid {
       display: grid;
-      grid-template-columns: 1.2fr repeat(4, 0.75fr);
+      grid-template-columns: 1.2fr repeat(3, 0.85fr);
       gap: 12px;
       align-items: end;
     }
@@ -392,18 +391,18 @@
     label {
       display: grid;
       gap: 7px;
-      color: var(--brand-dark);
-      font-size: 0.92rem;
       font-weight: 950;
+      color: #105e58;
+      font-size: 0.92rem;
     }
 
     input, select {
       width: 100%;
-      border: 1px solid rgba(23, 50, 77, 0.18);
+      border: 1px solid rgba(20, 48, 74, 0.18);
       border-radius: 15px;
+      padding: 12px 13px;
       background: white;
       color: var(--ink);
-      padding: 12px 13px;
       font-weight: 750;
     }
 
@@ -412,250 +411,248 @@
       border-color: rgba(15, 118, 110, 0.4);
     }
 
-    .quick-tags {
+    .quick-topics {
       display: flex;
       flex-wrap: wrap;
       gap: 9px;
       margin-top: 16px;
     }
 
-    .tag-btn {
+    .topic-btn {
       border: 1px solid var(--line);
-      background: #fff;
+      background: white;
       border-radius: 999px;
       padding: 9px 12px;
       font-weight: 950;
-      color: var(--brand-dark);
+      color: #105e58;
       cursor: pointer;
-      transition: 0.18s ease;
+      transition: 0.2s ease;
     }
 
-    .tag-btn:hover,
-    .tag-btn.active {
+    .topic-btn:hover,
+    .topic-btn.active {
       transform: translateY(-2px);
       background: #ecfff7;
-      border-color: rgba(15, 118, 110, 0.28);
+      border-color: rgba(15, 118, 110, 0.25);
     }
 
-    .path-list {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 12px;
-    }
-
-    .path-step {
-      min-height: 110px;
-      border-radius: 20px;
-      border: 1px solid var(--line);
-      background: linear-gradient(135deg, #ffffff, #f3fffb);
-      padding: 14px;
-      display: grid;
-      align-content: center;
-      gap: 7px;
-      font-weight: 950;
-    }
-
-    .path-step span {
-      color: var(--muted);
-      font-size: 0.82rem;
-      font-weight: 850;
-    }
-
-    .activity-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .activity-card {
-      border-radius: 25px;
-      padding: 18px;
-      display: grid;
-      gap: 12px;
+    .game-stage {
+      padding: 24px;
+      border-radius: var(--radius-xl);
+      margin-bottom: 22px;
+      min-height: 420px;
       position: relative;
       overflow: hidden;
     }
 
-    .activity-card.done {
-      border-color: rgba(34, 197, 94, 0.5);
-      background: linear-gradient(180deg, #ffffff, #f0fff5);
-    }
-
-    .activity-card::after {
-      content: attr(data-symbol);
+    .game-stage::after {
+      content: "";
       position: absolute;
-      right: 14px;
-      bottom: -4px;
-      font-size: 4.4rem;
-      opacity: 0.08;
+      width: 230px;
+      height: 230px;
+      border-radius: 999px;
+      right: -90px;
+      top: -90px;
+      background: rgba(245, 185, 66, 0.16);
       pointer-events: none;
     }
 
-    .card-top {
+    .game-head {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
-      gap: 10px;
+      gap: 12px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 18px;
+    }
+
+    .game-head h2 {
+      margin: 0;
+      font-size: clamp(1.35rem, 3vw, 2.1rem);
+      letter-spacing: -0.04em;
+    }
+
+    .score-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .score-chip {
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-weight: 950;
+    }
+
+    .question-box {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 14px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .topic-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
     }
 
     .topic-badge,
-    .level-badge,
-    .type-badge {
+    .level-badge {
       display: inline-flex;
       align-items: center;
       gap: 7px;
       border-radius: 999px;
-      padding: 7px 10px;
-      font-size: 0.82rem;
+      padding: 8px 11px;
       font-weight: 950;
+      font-size: 0.86rem;
     }
 
-    .topic-badge { background: #ecfff7; color: var(--brand-dark); }
-    .level-badge { background: #fff3c4; color: #6b4300; white-space: nowrap; }
-    .type-badge { background: #eef7ff; color: #0b5171; width: fit-content; }
+    .topic-badge {
+      background: #ecfff7;
+      color: #105e58;
+      border: 1px solid rgba(15, 118, 110, 0.15);
+    }
+
+    .level-badge {
+      background: #fff3c4;
+      color: #6b4300;
+      border: 1px solid rgba(245, 185, 66, 0.3);
+    }
 
     .question-text {
-      color: #122b45;
-      font-size: 1.08rem;
-      line-height: 1.45;
+      background: linear-gradient(180deg, #ffffff, #fbfffe);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 25px rgba(20, 48, 74, 0.08);
+      border-radius: 26px;
+      padding: 26px 20px;
+      text-align: center;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      line-height: 1.35;
       font-weight: 950;
-      margin: 0;
+      letter-spacing: -0.03em;
     }
 
-    .task-box {
-      border: 1px solid rgba(23, 50, 77, 0.1);
-      border-radius: 17px;
-      background: #f7fbff;
-      padding: 12px;
-      color: var(--muted);
-      font-weight: 780;
-      line-height: 1.55;
+    .arabic {
+      direction: rtl;
+      text-align: center;
+      font-size: clamp(1.55rem, 4vw, 2.3rem);
+      line-height: 1.7;
+      background: #f8fbff;
+      border: 1px dashed rgba(20, 48, 74, 0.18);
+      border-radius: 22px;
+      padding: 14px;
+      font-weight: 900;
     }
 
-    .task-box strong { color: var(--ink); }
-
-    .option-grid {
+    .answer-grid {
       display: grid;
-      gap: 8px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
     }
 
-    .option {
-      width: 100%;
-      text-align: left;
-      border: 1px solid rgba(23, 50, 77, 0.12);
-      background: #fff;
-      border-radius: 15px;
-      padding: 10px 11px;
-      font-weight: 850;
-      cursor: pointer;
-      transition: 0.18s ease;
-    }
-
-    .option:hover { transform: translateX(3px); background: #f1fffb; }
-    .option.correct { background: #edfff4; border-color: rgba(34, 197, 94, 0.65); }
-    .option.wrong { background: #fff1f1; border-color: rgba(239, 68, 68, 0.55); }
-
-    .answer-box {
-      display: none;
-      border-radius: 17px;
-      padding: 13px;
-      background: #fff8df;
-      border: 1px solid rgba(246, 183, 60, 0.36);
-      color: #4c3900;
-      line-height: 1.6;
-      font-weight: 760;
-    }
-
-    .answer-box.show { display: block; }
-
-    .card-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .small-btn {
-      border: none;
-      cursor: pointer;
-      border-radius: 999px;
-      padding: 9px 12px;
-      background: #ecfff7;
-      color: var(--brand-dark);
+    .answer-btn,
+    .memory-card {
+      border: 2px solid rgba(20, 48, 74, 0.1);
+      background: white;
+      border-radius: 22px;
+      padding: 16px;
+      min-height: 74px;
+      color: var(--ink);
       font-weight: 950;
-      transition: 0.18s ease;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(20, 48, 74, 0.06);
+      transition: transform 0.18s ease, background 0.18s ease, border 0.18s ease;
     }
 
-    .small-btn:hover,
-    .small-btn:focus { transform: translateY(-2px); outline: none; }
-    .small-btn.answer { background: #eef7ff; color: #0b5171; }
-    .small-btn.star { background: #fff3c4; color: #6b4300; }
-    .small-btn.play { background: #ffeef4; color: #8b1f45; }
+    .answer-btn:hover,
+    .memory-card:hover {
+      transform: translateY(-3px);
+      background: #f7fffd;
+    }
 
-    .loading,
-    .empty {
+    .answer-btn.correct,
+    .memory-card.correct {
+      background: #edfff4;
+      border-color: rgba(34, 197, 94, 0.65);
+    }
+
+    .answer-btn.wrong,
+    .memory-card.wrong {
+      background: #fff1f1;
+      border-color: rgba(239, 68, 68, 0.55);
+    }
+
+    .feedback {
+      display: none;
+      border-radius: 22px;
+      padding: 15px;
+      font-weight: 850;
+      line-height: 1.65;
+    }
+
+    .feedback.show { display: block; }
+
+    .feedback.good {
+      background: #edfff4;
+      border: 1px solid rgba(34, 197, 94, 0.34);
+      color: #126b35;
+    }
+
+    .feedback.try {
+      background: #fff8df;
+      border: 1px solid rgba(245, 185, 66, 0.4);
+      color: #674600;
+    }
+
+    .mini-hint {
+      background: #f7fbff;
+      border: 1px solid rgba(20, 48, 74, 0.1);
+      border-radius: 20px;
+      padding: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-weight: 750;
+    }
+
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .memory-card {
+      text-align: center;
+      display: grid;
+      place-items: center;
+      font-size: 1.04rem;
+    }
+
+    .empty,
+    .loading {
       text-align: center;
       padding: 42px 18px;
       color: var(--muted);
       font-weight: 900;
-      grid-column: 1 / -1;
+      line-height: 1.7;
     }
 
     .footer-note {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 22px 18px 40px;
-      color: var(--muted);
-      line-height: 1.7;
+      padding: 20px 18px 42px;
       text-align: center;
-      font-weight: 650;
-    }
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(12, 28, 44, 0.55);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 18px;
-      z-index: 90;
-    }
-
-    .modal.show { display: flex; }
-
-    .modal-card {
-      width: min(680px, 100%);
-      border-radius: 30px;
-      padding: 24px;
-    }
-
-    .modal-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.75rem;
-      letter-spacing: -0.03em;
-    }
-
-    .modal-card p {
       color: var(--muted);
-      line-height: 1.7;
       font-weight: 700;
-    }
-
-    .match-board {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .match-item {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: #fff;
-      padding: 12px;
-      min-height: 58px;
-      font-weight: 900;
+      line-height: 1.75;
     }
 
     .toast {
@@ -663,61 +660,79 @@
       left: 50%;
       bottom: 18px;
       transform: translateX(-50%);
-      z-index: 120;
-      opacity: 0;
-      pointer-events: none;
       background: #12314d;
       color: white;
       padding: 12px 16px;
       border-radius: 999px;
       font-weight: 950;
       box-shadow: var(--shadow);
-      transition: 0.24s ease;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.25s ease;
+      z-index: 100;
     }
 
-    .toast.show { opacity: 1; bottom: 26px; }
+    .toast.show {
+      opacity: 1;
+      bottom: 28px;
+    }
 
-    @media (max-width: 1020px) {
+    @media (max-width: 980px) {
       .hero { grid-template-columns: 1fr; }
-      .activity-types { grid-template-columns: repeat(3, 1fr); }
-      .filter-grid { grid-template-columns: 1fr 1fr; }
-      .path-list { grid-template-columns: repeat(2, 1fr); }
-      .activity-grid { grid-template-columns: repeat(2, 1fr); }
+      .mode-grid { grid-template-columns: repeat(2, 1fr); }
+      .filter-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    @media (max-width: 660px) {
-      .topbar-inner { align-items: flex-start; flex-direction: column; }
+    @media (max-width: 640px) {
+      .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
       .nav {
         width: 100%;
-        justify-content: flex-start;
         overflow-x: auto;
         flex-wrap: nowrap;
+        justify-content: flex-start;
         padding-bottom: 4px;
       }
+
       .nav a { white-space: nowrap; }
+
       .hero { padding-top: 24px; }
-      .hero-card, .side-card, .panel { padding: 20px; border-radius: 23px; }
-      .hero-actions .btn { width: 100%; }
-      .activity-types,
+
+      .hero-card,
+      .side-card,
+      .panel,
+      .game-stage {
+        padding: 20px;
+        border-radius: 22px;
+      }
+
+      .hero-actions .btn,
+      .actions .btn { width: 100%; }
+
+      .stats,
+      .mode-grid,
       .filter-grid,
-      .path-list,
-      .activity-grid,
-      .mini-grid,
-      .match-board { grid-template-columns: 1fr; }
-      .card-top { flex-direction: column; }
+      .answer-grid,
+      .memory-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .question-text { padding: 22px 16px; }
     }
   </style>
 </head>
-<body>
-  <a class="skip-link" href="#activitiesApp">Skip to activities</a>
 
+<body>
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="../index.html">
         <span class="brand-icon">☾</span>
         <span>
           Al-Hayat Kids Islam
-          <small>Islamic learning for ages 3–8</small>
+          <small>Islamic learning games for ages 3–8</small>
         </span>
       </a>
 
@@ -725,7 +740,7 @@
         <a href="../index.html">🏠 Home</a>
         <a href="../curriculum.html">📚 Curriculum</a>
         <a href="../questions.html">❓ Questions</a>
-        <a class="active" href="./">🎯 Activities</a>
+        <a href="../activities/">🎯 Activities</a>
         <a href="../games/">🎮 Games</a>
         <a href="../practice/">✍️ Practice</a>
         <a href="../progress/">⭐ Progress</a>
@@ -736,126 +751,144 @@
 
   <section class="hero">
     <div class="hero-card">
-      <span class="eyebrow">🎯 Connected to Your Question Bank</span>
-      <h1>Islamic Activities for Kids</h1>
+      <span class="eyebrow">🎮 Connected to the 3,000-question bank</span>
+      <h1>Islamic Games for Kids</h1>
       <p>
-        Every uploaded question becomes a child-friendly activity: tap the right answer,
-        say it aloud, match ideas, repeat a dua, practise a habit, play a mini game and earn stars.
+        Play gentle Islamic learning games with questions from your uploaded bank.
+        Children can choose answers, collect stars, follow topics, and revise duas,
+        Qur’an, salah, manners, Arabic letters and Seerah in a playful way.
       </p>
+
       <div class="hero-actions">
-        <a class="btn primary" href="#activitiesApp">🎯 Start Activities</a>
-        <button class="btn gold" id="dailyActivityBtn" type="button">🌞 Today’s Activity</button>
-        <a class="btn soft" href="../questions.html">❓ Open Questions</a>
+        <a class="btn primary" href="#playArea">▶️ Start Playing</a>
+        <button class="btn gold" id="randomGameBtn" type="button">🎲 Random Game</button>
+        <a class="btn soft" href="../questions.html">❓ Open Question Bank</a>
       </div>
     </div>
 
     <aside class="side-card">
-      <div class="mascot-box">
+      <div class="mascot">
         <div>
-          <strong>🧒 🎯 ⭐</strong>
-          <span>One small task, one happy star</span>
+          <strong>🧒🎮⭐</strong>
+          <span>Pick • Think • Answer • Shine</span>
         </div>
       </div>
-      <div class="mini-grid">
-        <div class="mini-stat"><b id="totalActivities">—</b><span>Total Cards</span></div>
-        <div class="mini-stat"><b id="visibleActivities">—</b><span>Showing Now</span></div>
-        <div class="mini-stat"><b id="completedActivities">0</b><span>Completed</span></div>
-        <div class="mini-stat"><b id="starCount">0</b><span>Stars</span></div>
+
+      <div class="stats">
+        <div class="stat">
+          <b id="totalQuestions">—</b>
+          <span>Loaded Cards</span>
+        </div>
+        <div class="stat">
+          <b id="filteredQuestions">—</b>
+          <span>Ready to Play</span>
+        </div>
+        <div class="stat">
+          <b id="scoreNow">0</b>
+          <span>Game Score</span>
+        </div>
+        <div class="stat">
+          <b id="starCount">0</b>
+          <span>Total Stars</span>
+        </div>
       </div>
     </aside>
   </section>
 
-  <main id="activitiesApp">
-    <section class="panel">
+  <main>
+    <section class="panel" aria-labelledby="modeTitle">
       <div class="panel-title">
-        <h2>🧩 Choose Activity Style</h2>
-        <span class="status-pill" id="loadStatus">Loading activities...</span>
+        <h2 id="modeTitle">🕹️ Choose a game mode</h2>
+        <span class="pill" id="loadStatus">Loading games...</span>
       </div>
 
-      <div class="activity-types" id="activityTypes">
-        <button class="type-tile active" data-activity="all" type="button"><b>🌈</b>All Activities<span>Show everything</span></button>
-        <button class="type-tile" data-activity="tap" type="button"><b>👆</b>Tap & Choose<span>Pick the correct answer</span></button>
-        <button class="type-tile" data-activity="say" type="button"><b>🗣️</b>Say & Repeat<span>Speak the key idea</span></button>
-        <button class="type-tile" data-activity="match" type="button"><b>🧩</b>Match & Connect<span>Connect question and answer</span></button>
-        <button class="type-tile" data-activity="practice" type="button"><b>✍️</b>Practice Task<span>Do a small action</span></button>
-        <button class="type-tile" data-activity="game" type="button"><b>🎮</b>Mini Game<span>Play and revise</span></button>
+      <div class="mode-grid" id="modeGrid">
+        <article class="mode-card active" data-mode="quiz" tabindex="0" role="button" aria-label="Choose Quick Quiz game">
+          <span class="icon">⚡</span>
+          <h3>Quick Quiz</h3>
+          <p>Choose the correct answer and collect stars.</p>
+        </article>
+        <article class="mode-card" data-mode="treasure" tabindex="0" role="button" aria-label="Choose Star Treasure game">
+          <span class="icon">💎</span>
+          <h3>Star Treasure</h3>
+          <p>Open a question, answer correctly, and win treasure points.</p>
+        </article>
+        <article class="mode-card" data-mode="memory" tabindex="0" role="button" aria-label="Choose Match Pairs game">
+          <span class="icon">🧩</span>
+          <h3>Match Pairs</h3>
+          <p>Match a short question with its answer.</p>
+        </article>
+        <article class="mode-card" data-mode="practice" tabindex="0" role="button" aria-label="Choose Practice Challenge game">
+          <span class="icon">✍️</span>
+          <h3>Practice Challenge</h3>
+          <p>Read, say, repeat, and complete a tiny Islamic task.</p>
+        </article>
       </div>
     </section>
 
-    <section class="panel">
+    <section class="panel" aria-labelledby="filterTitle">
       <div class="panel-title">
-        <h2>🔎 Find an Activity</h2>
-        <span class="status-pill" id="resultCount">Loading...</span>
+        <h2 id="filterTitle">🔎 Pick level and topic</h2>
+        <span class="pill" id="filterStatus">All games</span>
       </div>
 
       <div class="filter-grid">
         <label>
           Search
-          <input id="searchInput" type="search" placeholder="Search: Allah, salah, dua, Qur’an, manners..." />
+          <input id="searchInput" type="search" placeholder="Search Allah, salah, dua, manners..." />
         </label>
+
         <label>
           Level
-          <select id="levelFilter"><option value="">All Levels</option></select>
+          <select id="levelFilter">
+            <option value="">All Levels</option>
+          </select>
         </label>
+
         <label>
           Topic
-          <select id="topicFilter"><option value="">All Topics</option></select>
+          <select id="topicFilter">
+            <option value="">All Topics</option>
+          </select>
         </label>
-        <label>
-          Type
-          <select id="typeFilter"><option value="">All Types</option></select>
-        </label>
+
         <label>
           Difficulty
-          <select id="difficultyFilter"><option value="">All Difficulty</option></select>
+          <select id="difficultyFilter">
+            <option value="">All Difficulty</option>
+          </select>
         </label>
       </div>
 
-      <div class="quick-tags" id="quickTags"></div>
+      <div class="quick-topics" id="quickTopics"></div>
 
-      <div class="hero-actions">
-        <button class="btn primary" id="applyFiltersBtn" type="button">✅ Apply</button>
-        <button class="btn soft" id="clearFiltersBtn" type="button">🧹 Clear</button>
-        <button class="btn gold" id="loadMoreBtn" type="button">⬇️ Show More</button>
+      <div class="actions">
+        <button class="btn primary" id="applyBtn" type="button">✅ Apply</button>
+        <button class="btn soft" id="clearBtn" type="button">🧹 Clear</button>
+        <button class="btn gold" id="nextBtn" type="button">➡️ New Question</button>
       </div>
     </section>
 
-    <section class="panel">
-      <div class="panel-title">
-        <h2>🧭 Today’s Activity Path</h2>
-        <span class="status-pill">Do 4 tiny tasks</span>
+    <section class="game-stage" id="playArea" aria-live="polite">
+      <div class="game-head">
+        <h2 id="gameTitle">🎮 Game Loading</h2>
+        <div class="score-row">
+          <span class="score-chip">Round: <b id="roundCount">0</b></span>
+          <span class="score-chip">Correct: <b id="correctCount">0</b></span>
+          <span class="score-chip">Stars: <b id="stageStars">0</b></span>
+        </div>
       </div>
-      <div class="path-list" id="activityPath">
-        <div class="loading">Loading today’s activity path...</div>
-      </div>
-    </section>
 
-    <section class="panel">
-      <div class="panel-title">
-        <h2>🎯 Activity Cards</h2>
-        <span class="status-pill">Tap, practise, earn stars</span>
-      </div>
-      <div class="activity-grid" id="activityGrid">
-        <div class="loading">Opening your activity bank...</div>
+      <div class="question-box" id="gameBox">
+        <div class="loading">Please wait. Your Islamic games are opening...</div>
       </div>
     </section>
   </main>
 
   <p class="footer-note">
-    Parent guidance: use these activities gently. For very young children, read the question aloud, let the child tap, repeat, act, smile, and stop before tiredness.
+    Parent note: These games are made for gentle practice and revision. For formal teaching,
+    please check the exact wording, Arabic text and school policy before classroom use.
   </p>
-
-  <div class="modal" id="activityModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-card">
-      <h3 id="modalTitle">Activity</h3>
-      <p id="modalText">Activity details</p>
-      <div id="modalBody"></div>
-      <div class="hero-actions">
-        <button class="btn primary" id="modalCompleteBtn" type="button">⭐ Complete Activity</button>
-        <button class="btn soft" id="modalCloseBtn" type="button">Close</button>
-      </div>
-    </div>
-  </div>
 
   <div class="toast" id="toast">Saved</div>
 
@@ -873,42 +906,40 @@
     };
 
     const state = {
-      allItems: [],
-      filteredItems: [],
+      allQuestions: [],
+      filteredQuestions: [],
+      currentQuestion: null,
+      currentMode: "quiz",
       levels: [],
       topics: [],
-      visibleLimit: 48,
-      activityStyle: "all",
-      activeModalItem: null,
+      score: 0,
+      round: 0,
+      correct: 0,
       progress: readProgress()
     };
 
     const els = {
-      totalActivities: document.getElementById("totalActivities"),
-      visibleActivities: document.getElementById("visibleActivities"),
-      completedActivities: document.getElementById("completedActivities"),
+      totalQuestions: document.getElementById("totalQuestions"),
+      filteredQuestions: document.getElementById("filteredQuestions"),
+      scoreNow: document.getElementById("scoreNow"),
       starCount: document.getElementById("starCount"),
       loadStatus: document.getElementById("loadStatus"),
-      resultCount: document.getElementById("resultCount"),
-      activityTypes: document.getElementById("activityTypes"),
+      filterStatus: document.getElementById("filterStatus"),
+      modeGrid: document.getElementById("modeGrid"),
       searchInput: document.getElementById("searchInput"),
       levelFilter: document.getElementById("levelFilter"),
       topicFilter: document.getElementById("topicFilter"),
-      typeFilter: document.getElementById("typeFilter"),
       difficultyFilter: document.getElementById("difficultyFilter"),
-      quickTags: document.getElementById("quickTags"),
-      applyFiltersBtn: document.getElementById("applyFiltersBtn"),
-      clearFiltersBtn: document.getElementById("clearFiltersBtn"),
-      loadMoreBtn: document.getElementById("loadMoreBtn"),
-      dailyActivityBtn: document.getElementById("dailyActivityBtn"),
-      activityPath: document.getElementById("activityPath"),
-      activityGrid: document.getElementById("activityGrid"),
-      activityModal: document.getElementById("activityModal"),
-      modalTitle: document.getElementById("modalTitle"),
-      modalText: document.getElementById("modalText"),
-      modalBody: document.getElementById("modalBody"),
-      modalCompleteBtn: document.getElementById("modalCompleteBtn"),
-      modalCloseBtn: document.getElementById("modalCloseBtn"),
+      quickTopics: document.getElementById("quickTopics"),
+      applyBtn: document.getElementById("applyBtn"),
+      clearBtn: document.getElementById("clearBtn"),
+      nextBtn: document.getElementById("nextBtn"),
+      randomGameBtn: document.getElementById("randomGameBtn"),
+      gameTitle: document.getElementById("gameTitle"),
+      roundCount: document.getElementById("roundCount"),
+      correctCount: document.getElementById("correctCount"),
+      stageStars: document.getElementById("stageStars"),
+      gameBox: document.getElementById("gameBox"),
       toast: document.getElementById("toast")
     };
 
@@ -925,23 +956,24 @@
 
         state.levels = levelsData.levels || [];
         state.topics = topicsData.topics || [];
-        state.allItems = questionFiles.flatMap(file => file.items || []);
-        state.filteredItems = [...state.allItems];
+        state.allQuestions = questionFiles.flatMap(file => file.items || file.questions || []);
+        state.filteredQuestions = [...state.allQuestions];
 
         buildFilters(topicsData);
-        bindGlobalEvents();
-        renderStats();
-        renderPath();
-        renderCards();
-        els.loadStatus.textContent = "Activities loaded";
-        showToast("Activities connected to question bank");
+        bindEvents();
+        updateStats();
+        chooseQuestion();
+        renderGame();
+
+        els.loadStatus.textContent = "Games ready";
+        showToast("Games loaded successfully");
       } catch (error) {
         console.error(error);
-        els.loadStatus.textContent = "Could not load activities";
-        els.activityGrid.innerHTML = `
+        els.loadStatus.textContent = "Could not load games";
+        els.gameBox.innerHTML = `
           <div class="empty">
-            <h3>Activities could not load.</h3>
-            <p>Please check that JSON files are uploaded in <b>assets/data/questions/</b>, <b>assets/data/levels/</b>, and <b>assets/data/topics/</b>.</p>
+            <h3>Games could not load.</h3>
+            <p>Please check that JSON files exist inside <b>assets/data/questions/</b>.</p>
             <p>Error: ${escapeHTML(error.message)}</p>
           </div>
         `;
@@ -969,15 +1001,7 @@
         els.topicFilter.appendChild(option);
       });
 
-      const questionTypes = topicsData.filters?.questionTypes || uniqueValues(state.allItems, "type");
-      questionTypes.forEach(type => {
-        const option = document.createElement("option");
-        option.value = type;
-        option.textContent = labelize(type);
-        els.typeFilter.appendChild(option);
-      });
-
-      const difficulties = topicsData.filters?.difficulty || uniqueValues(state.allItems, "difficulty");
+      const difficulties = topicsData.filters?.difficulty || uniqueValues(state.allQuestions, "difficulty");
       difficulties.forEach(diff => {
         const option = document.createElement("option");
         option.value = diff;
@@ -995,76 +1019,82 @@
         ["prophet_seerah", "ﷺ Seerah"]
       ];
 
-      els.quickTags.innerHTML = quickTopics.map(([id, label]) =>
-        `<button class="tag-btn" type="button" data-topic="${escapeHTML(id)}">${escapeHTML(label)}</button>`
-      ).join("");
+      els.quickTopics.innerHTML = quickTopics.map(([id, label]) => `
+        <button class="topic-btn" type="button" data-topic="${escapeHTML(id)}">${escapeHTML(label)}</button>
+      `).join("");
+    }
 
-      els.quickTags.querySelectorAll("[data-topic]").forEach(button => {
+    function bindEvents() {
+      els.modeGrid.querySelectorAll(".mode-card").forEach(card => {
+        card.addEventListener("click", () => setMode(card.dataset.mode));
+        card.addEventListener("keydown", event => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            setMode(card.dataset.mode);
+          }
+        });
+      });
+
+      els.quickTopics.querySelectorAll("[data-topic]").forEach(button => {
         button.addEventListener("click", () => {
           els.topicFilter.value = button.dataset.topic;
           applyFilters();
         });
       });
-    }
 
-    function bindGlobalEvents() {
-      els.activityTypes.querySelectorAll("[data-activity]").forEach(button => {
-        button.addEventListener("click", () => {
-          els.activityTypes.querySelectorAll(".type-tile").forEach(tile => tile.classList.remove("active"));
-          button.classList.add("active");
-          state.activityStyle = button.dataset.activity;
-          applyFilters();
-        });
+      els.applyBtn.addEventListener("click", applyFilters);
+      els.clearBtn.addEventListener("click", clearFilters);
+      els.nextBtn.addEventListener("click", () => {
+        chooseQuestion();
+        renderGame();
       });
+      els.randomGameBtn.addEventListener("click", randomGame);
 
-      els.applyFiltersBtn.addEventListener("click", applyFilters);
-      els.clearFiltersBtn.addEventListener("click", clearFilters);
-      els.loadMoreBtn.addEventListener("click", () => {
-        state.visibleLimit += 48;
-        renderCards();
-        showToast("More activities opened");
-      });
-      els.dailyActivityBtn.addEventListener("click", openDailyActivity);
-      els.modalCloseBtn.addEventListener("click", closeModal);
-      els.activityModal.addEventListener("click", event => {
-        if (event.target === els.activityModal) closeModal();
-      });
-      els.modalCompleteBtn.addEventListener("click", () => {
-        if (state.activeModalItem) completeActivity(state.activeModalItem.id);
-        closeModal();
-      });
-
-      [els.searchInput, els.levelFilter, els.topicFilter, els.typeFilter, els.difficultyFilter].forEach(input => {
+      [els.searchInput, els.levelFilter, els.topicFilter, els.difficultyFilter].forEach(input => {
         input.addEventListener("input", debounce(applyFilters, 180));
         input.addEventListener("change", applyFilters);
       });
+    }
+
+    function setMode(mode) {
+      state.currentMode = mode;
+      els.modeGrid.querySelectorAll(".mode-card").forEach(card => {
+        card.classList.toggle("active", card.dataset.mode === mode);
+      });
+      chooseQuestion();
+      renderGame();
+      document.getElementById("playArea").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function randomGame() {
+      const modes = ["quiz", "treasure", "memory", "practice"];
+      setMode(modes[Math.floor(Math.random() * modes.length)]);
+      showToast("Random game selected");
     }
 
     function applyFilters() {
       const search = els.searchInput.value.trim().toLowerCase();
       const level = els.levelFilter.value;
       const topic = els.topicFilter.value;
-      const type = els.typeFilter.value;
       const difficulty = els.difficultyFilter.value;
 
-      state.filteredItems = state.allItems.filter(item => {
-        if (level && String(item.level) !== String(level)) return false;
-        if (topic && item.topicId !== topic) return false;
-        if (type && item.type !== type) return false;
-        if (difficulty && item.difficulty !== difficulty) return false;
+      state.filteredQuestions = state.allQuestions.filter(q => {
+        if (level && String(q.level) !== String(level)) return false;
+        if (topic && q.topicId !== topic) return false;
+        if (difficulty && q.difficulty !== difficulty) return false;
 
         if (search) {
           const blob = [
-            item.id,
-            item.question,
-            item.answer,
-            item.topicTitle,
-            item.subtopic,
-            item.arabic,
-            item.simpleExplanation,
-            item.activity,
-            item.practice,
-            item.game
+            q.id,
+            q.question,
+            q.answer,
+            q.topicTitle,
+            q.subtopic,
+            q.arabic,
+            q.simpleExplanation,
+            q.activity,
+            q.practice,
+            q.game
           ].join(" ").toLowerCase();
           if (!blob.includes(search)) return false;
         }
@@ -1072,259 +1102,268 @@
         return true;
       });
 
-      state.visibleLimit = 48;
-      renderStats();
-      renderPath();
-      renderCards();
+      updateStats();
+      chooseQuestion();
+      renderGame();
     }
 
     function clearFilters() {
       els.searchInput.value = "";
       els.levelFilter.value = "";
       els.topicFilter.value = "";
-      els.typeFilter.value = "";
       els.difficultyFilter.value = "";
-      state.activityStyle = "all";
-      els.activityTypes.querySelectorAll(".type-tile").forEach(tile => tile.classList.remove("active"));
-      els.activityTypes.querySelector('[data-activity="all"]').classList.add("active");
-      state.filteredItems = [...state.allItems];
-      state.visibleLimit = 48;
-      renderStats();
-      renderPath();
-      renderCards();
+      state.filteredQuestions = [...state.allQuestions];
+      updateStats();
+      chooseQuestion();
+      renderGame();
       showToast("Filters cleared");
     }
 
-    function renderStats() {
-      const completed = Object.keys(state.progress.activities || {}).length;
-      els.totalActivities.textContent = state.allItems.length.toLocaleString();
-      els.visibleActivities.textContent = state.filteredItems.length.toLocaleString();
-      els.completedActivities.textContent = completed.toLocaleString();
-      els.starCount.textContent = (state.progress.activityStars || 0).toLocaleString();
-      els.resultCount.textContent = `${state.filteredItems.length.toLocaleString()} activities found`;
-    }
-
-    function renderPath() {
-      const list = state.filteredItems.length ? state.filteredItems : state.allItems;
+    function chooseQuestion() {
+      const list = state.filteredQuestions.length ? state.filteredQuestions : state.allQuestions;
       if (!list.length) {
-        els.activityPath.innerHTML = `<div class="empty">No activity path available.</div>`;
+        state.currentQuestion = null;
+        return;
+      }
+      state.currentQuestion = list[Math.floor(Math.random() * list.length)];
+    }
+
+    function renderGame() {
+      if (!state.currentQuestion) {
+        els.gameTitle.textContent = "No Game Found";
+        els.gameBox.innerHTML = `
+          <div class="empty">
+            <h3>No question found.</h3>
+            <p>Try another level, topic or search word.</p>
+          </div>
+        `;
         return;
       }
 
-      const today = new Date();
-      const seed = today.getFullYear() + today.getMonth() + today.getDate();
-      const start = seed % Math.max(1, list.length - 4);
-      const steps = list.slice(start, start + 4);
-      const labels = ["👆 Tap", "🗣️ Say", "✍️ Practice", "⭐ Star"];
-
-      els.activityPath.innerHTML = steps.map((item, index) => `
-        <button class="path-step" type="button" data-open="${escapeHTML(item.id)}">
-          <span>${labels[index] || "🎯 Task"} • Level ${escapeHTML(item.level)}</span>
-          ${escapeHTML(item.symbol || findTopicIcon(item.topicId) || "🎯")} ${escapeHTML(item.subtopic || item.topicTitle || "Activity")}
-        </button>
-      `).join("");
-
-      els.activityPath.querySelectorAll("[data-open]").forEach(button => {
-        button.addEventListener("click", () => openActivityById(button.dataset.open));
-      });
-    }
-
-    function renderCards() {
-      if (!state.filteredItems.length) {
-        els.activityGrid.innerHTML = `<div class="empty"><h3>No activity found.</h3><p>Try another level, topic or search word.</p></div>`;
-        return;
-      }
-
-      const visible = state.filteredItems.slice(0, state.visibleLimit);
-      els.activityGrid.innerHTML = visible.map(item => activityCard(item)).join("");
-      els.loadMoreBtn.style.display = state.filteredItems.length > state.visibleLimit ? "inline-flex" : "none";
-      bindCardEvents();
-    }
-
-    function activityCard(item) {
-      const done = Boolean(state.progress.activities?.[item.id]);
-      const symbol = item.symbol || findTopicIcon(item.topicId) || "🎯";
-      const style = state.activityStyle === "all" ? inferActivityStyle(item) : state.activityStyle;
-      const title = activityTitle(style);
-      const options = Array.isArray(item.options) ? item.options : [];
-
-      return `
-        <article class="activity-card ${done ? "done" : ""}" data-card-id="${escapeHTML(item.id)}" data-symbol="${escapeHTML(symbol)}">
-          <div class="card-top">
-            <span class="topic-badge">${escapeHTML(symbol)} ${escapeHTML(item.topicTitle || "Islamic Learning")}</span>
-            <span class="level-badge">Level ${escapeHTML(item.level)} • Age ${escapeHTML(item.ageRange || "")}</span>
-          </div>
-
-          <span class="type-badge">${escapeHTML(title)}</span>
-          <p class="question-text">${escapeHTML(item.question)}</p>
-
-          ${renderActivityContent(item, style, options)}
-
-          <div class="answer-box" id="answer-${safeId(item.id)}">
-            <b>Answer:</b> ${escapeHTML(item.answer || "")}
-            ${item.simpleExplanation ? `<br><b>Meaning:</b> ${escapeHTML(item.simpleExplanation)}` : ""}
-          </div>
-
-          <div class="card-actions">
-            <button class="small-btn play" type="button" data-open="${escapeHTML(item.id)}">🎯 Open Activity</button>
-            <button class="small-btn answer" type="button" data-answer="${escapeHTML(item.id)}">👀 Show Answer</button>
-            <button class="small-btn star" type="button" data-complete="${escapeHTML(item.id)}">⭐ Complete</button>
-          </div>
-        </article>
-      `;
-    }
-
-    function renderActivityContent(item, style, options) {
-      if (style === "tap" && options.length) {
-        return `
-          <div class="option-grid">
-            ${options.map(option => `<button class="option" type="button" data-option="${escapeHTML(option)}" data-correct="${escapeHTML(item.answer)}">${escapeHTML(option)}</button>`).join("")}
-          </div>
-        `;
-      }
-
-      if (style === "say") {
-        return `<div class="task-box"><strong>🗣️ Say it:</strong> ${escapeHTML(item.answer || item.question)}<br><strong>Then:</strong> Repeat it gently 3 times.</div>`;
-      }
-
-      if (style === "match") {
-        return `<div class="task-box"><strong>🧩 Match:</strong> Match this question with the correct answer: <b>${escapeHTML(item.answer || "")}</b></div>`;
-      }
-
-      if (style === "practice") {
-        return `<div class="task-box"><strong>✍️ Practice:</strong> ${escapeHTML(item.practice || item.activity || "Say the answer, then draw or act it.")}</div>`;
-      }
-
-      if (style === "game") {
-        return `<div class="task-box"><strong>🎮 Mini Game:</strong> ${escapeHTML(item.game || "Ask a parent to hide the answer. Try to remember it and earn a star.")}</div>`;
-      }
-
-      return `<div class="task-box"><strong>🎯 Activity:</strong> ${escapeHTML(item.activity || item.practice || "Read, tap, repeat and earn a star.")}</div>`;
-    }
-
-    function bindCardEvents() {
-      document.querySelectorAll("[data-answer]").forEach(button => {
-        button.addEventListener("click", () => {
-          const box = document.getElementById(`answer-${safeId(button.dataset.answer)}`);
-          if (box) box.classList.toggle("show");
-        });
-      });
-
-      document.querySelectorAll("[data-complete]").forEach(button => {
-        button.addEventListener("click", () => completeActivity(button.dataset.complete));
-      });
-
-      document.querySelectorAll("[data-open]").forEach(button => {
-        button.addEventListener("click", () => openActivityById(button.dataset.open));
-      });
-
-      document.querySelectorAll("[data-option]").forEach(button => {
-        button.addEventListener("click", () => {
-          const selected = normalize(button.dataset.option);
-          const correct = normalize(button.dataset.correct);
-          button.parentElement.querySelectorAll(".option").forEach(opt => opt.classList.remove("correct", "wrong"));
-          if (selected === correct) {
-            button.classList.add("correct");
-            playSoftClick();
-            showToast("Correct! ⭐");
-          } else {
-            button.classList.add("wrong");
-            showToast("Try again gently");
-          }
-        });
-      });
-    }
-
-    function openDailyActivity() {
-      const list = state.filteredItems.length ? state.filteredItems : state.allItems;
-      if (!list.length) return;
-      const today = new Date();
-      const index = (today.getFullYear() + today.getMonth() + today.getDate()) % list.length;
-      openActivity(list[index]);
-    }
-
-    function openActivityById(id) {
-      const item = state.allItems.find(q => q.id === id);
-      if (item) openActivity(item);
-    }
-
-    function openActivity(item) {
-      state.activeModalItem = item;
-      const style = state.activityStyle === "all" ? inferActivityStyle(item) : state.activityStyle;
-      els.modalTitle.textContent = `${activityTitle(style)} • ${item.topicTitle || "Activity"}`;
-      els.modalText.textContent = item.question || "Complete this Islamic learning activity.";
-
-      if (style === "match") {
-        els.modalBody.innerHTML = `
-          <div class="match-board">
-            <div class="match-item">❓ ${escapeHTML(item.question || "Question")}</div>
-            <div class="match-item">✅ ${escapeHTML(item.answer || "Answer")}</div>
-            <div class="match-item">🎯 ${escapeHTML(item.activity || "Activity")}</div>
-            <div class="match-item">⭐ Earn one star after saying it.</div>
-          </div>
-        `;
-      } else {
-        els.modalBody.innerHTML = `
-          <div class="task-box"><strong>Answer:</strong> ${escapeHTML(item.answer || "")}</div>
-          <div class="task-box"><strong>Activity:</strong> ${escapeHTML(item.activity || "Say the answer and repeat it.")}</div>
-          <div class="task-box"><strong>Practice:</strong> ${escapeHTML(item.practice || "Do this gently with a parent.")}</div>
-          <div class="task-box"><strong>Game:</strong> ${escapeHTML(item.game || "Hide the answer and try again.")}</div>
-        `;
-      }
-
-      els.activityModal.classList.add("show");
-    }
-
-    function closeModal() {
-      els.activityModal.classList.remove("show");
-      state.activeModalItem = null;
-    }
-
-    function completeActivity(id) {
-      if (!state.progress.activities) state.progress.activities = {};
-      if (!state.progress.activities[id]) {
-        state.progress.activities[id] = { completedAt: new Date().toISOString() };
-        state.progress.activityStars = (state.progress.activityStars || 0) + 1;
-        saveProgress();
-        renderStats();
-        renderCards();
-        playSoftClick();
-        showToast("Activity completed! ⭐");
-      } else {
-        showToast("Already completed");
-      }
-    }
-
-    function inferActivityStyle(item) {
-      if (Array.isArray(item.options) && item.options.length) return "tap";
-      if (item.game) return "game";
-      if (item.practice) return "practice";
-      if (item.activity) return "say";
-      return "tap";
-    }
-
-    function activityTitle(style) {
-      const map = {
-        all: "🌈 Activity",
-        tap: "👆 Tap & Choose",
-        say: "🗣️ Say & Repeat",
-        match: "🧩 Match & Connect",
-        practice: "✍️ Practice Task",
-        game: "🎮 Mini Game"
+      const titles = {
+        quiz: "⚡ Quick Quiz",
+        treasure: "💎 Star Treasure",
+        memory: "🧩 Match Pairs",
+        practice: "✍️ Practice Challenge"
       };
-      return map[style] || map.all;
+      els.gameTitle.textContent = titles[state.currentMode] || "🎮 Game";
+
+      if (state.currentMode === "memory") renderMemoryGame();
+      else if (state.currentMode === "practice") renderPracticeGame();
+      else renderQuizGame(state.currentMode);
+    }
+
+    function renderQuizGame(mode) {
+      const q = state.currentQuestion;
+      const options = makeOptions(q);
+      const treasureText = mode === "treasure"
+        ? `<div class="mini-hint"><b>💎 Treasure Rule:</b> Choose the right answer to win 2 stars for this round.</div>`
+        : `<div class="mini-hint"><b>⚡ Quick Rule:</b> Think gently, choose one answer, then check the meaning.</div>`;
+
+      els.gameBox.innerHTML = `
+        <div class="topic-line">
+          <span class="topic-badge">${escapeHTML(q.symbol || findTopicIcon(q.topicId) || "❓")} ${escapeHTML(q.topicTitle || "Islamic Learning")}</span>
+          <span class="level-badge">Level ${escapeHTML(q.level || "")} • Age ${escapeHTML(q.ageRange || "")}</span>
+        </div>
+        <div class="question-text">${escapeHTML(q.question || "Question")}</div>
+        ${q.arabic ? `<div class="arabic">${escapeHTML(q.arabic)}</div>` : ""}
+        <div class="answer-grid">
+          ${options.map(option => `<button class="answer-btn" type="button" data-answer-option="${escapeHTML(option)}">${escapeHTML(option)}</button>`).join("")}
+        </div>
+        <div class="feedback" id="feedbackBox"></div>
+        ${treasureText}
+      `;
+
+      els.gameBox.querySelectorAll("[data-answer-option]").forEach(button => {
+        button.addEventListener("click", () => checkAnswer(button, mode));
+      });
+    }
+
+    function renderMemoryGame() {
+      const list = state.filteredQuestions.length >= 2 ? state.filteredQuestions : state.allQuestions;
+      const chosen = shuffle(list.filter(item => item.answer && item.question)).slice(0, 2);
+
+      if (chosen.length < 2) {
+        renderQuizGame("quiz");
+        return;
+      }
+
+      const cards = shuffle([
+        { type: "question", pair: chosen[0].id, text: chosen[0].question },
+        { type: "answer", pair: chosen[0].id, text: chosen[0].answer },
+        { type: "question", pair: chosen[1].id, text: chosen[1].question },
+        { type: "answer", pair: chosen[1].id, text: chosen[1].answer }
+      ]);
+
+      els.gameBox.innerHTML = `
+        <div class="topic-line">
+          <span class="topic-badge">🧩 Match the question with its answer</span>
+          <span class="level-badge">Tap two cards</span>
+        </div>
+        <div class="memory-grid">
+          ${cards.map((card, index) => `
+            <button class="memory-card" type="button" data-pair="${escapeHTML(card.pair)}" data-kind="${escapeHTML(card.type)}" data-index="${index}">
+              ${escapeHTML(card.text)}
+            </button>
+          `).join("")}
+        </div>
+        <div class="feedback" id="feedbackBox"></div>
+        <div class="mini-hint"><b>🧩 Rule:</b> First tap a question, then tap its correct answer.</div>
+      `;
+
+      let first = null;
+      els.gameBox.querySelectorAll(".memory-card").forEach(card => {
+        card.addEventListener("click", () => {
+          if (card.classList.contains("correct")) return;
+
+          if (!first) {
+            first = card;
+            card.style.background = "#fff8df";
+            return;
+          }
+
+          const samePair = first.dataset.pair === card.dataset.pair;
+          const differentKind = first.dataset.kind !== card.dataset.kind;
+
+          if (samePair && differentKind) {
+            first.classList.add("correct");
+            card.classList.add("correct");
+            addScore(1, 1);
+            showFeedback("good", "Great matching! ⭐ You matched the question with the answer.");
+          } else {
+            first.classList.add("wrong");
+            card.classList.add("wrong");
+            showFeedback("try", "Good try. Look again and match the correct pair.");
+            setTimeout(() => {
+              first.classList.remove("wrong");
+              card.classList.remove("wrong");
+              first.style.background = "";
+              card.style.background = "";
+            }, 850);
+          }
+          first = null;
+        });
+      });
+    }
+
+    function renderPracticeGame() {
+      const q = state.currentQuestion;
+      els.gameBox.innerHTML = `
+        <div class="topic-line">
+          <span class="topic-badge">${escapeHTML(q.symbol || findTopicIcon(q.topicId) || "✍️")} ${escapeHTML(q.topicTitle || "Practice")}</span>
+          <span class="level-badge">Level ${escapeHTML(q.level || "")} • Tiny Task</span>
+        </div>
+        <div class="question-text">${escapeHTML(q.question || "Practice task")}</div>
+        ${q.arabic ? `<div class="arabic">${escapeHTML(q.arabic)}</div>` : ""}
+        <div class="mini-hint"><b>Answer:</b> ${escapeHTML(q.answer || "")}</div>
+        <div class="mini-hint"><b>🎯 Activity:</b> ${escapeHTML(q.activity || q.game || "Say the answer and repeat it gently.")}</div>
+        <div class="mini-hint"><b>✍️ Practice:</b> ${escapeHTML(q.practice || "Trace, say, point, or repeat the key idea.")}</div>
+        <div class="actions">
+          <button class="btn primary" type="button" id="practiceDoneBtn">⭐ I did it</button>
+          <button class="btn soft" type="button" id="anotherPracticeBtn">➡️ Another task</button>
+        </div>
+        <div class="feedback" id="feedbackBox"></div>
+      `;
+
+      document.getElementById("practiceDoneBtn").addEventListener("click", () => {
+        addScore(1, 1);
+        markCompleted(q.id);
+        showFeedback("good", "Beautiful effort! ⭐ Practice completed.");
+      });
+
+      document.getElementById("anotherPracticeBtn").addEventListener("click", () => {
+        chooseQuestion();
+        renderGame();
+      });
+    }
+
+    function checkAnswer(button, mode) {
+      const q = state.currentQuestion;
+      const selected = normalize(button.dataset.answerOption);
+      const correct = normalize(q.answer);
+      const buttons = els.gameBox.querySelectorAll(".answer-btn");
+      buttons.forEach(btn => btn.disabled = true);
+
+      if (selected === correct) {
+        button.classList.add("correct");
+        addScore(mode === "treasure" ? 2 : 1, mode === "treasure" ? 2 : 1);
+        markCompleted(q.id);
+        showFeedback("good", `Correct! ⭐ <br><b>Answer:</b> ${escapeHTML(q.answer)}${q.simpleExplanation ? `<br><b>Meaning:</b> ${escapeHTML(q.simpleExplanation)}` : ""}`);
+      } else {
+        button.classList.add("wrong");
+        buttons.forEach(btn => {
+          if (normalize(btn.dataset.answerOption) === correct) btn.classList.add("correct");
+        });
+        state.round += 1;
+        updateStats();
+        showFeedback("try", `Good try. The correct answer is <b>${escapeHTML(q.answer)}</b>.${q.simpleExplanation ? `<br>${escapeHTML(q.simpleExplanation)}` : ""}`);
+      }
+    }
+
+    function makeOptions(q) {
+      const baseOptions = Array.isArray(q.options) ? q.options.filter(Boolean) : [];
+      let options = [...baseOptions];
+
+      if (q.answer && !options.some(option => normalize(option) === normalize(q.answer))) {
+        options.push(q.answer);
+      }
+
+      if (options.length < 4) {
+        const distractors = shuffle(state.allQuestions)
+          .map(item => item.answer)
+          .filter(answer => answer && normalize(answer) !== normalize(q.answer) && !options.some(option => normalize(option) === normalize(answer)))
+          .slice(0, 4 - options.length);
+        options = [...options, ...distractors];
+      }
+
+      return shuffle(options).slice(0, 4);
+    }
+
+    function addScore(points, stars) {
+      state.score += points;
+      state.correct += 1;
+      state.round += 1;
+      state.progress.stars = (state.progress.stars || 0) + stars;
+      saveProgress();
+      updateStats();
+      showToast(`+${stars} star${stars > 1 ? "s" : ""}`);
+    }
+
+    function markCompleted(id) {
+      if (!id) return;
+      if (!state.progress.completed) state.progress.completed = {};
+      state.progress.completed[id] = { completedAt: new Date().toISOString(), source: "games" };
+      saveProgress();
+    }
+
+    function updateStats() {
+      els.totalQuestions.textContent = state.allQuestions.length.toLocaleString();
+      els.filteredQuestions.textContent = state.filteredQuestions.length.toLocaleString();
+      els.scoreNow.textContent = state.score.toLocaleString();
+      els.starCount.textContent = (state.progress.stars || 0).toLocaleString();
+      els.stageStars.textContent = (state.progress.stars || 0).toLocaleString();
+      els.roundCount.textContent = state.round.toLocaleString();
+      els.correctCount.textContent = state.correct.toLocaleString();
+      els.filterStatus.textContent = `${state.filteredQuestions.length.toLocaleString()} cards ready`;
+    }
+
+    function showFeedback(type, html) {
+      const box = document.getElementById("feedbackBox");
+      if (!box) return;
+      box.className = `feedback show ${type}`;
+      box.innerHTML = html;
     }
 
     function readProgress() {
       try {
-        return JSON.parse(localStorage.getItem("alHayatKidsIslamActivities")) || { activityStars: 0, activities: {} };
+        return JSON.parse(localStorage.getItem("alHayatKidsIslamProgress")) || { stars: 0, completed: {} };
       } catch {
-        return { activityStars: 0, activities: {} };
+        return { stars: 0, completed: {} };
       }
     }
 
     function saveProgress() {
-      localStorage.setItem("alHayatKidsIslamActivities", JSON.stringify(state.progress));
+      localStorage.setItem("alHayatKidsIslamProgress", JSON.stringify(state.progress));
     }
 
     function findTopicIcon(topicId) {
@@ -1336,12 +1375,19 @@
       return [...new Set(items.map(item => item[key]).filter(Boolean))].sort();
     }
 
-    function labelize(value) {
-      return String(value || "").replaceAll("_", " ").replace(/\b\w/g, letter => letter.toUpperCase());
+    function shuffle(array) {
+      const copy = [...array];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
     }
 
-    function safeId(value) {
-      return String(value || "").replace(/[^a-zA-Z0-9_-]/g, "-");
+    function labelize(value) {
+      return String(value || "")
+        .replaceAll("_", " ")
+        .replace(/\b\w/g, letter => letter.toUpperCase());
     }
 
     function normalize(value) {
@@ -1370,28 +1416,6 @@
       els.toast.textContent = message;
       els.toast.classList.add("show");
       setTimeout(() => els.toast.classList.remove("show"), 1800);
-    }
-
-    function playSoftClick() {
-      try {
-        const AudioContext = window.AudioContext || window.webkitAudioContext;
-        if (!AudioContext) return;
-        const ctx = new AudioContext();
-        const oscillator = ctx.createOscillator();
-        const gain = ctx.createGain();
-        oscillator.type = "sine";
-        oscillator.frequency.setValueAtTime(520, ctx.currentTime);
-        oscillator.frequency.exponentialRampToValueAtTime(760, ctx.currentTime + 0.08);
-        gain.gain.setValueAtTime(0.001, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.06, ctx.currentTime + 0.01);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.12);
-        oscillator.connect(gain);
-        gain.connect(ctx.destination);
-        oscillator.start();
-        oscillator.stop(ctx.currentTime + 0.13);
-      } catch (error) {
-        // Sound is optional. Ignore browser/audio restrictions.
-      }
     }
   </script>
 </body>
