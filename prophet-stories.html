@@ -1,58 +1,621 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Prophet Stories and Seerah | Al-Hayat Kids Islam</title>
-  <meta name="description" content="Prophet Muhammad ﷺ and Prophets’ stories for children ages 3 to 8.">
-  <link rel="canonical" href="https://drimranhayat.github.io/al-hayat-kids-islam/prophet-stories-and-seerah">
-  <link rel="stylesheet" href="styles.css?v=8">
-  
-<style>
-  :root{--navy:#17324d;--teal:#0f766e;--gold:#c8912b;--cream:#fff8ec;--mint:#eefaf7;--card:#fff;--ink:#243044;--soft:#f7fbfa;--shadow:0 14px 34px rgba(23,50,77,.10)}
-  *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,system-ui,sans-serif;background:radial-gradient(circle at top left,#fff4d8 0,#fff8ec 28%,#eefaf7 100%);color:var(--ink);line-height:1.6}.wrap{max-width:1180px;margin:auto;padding:18px}
-  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e9ddc8}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.brand{font-weight:900;color:var(--navy);font-size:1.28rem;text-decoration:none}.brand span{color:var(--gold)}nav{display:flex;flex-wrap:wrap;gap:6px}nav a{display:inline-block;padding:9px 12px;border-radius:999px;background:#f4efe4;text-decoration:none;color:var(--navy);font-weight:800;font-size:.94rem}nav a:hover{background:#dff7f1;transform:translateY(-1px)}
-  .hero,.ak-hero{background:linear-gradient(135deg,#17324d,#0f766e);color:white;border-radius:30px;padding:32px;margin:22px 0;box-shadow:0 18px 45px rgba(23,50,77,.18);position:relative;overflow:hidden}.hero:after,.ak-hero:after{content:'☪︎';position:absolute;right:28px;top:10px;font-size:8rem;opacity:.08}.hero h1,.ak-hero h1{margin:0 0 8px;font-size:clamp(2rem,5vw,4.2rem);line-height:1.05}.hero p,.ak-hero p{font-size:1.1rem;max-width:800px}.pillbar,.ak-stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.pillbar span,.ak-stats span,.ak-hero button{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:10px 14px;border-radius:999px;color:white;font-weight:900}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}.panel,.card,.ak-filter-panel,.ak-daily,.ak-card,.ak-badge{background:white;border-radius:24px;padding:18px;box-shadow:var(--shadow)}.panel h2,.card h2,.card h3{color:var(--navy);margin-top:0}.shortcut{display:block;text-decoration:none;color:var(--navy);background:white;border-radius:24px;padding:20px;box-shadow:var(--shadow);font-weight:900}.shortcut b{display:block;font-size:1.22rem}.shortcut span{color:#556;font-weight:700}.shortcut:hover{transform:translateY(-3px);background:#fff7e5}
-  .ak-filter-grid{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:12px}.ak-filter-grid label{font-weight:900;color:var(--navy)}select,input,textarea{width:100%;box-sizing:border-box;margin-top:6px;padding:12px;border-radius:14px;border:1px solid #d8dfe4;font-size:1rem;background:white}.ak-quick-buttons button,.ak-options button,.ak-complete,.ak-mini-list button,.btn{cursor:pointer;border:0;border-radius:999px;background:#eaf7f4;color:var(--navy);padding:10px 14px;margin:6px 6px 6px 0;font-weight:900;text-decoration:none;display:inline-block}.ak-quick-buttons button:hover,.ak-options button:hover,.ak-complete:hover,.btn:hover{background:#ffe7b1;transform:translateY(-1px)}
-  .ak-card-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(286px,1fr));gap:16px}.ak-card{border:2px solid transparent}.ak-card.is-done{border-color:#42b883;background:#f3fff7}.ak-card-top{display:flex;justify-content:space-between;gap:8px;font-weight:900;color:#52616f;flex-wrap:wrap}.ak-icon{font-size:1.8rem}.ak-card h3{color:var(--navy);font-size:1.18rem}.ak-arabic{font-size:1.65rem;font-family:serif;text-align:center;background:#fff8ec;border-radius:18px;padding:12px}.ak-explain,.ak-action,.ak-trail{background:#f7fafc;border-radius:16px;padding:10px}.ak-options{display:flex;flex-wrap:wrap}.ak-complete{background:#17324d;color:white;width:100%}.ak-count{font-weight:900;color:var(--navy);margin:18px 0}.ak-more,.ak-error{background:#fff3cd;padding:14px;border-radius:16px}.ak-badge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.ak-badge{text-align:center}.ak-badge div{font-size:3rem}progress{width:100%;height:18px}.practice-tools{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}.tool{background:white;border-radius:24px;padding:18px;box-shadow:var(--shadow)}canvas{width:100%;height:240px;border:3px dashed #cbd5e1;border-radius:18px;background:white}.note{background:#fff8ec;border-left:6px solid var(--gold);padding:16px;border-radius:18px;margin:18px 0}footer{margin-top:30px;background:#17324d;color:white}footer a{color:#ffe7b1}.mini-title{color:var(--teal);font-weight:900;text-transform:uppercase;letter-spacing:.08em}.arabic{font-family:serif;font-size:1.6rem;direction:rtl}.hidden{display:none!important}
-  @media(max-width:760px){.ak-filter-grid,.practice-tools{grid-template-columns:1fr}nav a{font-size:.84rem;padding:8px 10px}.wrap{padding:12px}.hero,.ak-hero{padding:22px;border-radius:24px}.ak-card-list{grid-template-columns:1fr}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prophet Stories for Kids | Al-Hayat Kids Islam</title>
+  <meta name="description" content="Child-friendly Prophet stories for Muslim children ages 3 to 8 with Qur'anic morals, simple lessons, activities, mini quiz, stars and parent guidance." />
+  <meta name="keywords" content="Prophet stories for kids, Islamic stories for children, Quran stories for kids, Muslim kids learning, Prophet Muhammad story for kids, Islamic manners for kids" />
 
+  <style>
+    :root{
+      --bg:#fff8e8;
+      --paper:#ffffff;
+      --soft:#f4fffb;
+      --ink:#17324d;
+      --muted:#607487;
+      --brand:#0f766e;
+      --brand2:#22c55e;
+      --gold:#f5b942;
+      --rose:#ff7b7b;
+      --sky:#6ec7ff;
+      --line:rgba(23,50,77,.13);
+      --shadow:0 18px 44px rgba(23,50,77,.12);
+      --radius:26px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Segoe UI",Arial,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 6% 4%, rgba(110,199,255,.25), transparent 28%),
+        radial-gradient(circle at 96% 8%, rgba(245,185,66,.28), transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(154,240,197,.26), transparent 38%),
+        linear-gradient(180deg,#fff8e8 0%,#fffdf7 50%,#f1fffb 100%);
+      min-height:100vh;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select,textarea{font:inherit}
+    .topbar{
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,253,247,.92);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;
+      font-weight:950;letter-spacing:-.03em;
+    }
+    .brand-icon{
+      width:48px;height:48px;border-radius:17px;
+      display:grid;place-items:center;
+      color:white;font-size:1.35rem;
+      background:linear-gradient(135deg,var(--brand),var(--brand2));
+      box-shadow:0 13px 25px rgba(15,118,110,.24);
+    }
+    .brand small{display:block;color:var(--muted);font-weight:800;font-size:.76rem;margin-top:2px;letter-spacing:0}
+    .nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+    .nav a{
+      padding:10px 13px;border-radius:999px;
+      background:rgba(15,118,110,.08);
+      color:#115e59;font-weight:900;
+      transition:.2s ease;
+    }
+    .nav a:hover,.nav a:focus{transform:translateY(-2px);background:rgba(15,118,110,.16);outline:none}
+
+    .hero{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:42px 18px 18px;
+      display:grid;
+      grid-template-columns:1.14fr .86fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .card,.hero-card,.side-card,.panel,.story-card,.quiz-card{
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+    }
+    .hero-card{padding:34px;position:relative;overflow:hidden}
+    .hero-card:after{
+      content:"🌙";
+      position:absolute;right:22px;top:15px;
+      font-size:5rem;opacity:.11;transform:rotate(12deg)
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 13px;border-radius:999px;
+      background:#ecfff7;border:1px solid rgba(15,118,110,.16);
+      color:#115e59;font-weight:950;margin-bottom:14px;
+    }
+    h1{margin:0;font-size:clamp(2.15rem,5vw,4.2rem);line-height:.96;letter-spacing:-.06em;color:#12314d}
+    .hero-card p{font-size:1.1rem;line-height:1.75;color:var(--muted);font-weight:700;max-width:780px;margin:18px 0 0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{
+      border:none;cursor:pointer;border-radius:999px;
+      padding:12px 17px;font-weight:950;font-size:.98rem;
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      transition:.2s ease;
+    }
+    .btn:hover,.btn:focus{transform:translateY(-2px);outline:none}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:white;box-shadow:0 14px 24px rgba(15,118,110,.22)}
+    .btn.gold{background:linear-gradient(135deg,#f59e0b,#ffd166);color:#523700;box-shadow:0 14px 24px rgba(245,158,11,.18)}
+    .btn.soft{background:#f0fbff;color:#0b5171;border:1px solid rgba(11,81,113,.14)}
+    .side-card{padding:24px;display:grid;gap:14px}
+    .big-symbol{
+      min-height:168px;border-radius:24px;
+      background:radial-gradient(circle at top left,rgba(154,240,197,.6),transparent 35%),linear-gradient(135deg,#e8fffb,#fff7db);
+      border:1px solid var(--line);
+      display:grid;place-items:center;text-align:center;padding:20px;
+    }
+    .big-symbol strong{display:block;font-size:3.2rem;margin-bottom:8px}
+    .big-symbol span{font-weight:950;color:#115e59;font-size:1.08rem}
+    .mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .mini-stat{background:white;border:1px solid var(--line);border-radius:18px;padding:14px}
+    .mini-stat b{display:block;color:#115e59;font-size:1.45rem}
+    .mini-stat span{font-size:.84rem;color:var(--muted);font-weight:850}
+
+    main{max-width:var(--max);margin:0 auto;padding:18px}
+    .panel{padding:24px;margin-bottom:22px}
+    .panel-title{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+    .panel-title h2{margin:0;font-size:clamp(1.4rem,3vw,2.05rem);letter-spacing:-.03em}
+    .status-pill{background:#fff8df;color:#744b00;border:1px solid rgba(245,185,66,.36);padding:9px 13px;border-radius:999px;font-weight:950}
+
+    .path-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .path-step{border:1px solid var(--line);border-radius:20px;padding:15px;background:linear-gradient(135deg,#fff,#f3fffb);font-weight:900;line-height:1.45;min-height:96px;display:grid;align-content:center;gap:5px}
+    .path-step span{display:block;color:var(--muted);font-size:.82rem;font-weight:850}
+
+    .filters{display:grid;grid-template-columns:1.3fr repeat(3,.85fr);gap:12px;margin-bottom:16px}
+    label{display:grid;gap:7px;color:#115e59;font-weight:950;font-size:.9rem}
+    input,select{
+      width:100%;border:1px solid rgba(23,50,77,.18);border-radius:15px;padding:12px 13px;background:white;color:var(--ink);font-weight:750;
+    }
+    input:focus,select:focus{outline:3px solid rgba(15,118,110,.18);border-color:rgba(15,118,110,.4)}
+
+    .story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .story-card{padding:18px;display:grid;gap:12px;position:relative;overflow:hidden}
+    .story-card.done{border-color:rgba(34,197,94,.55);background:linear-gradient(180deg,#fff,#f0fff5)}
+    .story-top{display:flex;align-items:start;justify-content:space-between;gap:10px}
+    .story-icon{font-size:2.3rem;background:#ecfff7;border-radius:18px;width:58px;height:58px;display:grid;place-items:center;border:1px solid rgba(15,118,110,.15)}
+    .level-badge{display:inline-flex;padding:7px 10px;border-radius:999px;background:#fff3c4;color:#6b4300;font-weight:950;font-size:.8rem;white-space:nowrap}
+    .story-card h3{margin:0;font-size:1.25rem;line-height:1.25;color:#12314d;letter-spacing:-.02em}
+    .story-card p{margin:0;color:var(--muted);font-weight:750;line-height:1.65}
+    .source-note{background:#f8fbff;border:1px dashed rgba(23,50,77,.18);border-radius:16px;padding:11px;color:#36556f;font-weight:800;font-size:.92rem;line-height:1.55}
+    .moral{background:#fff8df;border:1px solid rgba(245,185,66,.34);border-radius:16px;padding:12px;color:#4c3900;font-weight:850;line-height:1.55}
+    .activity{background:#f1fffb;border:1px solid rgba(15,118,110,.13);border-radius:16px;padding:12px;color:#115e59;font-weight:850;line-height:1.55}
+    .card-actions{display:flex;flex-wrap:wrap;gap:8px}
+    .small-btn{border:none;cursor:pointer;border-radius:999px;padding:9px 11px;font-weight:950;background:#ecfff7;color:#115e59;transition:.2s ease}
+    .small-btn:hover{transform:translateY(-2px)}
+    .small-btn.star{background:#fff3c4;color:#6b4300}
+    .small-btn.quiz{background:#eef7ff;color:#0b5171}
+
+    .quiz-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .quiz-card{padding:17px;display:grid;gap:11px}
+    .quiz-card h3{margin:0;font-size:1.08rem;line-height:1.4}
+    .option-list{display:grid;gap:8px}
+    .option{border:1px solid rgba(23,50,77,.12);background:#fff;border-radius:14px;padding:10px 11px;font-weight:850;cursor:pointer;text-align:left;transition:.2s ease}
+    .option:hover{transform:translateX(3px);background:#f1fffb}
+    .option.correct{border-color:rgba(34,197,94,.65);background:#edfff4}
+    .option.wrong{border-color:rgba(239,68,68,.55);background:#fff1f1}
+
+    .parent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .parent-card{border:1px solid var(--line);border-radius:20px;padding:16px;background:linear-gradient(135deg,#fff,#f7fffd);line-height:1.65;color:var(--muted);font-weight:750}
+    .parent-card b{display:block;color:#115e59;font-size:1.05rem;margin-bottom:6px}
+
+    .footer-note{max-width:var(--max);margin:0 auto;padding:22px 18px 42px;text-align:center;color:var(--muted);line-height:1.7;font-weight:700}
+    .toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#12314d;color:white;padding:12px 16px;border-radius:999px;font-weight:950;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s ease;z-index:99}
+    .toast.show{opacity:1;bottom:26px}
+    .hidden{display:none!important}
+
+    @media(max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .path-grid,.story-grid,.parent-grid{grid-template-columns:repeat(2,1fr)}
+      .filters{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:640px){
+      .topbar-inner{flex-direction:column;align-items:flex-start}
+      .nav{width:100%;flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:4px}
+      .nav a{white-space:nowrap}
+      .hero{padding-top:24px}
+      .hero-card,.side-card,.panel{padding:20px;border-radius:22px}
+      .hero-actions .btn{width:100%}
+      .mini-grid,.path-grid,.story-grid,.filters,.quiz-grid,.parent-grid{grid-template-columns:1fr}
+      .story-top{flex-direction:column}
+    }
+  </style>
 </head>
+
 <body>
-<header><div class="wrap top"><a class="brand" href="index.html">Al-Hayat <span>Kids Islam</span></a><nav>
-      <a href="index.html">Home</a><a href="curriculum.html">Curriculum</a><a href="duas.html">Duas</a><a href="surahs.html">Qur’an</a><a href="prayer-basics.html">Salah</a><a href="arabic-letters.html">Arabic</a><a href="activities/">Activities</a><a href="games/">Games</a><a href="practice/">Practice</a><a href="progress/">Progress</a>
-    </nav></div></header>
-<main class="wrap">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-icon">☾</span>
+        <span>Al-Hayat Kids Islam<small>Islamic learning for ages 3–8</small></span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">🏠 Home</a>
+        <a href="questions.html">❓ Questions</a>
+        <a href="activities/">🎯 Activities</a>
+        <a href="games/">🎮 Games</a>
+        <a href="practice/">✍️ Practice</a>
+        <a href="progress/">⭐ Progress</a>
+        <a href="parents/">👨‍👩‍👧 Parents</a>
+      </nav>
+    </div>
+  </header>
 
-<section class="hero">
-  <p class="mini-title">Structured Islamic learning path</p>
-  <h1>Prophet Stories and Seerah</h1>
-  <p>Short, respectful, child-safe questions about Prophet Muhammad ﷺ and selected Prophets’ stories with simple moral lessons.</p>
-  <div class="pillbar"><span>❓ 3,000 Q/A</span><span>🌱 Gradual levels</span><span>👆 Child-friendly symbols</span><span>⭐ Stars and badges</span></div>
-</section>
-<section class="grid">
-  <a class="shortcut" href="activities/"><b>🎯 Activities</b><span>Question → task → next card</span></a>
-  <a class="shortcut" href="games/"><b>🎮 Games</b><span>Mini challenges from the same bank</span></a>
-  <a class="shortcut" href="practice/"><b>✍️ Practice</b><span>Whiteboard, typing, tracing</span></a>
-  <a class="shortcut" href="progress/"><b>⭐ Progress</b><span>Completed cards, stars, badges</span></a>
-</section>
+  <section class="hero">
+    <div class="hero-card">
+      <span class="eyebrow">🌙 Gentle Qur’anic Story Learning</span>
+      <h1>Prophet Stories for Kids</h1>
+      <p>
+        Short, careful and child-friendly stories from the Qur’anic tradition. Each story teaches one clear value: truthfulness, patience, courage, kindness, trust in Allah and good manners.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#stories">📖 Start Stories</a>
+        <button class="btn gold" id="randomStoryBtn" type="button">🎲 Random Story</button>
+        <a class="btn soft" href="questions.html">❓ Open Questions</a>
+      </div>
+    </div>
 
-<div id="alhayat-bank-app" data-bank-page="curriculum" data-title="Prophet Stories and Seerah" data-description="Short, respectful, child-safe questions about Prophet Muhammad ﷺ and selected Prophets’ stories with simple moral lessons." data-topic-ids="prophet_seerah,prophets_stories"></div>
+    <aside class="side-card">
+      <div class="big-symbol">
+        <div>
+          <strong>📖 ❤️ ⭐</strong>
+          <span>Story → Moral → Practice → Star</span>
+        </div>
+      </div>
+      <div class="mini-grid">
+        <div class="mini-stat"><b id="storyCount">8</b><span>Story Cards</span></div>
+        <div class="mini-stat"><b id="completedCount">0</b><span>Completed</span></div>
+        <div class="mini-stat"><b id="starCount">0</b><span>Stars Here</span></div>
+        <div class="mini-stat"><b>3–8</b><span>Age Range</span></div>
+      </div>
+    </aside>
+  </section>
 
-</main>
-<footer><div class="wrap"><strong>Al-Hayat Kids Islam</strong><p>Safe, parent-guided Islamic learning for children ages 3–8. No child chat, no login, no ads, and no tracking scripts.</p><p><a href="safety-privacy.html">Safety</a> · <a href="privacy-policy.html">Privacy</a> · <a href="contact.html">Contact</a></p></div></footer>
+  <main>
+    <section class="panel">
+      <div class="panel-title">
+        <h2>🧭 How children should learn</h2>
+        <span class="status-pill">One story, one value</span>
+      </div>
+      <div class="path-grid">
+        <div class="path-step"><span>Step 1</span>👂 Listen or read one short story.</div>
+        <div class="path-step"><span>Step 2</span>❤️ Say the moral in one sentence.</div>
+        <div class="path-step"><span>Step 3</span>🎯 Do one tiny activity.</div>
+        <div class="path-step"><span>Step 4</span>⭐ Mark complete and earn a star.</div>
+      </div>
+    </section>
 
-  <script src="assets/js/sound-engine.js"></script>
-  <script src="assets/js/progress-engine.js"></script>
-  <script src="assets/js/reward-engine.js"></script>
-  <script src="assets/js/filter-engine.js"></script>
-  <script src="assets/js/learning-path.js"></script>
-  <script src="assets/js/whiteboard.js"></script>
-  <script src="assets/js/typing-board.js"></script>
-  <script src="assets/js/question-bank.js"></script>
+    <section class="panel" id="stories">
+      <div class="panel-title">
+        <h2>📖 Story Cards</h2>
+        <span class="status-pill" id="resultCount">8 stories</span>
+      </div>
 
-<script src="script.js?v=8"></script>
+      <div class="filters" aria-label="Story filters">
+        <label>
+          Search
+          <input id="searchInput" type="search" placeholder="Search: kindness, patience, truth, Prophet Musa..." />
+        </label>
+        <label>
+          Value
+          <select id="valueFilter">
+            <option value="">All Values</option>
+            <option value="truthfulness">Truthfulness</option>
+            <option value="patience">Patience</option>
+            <option value="courage">Courage</option>
+            <option value="trust">Trust in Allah</option>
+            <option value="kindness">Kindness</option>
+            <option value="repentance">Repentance</option>
+          </select>
+        </label>
+        <label>
+          Age
+          <select id="ageFilter">
+            <option value="">All Ages</option>
+            <option value="3-4">Ages 3–4</option>
+            <option value="5-6">Ages 5–6</option>
+            <option value="7-8">Ages 7–8</option>
+          </select>
+        </label>
+        <label>
+          Action
+          <select id="actionFilter">
+            <option value="">All Actions</option>
+            <option value="say">Say</option>
+            <option value="draw">Draw</option>
+            <option value="choose">Choose</option>
+            <option value="act">Act</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="story-grid" id="storyGrid"></div>
+    </section>
+
+    <section class="panel" id="quiz">
+      <div class="panel-title">
+        <h2>🧩 Mini Quiz</h2>
+        <span class="status-pill">Tap the best answer</span>
+      </div>
+      <div class="quiz-grid" id="quizGrid"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>👨‍👩‍👧 Parent / Teacher Guidance</h2>
+        <span class="status-pill">Safe storytelling</span>
+      </div>
+      <div class="parent-grid">
+        <div class="parent-card"><b>Keep it gentle</b>For ages 3–8, avoid frightening details. Focus on Allah’s help, good choices, kindness and hope.</div>
+        <div class="parent-card"><b>Use Qur’anic references</b>These cards give simple references. Read from a reliable children’s Qur’an story book or teacher-approved source for formal lessons.</div>
+        <div class="parent-card"><b>One moral only</b>After one story, ask: “What good action can we do today?” Then let the child practise one tiny behaviour.</div>
+      </div>
+    </section>
+  </main>
+
+  <p class="footer-note">
+    Note: This page gives simplified child-friendly summaries. For formal teaching, parents and teachers should review Qur’anic verses, authentic Islamic sources and the child’s age level.
+  </p>
+
+  <div class="toast" id="toast">Saved</div>
+
+  <script>
+    const stories = [
+      {
+        id:"muhammad-truthful",
+        icon:"ﷺ",
+        title:"Prophet Muhammad ﷺ: The Truthful and Trustworthy",
+        prophet:"Prophet Muhammad ﷺ",
+        value:"truthfulness",
+        age:"5-6",
+        action:"say",
+        level:"Beginner",
+        summary:"Before prophethood, people knew Prophet Muhammad ﷺ as truthful and trustworthy. A Muslim child learns to speak the truth, keep promises and be gentle with others.",
+        moral:"Allah loves truthfulness. I should tell the truth and keep what is trusted to me.",
+        activity:"Say: “I will tell the truth.” Then name one promise you can keep today.",
+        source:"General Seerah theme; connect with Qur’an 33:21 for the Prophet ﷺ as a beautiful example."
+      },
+      {
+        id:"nuh-patience",
+        icon:"🚢",
+        title:"Prophet Nuh عليه السلام: Patience and Calling to Good",
+        prophet:"Prophet Nuh عليه السلام",
+        value:"patience",
+        age:"7-8",
+        action:"draw",
+        level:"Intermediate",
+        summary:"Prophet Nuh عليه السلام called his people to worship Allah. He was patient for a very long time and trusted Allah’s command.",
+        moral:"When doing good is hard, I can still be patient and trust Allah.",
+        activity:"Draw a small ark and say one good thing you can keep doing patiently.",
+        source:"Qur’an: Surah Nuh 71; also see 11:36–49 for the ark narrative."
+      },
+      {
+        id:"ibrahim-trust",
+        icon:"⭐",
+        title:"Prophet Ibrahim عليه السلام: Trust in Allah",
+        prophet:"Prophet Ibrahim عليه السلام",
+        value:"trust",
+        age:"7-8",
+        action:"choose",
+        level:"Intermediate",
+        summary:"Prophet Ibrahim عليه السلام loved Allah and rejected false worship. He showed courage and trusted Allah in difficult moments.",
+        moral:"I worship Allah alone and trust Him when I feel afraid.",
+        activity:"Choose one brave good action: say sorry, tell the truth, share a toy, or help someone.",
+        source:"Qur’an: 21:51–70; 37:83–113."
+      },
+      {
+        id:"musa-courage",
+        icon:"🌊",
+        title:"Prophet Musa عليه السلام: Courage with Allah’s Help",
+        prophet:"Prophet Musa عليه السلام",
+        value:"courage",
+        age:"5-6",
+        action:"act",
+        level:"Beginner",
+        summary:"Prophet Musa عليه السلام faced a powerful ruler and trusted Allah. Allah helped him and protected the believers.",
+        moral:"Allah can help me be brave when I do the right thing.",
+        activity:"Stand tall, take a deep breath and say: “Allah helps me do good.”",
+        source:"Qur’an: 20:9–98; 26:10–68."
+      },
+      {
+        id:"yunus-dua",
+        icon:"🐋",
+        title:"Prophet Yunus عليه السلام: Dua and Returning to Allah",
+        prophet:"Prophet Yunus عليه السلام",
+        value:"repentance",
+        age:"5-6",
+        action:"say",
+        level:"Beginner",
+        summary:"Prophet Yunus عليه السلام called upon Allah in difficulty. Allah heard his dua and saved him. A child learns to turn to Allah and ask forgiveness.",
+        moral:"When I make a mistake, I can say sorry and make dua to Allah.",
+        activity:"Repeat gently: “La ilaha illa anta subhanaka inni kuntu minaz-zalimin.”",
+        source:"Qur’an: 21:87–88; 37:139–148."
+      },
+      {
+        id:"yusuf-forgiveness",
+        icon:"🌾",
+        title:"Prophet Yusuf عليه السلام: Patience and Forgiveness",
+        prophet:"Prophet Yusuf عليه السلام",
+        value:"patience",
+        age:"7-8",
+        action:"choose",
+        level:"Intermediate",
+        summary:"Prophet Yusuf عليه السلام faced hardship, but he remained patient and good. Later, he forgave when he had the chance to be kind.",
+        moral:"A strong believer can be patient and forgive for Allah’s sake.",
+        activity:"Choose a kind sentence: “I forgive you,” “Let us try again,” or “I will be gentle.”",
+        source:"Qur’an: Surah Yusuf 12."
+      },
+      {
+        id:"ayyub-patience",
+        icon:"🤲",
+        title:"Prophet Ayyub عليه السلام: Patience in Hard Times",
+        prophet:"Prophet Ayyub عليه السلام",
+        value:"patience",
+        age:"7-8",
+        action:"say",
+        level:"Intermediate",
+        summary:"Prophet Ayyub عليه السلام remained patient during illness and hardship. He made dua and trusted Allah’s mercy.",
+        moral:"When I feel unwell or sad, I can be patient and ask Allah for help.",
+        activity:"Say one grateful sentence: “Alhamdulillah for my family,” “Alhamdulillah for food,” or “Alhamdulillah for today.”",
+        source:"Qur’an: 21:83–84; 38:41–44."
+      },
+      {
+        id:"sulayman-gratitude",
+        icon:"🐜",
+        title:"Prophet Sulayman عليه السلام: Gratitude for Allah’s Gifts",
+        prophet:"Prophet Sulayman عليه السلام",
+        value:"trust",
+        age:"5-6",
+        action:"draw",
+        level:"Beginner",
+        summary:"Prophet Sulayman عليه السلام received great gifts from Allah. He thanked Allah and used his gifts wisely.",
+        moral:"Every gift is from Allah. I should say Alhamdulillah and use my gifts for good.",
+        activity:"Draw one blessing: family, food, books, toys or nature. Then say: Alhamdulillah.",
+        source:"Qur’an: 27:15–19; 34:12–14."
+      }
+    ];
+
+    const quiz = [
+      {q:"What value do we learn from Prophet Muhammad ﷺ being truthful?", a:"Tell the truth", opts:["Tell the truth","Hide good things","Break promises"]},
+      {q:"What did Prophet Yunus عليه السلام do in difficulty?", a:"He made dua to Allah", opts:["He made dua to Allah","He forgot Allah","He was proud"]},
+      {q:"What can we learn from Prophet Ayyub عليه السلام?", a:"Be patient", opts:["Be patient","Give up quickly","Be unkind"]},
+      {q:"What should we say for Allah’s blessings?", a:"Alhamdulillah", opts:["Alhamdulillah","I do not care","It is only mine"]}
+    ];
+
+    const els = {
+      storyGrid: document.getElementById("storyGrid"),
+      quizGrid: document.getElementById("quizGrid"),
+      searchInput: document.getElementById("searchInput"),
+      valueFilter: document.getElementById("valueFilter"),
+      ageFilter: document.getElementById("ageFilter"),
+      actionFilter: document.getElementById("actionFilter"),
+      resultCount: document.getElementById("resultCount"),
+      completedCount: document.getElementById("completedCount"),
+      starCount: document.getElementById("starCount"),
+      randomStoryBtn: document.getElementById("randomStoryBtn"),
+      toast: document.getElementById("toast")
+    };
+
+    const progressKey = "alHayatProphetStoriesProgress";
+    let progress = readProgress();
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderStories(stories);
+      renderQuiz();
+      renderProgress();
+      [els.searchInput, els.valueFilter, els.ageFilter, els.actionFilter].forEach(el => {
+        el.addEventListener("input", applyFilters);
+        el.addEventListener("change", applyFilters);
+      });
+      els.randomStoryBtn.addEventListener("click", randomStory);
+    });
+
+    function applyFilters(){
+      const search = els.searchInput.value.trim().toLowerCase();
+      const value = els.valueFilter.value;
+      const age = els.ageFilter.value;
+      const action = els.actionFilter.value;
+
+      const filtered = stories.filter(story => {
+        if(value && story.value !== value) return false;
+        if(age && story.age !== age) return false;
+        if(action && story.action !== action) return false;
+        if(search){
+          const blob = [story.title,story.prophet,story.value,story.summary,story.moral,story.activity,story.source].join(" ").toLowerCase();
+          if(!blob.includes(search)) return false;
+        }
+        return true;
+      });
+      renderStories(filtered);
+    }
+
+    function renderStories(list){
+      els.resultCount.textContent = `${list.length} ${list.length === 1 ? "story" : "stories"}`;
+      if(!list.length){
+        els.storyGrid.innerHTML = `<div class="story-card"><h3>No story found</h3><p>Try another search word or clear the filters.</p></div>`;
+        return;
+      }
+      els.storyGrid.innerHTML = list.map(story => {
+        const done = Boolean(progress.completed?.[story.id]);
+        return `
+          <article class="story-card ${done ? "done" : ""}" id="card-${escapeHTML(story.id)}">
+            <div class="story-top">
+              <div class="story-icon">${escapeHTML(story.icon)}</div>
+              <span class="level-badge">${escapeHTML(story.level)} • ${escapeHTML(story.age)}</span>
+            </div>
+            <h3>${escapeHTML(story.title)}</h3>
+            <p>${escapeHTML(story.summary)}</p>
+            <div class="moral"><b>❤️ Moral:</b> ${escapeHTML(story.moral)}</div>
+            <div class="activity"><b>🎯 Tiny Activity:</b> ${escapeHTML(story.activity)}</div>
+            <div class="source-note"><b>Reference:</b> ${escapeHTML(story.source)}</div>
+            <div class="card-actions">
+              <button class="small-btn star" type="button" data-complete="${escapeHTML(story.id)}">⭐ Mark Complete</button>
+              <button class="small-btn quiz" type="button" data-quiz-jump>🧩 Mini Quiz</button>
+              <a class="small-btn" href="questions.html">❓ More Q/A</a>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      document.querySelectorAll("[data-complete]").forEach(btn => {
+        btn.addEventListener("click", () => completeStory(btn.dataset.complete));
+      });
+      document.querySelectorAll("[data-quiz-jump]").forEach(btn => {
+        btn.addEventListener("click", () => document.getElementById("quiz").scrollIntoView({behavior:"smooth"}));
+      });
+    }
+
+    function renderQuiz(){
+      els.quizGrid.innerHTML = quiz.map((item, index) => `
+        <article class="quiz-card">
+          <h3>${index + 1}. ${escapeHTML(item.q)}</h3>
+          <div class="option-list">
+            ${item.opts.map(opt => `<button class="option" type="button" data-answer="${escapeHTML(item.a)}" data-option="${escapeHTML(opt)}">${escapeHTML(opt)}</button>`).join("")}
+          </div>
+        </article>
+      `).join("");
+
+      document.querySelectorAll("[data-option]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const parent = btn.parentElement;
+          parent.querySelectorAll(".option").forEach(o => o.classList.remove("correct","wrong"));
+          if(normalize(btn.dataset.option) === normalize(btn.dataset.answer)){
+            btn.classList.add("correct");
+            progress.quizStars = (progress.quizStars || 0) + 1;
+            saveProgress();
+            renderProgress();
+            showToast("Correct! ⭐");
+          } else {
+            btn.classList.add("wrong");
+            showToast("Try again gently");
+          }
+        });
+      });
+    }
+
+    function completeStory(id){
+      if(!progress.completed) progress.completed = {};
+      if(!progress.completed[id]){
+        progress.completed[id] = {completedAt:new Date().toISOString()};
+        progress.stars = (progress.stars || 0) + 1;
+        saveProgress();
+        renderProgress();
+        applyFilters();
+        showToast("Story completed! ⭐");
+      } else {
+        showToast("Already completed");
+      }
+    }
+
+    function randomStory(){
+      const story = stories[Math.floor(Math.random() * stories.length)];
+      els.searchInput.value = story.prophet;
+      els.valueFilter.value = "";
+      els.ageFilter.value = "";
+      els.actionFilter.value = "";
+      applyFilters();
+      setTimeout(() => document.getElementById("stories").scrollIntoView({behavior:"smooth"}), 80);
+    }
+
+    function renderProgress(){
+      const completed = Object.keys(progress.completed || {}).length;
+      const stars = (progress.stars || 0) + (progress.quizStars || 0);
+      els.completedCount.textContent = completed;
+      els.starCount.textContent = stars;
+    }
+
+    function readProgress(){
+      try{
+        return JSON.parse(localStorage.getItem(progressKey)) || {stars:0, quizStars:0, completed:{}};
+      }catch{
+        return {stars:0, quizStars:0, completed:{}};
+      }
+    }
+    function saveProgress(){localStorage.setItem(progressKey, JSON.stringify(progress));}
+    function normalize(v){return String(v || "").trim().toLowerCase();}
+    function escapeHTML(value){return String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[ch]));}
+    function showToast(message){
+      els.toast.textContent = message;
+      els.toast.classList.add("show");
+      setTimeout(() => els.toast.classList.remove("show"), 1800);
+    }
+  </script>
 </body>
 </html>
