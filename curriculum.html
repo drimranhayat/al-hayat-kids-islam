@@ -1,58 +1,1134 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Curriculum Dashboard | Al-Hayat Kids Islam</title>
-  <meta name="description" content="Complete level-wise Islamic learning dashboard for children ages 3 to 8.">
-  <link rel="canonical" href="https://drimranhayat.github.io/al-hayat-kids-islam/curriculum-dashboard">
-  <link rel="stylesheet" href="styles.css?v=8">
-  
-<style>
-  :root{--navy:#17324d;--teal:#0f766e;--gold:#c8912b;--cream:#fff8ec;--mint:#eefaf7;--card:#fff;--ink:#243044;--soft:#f7fbfa;--shadow:0 14px 34px rgba(23,50,77,.10)}
-  *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,system-ui,sans-serif;background:radial-gradient(circle at top left,#fff4d8 0,#fff8ec 28%,#eefaf7 100%);color:var(--ink);line-height:1.6}.wrap{max-width:1180px;margin:auto;padding:18px}
-  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e9ddc8}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.brand{font-weight:900;color:var(--navy);font-size:1.28rem;text-decoration:none}.brand span{color:var(--gold)}nav{display:flex;flex-wrap:wrap;gap:6px}nav a{display:inline-block;padding:9px 12px;border-radius:999px;background:#f4efe4;text-decoration:none;color:var(--navy);font-weight:800;font-size:.94rem}nav a:hover{background:#dff7f1;transform:translateY(-1px)}
-  .hero,.ak-hero{background:linear-gradient(135deg,#17324d,#0f766e);color:white;border-radius:30px;padding:32px;margin:22px 0;box-shadow:0 18px 45px rgba(23,50,77,.18);position:relative;overflow:hidden}.hero:after,.ak-hero:after{content:'☪︎';position:absolute;right:28px;top:10px;font-size:8rem;opacity:.08}.hero h1,.ak-hero h1{margin:0 0 8px;font-size:clamp(2rem,5vw,4.2rem);line-height:1.05}.hero p,.ak-hero p{font-size:1.1rem;max-width:800px}.pillbar,.ak-stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.pillbar span,.ak-stats span,.ak-hero button{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:10px 14px;border-radius:999px;color:white;font-weight:900}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}.panel,.card,.ak-filter-panel,.ak-daily,.ak-card,.ak-badge{background:white;border-radius:24px;padding:18px;box-shadow:var(--shadow)}.panel h2,.card h2,.card h3{color:var(--navy);margin-top:0}.shortcut{display:block;text-decoration:none;color:var(--navy);background:white;border-radius:24px;padding:20px;box-shadow:var(--shadow);font-weight:900}.shortcut b{display:block;font-size:1.22rem}.shortcut span{color:#556;font-weight:700}.shortcut:hover{transform:translateY(-3px);background:#fff7e5}
-  .ak-filter-grid{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:12px}.ak-filter-grid label{font-weight:900;color:var(--navy)}select,input,textarea{width:100%;box-sizing:border-box;margin-top:6px;padding:12px;border-radius:14px;border:1px solid #d8dfe4;font-size:1rem;background:white}.ak-quick-buttons button,.ak-options button,.ak-complete,.ak-mini-list button,.btn{cursor:pointer;border:0;border-radius:999px;background:#eaf7f4;color:var(--navy);padding:10px 14px;margin:6px 6px 6px 0;font-weight:900;text-decoration:none;display:inline-block}.ak-quick-buttons button:hover,.ak-options button:hover,.ak-complete:hover,.btn:hover{background:#ffe7b1;transform:translateY(-1px)}
-  .ak-card-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(286px,1fr));gap:16px}.ak-card{border:2px solid transparent}.ak-card.is-done{border-color:#42b883;background:#f3fff7}.ak-card-top{display:flex;justify-content:space-between;gap:8px;font-weight:900;color:#52616f;flex-wrap:wrap}.ak-icon{font-size:1.8rem}.ak-card h3{color:var(--navy);font-size:1.18rem}.ak-arabic{font-size:1.65rem;font-family:serif;text-align:center;background:#fff8ec;border-radius:18px;padding:12px}.ak-explain,.ak-action,.ak-trail{background:#f7fafc;border-radius:16px;padding:10px}.ak-options{display:flex;flex-wrap:wrap}.ak-complete{background:#17324d;color:white;width:100%}.ak-count{font-weight:900;color:var(--navy);margin:18px 0}.ak-more,.ak-error{background:#fff3cd;padding:14px;border-radius:16px}.ak-badge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.ak-badge{text-align:center}.ak-badge div{font-size:3rem}progress{width:100%;height:18px}.practice-tools{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}.tool{background:white;border-radius:24px;padding:18px;box-shadow:var(--shadow)}canvas{width:100%;height:240px;border:3px dashed #cbd5e1;border-radius:18px;background:white}.note{background:#fff8ec;border-left:6px solid var(--gold);padding:16px;border-radius:18px;margin:18px 0}footer{margin-top:30px;background:#17324d;color:white}footer a{color:#ffe7b1}.mini-title{color:var(--teal);font-weight:900;text-transform:uppercase;letter-spacing:.08em}.arabic{font-family:serif;font-size:1.6rem;direction:rtl}.hidden{display:none!important}
-  @media(max-width:760px){.ak-filter-grid,.practice-tools{grid-template-columns:1fr}nav a{font-size:.84rem;padding:8px 10px}.wrap{padding:12px}.hero,.ak-hero{padding:22px;border-radius:24px}.ak-card-list{grid-template-columns:1fr}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Islamic Curriculum for Kids Ages 3–8 | Al-Hayat Kids Islam</title>
+  <meta name="description" content="A complete child-friendly Islamic curriculum dashboard for ages 3–8 with levels, topics, questions, activities, games, practice, progress and parent guidance." />
+  <meta name="keywords" content="Islamic curriculum for kids, Muslim kids Islamic studies, Islamic learning ages 3 to 8, Quran for children, duas for kids, salah for kids" />
 
+  <style>
+    :root {
+      --cream: #fff7e6;
+      --cream-2: #fffdf6;
+      --ink: #17324d;
+      --muted: #5d7185;
+      --teal: #0f766e;
+      --teal-dark: #115e59;
+      --green: #22c55e;
+      --gold: #f5b942;
+      --sky: #67c7ff;
+      --rose: #ff7b7b;
+      --purple: #a78bfa;
+      --card: rgba(255, 255, 255, 0.92);
+      --line: rgba(23, 50, 77, 0.12);
+      --shadow: 0 18px 45px rgba(23, 50, 77, 0.12);
+      --shadow-soft: 0 10px 25px rgba(23, 50, 77, 0.09);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 5% 8%, rgba(103, 199, 255, 0.24), transparent 30%),
+        radial-gradient(circle at 95% 10%, rgba(245, 185, 66, 0.23), transparent 32%),
+        radial-gradient(circle at 50% 100%, rgba(34, 197, 94, 0.14), transparent 36%),
+        linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 42%, #f2fffb 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    button, input, select { font: inherit; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background: rgba(255, 253, 246, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 950;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--teal), var(--green));
+      color: white;
+      box-shadow: 0 12px 26px rgba(15, 118, 110, 0.24);
+      font-size: 1.4rem;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-weight: 750;
+      font-size: 0.78rem;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .nav a {
+      padding: 10px 13px;
+      border-radius: 999px;
+      font-weight: 900;
+      color: var(--teal-dark);
+      background: rgba(15, 118, 110, 0.08);
+      transition: 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav a:hover,
+    .nav a:focus {
+      transform: translateY(-2px);
+      background: rgba(15, 118, 110, 0.16);
+      outline: none;
+    }
+
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 42px 18px 20px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .side-card,
+    .panel,
+    .level-card,
+    .topic-card,
+    .path-card,
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-xl);
+    }
+
+    .hero-card {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -90px -110px auto auto;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245, 185, 66, 0.28), transparent 68%);
+    }
+
+    .hero-card::after {
+      content: "📚";
+      position: absolute;
+      right: 24px;
+      top: 24px;
+      font-size: 4.6rem;
+      opacity: 0.13;
+      transform: rotate(10deg);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ecfff7;
+      color: var(--teal-dark);
+      border: 1px solid rgba(15, 118, 110, 0.16);
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-weight: 950;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.15rem, 5vw, 4.35rem);
+      line-height: 0.97;
+      letter-spacing: -0.06em;
+      color: #12314d;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-card p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 790px;
+      margin: 18px 0 0;
+      font-weight: 680;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 12px 17px;
+      font-weight: 950;
+      font-size: 0.98rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--teal), var(--green));
+      color: white;
+      box-shadow: 0 14px 24px rgba(15, 118, 110, 0.22);
+    }
+
+    .btn.gold {
+      background: linear-gradient(135deg, #f59e0b, #ffd166);
+      color: #4b3400;
+      box-shadow: 0 14px 24px rgba(245, 158, 11, 0.18);
+    }
+
+    .btn.soft {
+      background: #f0fbff;
+      color: #0b5171;
+      border: 1px solid rgba(11, 81, 113, 0.12);
+    }
+
+    .side-card {
+      padding: 24px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .big-symbol {
+      min-height: 164px;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at top left, rgba(154, 240, 197, 0.58), transparent 34%),
+        linear-gradient(135deg, #e8fffb, #fff7db);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 20px;
+      border: 1px solid var(--line);
+    }
+
+    .big-symbol strong {
+      display: block;
+      font-size: 3rem;
+      margin-bottom: 8px;
+    }
+
+    .big-symbol span {
+      display: block;
+      font-weight: 950;
+      color: var(--teal-dark);
+      font-size: 1.08rem;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .mini-stat {
+      border-radius: 18px;
+      padding: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .mini-stat b {
+      display: block;
+      font-size: 1.45rem;
+      color: var(--teal-dark);
+    }
+
+    .mini-stat span {
+      font-weight: 850;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    .panel {
+      padding: 24px;
+      margin-bottom: 22px;
+    }
+
+    .panel-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .panel-title h2 {
+      margin: 0;
+      font-size: clamp(1.4rem, 3vw, 2.08rem);
+      letter-spacing: -0.035em;
+    }
+
+    .panel-title p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-weight: 700;
+      line-height: 1.65;
+      max-width: 820px;
+    }
+
+    .status-pill {
+      background: #fff8df;
+      color: #744b00;
+      border: 1px solid rgba(245, 185, 66, 0.36);
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-weight: 950;
+    }
+
+    .learning-cycle {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .cycle-step {
+      min-height: 116px;
+      padding: 14px;
+      background: linear-gradient(180deg, #ffffff, #f2fffb);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      display: grid;
+      align-content: center;
+      gap: 6px;
+      text-align: center;
+      font-weight: 950;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .cycle-step b {
+      font-size: 1.8rem;
+    }
+
+    .cycle-step span {
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: 1.15fr repeat(3, 0.85fr);
+      gap: 12px;
+      align-items: end;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      font-weight: 950;
+      color: var(--teal-dark);
+      font-size: 0.92rem;
+    }
+
+    input,
+    select {
+      width: 100%;
+      border: 1px solid rgba(23, 50, 77, 0.18);
+      border-radius: 15px;
+      padding: 12px 13px;
+      background: white;
+      color: var(--ink);
+      font-weight: 750;
+    }
+
+    input:focus,
+    select:focus {
+      outline: 3px solid rgba(15, 118, 110, 0.18);
+      border-color: rgba(15, 118, 110, 0.4);
+    }
+
+    .level-grid,
+    .topic-grid,
+    .feature-grid,
+    .path-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .level-grid { grid-template-columns: repeat(5, 1fr); }
+    .topic-grid { grid-template-columns: repeat(4, 1fr); }
+    .feature-grid { grid-template-columns: repeat(4, 1fr); }
+    .path-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .level-card,
+    .topic-card,
+    .feature-card,
+    .path-card {
+      padding: 18px;
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .level-card::after,
+    .topic-card::after {
+      content: "";
+      position: absolute;
+      right: -36px;
+      bottom: -36px;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: rgba(15, 118, 110, 0.08);
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: #ecfff7;
+      color: var(--teal-dark);
+      font-size: 1.55rem;
+      font-weight: 950;
+      margin-bottom: 12px;
+    }
+
+    .level-card h3,
+    .topic-card h3,
+    .feature-card h3,
+    .path-card h3 {
+      margin: 0;
+      font-size: 1.08rem;
+      letter-spacing: -0.02em;
+      color: #12314d;
+    }
+
+    .level-card p,
+    .topic-card p,
+    .feature-card p,
+    .path-card p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-weight: 700;
+      font-size: 0.94rem;
+    }
+
+    .small-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 12px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      border-radius: 999px;
+      padding: 7px 10px;
+      background: #f8fbff;
+      border: 1px solid rgba(23, 50, 77, 0.1);
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 0.78rem;
+    }
+
+    .mini-link {
+      margin-top: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #ecfff7;
+      color: var(--teal-dark);
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-weight: 950;
+      position: relative;
+      z-index: 2;
+    }
+
+    .topic-card.hidden,
+    .level-card.hidden { display: none; }
+
+    .subject-strip {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+    }
+
+    .subject-btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 18px;
+      padding: 14px 10px;
+      text-align: center;
+      font-weight: 950;
+      color: var(--teal-dark);
+      cursor: pointer;
+      transition: 0.2s ease;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .subject-btn:hover,
+    .subject-btn.active {
+      transform: translateY(-2px);
+      background: #ecfff7;
+      border-color: rgba(15, 118, 110, 0.25);
+    }
+
+    .teacher-note {
+      background: #fff8df;
+      border: 1px solid rgba(245, 185, 66, 0.35);
+      border-radius: 22px;
+      padding: 18px;
+      color: #5a4000;
+      line-height: 1.65;
+      font-weight: 750;
+    }
+
+    .empty,
+    .loading {
+      text-align: center;
+      padding: 42px 18px;
+      font-weight: 900;
+      color: var(--muted);
+    }
+
+    .footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 16px 18px 42px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .footer a {
+      color: var(--teal-dark);
+      font-weight: 950;
+    }
+
+    @media (max-width: 1100px) {
+      .level-grid { grid-template-columns: repeat(3, 1fr); }
+      .topic-grid { grid-template-columns: repeat(3, 1fr); }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .learning-cycle { grid-template-columns: repeat(3, 1fr); }
+      .subject-strip { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .controls { grid-template-columns: 1fr 1fr; }
+      .path-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 4px;
+      }
+
+      .hero { padding-top: 24px; }
+
+      .hero-card,
+      .side-card,
+      .panel {
+        padding: 20px;
+        border-radius: 22px;
+      }
+
+      .hero-actions .btn { width: 100%; }
+
+      .mini-grid,
+      .controls,
+      .level-grid,
+      .topic-grid,
+      .feature-grid,
+      .learning-cycle,
+      .subject-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .subject-btn { text-align: left; }
+    }
+  </style>
 </head>
+
 <body>
-<header><div class="wrap top"><a class="brand" href="index.html">Al-Hayat <span>Kids Islam</span></a><nav>
-      <a href="index.html">Home</a><a href="curriculum.html">Curriculum</a><a href="duas.html">Duas</a><a href="surahs.html">Qur’an</a><a href="prayer-basics.html">Salah</a><a href="arabic-letters.html">Arabic</a><a href="activities/">Activities</a><a href="games/">Games</a><a href="practice/">Practice</a><a href="progress/">Progress</a>
-    </nav></div></header>
-<main class="wrap">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html#home" aria-label="Al-Hayat Kids Islam Home">
+        <span class="brand-icon">☾</span>
+        <span>
+          Al-Hayat Kids Islam
+          <small>Islamic learning for ages 3–8</small>
+        </span>
+      </a>
 
-<section class="hero">
-  <p class="mini-title">Structured Islamic learning path</p>
-  <h1>Complete Islamic Curriculum Dashboard</h1>
-  <p>Explore all 3,000 structured short questions and answers by level, topic, activity, game, and practice.</p>
-  <div class="pillbar"><span>❓ 3,000 Q/A</span><span>🌱 Gradual levels</span><span>👆 Child-friendly symbols</span><span>⭐ Stars and badges</span></div>
-</section>
-<section class="grid">
-  <a class="shortcut" href="activities/"><b>🎯 Activities</b><span>Question → task → next card</span></a>
-  <a class="shortcut" href="games/"><b>🎮 Games</b><span>Mini challenges from the same bank</span></a>
-  <a class="shortcut" href="practice/"><b>✍️ Practice</b><span>Whiteboard, typing, tracing</span></a>
-  <a class="shortcut" href="progress/"><b>⭐ Progress</b><span>Completed cards, stars, badges</span></a>
-</section>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html#home">🏠 Home</a>
+        <a href="curriculum.html">📚 Curriculum</a>
+        <a href="questions.html">❓ Questions</a>
+        <a href="activities/">🎯 Activities</a>
+        <a href="games/">🎮 Games</a>
+        <a href="practice/">✍️ Practice</a>
+        <a href="progress/">⭐ Progress</a>
+        <a href="parents/">👨‍👩‍👧 Parents</a>
+      </nav>
+    </div>
+  </header>
 
-<div id="alhayat-bank-app" data-bank-page="curriculum" data-title="Complete Islamic Curriculum Dashboard" data-description="Explore all 3,000 structured short questions and answers by level, topic, activity, game, and practice."></div>
+  <section class="hero">
+    <div class="hero-card">
+      <span class="eyebrow">📚 Complete Curriculum Dashboard</span>
+      <h1>Islamic Learning Path for Kids</h1>
+      <p>
+        A structured age-wise curriculum for children ages 3–8. Each child moves gently from
+        recognition to understanding, practice, review, games, stars and badges.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="questions.html">❓ Open 3,000 Questions</a>
+        <a class="btn gold" href="#levels">🌟 View Levels</a>
+        <a class="btn soft" href="#topics">🧩 Browse Topics</a>
+      </div>
+    </div>
 
-</main>
-<footer><div class="wrap"><strong>Al-Hayat Kids Islam</strong><p>Safe, parent-guided Islamic learning for children ages 3–8. No child chat, no login, no ads, and no tracking scripts.</p><p><a href="safety-privacy.html">Safety</a> · <a href="privacy-policy.html">Privacy</a> · <a href="contact.html">Contact</a></p></div></footer>
+    <aside class="side-card" aria-label="Curriculum summary">
+      <div class="big-symbol">
+        <div>
+          <strong>📖 ❓ ⭐</strong>
+          <span>Learn → Practice → Play → Earn</span>
+        </div>
+      </div>
 
-  <script src="assets/js/sound-engine.js"></script>
-  <script src="assets/js/progress-engine.js"></script>
-  <script src="assets/js/reward-engine.js"></script>
-  <script src="assets/js/filter-engine.js"></script>
-  <script src="assets/js/learning-path.js"></script>
-  <script src="assets/js/whiteboard.js"></script>
-  <script src="assets/js/typing-board.js"></script>
-  <script src="assets/js/question-bank.js"></script>
+      <div class="mini-grid">
+        <div class="mini-stat">
+          <b id="totalQuestions">—</b>
+          <span>Questions</span>
+        </div>
+        <div class="mini-stat">
+          <b id="totalLevels">5</b>
+          <span>Age Levels</span>
+        </div>
+        <div class="mini-stat">
+          <b id="totalTopics">—</b>
+          <span>Topics</span>
+        </div>
+        <div class="mini-stat">
+          <b>3–8</b>
+          <span>Age Range</span>
+        </div>
+      </div>
+    </aside>
+  </section>
 
-<script src="script.js?v=8"></script>
+  <main>
+    <section class="panel" id="how-it-works">
+      <div class="panel-title">
+        <div>
+          <h2>🧭 How the curriculum works</h2>
+          <p>Every lesson should be small, visual and clear. The child should know what to do without confusion.</p>
+        </div>
+        <span class="status-pill" id="loadStatus">Loading curriculum...</span>
+      </div>
+
+      <div class="learning-cycle" id="learningCycle">
+        <div class="cycle-step"><b>👀</b>Recognize<span>See the symbol</span></div>
+        <div class="cycle-step"><b>❓</b>Answer<span>Choose or tap</span></div>
+        <div class="cycle-step"><b>✍️</b>Practice<span>Trace or type</span></div>
+        <div class="cycle-step"><b>🎯</b>Activity<span>Do one task</span></div>
+        <div class="cycle-step"><b>🎮</b>Game<span>Quick challenge</span></div>
+        <div class="cycle-step"><b>⭐</b>Reward<span>Earn star</span></div>
+      </div>
+    </section>
+
+    <section class="panel" id="levels">
+      <div class="panel-title">
+        <div>
+          <h2>🌈 Age-wise learning levels</h2>
+          <p>The curriculum grows gradually from very easy recognition cards to stronger mixed review challenges.</p>
+        </div>
+        <span class="status-pill">5 levels</span>
+      </div>
+
+      <div class="level-grid" id="levelGrid">
+        <div class="loading">Loading levels...</div>
+      </div>
+    </section>
+
+    <section class="panel" id="topics">
+      <div class="panel-title">
+        <div>
+          <h2>🧩 Curriculum topics</h2>
+          <p>Filter topics and send children directly to the full question bank for practice.</p>
+        </div>
+        <span class="status-pill" id="topicCount">Loading...</span>
+      </div>
+
+      <div class="controls" aria-label="Curriculum filters">
+        <label>
+          Search Topic
+          <input type="search" id="topicSearch" placeholder="Search: salah, duas, Quran, manners..." />
+        </label>
+        <label>
+          Level Focus
+          <select id="levelFocus">
+            <option value="">All Levels</option>
+          </select>
+        </label>
+        <label>
+          Topic Area
+          <select id="topicArea">
+            <option value="">All Areas</option>
+          </select>
+        </label>
+        <label>
+          Quick Action
+          <select id="quickAction">
+            <option value="questions.html">Open Questions</option>
+            <option value="activities/">Open Activities</option>
+            <option value="games/">Open Games</option>
+            <option value="practice/">Open Practice</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="subject-strip" id="subjectStrip" style="margin-top:16px;">
+        <button class="subject-btn active" type="button" data-topic="">🌟 All</button>
+        <button class="subject-btn" type="button" data-topic="allah">☝️ Allah</button>
+        <button class="subject-btn" type="button" data-topic="quran">📖 Qur’an</button>
+        <button class="subject-btn" type="button" data-topic="dua">🤲 Duas</button>
+        <button class="subject-btn" type="button" data-topic="salah">🕌 Salah</button>
+        <button class="subject-btn" type="button" data-topic="manners">❤️ Manners</button>
+        <button class="subject-btn" type="button" data-topic="arabic">🔤 Arabic</button>
+      </div>
+
+      <div class="topic-grid" id="topicGrid" style="margin-top:16px;">
+        <div class="loading">Loading topics...</div>
+      </div>
+    </section>
+
+    <section class="panel" id="daily-path">
+      <div class="panel-title">
+        <div>
+          <h2>☀️ Suggested daily path</h2>
+          <p>For ages 3–8, keep each session short. Use one screen, one task, one reward.</p>
+        </div>
+        <span class="status-pill">Parent-guided</span>
+      </div>
+
+      <div class="path-grid" id="dailyPath">
+        <div class="path-card">
+          <div class="card-icon">1</div>
+          <h3>Start with love</h3>
+          <p>Say Bismillah, choose one topic, and let the child see a clear symbol or picture.</p>
+          <div class="small-meta"><span class="chip">⏱️ 1 minute</span><span class="chip">👀 Recognize</span></div>
+        </div>
+        <div class="path-card">
+          <div class="card-icon">2</div>
+          <h3>Answer 3–5 cards</h3>
+          <p>Open the question bank and complete a few small questions, not a long test.</p>
+          <div class="small-meta"><span class="chip">❓ Questions</span><span class="chip">⭐ Stars</span></div>
+        </div>
+        <div class="path-card">
+          <div class="card-icon">3</div>
+          <h3>Practice and praise</h3>
+          <p>Do one tracing, typing, matching or speaking task. End with gentle praise.</p>
+          <div class="small-meta"><span class="chip">✍️ Practice</span><span class="chip">❤️ Confidence</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="features">
+      <div class="panel-title">
+        <div>
+          <h2>🚀 Connected learning sections</h2>
+          <p>These sections should use the same curriculum bank so the child never feels lost.</p>
+        </div>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="card-icon">❓</div>
+          <h3>Question Bank</h3>
+          <p>All levels, topics, short answers, activities, practice tasks and games in one place.</p>
+          <a class="mini-link" href="questions.html">Open Questions →</a>
+        </article>
+        <article class="feature-card">
+          <div class="card-icon">🎯</div>
+          <h3>Activities</h3>
+          <p>Tap, match, arrange, choose, repeat and apply one Islamic idea at a time.</p>
+          <a class="mini-link" href="activities/">Open Activities →</a>
+        </article>
+        <article class="feature-card">
+          <div class="card-icon">🎮</div>
+          <h3>Games</h3>
+          <p>Mini revision challenges that make learning feel playful and safe.</p>
+          <a class="mini-link" href="games/">Open Games →</a>
+        </article>
+        <article class="feature-card">
+          <div class="card-icon">⭐</div>
+          <h3>Progress</h3>
+          <p>Stars, badges and completed cards help the child feel proud and motivated.</p>
+          <a class="mini-link" href="progress/">Open Progress →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="parent-guidance">
+      <div class="panel-title">
+        <div>
+          <h2>👨‍👩‍👧 Parent and teacher guidance</h2>
+          <p>Use the curriculum lovingly. The aim is not pressure; the aim is familiarity, habit and love of Islam.</p>
+        </div>
+      </div>
+
+      <div class="teacher-note">
+        <strong>Recommended use:</strong>
+        Ages 3–4 should mostly recognize, listen, tap and repeat. Ages 4–5 can answer easy daily-life questions.
+        Ages 5–6 can begin short understanding tasks. Ages 6–7 can do mixed practice. Ages 7–8 can complete
+        stronger review challenges. Keep advanced legal, sectarian or fear-heavy content away from this age range.
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <strong>Al-Hayat Kids Islam</strong><br />
+    Safe, parent-guided Islamic learning for children ages 3–8. No child chat, no login, no ads, and no tracking scripts.<br />
+    <a href="safety-privacy.html">Safety</a> · <a href="privacy-policy.html">Privacy</a> · <a href="contact.html">Contact</a>
+  </footer>
+
+  <script>
+    const DATA_PATHS = {
+      levels: "assets/data/levels/levels.json",
+      topics: "assets/data/topics/topics.json",
+      questions: [
+        "assets/data/questions/questions-level-1.json",
+        "assets/data/questions/questions-level-2.json",
+        "assets/data/questions/questions-level-3.json",
+        "assets/data/questions/questions-level-4.json",
+        "assets/data/questions/questions-level-5.json"
+      ]
+    };
+
+    const fallbackTopics = [
+      { id: "allah_iman", title: "Allah and Iman", icon: "☝️", description: "Simple faith questions for young children." },
+      { id: "quran_surahs", title: "Qur’an and Short Surahs", icon: "📖", description: "Respect, recognition and basic messages of the Qur’an." },
+      { id: "daily_duas_adhkar", title: "Daily Duas and Adhkar", icon: "🤲", description: "Everyday Islamic phrases and duas." },
+      { id: "salah", title: "Salah and Wudu", icon: "🕌", description: "Prayer names, cleanliness and gentle worship habits." },
+      { id: "manners_character", title: "Manners and Character", icon: "❤️", description: "Kindness, honesty, sharing, respect and daily good actions." },
+      { id: "arabic_letters_words", title: "Arabic Letters and Words", icon: "🔤", description: "Arabic letters and simple Islamic words." },
+      { id: "prophet_seerah", title: "Prophet Muhammad ﷺ and Seerah", icon: "ﷺ", description: "Simple, loving lessons from the life of Prophet Muhammad ﷺ." },
+      { id: "ramadan_eid", title: "Ramadan, Eid and Islamic Months", icon: "🌙", description: "Joyful learning about Ramadan, Eid and special Islamic days." }
+    ];
+
+    const state = {
+      levels: [],
+      topics: [],
+      questions: [],
+      topicQuestionCounts: {},
+      activeKeyword: ""
+    };
+
+    const els = {
+      totalQuestions: document.getElementById("totalQuestions"),
+      totalLevels: document.getElementById("totalLevels"),
+      totalTopics: document.getElementById("totalTopics"),
+      loadStatus: document.getElementById("loadStatus"),
+      levelGrid: document.getElementById("levelGrid"),
+      topicGrid: document.getElementById("topicGrid"),
+      topicCount: document.getElementById("topicCount"),
+      topicSearch: document.getElementById("topicSearch"),
+      levelFocus: document.getElementById("levelFocus"),
+      topicArea: document.getElementById("topicArea"),
+      quickAction: document.getElementById("quickAction"),
+      subjectStrip: document.getElementById("subjectStrip")
+    };
+
+    document.addEventListener("DOMContentLoaded", initCurriculum);
+
+    async function initCurriculum() {
+      try {
+        els.loadStatus.textContent = "Loading JSON curriculum...";
+
+        const [levelsData, topicsData, ...questionFiles] = await Promise.all([
+          fetchJson(DATA_PATHS.levels),
+          fetchJson(DATA_PATHS.topics),
+          ...DATA_PATHS.questions.map(fetchJson)
+        ]);
+
+        state.levels = Array.isArray(levelsData.levels) ? levelsData.levels : [];
+        state.topics = Array.isArray(topicsData.topics) && topicsData.topics.length ? topicsData.topics : fallbackTopics;
+        state.questions = questionFiles.flatMap(file => Array.isArray(file.items) ? file.items : []);
+        state.topicQuestionCounts = countBy(state.questions, "topicId");
+
+        populateControls();
+        renderStats();
+        renderLevels();
+        renderTopics();
+        els.loadStatus.textContent = "Curriculum connected";
+      } catch (error) {
+        console.error(error);
+        state.levels = fallbackLevels();
+        state.topics = fallbackTopics;
+        state.questions = [];
+        populateControls();
+        renderStats();
+        renderLevels();
+        renderTopics();
+        els.loadStatus.textContent = "Fallback curriculum shown";
+      }
+    }
+
+    async function fetchJson(path) {
+      const response = await fetch(path, { cache: "no-store" });
+      if (!response.ok) throw new Error(`${response.status} — ${path}`);
+      return response.json();
+    }
+
+    function populateControls() {
+      els.levelFocus.innerHTML = `<option value="">All Levels</option>` + state.levels.map(level => {
+        return `<option value="${escapeHTML(level.levelNumber)}">Level ${escapeHTML(level.levelNumber)}: ${escapeHTML(level.shortTitle || level.title || "")}</option>`;
+      }).join("");
+
+      const areas = uniqueTopicAreas(state.topics);
+      els.topicArea.innerHTML = `<option value="">All Areas</option>` + areas.map(area => {
+        return `<option value="${escapeHTML(area)}">${escapeHTML(labelize(area))}</option>`;
+      }).join("");
+
+      els.topicSearch.addEventListener("input", debounce(renderTopics, 180));
+      els.levelFocus.addEventListener("change", renderTopics);
+      els.topicArea.addEventListener("change", renderTopics);
+      els.quickAction.addEventListener("change", renderTopics);
+
+      els.subjectStrip.querySelectorAll("[data-topic]").forEach(button => {
+        button.addEventListener("click", () => {
+          els.subjectStrip.querySelectorAll(".subject-btn").forEach(btn => btn.classList.remove("active"));
+          button.classList.add("active");
+          state.activeKeyword = button.dataset.topic;
+          renderTopics();
+        });
+      });
+    }
+
+    function renderStats() {
+      const totalEstimate = state.levels.reduce((sum, level) => sum + Number(level.estimatedQuestions || 0), 0);
+      const totalQuestions = state.questions.length || totalEstimate || 3000;
+      els.totalQuestions.textContent = totalQuestions.toLocaleString();
+      els.totalLevels.textContent = state.levels.length || 5;
+      els.totalTopics.textContent = state.topics.length || fallbackTopics.length;
+    }
+
+    function renderLevels() {
+      if (!state.levels.length) {
+        els.levelGrid.innerHTML = `<div class="empty">No levels found yet.</div>`;
+        return;
+      }
+
+      els.levelGrid.innerHTML = state.levels.map(level => {
+        const levelCount = state.questions.filter(q => String(q.level) === String(level.levelNumber)).length || level.estimatedQuestions || 0;
+        return `
+          <article class="level-card">
+            <div class="card-icon">${escapeHTML(level.symbol || level.levelNumber || "⭐")}</div>
+            <h3>Level ${escapeHTML(level.levelNumber)}: ${escapeHTML(level.title || "Learning Level")}</h3>
+            <p>${escapeHTML(level.childGoal || "A gentle Islamic learning stage for children.")}</p>
+            <div class="small-meta">
+              <span class="chip">👧 Age ${escapeHTML(level.ageRange || "3–8")}</span>
+              <span class="chip">❓ ${Number(levelCount).toLocaleString()} questions</span>
+              <span class="chip">⏱️ ${escapeHTML(level.recommendedDailyMinutes || "short daily")}</span>
+            </div>
+            <a class="mini-link" href="questions.html">Open Level ${escapeHTML(level.levelNumber)} →</a>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function renderTopics() {
+      const search = normalize(els.topicSearch.value);
+      const area = normalize(els.topicArea.value);
+      const keyword = normalize(state.activeKeyword);
+      const action = els.quickAction.value || "questions.html";
+
+      let topics = state.topics.filter(topic => {
+        const blob = normalize([
+          topic.id,
+          topic.title,
+          topic.name,
+          topic.description,
+          topic.shortDescription,
+          topic.area,
+          topic.category,
+          topic.keywords
+        ].join(" "));
+
+        if (search && !blob.includes(search)) return false;
+        if (area && !blob.includes(area)) return false;
+        if (keyword && !blob.includes(keyword)) return false;
+        return true;
+      });
+
+      els.topicCount.textContent = `${topics.length} topics shown`;
+
+      if (!topics.length) {
+        els.topicGrid.innerHTML = `<div class="empty">No topic found. Try another search word.</div>`;
+        return;
+      }
+
+      els.topicGrid.innerHTML = topics.map(topic => {
+        const topicId = topic.id || topic.slug || "topic";
+        const count = state.topicQuestionCounts[topicId] || topic.estimatedQuestions || "";
+        const title = topic.title || topic.name || labelize(topicId);
+        const desc = topic.description || topic.shortDescription || "Child-friendly Islamic learning cards with questions, practice and activities.";
+        const link = `${action}${action.includes("?") ? "&" : "?"}topic=${encodeURIComponent(topicId)}`;
+
+        return `
+          <article class="topic-card">
+            <div class="card-icon">${escapeHTML(topic.icon || topic.symbol || "📌")}</div>
+            <h3>${escapeHTML(title)}</h3>
+            <p>${escapeHTML(desc)}</p>
+            <div class="small-meta">
+              ${count ? `<span class="chip">❓ ${Number(count).toLocaleString ? Number(count).toLocaleString() : count} cards</span>` : `<span class="chip">📚 Topic</span>`}
+              <span class="chip">🎯 Practice-ready</span>
+            </div>
+            <a class="mini-link" href="${escapeHTML(link)}">Open Topic →</a>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function countBy(items, key) {
+      return items.reduce((acc, item) => {
+        const value = item[key];
+        if (!value) return acc;
+        acc[value] = (acc[value] || 0) + 1;
+        return acc;
+      }, {});
+    }
+
+    function uniqueTopicAreas(topics) {
+      const values = topics.flatMap(topic => [topic.area, topic.category, topic.group]).filter(Boolean);
+      return [...new Set(values)].sort();
+    }
+
+    function fallbackLevels() {
+      return [
+        { levelNumber: 1, title: "Little Muslim Starter", shortTitle: "Starter", ageRange: "3–4", estimatedQuestions: 400, childGoal: "Recognize simple Islamic words, good habits and basic daily phrases.", recommendedDailyMinutes: "5–8" },
+        { levelNumber: 2, title: "Daily Islam Explorer", shortTitle: "Explorer", ageRange: "4–5", estimatedQuestions: 500, childGoal: "Use simple Islamic words in daily life and answer easy questions.", recommendedDailyMinutes: "7–10" },
+        { levelNumber: 3, title: "Young Muslim Learner", shortTitle: "Learner", ageRange: "5–6", estimatedQuestions: 600, childGoal: "Answer short questions about Allah, Qur’an, Prophet Muhammad ﷺ, salah, wudu, duas and manners.", recommendedDailyMinutes: "10–12" },
+        { levelNumber: 4, title: "Confident Muslim Kid", shortTitle: "Confident", ageRange: "6–7", estimatedQuestions: 700, childGoal: "Explain simple Islamic ideas and connect lessons with daily life.", recommendedDailyMinutes: "12–15" },
+        { levelNumber: 5, title: "Islam Champion", shortTitle: "Champion", ageRange: "7–8", estimatedQuestions: 800, childGoal: "Complete stronger revision challenges and show confident Islamic habits.", recommendedDailyMinutes: "15–20" }
+      ];
+    }
+
+    function normalize(value) {
+      return String(value || "").toLowerCase().trim();
+    }
+
+    function labelize(value) {
+      return String(value || "")
+        .replaceAll("_", " ")
+        .replace(/\b\w/g, letter => letter.toUpperCase());
+    }
+
+    function escapeHTML(value) {
+      return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      }[char]));
+    }
+
+    function debounce(fn, delay = 200) {
+      let timer;
+      return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), delay);
+      };
+    }
+  </script>
 </body>
 </html>
