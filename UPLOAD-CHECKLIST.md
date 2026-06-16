@@ -40,3 +40,17 @@ Upload these files to the root of your GitHub Pages repository. Replace older fi
 ## V4 cache note
 
 Replace `index.html`, `curriculum.html`, `styles.css`, and `script.js` together. The HTML now loads `styles.css?v=4.2` and `script.js?v=4.2`, which helps avoid the old messy CSS being shown from browser cache.
+
+
+## V7 files to replace first
+
+Replace all files for best results. At minimum replace:
+- index.html
+- curriculum.html
+- all topic pages: duas.html, surahs.html, islamic-manners.html, prophet-stories.html, arabic-letters.html, prayer-basics.html, ramadan-eid.html
+- styles.css
+- script.js
+- privacy-policy.html
+- safety-privacy.html
+
+After upload, press Ctrl + F5.

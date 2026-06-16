@@ -17,7 +17,7 @@
 <meta name="twitter:description" content="Interactive course dashboard for Al-Hayat Kids Islam with age filters, level filters, Arabic lessons, practice tasks, activities, and mini games.">
 <meta name="theme-color" content="#0f766e">
 <meta name="color-scheme" content="light">
-<link rel="stylesheet" href="styles.css?v=6.0">
+<link rel="stylesheet" href="styles.css?v=7.0">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Al-Hayat Kids Islam","alternateName":"الحیات اسلامی اطفال","url":"https://YOUR_DOMAIN_HERE/","description":"A child-friendly Islamic learning course menu with age filters, level filters, lessons, activities, and mini games for Muslim children aged 3 to 8.","inLanguage":["en","ur"],"educationalLevel":"Early childhood ages 3 to 8"}</script>
 </head>
 <body class="premium-v2 learning-first clean-v4">
@@ -40,6 +40,15 @@
     </nav>
   </div>
 </header>
+
+<div class="kid-control-bar" aria-label="Kid learning controls">
+  <div class="container kid-control-inner">
+    <button type="button" class="sound-toggle" data-enable-sound aria-pressed="false">🔊 Enable Fun Sounds</button>
+    <div class="progress-pill" aria-live="polite"><span>⭐ Stars:</span> <strong data-star-counter>0</strong></div>
+    <div class="progress-pill"><span>🏅 Badges:</span> <strong data-badge-counter>0</strong></div>
+    <button type="button" class="sound-toggle small" data-speak="Start learning">🔈 Listen</button>
+  </div>
+</div>
 
 <main id="main">
 <section class="clean-page-hero"><div class="container"><p class="eyebrow">Start learning</p><h1>All courses, lessons, practice, activities, and games</h1><p>Choose a course first. Parent notes and curriculum explanations are lower, so children reach learning quickly.</p></div></section>
@@ -171,13 +180,32 @@
 <section class="section soft" id="good-deeds-game"><div class="container mini-game-panel"><div class="course-top"><span class="course-icon" aria-hidden="true">🎮</span><span class="course-tag">Mini Game</span></div><h2>Which is a good deed?</h2><div class="choice-game"><button type="button" class="choice-btn" data-correct="true">Help parents kindly</button><button type="button" class="choice-btn" data-correct="false">Waste water</button><button type="button" class="choice-btn" data-correct="false">Speak rudely</button></div><p class="game-result" aria-live="polite"></p></div></section>
 
 <section class="section parent-notes-lower soft"><div class="container accordion-grid"><details class="parent-detail"><summary>Curriculum note for parents</summary><p>The learning dashboard is for children. Detailed sequencing, safety, and parent guidance can stay lower on the site so children are not blocked by reading-heavy introductions.</p></details><details class="parent-detail"><summary>Authenticity rule</summary><p>No fabricated Qur’an, Hadith, duas, or Prophet story details should be published. Arabic text should be reviewed before final app release.</p></details></div></section>
+
+<section class="section complete-content-map-v7" id="complete-content-map-v7">
+  <div class="container section-head"><p class="eyebrow">Complete content map</p><h2>More learning tracks for ages 3–8</h2><p>Each track can grow into lessons, practice, activity, mini game, whiteboard, typing board, stars, and badges.</p></div>
+  <div class="container content-map-grid">
+    <a href="curriculum.html#iman-lesson" data-age="3-4 5-6 7-8" data-level="1 2 3"><span>☝️</span><b>Allah & Iman</b><small>Allah made me • Allah is One • gratitude</small></a>
+    <a href="duas.html#lesson" data-age="3-4 5-6 7-8" data-level="1 2 3"><span>🤲</span><b>Daily Duas</b><small>Food • sleep • study • parents</small></a>
+    <a href="surahs.html#lesson" data-age="5-6 7-8" data-level="1 2 3"><span>📖</span><b>Short Surahs</b><small>Al-Fatihah • Ikhlas • Falaq • Nas</small></a>
+    <a href="islamic-manners.html#lesson" data-age="3-4 5-6 7-8" data-level="1 2 3"><span>🌸</span><b>Akhlaq</b><small>Salam • truth • sharing • kindness</small></a>
+    <a href="prophet-stories.html#lesson" data-age="5-6 7-8" data-level="1 2 3"><span>⭐</span><b>Prophet Stories</b><small>Adam • Nuh • Ibrahim • Musa • Muhammad ﷺ</small></a>
+    <a href="arabic-letters.html#lesson" data-age="3-4 5-6 7-8" data-level="1 2"><span>ا</span><b>Arabic Letters</b><small>Recognize • trace • match</small></a>
+    <a href="prayer-basics.html#lesson" data-age="5-6 7-8" data-level="1 2 3"><span>🕌</span><b>Salah Basics</b><small>Five prayers • clean clothes • wudu awareness</small></a>
+    <a href="ramadan-eid.html#lesson" data-age="3-4 5-6 7-8" data-level="1 2 3"><span>🌙</span><b>Ramadan & Eid</b><small>Good deeds • charity • Eid • Hajj awareness</small></a>
+    <a href="curriculum.html#good-deeds-lesson" data-age="3-4 5-6 7-8" data-level="1 2 3"><span>💚</span><b>Good Deeds</b><small>Help parents • share • care for animals</small></a>
+    <a href="curriculum.html#family" data-age="3-4 5-6 7-8" data-level="1 2 3"><span>👨‍👩‍👧</span><b>Family & Parents</b><small>Love • respect • helpful habits</small></a>
+    <a href="curriculum.html#masjid" data-age="5-6 7-8" data-level="1 2 3"><span>🧎</span><b>Masjid Manners</b><small>Clean • quiet • respectful</small></a>
+    <a href="curriculum.html#quiz" data-age="5-6 7-8" data-level="2 3"><span>❓</span><b>Islamic Quiz</b><small>Visual questions • stars • badges</small></a>
+  </div>
+</section>
+
 </main>
 <footer class="site-footer">
   <div class="container footer-grid">
     <section>
       <h2>Al-Hayat Kids Islam</h2>
       <p lang="ur" dir="rtl" class="urdu-name">الحیات اسلامی اطفال</p>
-      <p>Safe Islamic learning for young Muslim children. A parent-guided, no-audio first version for Muslim children aged 3–8.</p>
+      <p>Safe Islamic learning for young Muslim children. A parent-guided, optional-sound learning version for Muslim children aged 3–8.</p>
     </section>
     <section>
       <h2>Explore Learning</h2>
@@ -185,10 +213,10 @@
     </section>
     <section>
       <h2>Safety Promise</h2>
-      <p>No ads, no login, no tracking scripts, no child chat, no microphone, no camera, and no unsafe external media in this static website version.</p>
+      <p>No ads, no login, no tracking scripts, no child chat, no microphone, no camera, and no unsafe external media. Optional sounds are generated locally in the browser.</p>
     </section>
   </div>
   <div class="container footer-bottom"><span>© <span data-year></span> Al-Hayat Kids Islam. All rights reserved.</span><a href="privacy-policy.html">Privacy Policy</a></div>
 </footer>
 <button class="back-to-top" type="button" aria-label="Back to top" data-back-to-top>↑</button>
-<script src="script.js?v=6.0" defer></script>
+<script src="script.js?v=7.0" defer></script>

@@ -110,3 +110,18 @@ This version fixes the messy first-fold problem. The homepage no longer starts w
 ## V6 update
 
 This version adds real Arabic-first lesson content, practice sections, activities, and mini games under all main course buttons. Arabic words are shown in Arabic script, with transliteration minimized. No audio, tracking, backend, camera, or microphone is used.
+
+
+## V7 Rich Interactive Learning Upgrade
+
+This version adds:
+- whiteboard drawing tools on learning pages;
+- typing boards linked to the next task;
+- optional local browser sound effects for hover/click after enabling Fun Sounds;
+- English word pronunciation using the browser speech synthesis engine;
+- auto-updating Today’s Learning Path;
+- local-only stars, badges, and completed-task tracking;
+- global age/level filters that are remembered and passed across internal links;
+- expanded learning content for ages 3–8.
+
+No microphone, camera, login, chat, external audio API, tracking script, or backend is used.

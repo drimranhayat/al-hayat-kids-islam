@@ -17,7 +17,7 @@
 <meta name="twitter:description" content="Parent-guided short Surah learning for children aged 3 to 8 with respectful Qur’an etiquette and no-pressure memorization.">
 <meta name="theme-color" content="#0f766e">
 <meta name="color-scheme" content="light">
-<link rel="stylesheet" href="styles.css?v=6.0">
+<link rel="stylesheet" href="styles.css?v=7.0">
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "EducationalOccupationalCredential",
@@ -38,6 +38,15 @@
     <nav class="main-nav" aria-label="Main navigation" data-nav-menu><a class="nav-link " href="index.html">Home</a><a class="nav-link " href="curriculum.html">Start Learning</a><a class="nav-link " href="index.html#learning-dashboard">Courses</a><a class="nav-link " href="parents-corner.html">Parents</a><a class="nav-link " href="safety-privacy.html">Safety</a><a class="nav-link " href="faq.html">FAQ</a><a class="nav-link " href="contact.html">Contact</a></nav>
   </div>
 </header>
+
+<div class="kid-control-bar" aria-label="Kid learning controls">
+  <div class="container kid-control-inner">
+    <button type="button" class="sound-toggle" data-enable-sound aria-pressed="false">🔊 Enable Fun Sounds</button>
+    <div class="progress-pill" aria-live="polite"><span>⭐ Stars:</span> <strong data-star-counter>0</strong></div>
+    <div class="progress-pill"><span>🏅 Badges:</span> <strong data-badge-counter>0</strong></div>
+    <button type="button" class="sound-toggle small" data-speak="Start learning">🔈 Listen</button>
+  </div>
+</div>
 
 <nav class="kid-topic-nav" aria-label="Kids learning topics">
   <div class="container kid-topic-scroll">
@@ -69,7 +78,14 @@
   </div>
 </section>
 
-<section class="section" id="lesson">
+<section class="page-filter-strip" aria-label="Filter this lesson page">
+  <div class="container smart-filter-panel compact-filter">
+    <div class="filter-group"><strong>Age</strong><button class="filter-btn active" data-kid-filter="age" data-filter-value="all">All</button><button class="filter-btn" data-kid-filter="age" data-filter-value="3-4">3–4</button><button class="filter-btn" data-kid-filter="age" data-filter-value="5-6">5–6</button><button class="filter-btn" data-kid-filter="age" data-filter-value="7-8">7–8</button></div>
+    <div class="filter-group"><strong>Level</strong><button class="filter-btn active" data-kid-filter="level" data-filter-value="all">All</button><button class="filter-btn" data-kid-filter="level" data-filter-value="1">Look</button><button class="filter-btn" data-kid-filter="level" data-filter-value="2">Practice</button><button class="filter-btn" data-kid-filter="level" data-filter-value="3">Use</button></div>
+  </div>
+</section>
+
+<section class="section trackable-section" id="lesson" data-age="3-4 5-6 7-8" data-level="1" data-section-name="Lesson">
   <div class="container section-head"><p class="eyebrow">Lesson</p><h2>Look and learn</h2><p>Arabic is shown properly first. Transliteration is not the main learning text.</p></div>
   <div class="container arabic-card-grid">
     <article class="arabic-lesson-card">
@@ -130,7 +146,7 @@
 </section>
 
 
-<section class="section soft" id="practice">
+<section class="section soft trackable-section" id="practice" data-age="3-4 5-6 7-8" data-level="2" data-section-name="Practice">
   <div class="container section-head"><p class="eyebrow">Practice</p><h2>Find the Surah name</h2><p>Tap each card. The child receives simple visual feedback without audio.</p></div>
   <div class="container practice-board">
     <button type="button" class="tap-card" data-reveal-text="سورة الإخلاص">
@@ -147,9 +163,25 @@
       </button>
   </div>
   <p class="container practice-result" aria-live="polite"></p>
+  <div class="container task-studio" id="practice-studio" data-age="3-4 5-6 7-8" data-level="2">
+    <article class="studio-card whiteboard-card">
+      <div class="studio-head"><span>📖</span><div><h3>Practice Whiteboard</h3><p>Draw, trace, circle, or write the learning word.</p></div></div>
+      <canvas class="whiteboard" width="740" height="260" data-whiteboard aria-label="Whiteboard drawing area"></canvas>
+      <div class="board-actions"><button type="button" class="tool-btn" data-clear-whiteboard>🧽 Clear board</button><button type="button" class="tool-btn" data-progress="surahs-practice-whiteboard" data-next="#activity">⭐ I used the board</button></div>
+    </article>
+    <article class="studio-card typing-card">
+      <div class="studio-head"><span>⌨️</span><div><h3>Practice Typing Board</h3><p>Type the main word. Then continue to the next task.</p></div></div>
+      <div class="typing-target"><b>Target:</b> <span class="speak-word" data-speak="Qur’an">Qur’an</span> <span lang="ar" dir="rtl">الْقُرْآن</span></div>
+      <label class="sr-only" for="type-surahs-practice">Type Qur’an</label>
+      <input id="type-surahs-practice" class="typing-input" type="text" data-typing-answer="qur’an" placeholder="Type here...">
+      <div class="board-actions"><button type="button" class="tool-btn check-btn" data-check-typing data-progress="surahs-practice-typing" data-next="#activity">✅ Check</button><a class="next-task-link" href="#activity" hidden>Next: Activity ➜</a></div>
+      <p class="typing-result" aria-live="polite"></p>
+    </article>
+  </div>
+
 </section>
 
-<section class="section" id="activity">
+<section class="section trackable-section" id="activity" data-age="3-4 5-6 7-8" data-level="3" data-section-name="Activity">
   <div class="container section-head"><p class="eyebrow">Activity</p><h2>Respectful Qur’an routine</h2><p>Complete one small real-life task today.</p></div>
   <div class="container activity-checklist">
     <label class="check-card"><input type="checkbox" data-check-task><span>Sit calmly</span></label>
@@ -157,10 +189,26 @@
 <label class="check-card"><input type="checkbox" data-check-task><span>Parent/teacher reads first</span></label>
 <label class="check-card"><input type="checkbox" data-check-task><span>Child repeats slowly without pressure</span></label>
   </div>
-  <div class="container"><button type="button" class="task-btn" data-star-task>⭐ Mark today’s activity done</button><p class="task-result" aria-live="polite"></p></div>
+  <div class="container"><button type="button" class="task-btn" data-star-task data-progress="surahs-activity-main" data-next="#game">⭐ Mark today’s activity done</button><p class="task-result" aria-live="polite"></p></div>
+  <div class="container task-studio" id="activity-studio" data-age="3-4 5-6 7-8" data-level="3">
+    <article class="studio-card whiteboard-card">
+      <div class="studio-head"><span>📖</span><div><h3>Activity Whiteboard</h3><p>Draw, trace, circle, or write the learning word.</p></div></div>
+      <canvas class="whiteboard" width="740" height="260" data-whiteboard aria-label="Whiteboard drawing area"></canvas>
+      <div class="board-actions"><button type="button" class="tool-btn" data-clear-whiteboard>🧽 Clear board</button><button type="button" class="tool-btn" data-progress="surahs-activity-whiteboard" data-next="#game">⭐ I used the board</button></div>
+    </article>
+    <article class="studio-card typing-card">
+      <div class="studio-head"><span>⌨️</span><div><h3>Activity Typing Board</h3><p>Type the main word. Then continue to the next task.</p></div></div>
+      <div class="typing-target"><b>Target:</b> <span class="speak-word" data-speak="Qur’an">Qur’an</span> <span lang="ar" dir="rtl">الْقُرْآن</span></div>
+      <label class="sr-only" for="type-surahs-activity">Type Surah Al-Ikhlas</label>
+      <input id="type-surahs-activity" class="typing-input" type="text" data-typing-answer="surah al-ikhlas" placeholder="Type here...">
+      <div class="board-actions"><button type="button" class="tool-btn check-btn" data-check-typing data-progress="surahs-activity-typing" data-next="#game">✅ Check</button><a class="next-task-link" href="#game" hidden>Next: Mini Game ➜</a></div>
+      <p class="typing-result" aria-live="polite"></p>
+    </article>
+  </div>
+
 </section>
 
-<section class="section soft" id="game">
+<section class="section soft trackable-section" id="game" data-age="3-4 5-6 7-8" data-level="2 3" data-section-name="Mini Game">
   <div class="container mini-game-panel">
     <div class="course-top"><span class="course-icon" aria-hidden="true">🎮</span><span class="course-tag">Mini Game</span></div>
     <h2>Which Surah name is written in Arabic?</h2>
@@ -169,13 +217,29 @@
 <button type="button" class="choice-btn" data-correct="false">Eating time</button></div>
     <p class="game-result" aria-live="polite"></p>
     <p class="challenge-box">Today’s star challenge: Read one short Surah name respectfully with a parent.</p>
+  <div class="container task-studio" id="game-studio" data-age="3-4 5-6 7-8" data-level="2 3">
+    <article class="studio-card whiteboard-card">
+      <div class="studio-head"><span>📖</span><div><h3>Game Whiteboard</h3><p>Draw, trace, circle, or write the learning word.</p></div></div>
+      <canvas class="whiteboard" width="740" height="260" data-whiteboard aria-label="Whiteboard drawing area"></canvas>
+      <div class="board-actions"><button type="button" class="tool-btn" data-clear-whiteboard>🧽 Clear board</button><button type="button" class="tool-btn" data-progress="surahs-game-whiteboard" data-next="islamic-manners.html#lesson">⭐ I used the board</button></div>
+    </article>
+    <article class="studio-card typing-card">
+      <div class="studio-head"><span>⌨️</span><div><h3>Game Typing Board</h3><p>Type the main word. Then continue to the next task.</p></div></div>
+      <div class="typing-target"><b>Target:</b> <span class="speak-word" data-speak="Qur’an">Qur’an</span> <span lang="ar" dir="rtl">الْقُرْآن</span></div>
+      <label class="sr-only" for="type-surahs-game">Type Qur’an</label>
+      <input id="type-surahs-game" class="typing-input" type="text" data-typing-answer="qur’an" placeholder="Type here...">
+      <div class="board-actions"><button type="button" class="tool-btn check-btn" data-check-typing data-progress="surahs-game-typing" data-next="islamic-manners.html#lesson">✅ Check</button><a class="next-task-link" href="islamic-manners.html#lesson" hidden>Next Course ➜</a></div>
+      <p class="typing-result" aria-live="polite"></p>
+    </article>
+  </div>
+
   </div>
 </section>
 
 <section class="section parent-notes-lower">
   <div class="container accordion-grid">
     <details class="parent-detail"><summary>Parent note</summary><p>Arabic text and Qur’an/dua content should be checked by a qualified scholar or trusted Islamic teacher before final app publication.</p></details>
-    <details class="parent-detail"><summary>No-audio first version</summary><p>This website uses visual learning only. Parents or teachers guide pronunciation directly.</p></details>
+    <details class="parent-detail"><summary>Optional sound version</summary><p>Fun button sounds and English word pronunciation use the browser only. No microphone, no recording, and no external audio service is used.</p></details>
   </div>
 </section>
 </main>
@@ -184,7 +248,7 @@
     <section>
       <h2>Al-Hayat Kids Islam</h2>
       <p lang="ur" dir="rtl" class="urdu-name">الحیات اسلامی اطفال</p>
-      <p>Safe Islamic learning for young Muslim children. A parent-guided, no-audio first version for Muslim children aged 3–8.</p>
+      <p>Safe Islamic learning for young Muslim children. A parent-guided, optional-sound learning version for Muslim children aged 3–8.</p>
     </section>
     <section>
       <h2>Explore</h2>
@@ -192,12 +256,12 @@
     </section>
     <section>
       <h2>Safety Promise</h2>
-      <p>No ads, no login, no tracking scripts, no child chat, no microphone, no camera, and no unsafe external media in this static website version.</p>
+      <p>No ads, no login, no tracking scripts, no child chat, no microphone, no camera, and no unsafe external media. Optional sounds are generated locally in the browser.</p>
     </section>
   </div>
   <div class="container footer-bottom"><span>© <span data-year></span> Al-Hayat Kids Islam. All rights reserved.</span><a href="privacy-policy.html">Privacy Policy</a></div>
 </footer>
 <button class="back-to-top" type="button" aria-label="Back to top" data-back-to-top>↑</button>
-<script src="script.js?v=6.0" defer></script>
+<script src="script.js?v=7.0" defer></script>
 </body>
 </html>

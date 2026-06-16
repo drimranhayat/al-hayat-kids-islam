@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Al-Hayat Kids Islam — Interactive Interactive Kids Learning Dashboard</title>
+<title>Al-Hayat Kids Islam — Rich Interactive Kids Learning Dashboard</title>
 <meta name="description" content="A child-first Islamic learning dashboard for ages 3 to 8 with Arabic words, visual lessons, practice tasks, activities, and mini games.">
 <link rel="canonical" href="https://YOUR_DOMAIN_HERE/">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Al-Hayat Kids Islam — Interactive Interactive Kids Learning Dashboard">
+<meta property="og:title" content="Al-Hayat Kids Islam — Rich Interactive Kids Learning Dashboard">
 <meta property="og:description" content="A child-first Islamic learning dashboard for ages 3 to 8 with Arabic words, visual lessons, practice tasks, activities, and mini games.">
 <meta property="og:url" content="https://YOUR_DOMAIN_HERE/">
 <meta property="og:site_name" content="Al-Hayat Kids Islam">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Al-Hayat Kids Islam — Interactive Interactive Kids Learning Dashboard">
+<meta name="twitter:title" content="Al-Hayat Kids Islam — Rich Interactive Kids Learning Dashboard">
 <meta name="twitter:description" content="A child-first Islamic learning dashboard for ages 3 to 8 with Arabic words, visual lessons, practice tasks, activities, and mini games.">
 <meta name="theme-color" content="#0f766e">
 <meta name="color-scheme" content="light">
-<link rel="stylesheet" href="styles.css?v=6.0">
+<link rel="stylesheet" href="styles.css?v=7.0">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Al-Hayat Kids Islam","alternateName":"الحیات اسلامی اطفال","url":"https://YOUR_DOMAIN_HERE/","description":"A clean child-first Islamic learning dashboard for Muslim children aged 3 to 8 with visual courses, age and level filters, lessons, activities, and mini games.","inLanguage":["en","ur"],"educationalLevel":"Early childhood ages 3 to 8"}</script>
 </head>
 <body class="premium-v2 learning-first clean-v4">
@@ -41,25 +41,35 @@
   </div>
 </header>
 
+<div class="kid-control-bar" aria-label="Kid learning controls">
+  <div class="container kid-control-inner">
+    <button type="button" class="sound-toggle" data-enable-sound aria-pressed="false">🔊 Enable Fun Sounds</button>
+    <div class="progress-pill" aria-live="polite"><span>⭐ Stars:</span> <strong data-star-counter>0</strong></div>
+    <div class="progress-pill"><span>🏅 Badges:</span> <strong data-badge-counter>0</strong></div>
+    <button type="button" class="sound-toggle small" data-speak="Start learning">🔈 Listen</button>
+  </div>
+</div>
+
 <main id="main">
 <section class="clean-hero decorative-section compact-hero">
   <div class="container clean-hero-grid">
     <div class="clean-hero-copy">
       <p class="eyebrow">Start learning • Age 3–8</p>
       <h1>Pick a course. Tap a task. Learn Islam with joy.</h1>
-      <p class="hero-tagline">A child-first Islamic learning dashboard with Arabic words, visual lessons, practice tasks, activities, and mini games.</p>
+      <p class="hero-tagline">A child-first Islamic learning dashboard with Arabic words, visual lessons, whiteboards, typing boards, practice tasks, activities, mini games, stars, and badges.</p>
       <div class="big-start-actions clean-actions">
         <a class="btn btn-primary" href="#learning-dashboard">🚀 Start Learning</a>
         <a class="btn btn-soft" href="curriculum.html#learning-courses">🧩 All Courses</a>
         <a class="btn btn-outline" href="parents-corner.html">👨‍👩‍👧 Parent Guide</a>
       </div>
-      <div class="mini-trust-row"><span>No ads</span><span>No login</span><span>No tracking</span><span>No audio first version</span></div>
+      <div class="mini-trust-row"><span>No ads</span><span>No login</span><span>No tracking</span><span>Optional fun sounds</span><span>English word voice</span></div>
     </div>
     <aside class="start-card today-card" aria-label="Today learning path">
       <h2>Today’s Learning Path</h2>
-      <a class="today-task" href="duas.html#lesson"><span>🤲</span><b>Learn a Dua</b><small lang="ar" dir="rtl">بِسْمِ اللهِ • الْحَمْدُ لِلّٰهِ</small></a>
-      <a class="today-task" href="islamic-manners.html#game"><span>🌸</span><b>Play Manners Game</b><small lang="ar" dir="rtl">السَّلَامُ عَلَيْكُمْ • جَزَاكَ اللهُ خَيْرًا</small></a>
-      <a class="today-task" href="arabic-letters.html#practice"><span>ا</span><b>Trace Arabic Letters</b><small lang="ar" dir="rtl">ا • ب • ت • ث</small></a>
+      <p class="daily-hint">Auto-updates every day from the full curriculum.</p>
+      <div data-daily-path>
+        <a class="today-task" href="duas.html#lesson"><span>🤲</span><b>Learn a Dua</b><small lang="ar" dir="rtl">بِسْمِ اللهِ</small></a>
+      </div>
     </aside>
   </div>
 </section>
@@ -77,6 +87,22 @@
       <a href="ramadan-eid.html#lesson"><span>🌙</span><b>Ramadan & Eid</b><small lang="ar" dir="rtl">رَمَضَان • عِيد</small></a>
       <a href="curriculum.html#learning-courses"><span>🧩</span><b>All Courses</b><small>Age + level</small></a>
     </div>
+  </div>
+</section>
+
+<section class="section progress-section soft" id="my-progress">
+  <div class="container progress-dashboard" data-progress-dashboard>
+    <div>
+      <p class="eyebrow">My learning track</p>
+      <h2>Stars, badges, and next steps</h2>
+      <p>Complete lessons, practices, activities, whiteboards, typing boards, and mini games. Your progress stays only in this browser.</p>
+    </div>
+    <div class="progress-big-card">
+      <span class="big-star">⭐</span>
+      <strong data-star-counter>0</strong>
+      <small>Learning stars</small>
+    </div>
+    <div class="badge-shelf" data-badge-shelf aria-live="polite"></div>
   </div>
 </section>
 
@@ -205,7 +231,7 @@
 <section class="section parent-notes-lower soft">
   <div class="container accordion-grid">
     <details class="parent-detail"><summary>For parents: how to use this site</summary><p>Let the child choose one course. Use one lesson, one practice, or one mini game for 5 minutes. Praise effort and use the same word in real life.</p></details>
-    <details class="parent-detail"><summary>Safety promise</summary><p>No audio, no ads, no login, no tracking, no camera, no microphone, and no chat in this static website version.</p></details>
+    <details class="parent-detail"><summary>Safety promise</summary><p>Optional sounds, no recordings, no ads, no login, no tracking, no camera, no microphone, and no chat in this static website version.</p></details>
   </div>
 </section>
 </main>
@@ -214,7 +240,7 @@
     <section>
       <h2>Al-Hayat Kids Islam</h2>
       <p lang="ur" dir="rtl" class="urdu-name">الحیات اسلامی اطفال</p>
-      <p>Safe Islamic learning for young Muslim children. A parent-guided, no-audio first version for Muslim children aged 3–8.</p>
+      <p>Safe Islamic learning for young Muslim children. A parent-guided, optional-sound learning version for Muslim children aged 3–8.</p>
     </section>
     <section>
       <h2>Explore Learning</h2>
@@ -222,10 +248,10 @@
     </section>
     <section>
       <h2>Safety Promise</h2>
-      <p>No ads, no login, no tracking scripts, no child chat, no microphone, no camera, and no unsafe external media in this static website version.</p>
+      <p>No ads, no login, no tracking scripts, no child chat, no microphone, no camera, and no unsafe external media. Optional sounds are generated locally in the browser.</p>
     </section>
   </div>
   <div class="container footer-bottom"><span>© <span data-year></span> Al-Hayat Kids Islam. All rights reserved.</span><a href="privacy-policy.html">Privacy Policy</a></div>
 </footer>
 <button class="back-to-top" type="button" aria-label="Back to top" data-back-to-top>↑</button>
-<script src="script.js?v=6.0" defer></script>
+<script src="script.js?v=7.0" defer></script>
