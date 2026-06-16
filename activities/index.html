@@ -1,45 +1,1398 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Activities | Al-Hayat Kids Islam</title>
-  <meta name="description" content="Connected Islamic activities for children ages 3 to 8.">
-  <link rel="stylesheet" href="../styles.css">
-  
-<style>
-  :root{--navy:#17324d;--teal:#0f766e;--gold:#c8912b;--cream:#fff8ec;--card:#ffffff;--ink:#243044;}
-  body{margin:0;font-family:Arial,system-ui,sans-serif;background:linear-gradient(180deg,#fff8ec,#eefaf7);color:var(--ink);}
-  header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e8dcc7;}
-  .wrap{max-width:1180px;margin:auto;padding:18px;}
-  .top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
-  .brand{font-weight:900;color:var(--navy);font-size:1.25rem}.brand span{color:var(--gold)}
-  nav a{display:inline-block;margin:4px;padding:10px 12px;border-radius:999px;background:#f4efe4;text-decoration:none;color:var(--navy);font-weight:700}
-  nav a:hover{background:#dff7f1;transform:translateY(-1px)}
-  .ak-hero{background:linear-gradient(135deg,#17324d,#0f766e);color:white;border-radius:28px;padding:28px;margin:22px 0;box-shadow:0 16px 40px rgba(23,50,77,.18)}
-  .ak-hero h1{margin:0 0 8px;font-size:clamp(2rem,5vw,4rem)}.ak-hero p{font-size:1.1rem;max-width:780px}.ak-stats{display:flex;gap:10px;flex-wrap:wrap}.ak-stats span,.ak-hero button{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:10px 14px;border-radius:999px;color:white;font-weight:800}
-  .ak-filter-panel{background:#fff;border-radius:24px;padding:18px;margin:18px 0;box-shadow:0 12px 30px rgba(0,0,0,.07)}
-  .ak-filter-grid{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:12px}.ak-filter-grid label{font-weight:800;color:var(--navy)} select,input{width:100%;box-sizing:border-box;margin-top:6px;padding:12px;border-radius:14px;border:1px solid #ddd;font-size:1rem}.ak-quick-buttons button,.ak-options button,.ak-complete,.ak-mini-list button{cursor:pointer;border:0;border-radius:999px;background:#eaf7f4;color:var(--navy);padding:10px 14px;margin:6px;font-weight:800}.ak-quick-buttons button:hover,.ak-options button:hover,.ak-complete:hover{background:#ffe7b1}
-  .ak-card-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}.ak-card{background:var(--card);border-radius:24px;padding:18px;box-shadow:0 14px 34px rgba(0,0,0,.08);border:2px solid transparent}.ak-card.is-done{border-color:#42b883;background:#f3fff7}.ak-card-top{display:flex;justify-content:space-between;gap:8px;font-weight:800;color:#557}.ak-icon{font-size:1.8rem}.ak-card h3{color:var(--navy);font-size:1.2rem}.ak-arabic{font-size:1.8rem;font-family:serif;text-align:center;background:#fff8ec;border-radius:18px;padding:12px}.ak-explain,.ak-action{background:#f7fafc;border-radius:16px;padding:10px}.ak-complete{background:#17324d;color:white;width:100%}.ak-count{font-weight:900;color:var(--navy);margin:18px 0}.ak-more,.ak-error{background:#fff3cd;padding:14px;border-radius:16px}.ak-daily{background:#fff;border-radius:22px;padding:16px;margin:18px 0}.ak-badge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.ak-badge{background:white;border-radius:24px;padding:20px;text-align:center;box-shadow:0 14px 34px rgba(0,0,0,.08)}.ak-badge div{font-size:3rem}progress{width:100%;height:18px}
-  .practice-tools{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}.tool{background:white;border-radius:24px;padding:18px;box-shadow:0 14px 34px rgba(0,0,0,.08)}canvas{width:100%;height:240px;border:3px dashed #cbd5e1;border-radius:18px;background:white}
-  @media(max-width:760px){.ak-filter-grid,.practice-tools{grid-template-columns:1fr}nav a{font-size:.9rem}.wrap{padding:12px}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Islamic Activities for Kids | Al-Hayat Kids Islam</title>
+  <meta name="description" content="Child-friendly Islamic activities for Muslim children ages 3 to 8. Tap, choose, match, repeat, practice and earn stars from the Al-Hayat Kids Islam question bank." />
+  <meta name="keywords" content="Islamic activities for kids, Muslim kids learning activities, Islamic studies games, duas activities, Quran activities for children, salah activities for kids" />
 
+  <style>
+    :root {
+      --bg: #fff8e8;
+      --paper: #fffdf7;
+      --card: #ffffff;
+      --ink: #17324d;
+      --muted: #607386;
+      --brand: #0f766e;
+      --brand-dark: #115e59;
+      --gold: #f6b73c;
+      --pink: #ff7b9c;
+      --sky: #65c7ff;
+      --mint: #91efc3;
+      --orange: #ffb35c;
+      --line: rgba(23, 50, 77, 0.13);
+      --shadow: 0 18px 44px rgba(23, 50, 77, 0.12);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(101, 199, 255, 0.28), transparent 30%),
+        radial-gradient(circle at top right, rgba(246, 183, 60, 0.25), transparent 28%),
+        radial-gradient(circle at 20% 90%, rgba(145, 239, 195, 0.24), transparent 28%),
+        linear-gradient(180deg, #fff8e8 0%, #fffdf7 48%, #effffb 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 8px;
+      background: var(--ink);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 999px;
+      z-index: 999;
+    }
+    .skip-link:focus { left: 10px; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 253, 247, 0.93);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 950;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 1.4rem;
+      background: linear-gradient(135deg, var(--brand), #22c55e);
+      box-shadow: 0 14px 26px rgba(15, 118, 110, 0.24);
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-weight: 750;
+      font-size: 0.75rem;
+      letter-spacing: 0;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .nav a {
+      padding: 10px 13px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.08);
+      color: var(--brand-dark);
+      font-weight: 900;
+      transition: 0.2s ease;
+    }
+
+    .nav a:hover,
+    .nav a:focus,
+    .nav a.active {
+      transform: translateY(-2px);
+      background: rgba(15, 118, 110, 0.16);
+      outline: none;
+    }
+
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 40px 18px 22px;
+      display: grid;
+      grid-template-columns: 1.13fr 0.87fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .side-card,
+    .panel,
+    .activity-card,
+    .modal-card {
+      background: rgba(255, 255, 255, 0.91);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      padding: 34px;
+    }
+
+    .hero-card::before {
+      content: "🎯";
+      position: absolute;
+      right: 24px;
+      top: 18px;
+      font-size: 5rem;
+      opacity: 0.12;
+      transform: rotate(10deg);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: #ecfff7;
+      color: var(--brand-dark);
+      border: 1px solid rgba(15, 118, 110, 0.16);
+      font-weight: 950;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      color: #12314d;
+      font-size: clamp(2.15rem, 5.2vw, 4.5rem);
+      line-height: 0.96;
+      letter-spacing: -0.065em;
+      max-width: 850px;
+    }
+
+    .hero-card p {
+      margin: 18px 0 0;
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 1.1rem;
+      font-weight: 650;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 950;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .btn:hover,
+    .btn:focus { transform: translateY(-2px); outline: none; }
+
+    .btn.primary {
+      color: white;
+      background: linear-gradient(135deg, var(--brand), #22c55e);
+      box-shadow: 0 14px 24px rgba(15, 118, 110, 0.23);
+    }
+
+    .btn.gold {
+      color: #503400;
+      background: linear-gradient(135deg, #f59e0b, #ffd166);
+      box-shadow: 0 14px 24px rgba(245, 158, 11, 0.18);
+    }
+
+    .btn.soft {
+      color: #0b5171;
+      background: #f0fbff;
+      border: 1px solid rgba(11, 81, 113, 0.12);
+    }
+
+    .side-card {
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .mascot-box {
+      min-height: 174px;
+      border-radius: 25px;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 20px;
+      background:
+        radial-gradient(circle at top left, rgba(145, 239, 195, 0.52), transparent 36%),
+        linear-gradient(135deg, #e8fffb, #fff7db);
+    }
+
+    .mascot-box strong {
+      display: block;
+      font-size: 3.2rem;
+      margin-bottom: 8px;
+    }
+
+    .mascot-box span {
+      display: block;
+      color: var(--brand-dark);
+      font-size: 1.08rem;
+      font-weight: 950;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .mini-stat {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+      background: #fff;
+    }
+
+    .mini-stat b {
+      display: block;
+      color: var(--brand-dark);
+      font-size: 1.45rem;
+      line-height: 1.1;
+    }
+
+    .mini-stat span {
+      display: block;
+      color: var(--muted);
+      margin-top: 3px;
+      font-size: 0.84rem;
+      font-weight: 850;
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    .panel {
+      padding: 24px;
+      border-radius: var(--radius-xl);
+      margin-bottom: 22px;
+    }
+
+    .panel-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .panel-title h2 {
+      margin: 0;
+      font-size: clamp(1.4rem, 3vw, 2.08rem);
+      letter-spacing: -0.035em;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border-radius: 999px;
+      padding: 9px 13px;
+      background: #fff8df;
+      color: #744b00;
+      border: 1px solid rgba(246, 183, 60, 0.36);
+      font-weight: 950;
+    }
+
+    .activity-types {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .type-tile {
+      min-height: 122px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 16px;
+      background: linear-gradient(180deg, #ffffff, #f5fffc);
+      cursor: pointer;
+      text-align: left;
+      font-weight: 900;
+      transition: 0.2s ease;
+    }
+
+    .type-tile:hover,
+    .type-tile.active {
+      transform: translateY(-3px);
+      background: linear-gradient(180deg, #ecfff7, #ffffff);
+      border-color: rgba(15, 118, 110, 0.28);
+    }
+
+    .type-tile b {
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .type-tile span {
+      display: block;
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
+
+    .filter-grid {
+      display: grid;
+      grid-template-columns: 1.2fr repeat(4, 0.75fr);
+      gap: 12px;
+      align-items: end;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      color: var(--brand-dark);
+      font-size: 0.92rem;
+      font-weight: 950;
+    }
+
+    input, select {
+      width: 100%;
+      border: 1px solid rgba(23, 50, 77, 0.18);
+      border-radius: 15px;
+      background: white;
+      color: var(--ink);
+      padding: 12px 13px;
+      font-weight: 750;
+    }
+
+    input:focus, select:focus {
+      outline: 3px solid rgba(15, 118, 110, 0.18);
+      border-color: rgba(15, 118, 110, 0.4);
+    }
+
+    .quick-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 16px;
+    }
+
+    .tag-btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 999px;
+      padding: 9px 12px;
+      font-weight: 950;
+      color: var(--brand-dark);
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+
+    .tag-btn:hover,
+    .tag-btn.active {
+      transform: translateY(-2px);
+      background: #ecfff7;
+      border-color: rgba(15, 118, 110, 0.28);
+    }
+
+    .path-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .path-step {
+      min-height: 110px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #ffffff, #f3fffb);
+      padding: 14px;
+      display: grid;
+      align-content: center;
+      gap: 7px;
+      font-weight: 950;
+    }
+
+    .path-step span {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 850;
+    }
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .activity-card {
+      border-radius: 25px;
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .activity-card.done {
+      border-color: rgba(34, 197, 94, 0.5);
+      background: linear-gradient(180deg, #ffffff, #f0fff5);
+    }
+
+    .activity-card::after {
+      content: attr(data-symbol);
+      position: absolute;
+      right: 14px;
+      bottom: -4px;
+      font-size: 4.4rem;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .topic-badge,
+    .level-badge,
+    .type-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 0.82rem;
+      font-weight: 950;
+    }
+
+    .topic-badge { background: #ecfff7; color: var(--brand-dark); }
+    .level-badge { background: #fff3c4; color: #6b4300; white-space: nowrap; }
+    .type-badge { background: #eef7ff; color: #0b5171; width: fit-content; }
+
+    .question-text {
+      color: #122b45;
+      font-size: 1.08rem;
+      line-height: 1.45;
+      font-weight: 950;
+      margin: 0;
+    }
+
+    .task-box {
+      border: 1px solid rgba(23, 50, 77, 0.1);
+      border-radius: 17px;
+      background: #f7fbff;
+      padding: 12px;
+      color: var(--muted);
+      font-weight: 780;
+      line-height: 1.55;
+    }
+
+    .task-box strong { color: var(--ink); }
+
+    .option-grid {
+      display: grid;
+      gap: 8px;
+    }
+
+    .option {
+      width: 100%;
+      text-align: left;
+      border: 1px solid rgba(23, 50, 77, 0.12);
+      background: #fff;
+      border-radius: 15px;
+      padding: 10px 11px;
+      font-weight: 850;
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+
+    .option:hover { transform: translateX(3px); background: #f1fffb; }
+    .option.correct { background: #edfff4; border-color: rgba(34, 197, 94, 0.65); }
+    .option.wrong { background: #fff1f1; border-color: rgba(239, 68, 68, 0.55); }
+
+    .answer-box {
+      display: none;
+      border-radius: 17px;
+      padding: 13px;
+      background: #fff8df;
+      border: 1px solid rgba(246, 183, 60, 0.36);
+      color: #4c3900;
+      line-height: 1.6;
+      font-weight: 760;
+    }
+
+    .answer-box.show { display: block; }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .small-btn {
+      border: none;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 9px 12px;
+      background: #ecfff7;
+      color: var(--brand-dark);
+      font-weight: 950;
+      transition: 0.18s ease;
+    }
+
+    .small-btn:hover,
+    .small-btn:focus { transform: translateY(-2px); outline: none; }
+    .small-btn.answer { background: #eef7ff; color: #0b5171; }
+    .small-btn.star { background: #fff3c4; color: #6b4300; }
+    .small-btn.play { background: #ffeef4; color: #8b1f45; }
+
+    .loading,
+    .empty {
+      text-align: center;
+      padding: 42px 18px;
+      color: var(--muted);
+      font-weight: 900;
+      grid-column: 1 / -1;
+    }
+
+    .footer-note {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 22px 18px 40px;
+      color: var(--muted);
+      line-height: 1.7;
+      text-align: center;
+      font-weight: 650;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(12, 28, 44, 0.55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 90;
+    }
+
+    .modal.show { display: flex; }
+
+    .modal-card {
+      width: min(680px, 100%);
+      border-radius: 30px;
+      padding: 24px;
+    }
+
+    .modal-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.75rem;
+      letter-spacing: -0.03em;
+    }
+
+    .modal-card p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 700;
+    }
+
+    .match-board {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .match-item {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      padding: 12px;
+      min-height: 58px;
+      font-weight: 900;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      z-index: 120;
+      opacity: 0;
+      pointer-events: none;
+      background: #12314d;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-weight: 950;
+      box-shadow: var(--shadow);
+      transition: 0.24s ease;
+    }
+
+    .toast.show { opacity: 1; bottom: 26px; }
+
+    @media (max-width: 1020px) {
+      .hero { grid-template-columns: 1fr; }
+      .activity-types { grid-template-columns: repeat(3, 1fr); }
+      .filter-grid { grid-template-columns: 1fr 1fr; }
+      .path-list { grid-template-columns: repeat(2, 1fr); }
+      .activity-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 660px) {
+      .topbar-inner { align-items: flex-start; flex-direction: column; }
+      .nav {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 4px;
+      }
+      .nav a { white-space: nowrap; }
+      .hero { padding-top: 24px; }
+      .hero-card, .side-card, .panel { padding: 20px; border-radius: 23px; }
+      .hero-actions .btn { width: 100%; }
+      .activity-types,
+      .filter-grid,
+      .path-list,
+      .activity-grid,
+      .mini-grid,
+      .match-board { grid-template-columns: 1fr; }
+      .card-top { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
-  <header><div class="wrap top"><div class="brand">Al-Hayat <span>Kids Islam</span></div><nav><a href="../index.html">Home</a><a href="../curriculum.html">Curriculum</a><a href="../activities/">Activities</a><a href="../games/">Games</a><a href="../practice/">Practice</a><a href="../progress/">Progress</a><a href="../badges/">Badges</a><a href="../parents/">Parents</a></nav></div></header>
-  <main class="wrap">
-    
-    
-    <div id="alhayat-bank-app" data-bank-page="activities"></div>
+  <a class="skip-link" href="#activitiesApp">Skip to activities</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-icon">☾</span>
+        <span>
+          Al-Hayat Kids Islam
+          <small>Islamic learning for ages 3–8</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="../index.html">🏠 Home</a>
+        <a href="../curriculum.html">📚 Curriculum</a>
+        <a href="../questions.html">❓ Questions</a>
+        <a class="active" href="./">🎯 Activities</a>
+        <a href="../games/">🎮 Games</a>
+        <a href="../practice/">✍️ Practice</a>
+        <a href="../progress/">⭐ Progress</a>
+        <a href="../parents/">👨‍👩‍👧 Parents</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-card">
+      <span class="eyebrow">🎯 Connected to Your Question Bank</span>
+      <h1>Islamic Activities for Kids</h1>
+      <p>
+        Every uploaded question becomes a child-friendly activity: tap the right answer,
+        say it aloud, match ideas, repeat a dua, practise a habit, play a mini game and earn stars.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#activitiesApp">🎯 Start Activities</a>
+        <button class="btn gold" id="dailyActivityBtn" type="button">🌞 Today’s Activity</button>
+        <a class="btn soft" href="../questions.html">❓ Open Questions</a>
+      </div>
+    </div>
+
+    <aside class="side-card">
+      <div class="mascot-box">
+        <div>
+          <strong>🧒 🎯 ⭐</strong>
+          <span>One small task, one happy star</span>
+        </div>
+      </div>
+      <div class="mini-grid">
+        <div class="mini-stat"><b id="totalActivities">—</b><span>Total Cards</span></div>
+        <div class="mini-stat"><b id="visibleActivities">—</b><span>Showing Now</span></div>
+        <div class="mini-stat"><b id="completedActivities">0</b><span>Completed</span></div>
+        <div class="mini-stat"><b id="starCount">0</b><span>Stars</span></div>
+      </div>
+    </aside>
+  </section>
+
+  <main id="activitiesApp">
+    <section class="panel">
+      <div class="panel-title">
+        <h2>🧩 Choose Activity Style</h2>
+        <span class="status-pill" id="loadStatus">Loading activities...</span>
+      </div>
+
+      <div class="activity-types" id="activityTypes">
+        <button class="type-tile active" data-activity="all" type="button"><b>🌈</b>All Activities<span>Show everything</span></button>
+        <button class="type-tile" data-activity="tap" type="button"><b>👆</b>Tap & Choose<span>Pick the correct answer</span></button>
+        <button class="type-tile" data-activity="say" type="button"><b>🗣️</b>Say & Repeat<span>Speak the key idea</span></button>
+        <button class="type-tile" data-activity="match" type="button"><b>🧩</b>Match & Connect<span>Connect question and answer</span></button>
+        <button class="type-tile" data-activity="practice" type="button"><b>✍️</b>Practice Task<span>Do a small action</span></button>
+        <button class="type-tile" data-activity="game" type="button"><b>🎮</b>Mini Game<span>Play and revise</span></button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>🔎 Find an Activity</h2>
+        <span class="status-pill" id="resultCount">Loading...</span>
+      </div>
+
+      <div class="filter-grid">
+        <label>
+          Search
+          <input id="searchInput" type="search" placeholder="Search: Allah, salah, dua, Qur’an, manners..." />
+        </label>
+        <label>
+          Level
+          <select id="levelFilter"><option value="">All Levels</option></select>
+        </label>
+        <label>
+          Topic
+          <select id="topicFilter"><option value="">All Topics</option></select>
+        </label>
+        <label>
+          Type
+          <select id="typeFilter"><option value="">All Types</option></select>
+        </label>
+        <label>
+          Difficulty
+          <select id="difficultyFilter"><option value="">All Difficulty</option></select>
+        </label>
+      </div>
+
+      <div class="quick-tags" id="quickTags"></div>
+
+      <div class="hero-actions">
+        <button class="btn primary" id="applyFiltersBtn" type="button">✅ Apply</button>
+        <button class="btn soft" id="clearFiltersBtn" type="button">🧹 Clear</button>
+        <button class="btn gold" id="loadMoreBtn" type="button">⬇️ Show More</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>🧭 Today’s Activity Path</h2>
+        <span class="status-pill">Do 4 tiny tasks</span>
+      </div>
+      <div class="path-list" id="activityPath">
+        <div class="loading">Loading today’s activity path...</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>🎯 Activity Cards</h2>
+        <span class="status-pill">Tap, practise, earn stars</span>
+      </div>
+      <div class="activity-grid" id="activityGrid">
+        <div class="loading">Opening your activity bank...</div>
+      </div>
+    </section>
   </main>
-  <script src="../assets/js/sound-engine.js"></script>
-  <script src="../assets/js/progress-engine.js"></script>
-  <script src="../assets/js/reward-engine.js"></script>
-  <script src="../assets/js/filter-engine.js"></script>
-  <script src="../assets/js/learning-path.js"></script>
-  <script src="../assets/js/whiteboard.js"></script>
-  <script src="../assets/js/typing-board.js"></script>
-  <script src="../assets/js/question-bank.js"></script>
+
+  <p class="footer-note">
+    Parent guidance: use these activities gently. For very young children, read the question aloud, let the child tap, repeat, act, smile, and stop before tiredness.
+  </p>
+
+  <div class="modal" id="activityModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <h3 id="modalTitle">Activity</h3>
+      <p id="modalText">Activity details</p>
+      <div id="modalBody"></div>
+      <div class="hero-actions">
+        <button class="btn primary" id="modalCompleteBtn" type="button">⭐ Complete Activity</button>
+        <button class="btn soft" id="modalCloseBtn" type="button">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Saved</div>
+
+  <script>
+    const DATA_PATHS = {
+      levels: "../assets/data/levels/levels.json",
+      topics: "../assets/data/topics/topics.json",
+      questions: [
+        "../assets/data/questions/questions-level-1.json",
+        "../assets/data/questions/questions-level-2.json",
+        "../assets/data/questions/questions-level-3.json",
+        "../assets/data/questions/questions-level-4.json",
+        "../assets/data/questions/questions-level-5.json"
+      ]
+    };
+
+    const state = {
+      allItems: [],
+      filteredItems: [],
+      levels: [],
+      topics: [],
+      visibleLimit: 48,
+      activityStyle: "all",
+      activeModalItem: null,
+      progress: readProgress()
+    };
+
+    const els = {
+      totalActivities: document.getElementById("totalActivities"),
+      visibleActivities: document.getElementById("visibleActivities"),
+      completedActivities: document.getElementById("completedActivities"),
+      starCount: document.getElementById("starCount"),
+      loadStatus: document.getElementById("loadStatus"),
+      resultCount: document.getElementById("resultCount"),
+      activityTypes: document.getElementById("activityTypes"),
+      searchInput: document.getElementById("searchInput"),
+      levelFilter: document.getElementById("levelFilter"),
+      topicFilter: document.getElementById("topicFilter"),
+      typeFilter: document.getElementById("typeFilter"),
+      difficultyFilter: document.getElementById("difficultyFilter"),
+      quickTags: document.getElementById("quickTags"),
+      applyFiltersBtn: document.getElementById("applyFiltersBtn"),
+      clearFiltersBtn: document.getElementById("clearFiltersBtn"),
+      loadMoreBtn: document.getElementById("loadMoreBtn"),
+      dailyActivityBtn: document.getElementById("dailyActivityBtn"),
+      activityPath: document.getElementById("activityPath"),
+      activityGrid: document.getElementById("activityGrid"),
+      activityModal: document.getElementById("activityModal"),
+      modalTitle: document.getElementById("modalTitle"),
+      modalText: document.getElementById("modalText"),
+      modalBody: document.getElementById("modalBody"),
+      modalCompleteBtn: document.getElementById("modalCompleteBtn"),
+      modalCloseBtn: document.getElementById("modalCloseBtn"),
+      toast: document.getElementById("toast")
+    };
+
+    document.addEventListener("DOMContentLoaded", init);
+
+    async function init() {
+      try {
+        els.loadStatus.textContent = "Loading JSON files...";
+        const [levelsData, topicsData, ...questionFiles] = await Promise.all([
+          fetchJson(DATA_PATHS.levels),
+          fetchJson(DATA_PATHS.topics),
+          ...DATA_PATHS.questions.map(fetchJson)
+        ]);
+
+        state.levels = levelsData.levels || [];
+        state.topics = topicsData.topics || [];
+        state.allItems = questionFiles.flatMap(file => file.items || []);
+        state.filteredItems = [...state.allItems];
+
+        buildFilters(topicsData);
+        bindGlobalEvents();
+        renderStats();
+        renderPath();
+        renderCards();
+        els.loadStatus.textContent = "Activities loaded";
+        showToast("Activities connected to question bank");
+      } catch (error) {
+        console.error(error);
+        els.loadStatus.textContent = "Could not load activities";
+        els.activityGrid.innerHTML = `
+          <div class="empty">
+            <h3>Activities could not load.</h3>
+            <p>Please check that JSON files are uploaded in <b>assets/data/questions/</b>, <b>assets/data/levels/</b>, and <b>assets/data/topics/</b>.</p>
+            <p>Error: ${escapeHTML(error.message)}</p>
+          </div>
+        `;
+      }
+    }
+
+    async function fetchJson(path) {
+      const response = await fetch(path, { cache: "no-store" });
+      if (!response.ok) throw new Error(`${response.status} — ${path}`);
+      return response.json();
+    }
+
+    function buildFilters(topicsData) {
+      state.levels.forEach(level => {
+        const option = document.createElement("option");
+        option.value = level.levelNumber;
+        option.textContent = `Level ${level.levelNumber}: ${level.title} (${level.ageRange})`;
+        els.levelFilter.appendChild(option);
+      });
+
+      state.topics.forEach(topic => {
+        const option = document.createElement("option");
+        option.value = topic.id;
+        option.textContent = `${topic.icon || "📌"} ${topic.title}`;
+        els.topicFilter.appendChild(option);
+      });
+
+      const questionTypes = topicsData.filters?.questionTypes || uniqueValues(state.allItems, "type");
+      questionTypes.forEach(type => {
+        const option = document.createElement("option");
+        option.value = type;
+        option.textContent = labelize(type);
+        els.typeFilter.appendChild(option);
+      });
+
+      const difficulties = topicsData.filters?.difficulty || uniqueValues(state.allItems, "difficulty");
+      difficulties.forEach(diff => {
+        const option = document.createElement("option");
+        option.value = diff;
+        option.textContent = labelize(diff);
+        els.difficultyFilter.appendChild(option);
+      });
+
+      const quickTopics = [
+        ["allah_iman", "☝️ Allah & Iman"],
+        ["quran_surahs", "📖 Qur’an"],
+        ["daily_duas_adhkar", "🤲 Duas"],
+        ["salah", "🕌 Salah"],
+        ["manners_character", "❤️ Manners"],
+        ["arabic_letters_words", "🔤 Arabic"],
+        ["prophet_seerah", "ﷺ Seerah"]
+      ];
+
+      els.quickTags.innerHTML = quickTopics.map(([id, label]) =>
+        `<button class="tag-btn" type="button" data-topic="${escapeHTML(id)}">${escapeHTML(label)}</button>`
+      ).join("");
+
+      els.quickTags.querySelectorAll("[data-topic]").forEach(button => {
+        button.addEventListener("click", () => {
+          els.topicFilter.value = button.dataset.topic;
+          applyFilters();
+        });
+      });
+    }
+
+    function bindGlobalEvents() {
+      els.activityTypes.querySelectorAll("[data-activity]").forEach(button => {
+        button.addEventListener("click", () => {
+          els.activityTypes.querySelectorAll(".type-tile").forEach(tile => tile.classList.remove("active"));
+          button.classList.add("active");
+          state.activityStyle = button.dataset.activity;
+          applyFilters();
+        });
+      });
+
+      els.applyFiltersBtn.addEventListener("click", applyFilters);
+      els.clearFiltersBtn.addEventListener("click", clearFilters);
+      els.loadMoreBtn.addEventListener("click", () => {
+        state.visibleLimit += 48;
+        renderCards();
+        showToast("More activities opened");
+      });
+      els.dailyActivityBtn.addEventListener("click", openDailyActivity);
+      els.modalCloseBtn.addEventListener("click", closeModal);
+      els.activityModal.addEventListener("click", event => {
+        if (event.target === els.activityModal) closeModal();
+      });
+      els.modalCompleteBtn.addEventListener("click", () => {
+        if (state.activeModalItem) completeActivity(state.activeModalItem.id);
+        closeModal();
+      });
+
+      [els.searchInput, els.levelFilter, els.topicFilter, els.typeFilter, els.difficultyFilter].forEach(input => {
+        input.addEventListener("input", debounce(applyFilters, 180));
+        input.addEventListener("change", applyFilters);
+      });
+    }
+
+    function applyFilters() {
+      const search = els.searchInput.value.trim().toLowerCase();
+      const level = els.levelFilter.value;
+      const topic = els.topicFilter.value;
+      const type = els.typeFilter.value;
+      const difficulty = els.difficultyFilter.value;
+
+      state.filteredItems = state.allItems.filter(item => {
+        if (level && String(item.level) !== String(level)) return false;
+        if (topic && item.topicId !== topic) return false;
+        if (type && item.type !== type) return false;
+        if (difficulty && item.difficulty !== difficulty) return false;
+
+        if (search) {
+          const blob = [
+            item.id,
+            item.question,
+            item.answer,
+            item.topicTitle,
+            item.subtopic,
+            item.arabic,
+            item.simpleExplanation,
+            item.activity,
+            item.practice,
+            item.game
+          ].join(" ").toLowerCase();
+          if (!blob.includes(search)) return false;
+        }
+
+        return true;
+      });
+
+      state.visibleLimit = 48;
+      renderStats();
+      renderPath();
+      renderCards();
+    }
+
+    function clearFilters() {
+      els.searchInput.value = "";
+      els.levelFilter.value = "";
+      els.topicFilter.value = "";
+      els.typeFilter.value = "";
+      els.difficultyFilter.value = "";
+      state.activityStyle = "all";
+      els.activityTypes.querySelectorAll(".type-tile").forEach(tile => tile.classList.remove("active"));
+      els.activityTypes.querySelector('[data-activity="all"]').classList.add("active");
+      state.filteredItems = [...state.allItems];
+      state.visibleLimit = 48;
+      renderStats();
+      renderPath();
+      renderCards();
+      showToast("Filters cleared");
+    }
+
+    function renderStats() {
+      const completed = Object.keys(state.progress.activities || {}).length;
+      els.totalActivities.textContent = state.allItems.length.toLocaleString();
+      els.visibleActivities.textContent = state.filteredItems.length.toLocaleString();
+      els.completedActivities.textContent = completed.toLocaleString();
+      els.starCount.textContent = (state.progress.activityStars || 0).toLocaleString();
+      els.resultCount.textContent = `${state.filteredItems.length.toLocaleString()} activities found`;
+    }
+
+    function renderPath() {
+      const list = state.filteredItems.length ? state.filteredItems : state.allItems;
+      if (!list.length) {
+        els.activityPath.innerHTML = `<div class="empty">No activity path available.</div>`;
+        return;
+      }
+
+      const today = new Date();
+      const seed = today.getFullYear() + today.getMonth() + today.getDate();
+      const start = seed % Math.max(1, list.length - 4);
+      const steps = list.slice(start, start + 4);
+      const labels = ["👆 Tap", "🗣️ Say", "✍️ Practice", "⭐ Star"];
+
+      els.activityPath.innerHTML = steps.map((item, index) => `
+        <button class="path-step" type="button" data-open="${escapeHTML(item.id)}">
+          <span>${labels[index] || "🎯 Task"} • Level ${escapeHTML(item.level)}</span>
+          ${escapeHTML(item.symbol || findTopicIcon(item.topicId) || "🎯")} ${escapeHTML(item.subtopic || item.topicTitle || "Activity")}
+        </button>
+      `).join("");
+
+      els.activityPath.querySelectorAll("[data-open]").forEach(button => {
+        button.addEventListener("click", () => openActivityById(button.dataset.open));
+      });
+    }
+
+    function renderCards() {
+      if (!state.filteredItems.length) {
+        els.activityGrid.innerHTML = `<div class="empty"><h3>No activity found.</h3><p>Try another level, topic or search word.</p></div>`;
+        return;
+      }
+
+      const visible = state.filteredItems.slice(0, state.visibleLimit);
+      els.activityGrid.innerHTML = visible.map(item => activityCard(item)).join("");
+      els.loadMoreBtn.style.display = state.filteredItems.length > state.visibleLimit ? "inline-flex" : "none";
+      bindCardEvents();
+    }
+
+    function activityCard(item) {
+      const done = Boolean(state.progress.activities?.[item.id]);
+      const symbol = item.symbol || findTopicIcon(item.topicId) || "🎯";
+      const style = state.activityStyle === "all" ? inferActivityStyle(item) : state.activityStyle;
+      const title = activityTitle(style);
+      const options = Array.isArray(item.options) ? item.options : [];
+
+      return `
+        <article class="activity-card ${done ? "done" : ""}" data-card-id="${escapeHTML(item.id)}" data-symbol="${escapeHTML(symbol)}">
+          <div class="card-top">
+            <span class="topic-badge">${escapeHTML(symbol)} ${escapeHTML(item.topicTitle || "Islamic Learning")}</span>
+            <span class="level-badge">Level ${escapeHTML(item.level)} • Age ${escapeHTML(item.ageRange || "")}</span>
+          </div>
+
+          <span class="type-badge">${escapeHTML(title)}</span>
+          <p class="question-text">${escapeHTML(item.question)}</p>
+
+          ${renderActivityContent(item, style, options)}
+
+          <div class="answer-box" id="answer-${safeId(item.id)}">
+            <b>Answer:</b> ${escapeHTML(item.answer || "")}
+            ${item.simpleExplanation ? `<br><b>Meaning:</b> ${escapeHTML(item.simpleExplanation)}` : ""}
+          </div>
+
+          <div class="card-actions">
+            <button class="small-btn play" type="button" data-open="${escapeHTML(item.id)}">🎯 Open Activity</button>
+            <button class="small-btn answer" type="button" data-answer="${escapeHTML(item.id)}">👀 Show Answer</button>
+            <button class="small-btn star" type="button" data-complete="${escapeHTML(item.id)}">⭐ Complete</button>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderActivityContent(item, style, options) {
+      if (style === "tap" && options.length) {
+        return `
+          <div class="option-grid">
+            ${options.map(option => `<button class="option" type="button" data-option="${escapeHTML(option)}" data-correct="${escapeHTML(item.answer)}">${escapeHTML(option)}</button>`).join("")}
+          </div>
+        `;
+      }
+
+      if (style === "say") {
+        return `<div class="task-box"><strong>🗣️ Say it:</strong> ${escapeHTML(item.answer || item.question)}<br><strong>Then:</strong> Repeat it gently 3 times.</div>`;
+      }
+
+      if (style === "match") {
+        return `<div class="task-box"><strong>🧩 Match:</strong> Match this question with the correct answer: <b>${escapeHTML(item.answer || "")}</b></div>`;
+      }
+
+      if (style === "practice") {
+        return `<div class="task-box"><strong>✍️ Practice:</strong> ${escapeHTML(item.practice || item.activity || "Say the answer, then draw or act it.")}</div>`;
+      }
+
+      if (style === "game") {
+        return `<div class="task-box"><strong>🎮 Mini Game:</strong> ${escapeHTML(item.game || "Ask a parent to hide the answer. Try to remember it and earn a star.")}</div>`;
+      }
+
+      return `<div class="task-box"><strong>🎯 Activity:</strong> ${escapeHTML(item.activity || item.practice || "Read, tap, repeat and earn a star.")}</div>`;
+    }
+
+    function bindCardEvents() {
+      document.querySelectorAll("[data-answer]").forEach(button => {
+        button.addEventListener("click", () => {
+          const box = document.getElementById(`answer-${safeId(button.dataset.answer)}`);
+          if (box) box.classList.toggle("show");
+        });
+      });
+
+      document.querySelectorAll("[data-complete]").forEach(button => {
+        button.addEventListener("click", () => completeActivity(button.dataset.complete));
+      });
+
+      document.querySelectorAll("[data-open]").forEach(button => {
+        button.addEventListener("click", () => openActivityById(button.dataset.open));
+      });
+
+      document.querySelectorAll("[data-option]").forEach(button => {
+        button.addEventListener("click", () => {
+          const selected = normalize(button.dataset.option);
+          const correct = normalize(button.dataset.correct);
+          button.parentElement.querySelectorAll(".option").forEach(opt => opt.classList.remove("correct", "wrong"));
+          if (selected === correct) {
+            button.classList.add("correct");
+            playSoftClick();
+            showToast("Correct! ⭐");
+          } else {
+            button.classList.add("wrong");
+            showToast("Try again gently");
+          }
+        });
+      });
+    }
+
+    function openDailyActivity() {
+      const list = state.filteredItems.length ? state.filteredItems : state.allItems;
+      if (!list.length) return;
+      const today = new Date();
+      const index = (today.getFullYear() + today.getMonth() + today.getDate()) % list.length;
+      openActivity(list[index]);
+    }
+
+    function openActivityById(id) {
+      const item = state.allItems.find(q => q.id === id);
+      if (item) openActivity(item);
+    }
+
+    function openActivity(item) {
+      state.activeModalItem = item;
+      const style = state.activityStyle === "all" ? inferActivityStyle(item) : state.activityStyle;
+      els.modalTitle.textContent = `${activityTitle(style)} • ${item.topicTitle || "Activity"}`;
+      els.modalText.textContent = item.question || "Complete this Islamic learning activity.";
+
+      if (style === "match") {
+        els.modalBody.innerHTML = `
+          <div class="match-board">
+            <div class="match-item">❓ ${escapeHTML(item.question || "Question")}</div>
+            <div class="match-item">✅ ${escapeHTML(item.answer || "Answer")}</div>
+            <div class="match-item">🎯 ${escapeHTML(item.activity || "Activity")}</div>
+            <div class="match-item">⭐ Earn one star after saying it.</div>
+          </div>
+        `;
+      } else {
+        els.modalBody.innerHTML = `
+          <div class="task-box"><strong>Answer:</strong> ${escapeHTML(item.answer || "")}</div>
+          <div class="task-box"><strong>Activity:</strong> ${escapeHTML(item.activity || "Say the answer and repeat it.")}</div>
+          <div class="task-box"><strong>Practice:</strong> ${escapeHTML(item.practice || "Do this gently with a parent.")}</div>
+          <div class="task-box"><strong>Game:</strong> ${escapeHTML(item.game || "Hide the answer and try again.")}</div>
+        `;
+      }
+
+      els.activityModal.classList.add("show");
+    }
+
+    function closeModal() {
+      els.activityModal.classList.remove("show");
+      state.activeModalItem = null;
+    }
+
+    function completeActivity(id) {
+      if (!state.progress.activities) state.progress.activities = {};
+      if (!state.progress.activities[id]) {
+        state.progress.activities[id] = { completedAt: new Date().toISOString() };
+        state.progress.activityStars = (state.progress.activityStars || 0) + 1;
+        saveProgress();
+        renderStats();
+        renderCards();
+        playSoftClick();
+        showToast("Activity completed! ⭐");
+      } else {
+        showToast("Already completed");
+      }
+    }
+
+    function inferActivityStyle(item) {
+      if (Array.isArray(item.options) && item.options.length) return "tap";
+      if (item.game) return "game";
+      if (item.practice) return "practice";
+      if (item.activity) return "say";
+      return "tap";
+    }
+
+    function activityTitle(style) {
+      const map = {
+        all: "🌈 Activity",
+        tap: "👆 Tap & Choose",
+        say: "🗣️ Say & Repeat",
+        match: "🧩 Match & Connect",
+        practice: "✍️ Practice Task",
+        game: "🎮 Mini Game"
+      };
+      return map[style] || map.all;
+    }
+
+    function readProgress() {
+      try {
+        return JSON.parse(localStorage.getItem("alHayatKidsIslamActivities")) || { activityStars: 0, activities: {} };
+      } catch {
+        return { activityStars: 0, activities: {} };
+      }
+    }
+
+    function saveProgress() {
+      localStorage.setItem("alHayatKidsIslamActivities", JSON.stringify(state.progress));
+    }
+
+    function findTopicIcon(topicId) {
+      const topic = state.topics.find(t => t.id === topicId);
+      return topic?.icon || "";
+    }
+
+    function uniqueValues(items, key) {
+      return [...new Set(items.map(item => item[key]).filter(Boolean))].sort();
+    }
+
+    function labelize(value) {
+      return String(value || "").replaceAll("_", " ").replace(/\b\w/g, letter => letter.toUpperCase());
+    }
+
+    function safeId(value) {
+      return String(value || "").replace(/[^a-zA-Z0-9_-]/g, "-");
+    }
+
+    function normalize(value) {
+      return String(value || "").trim().toLowerCase();
+    }
+
+    function escapeHTML(value) {
+      return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      }[char]));
+    }
+
+    function debounce(fn, delay = 200) {
+      let timer;
+      return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), delay);
+      };
+    }
+
+    function showToast(message) {
+      els.toast.textContent = message;
+      els.toast.classList.add("show");
+      setTimeout(() => els.toast.classList.remove("show"), 1800);
+    }
+
+    function playSoftClick() {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+        const ctx = new AudioContext();
+        const oscillator = ctx.createOscillator();
+        const gain = ctx.createGain();
+        oscillator.type = "sine";
+        oscillator.frequency.setValueAtTime(520, ctx.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(760, ctx.currentTime + 0.08);
+        gain.gain.setValueAtTime(0.001, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.06, ctx.currentTime + 0.01);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.12);
+        oscillator.connect(gain);
+        gain.connect(ctx.destination);
+        oscillator.start();
+        oscillator.stop(ctx.currentTime + 0.13);
+      } catch (error) {
+        // Sound is optional. Ignore browser/audio restrictions.
+      }
+    }
+  </script>
 </body>
 </html>
