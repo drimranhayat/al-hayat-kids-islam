@@ -1,1554 +1,1299 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#fff7df" />
-  <meta name="description" content="Al-Hayat Kids Islam is a mobile-first Islamic learning website for ages 3 to 8 with Duas, Qur'an, Salah, Arabic, practice games, badges, and guided learning steps." />
-  <title>Al-Hayat Kids Islam | Tap, Learn, Practice and Play</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@500;700;800;900&family=Noto+Naskh+Arabic:wght@600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Al-Hayat Kids Islam | Islamic Learning for Children Ages 3–8</title>
+  <meta name="description" content="Al-Hayat Kids Islam is a mobile-friendly Islamic learning website for children ages 3 to 8 with questions, activities, games, practice, stars, badges, duas, surahs, salah, Arabic letters, manners and parent guidance." />
+  <meta name="keywords" content="Islamic learning for kids, Muslim kids Islam, Quran for kids, duas for children, salah for kids, Arabic letters for kids, Islamic games for kids, Islamic questions for kids" />
+  <meta name="theme-color" content="#0f766e" />
+  <meta property="og:title" content="Al-Hayat Kids Islam" />
+  <meta property="og:description" content="A child-friendly Islamic learning dashboard for ages 3–8: questions, activities, games, practice, stars and badges." />
+  <meta property="og:type" content="website" />
 
   <style>
-    :root{
-      --ink:#10233d;
-      --muted:#64748b;
-      --white:#ffffff;
-      --cream:#fff7df;
-      --sun:#ffe59f;
-      --sun-2:#fff0bf;
-      --orange:#ffb45e;
-      --teal:#17b9ac;
-      --teal-dark:#087b75;
-      --sky:#dff4ff;
-      --blue:#4f8cff;
-      --pink:#ffe4ef;
-      --purple:#eee8ff;
-      --green:#e7f9df;
-      --mint:#defcf4;
-      --card:#fffdf7;
-      --line:rgba(16,35,61,.11);
-      --shadow:0 20px 55px rgba(17,34,64,.13);
-      --soft-shadow:0 12px 28px rgba(17,34,64,.10);
-      --radius-xl:34px;
-      --radius-lg:26px;
-      --radius-md:20px;
-      --max:1180px;
-      --bottom-nav:0px;
+    :root {
+      --cream: #fff8e8;
+      --cream-2: #fffdf6;
+      --ink: #15314d;
+      --muted: #60758a;
+      --teal: #0f766e;
+      --teal-2: #14b8a6;
+      --teal-soft: #eafff9;
+      --gold: #f5b942;
+      --gold-soft: #fff4c7;
+      --sky: #6ec7ff;
+      --sky-soft: #edf9ff;
+      --rose: #ff7b7b;
+      --rose-soft: #fff0f0;
+      --mint: #9af0c5;
+      --white: #ffffff;
+      --line: rgba(21, 49, 77, 0.12);
+      --shadow: 0 18px 50px rgba(21, 49, 77, 0.12);
+      --shadow-soft: 0 10px 26px rgba(21, 49, 77, 0.08);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1180px;
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth; overflow-x:hidden;}
-    body{
-      margin:0;
-      overflow-x:hidden;
-      color:var(--ink);
-      font-family:"Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
       background:
-        radial-gradient(circle at 10% 5%, rgba(255,229,159,.75), transparent 26rem),
-        radial-gradient(circle at 88% 12%, rgba(223,244,255,.9), transparent 28rem),
-        linear-gradient(180deg, #fff8e7 0%, #fffdf7 44%, #f7fffb 100%);
-      padding-bottom:calc(var(--bottom-nav) + env(safe-area-inset-bottom));
+        radial-gradient(circle at 10% 0%, rgba(110, 199, 255, 0.32), transparent 30%),
+        radial-gradient(circle at 92% 6%, rgba(245, 185, 66, 0.30), transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(154, 240, 197, 0.28), transparent 34%),
+        linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 48%, #f1fffb 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      opacity:.37;
-      background-image:
-        radial-gradient(circle, rgba(16,35,61,.10) 1.2px, transparent 1.2px),
-        radial-gradient(circle, rgba(23,185,172,.10) 1.2px, transparent 1.2px);
-      background-size:36px 36px, 54px 54px;
-      background-position:0 0, 12px 18px;
-      z-index:-1;
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -60px;
+      background: var(--ink);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 999px;
+      z-index: 1000;
+      transition: top 0.2s ease;
+      font-weight: 900;
+    }
+    .skip-link:focus { top: 12px; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      background: rgba(255, 253, 246, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
     }
 
-    a{color:inherit; text-decoration:none}
-    img,svg{max-width:100%; display:block}
-    button{font:inherit}
-
-    .skip-link{
-      position:absolute;
-      left:1rem;
-      top:-4rem;
-      padding:.8rem 1rem;
-      background:var(--ink);
-      color:white;
-      border-radius:14px;
-      z-index:50;
-    }
-    .skip-link:focus{top:1rem}
-
-    .site-header{
-      position:sticky;
-      top:0;
-      z-index:30;
-      backdrop-filter:blur(16px);
-      background:rgba(255,247,223,.82);
-      border-bottom:1px solid rgba(16,35,61,.08);
-    }
-    .header-inner{
-      width:min(var(--max), calc(100% - 28px));
-      margin:auto;
-      min-height:74px;
-      display:flex;
-      align-items:center;
-      gap:14px;
-      justify-content:space-between;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:11px;
-      min-width:0;
-    }
-    .brand-mark{
-      width:54px;
-      height:54px;
-      border-radius:20px;
-      display:grid;
-      place-items:center;
-      font-size:1.75rem;
-      background:linear-gradient(135deg, #fff, var(--sun));
-      border:2px solid rgba(16,35,61,.08);
-      box-shadow:0 10px 25px rgba(255,180,94,.20);
-      flex:0 0 auto;
-    }
-    .brand-title{
-      display:flex;
-      flex-direction:column;
-      line-height:1.02;
-      min-width:0;
-    }
-    .brand-title strong{
-      font-family:"Baloo 2", "Nunito", sans-serif;
-      font-size:clamp(1.05rem, 2.5vw, 1.45rem);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .brand-title span{
-      font-size:.77rem;
-      font-weight:900;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      color:var(--teal-dark);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
     }
 
-    .desktop-nav{
-      display:flex;
-      align-items:center;
-      gap:8px;
-    }
-    .desktop-nav a,
-    .mini-action{
-      min-height:42px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:.35rem;
-      padding:.72rem .95rem;
-      border-radius:999px;
-      font-weight:900;
-      color:#15304e;
-      border:1px solid transparent;
-      transition:transform .18s ease, background .18s ease, border-color .18s ease;
-      white-space:nowrap;
-    }
-    .desktop-nav a:hover,
-    .desktop-nav a:focus-visible,
-    .mini-action:hover,
-    .mini-action:focus-visible{
-      transform:translateY(-2px);
-      background:white;
-      border-color:var(--line);
-      outline:none;
-    }
-    .mini-action{
-      background:var(--ink);
-      color:white;
-      box-shadow:0 10px 20px rgba(16,35,61,.16);
-    }
-    .menu-toggle{
-      display:none;
-      width:48px;
-      height:48px;
-      border:0;
-      border-radius:18px;
-      background:#fff;
-      box-shadow:var(--soft-shadow);
-      color:var(--ink);
-      font-size:1.35rem;
-      cursor:pointer;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 250px;
+      font-weight: 1000;
+      letter-spacing: -0.03em;
     }
 
-    .mobile-menu{
-      display:none;
-      width:min(var(--max), calc(100% - 28px));
-      margin:0 auto 14px;
-      padding:10px;
-      border-radius:22px;
-      background:white;
-      box-shadow:var(--soft-shadow);
-      border:1px solid var(--line);
-    }
-    .mobile-menu[data-open="true"]{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
-    .mobile-menu a{
-      border-radius:16px;
-      padding:.9rem;
-      font-weight:900;
-      background:#f8fafc;
-      text-align:center;
+    .brand-mark {
+      width: 50px;
+      height: 50px;
+      border-radius: 17px;
+      background: linear-gradient(135deg, var(--teal), #22c55e);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      box-shadow: 0 13px 28px rgba(15, 118, 110, 0.22);
+      flex: 0 0 auto;
     }
 
-    .page{
-      width:min(var(--max), calc(100% - 28px));
-      margin:auto;
-      padding:18px 0 64px;
+    .brand small {
+      display: block;
+      margin-top: 2px;
+      font-size: 0.76rem;
+      color: var(--muted);
+      letter-spacing: 0;
+      font-weight: 800;
     }
 
-    .hero{
-      display:grid;
-      grid-template-columns:minmax(0, 1.06fr) minmax(320px, .94fr);
-      gap:22px;
-      align-items:stretch;
-      margin-top:8px;
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
     }
 
-    .hero-card{
-      position:relative;
-      overflow:hidden;
-      border-radius:42px;
+    .nav a {
+      border-radius: 999px;
+      padding: 10px 13px;
+      background: rgba(15, 118, 110, 0.08);
+      color: #0a6159;
+      font-weight: 900;
+      transition: transform 0.2s ease, background 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav a:hover, .nav a:focus {
+      background: rgba(15, 118, 110, 0.16);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    .hero {
+      padding: 36px 18px 22px;
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-card, .mission-card, .section-card, .room-card, .path-card, .mini-panel {
+      background: rgba(255, 255, 255, 0.90);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-xl);
+    }
+
+    .hero-card {
+      padding: clamp(24px, 4vw, 42px);
+      position: relative;
+      overflow: hidden;
+      min-height: 520px;
+      display: grid;
+      align-content: center;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -70px -90px auto;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245, 185, 66, 0.36), transparent 70%);
+    }
+
+    .hero-card::after {
+      content: "☾";
+      position: absolute;
+      right: 24px;
+      top: 16px;
+      font-size: 5rem;
+      color: rgba(15, 118, 110, 0.08);
+      transform: rotate(-12deg);
+      font-weight: 900;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 9px 14px;
+      background: var(--teal-soft);
+      border: 1px solid rgba(15, 118, 110, 0.16);
+      color: #0a6159;
+      font-weight: 1000;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 5.15rem);
+      line-height: 0.94;
+      letter-spacing: -0.07em;
+      color: #122f4b;
+    }
+
+    .hero-text {
+      margin: 18px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
+      line-height: 1.72;
+      font-weight: 700;
+    }
+
+    .hero-actions, .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 13px 18px;
+      font-weight: 1000;
+      min-height: 48px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover, .btn:focus {
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .btn.primary {
+      color: white;
+      background: linear-gradient(135deg, var(--teal), #22c55e);
+      box-shadow: 0 14px 26px rgba(15, 118, 110, 0.24);
+    }
+
+    .btn.gold {
+      color: #4d3400;
+      background: linear-gradient(135deg, #f59e0b, #ffd166);
+      box-shadow: 0 14px 26px rgba(245, 158, 11, 0.18);
+    }
+
+    .btn.soft {
+      color: #0b5171;
+      background: var(--sky-soft);
+      border: 1px solid rgba(11, 81, 113, 0.12);
+    }
+
+    .btn.rose {
+      color: #722020;
+      background: var(--rose-soft);
+      border: 1px solid rgba(255, 123, 123, 0.24);
+    }
+
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 22px;
+    }
+
+    .chip {
+      background: white;
+      border: 1px solid var(--line);
+      padding: 9px 12px;
+      border-radius: 999px;
+      color: #28506f;
+      font-weight: 900;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .phone-demo {
+      padding: 20px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, #ffffff, #f4fffb);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 14px;
+    }
+
+    .phone-shell {
+      border: 10px solid #17324d;
+      border-radius: 38px;
       background:
-        radial-gradient(circle at 82% 8%, rgba(255,255,255,.55) 0 92px, transparent 93px),
-        radial-gradient(circle at 10% 92%, rgba(255,229,159,.36) 0 100px, transparent 101px),
-        linear-gradient(135deg, #31d2c0 0%, #56c9ff 42%, #fff1a8 100%);
-      min-height:560px;
-      padding:clamp(22px, 3.4vw, 42px);
-      box-shadow:var(--shadow);
-      border:1px solid rgba(255,255,255,.65);
-      isolation:isolate;
-    }
-    .hero-card::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.48), rgba(255,255,255,.10) 52%, rgba(255,255,255,.38)),
-        radial-gradient(circle at 25% 20%, rgba(255,255,255,.58), transparent 12rem);
-      z-index:-1;
-    }
-    .hero-card::after{
-      content:"";
-      position:absolute;
-      width:220px;
-      height:220px;
-      right:-72px;
-      bottom:-72px;
-      border-radius:50%;
-      background:rgba(255,255,255,.28);
-      border:24px solid rgba(255,255,255,.22);
-      z-index:-1;
+        radial-gradient(circle at top left, rgba(110, 199, 255, 0.30), transparent 36%),
+        linear-gradient(180deg, #fffdf6, #f2fffb);
+      min-height: 460px;
+      padding: 18px;
+      display: grid;
+      align-content: space-between;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25), var(--shadow-soft);
+      overflow: hidden;
+      position: relative;
     }
 
-    .hero-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:.55rem;
-      padding:.78rem 1rem;
-      border-radius:999px;
-      color:#084f52;
-      background:rgba(255,255,255,.67);
-      border:1px solid rgba(255,255,255,.78);
-      box-shadow:0 12px 25px rgba(16,35,61,.08);
-      font-weight:1000;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-size:.82rem;
+    .phone-notch {
+      position: absolute;
+      left: 50%;
+      top: 10px;
+      transform: translateX(-50%);
+      width: 88px;
+      height: 10px;
+      background: #17324d;
+      border-radius: 999px;
     }
 
-    h1,h2,h3,p{margin-top:0}
-    .hero-title{
-      margin:24px 0 12px;
-      max-width:760px;
-      font-family:"Baloo 2", "Nunito", sans-serif;
-      font-size:clamp(3rem, 7.7vw, 6.35rem);
-      line-height:.86;
-      letter-spacing:-.055em;
-      color:#10233d;
-      text-wrap:balance;
-    }
-    .hero-title .spark{
-      display:inline-block;
-      color:#fff;
-      text-shadow:0 7px 22px rgba(16,35,61,.20);
-    }
-    .hero-lead{
-      max-width:680px;
-      margin:0 0 22px;
-      color:#12324d;
-      font-size:clamp(1.05rem, 2.1vw, 1.35rem);
-      line-height:1.55;
-      font-weight:850;
-    }
-    .hero-lead b{color:#074d50}
-
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin:20px 0 18px;
-    }
-    .btn{
-      min-height:54px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:.65rem;
-      padding:.95rem 1.18rem;
-      border:0;
-      border-radius:999px;
-      font-weight:1000;
-      font-size:1.02rem;
-      cursor:pointer;
-      transition:transform .18s ease, filter .18s ease, box-shadow .18s ease, background .18s ease;
-      box-shadow:0 12px 24px rgba(16,35,61,.13);
-      touch-action:manipulation;
-      text-align:center;
-    }
-    .btn:hover,.btn:focus-visible{transform:translateY(-3px) scale(1.01); filter:saturate(1.08); outline:none}
-    .btn-primary{background:#fff; color:#10233d; min-width:180px;}
-    .btn-sun{background:linear-gradient(135deg, var(--sun), #fff3c1); color:#442d08;}
-    .btn-teal{background:rgba(8,123,117,.78); color:#fff; border:1px solid rgba(255,255,255,.35);}
-
-    .picture-strip{
-      display:grid;
-      grid-template-columns:repeat(5, minmax(72px, 1fr));
-      gap:10px;
-      margin-top:22px;
-      max-width:690px;
-    }
-    .picture-pill{
-      min-height:72px;
-      border-radius:24px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex-direction:column;
-      gap:2px;
-      background:rgba(255,255,255,.72);
-      border:1px solid rgba(255,255,255,.9);
-      box-shadow:0 10px 18px rgba(16,35,61,.08);
-      font-weight:1000;
-      color:#15304e;
-      text-align:center;
-      line-height:1.02;
-    }
-    .picture-pill span{font-size:1.7rem; line-height:1}
-    .picture-pill small{font-size:.78rem}
-
-    .mini-road{
-      position:relative;
-      display:grid;
-      grid-template-columns:repeat(6, minmax(0, 1fr));
-      gap:8px;
-      margin-top:18px;
-      padding:16px;
-      border-radius:30px;
-      background:rgba(255,255,255,.55);
-      border:1px solid rgba(255,255,255,.75);
-      box-shadow:0 12px 22px rgba(16,35,61,.08);
-      max-width:720px;
-    }
-    .road-step{
-      position:relative;
-      z-index:1;
-      min-height:76px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex-direction:column;
-      gap:3px;
-      border-radius:24px;
-      background:#fff;
-      color:var(--ink);
-      font-weight:1000;
-      text-align:center;
-      box-shadow:0 8px 16px rgba(16,35,61,.07);
-      border:1px solid rgba(16,35,61,.06);
-    }
-    .road-step::after{
-      content:"→";
-      position:absolute;
-      right:-12px;
-      top:50%;
-      transform:translateY(-50%);
-      color:#087b75;
-      font-size:1.35rem;
-      z-index:2;
-    }
-    .road-step:last-child::after{display:none}
-    .road-step .emoji{font-size:1.55rem; line-height:1}
-    .road-step small{font-size:.72rem; color:#49627f}
-
-    .hero-side{
-      display:grid;
-      grid-template-rows:auto 1fr;
-      gap:18px;
-    }
-    .start-panel,
-    .topic-panel,
-    .soft-panel{
-      border-radius:var(--radius-xl);
-      background:rgba(255,255,255,.86);
-      box-shadow:var(--soft-shadow);
-      border:1px solid rgba(16,35,61,.08);
-      padding:24px;
-    }
-    .start-panel{
-      background:
-        radial-gradient(circle at 92% 0%, rgba(255,229,159,.65), transparent 12rem),
-        rgba(255,255,255,.88);
-    }
-    .panel-title{
-      font-family:"Baloo 2", "Nunito", sans-serif;
-      font-size:clamp(1.65rem, 3vw, 2.65rem);
-      line-height:.94;
-      letter-spacing:-.03em;
-      margin-bottom:14px;
-      color:var(--ink);
-    }
-    .today-card{
-      display:grid;
-      grid-template-columns:auto 1fr auto;
-      align-items:center;
-      gap:14px;
-      padding:16px;
-      border-radius:26px;
-      background:linear-gradient(135deg, #fff9df, #e6fbf7);
-      border:1px solid rgba(16,35,61,.08);
-    }
-    .today-icon{
-      width:58px;
-      height:58px;
-      display:grid;
-      place-items:center;
-      border-radius:22px;
-      background:#fff;
-      box-shadow:0 10px 20px rgba(16,35,61,.08);
-      font-size:1.9rem;
-    }
-    .today-card strong{display:block; font-size:1.12rem; font-weight:1000; margin-bottom:2px;}
-    .today-card span{display:block; color:#49627f; font-weight:900; line-height:1.25}
-    .tiny-btn{
-      border:0;
-      background:var(--ink);
-      color:white;
-      border-radius:999px;
-      padding:.75rem .9rem;
-      font-weight:1000;
-      cursor:pointer;
-      white-space:nowrap;
+    .mission-card {
+      padding: 16px;
+      border-radius: 24px;
+      box-shadow: none;
     }
 
-    .stat-grid{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:10px;
-      margin-top:14px;
-    }
-    .stat{
-      min-height:96px;
-      display:grid;
-      place-items:center;
-      text-align:center;
-      border-radius:26px;
-      background:rgba(255,255,255,.88);
-      border:1px solid rgba(16,35,61,.08);
-    }
-    .stat b{
-      display:block;
-      color:#087b75;
-      font-family:"Baloo 2", "Nunito", sans-serif;
-      font-size:2.1rem;
-      line-height:.9;
-    }
-    .stat span{font-weight:1000; font-size:.95rem;}
-
-    .topic-panel{
-      background:
-        radial-gradient(circle at 8% 12%, rgba(255,228,239,.8), transparent 12rem),
-        radial-gradient(circle at 92% 88%, rgba(223,244,255,.9), transparent 13rem),
-        rgba(255,255,255,.88);
-    }
-    .topic-panel h2{font-size:1.35rem; margin-bottom:13px;}
-    .quick-grid{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:12px;
-    }
-    .quick-card{
-      min-height:128px;
-      padding:14px;
-      border-radius:26px;
-      border:1px solid rgba(16,35,61,.08);
-      background:#fff;
-      box-shadow:0 10px 18px rgba(16,35,61,.06);
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      overflow:hidden;
-      position:relative;
-      transition:transform .18s ease, box-shadow .18s ease;
-    }
-    .quick-card:hover,.quick-card:focus-visible{transform:translateY(-4px); box-shadow:0 18px 28px rgba(16,35,61,.11); outline:none}
-    .quick-card .big{font-size:2.1rem; line-height:1}
-    .quick-card strong{font-size:1.05rem; line-height:1.04; font-weight:1000; color:#10233d;}
-    .quick-card small{display:block; color:#5c6f85; font-weight:900; margin-top:2px; line-height:1.16;}
-    .quick-card.quran{background:linear-gradient(135deg, #e6fbf7, #ffffff)}
-    .quick-card.dua{background:linear-gradient(135deg, #fff3cd, #ffffff)}
-    .quick-card.salah{background:linear-gradient(135deg, #eaf3ff, #ffffff)}
-    .quick-card.arabic{background:linear-gradient(135deg, #f2edff, #ffffff)}
-    .quick-card.games{background:linear-gradient(135deg, #ffeaf2, #ffffff)}
-    .quick-card.practice{background:linear-gradient(135deg, #effbe8, #ffffff)}
-
-    .section{
-      margin-top:32px;
-    }
-    .section-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom:16px;
-    }
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:.45rem;
-      padding:.45rem .72rem;
-      border-radius:999px;
-      background:#fff;
-      color:#087b75;
-      font-weight:1000;
-      font-size:.84rem;
-      box-shadow:0 8px 18px rgba(16,35,61,.06);
-      border:1px solid rgba(16,35,61,.06);
-      margin-bottom:8px;
-    }
-    .section-title{
-      margin:0;
-      font-family:"Baloo 2", "Nunito", sans-serif;
-      font-size:clamp(2rem, 4.2vw, 3.35rem);
-      line-height:.93;
-      letter-spacing:-.035em;
-    }
-    .section-lead{
-      color:#5c6f85;
-      margin:8px 0 0;
-      font-size:1.04rem;
-      font-weight:850;
-      max-width:680px;
-      line-height:1.45;
+    .mission-card .tiny {
+      color: var(--muted);
+      font-weight: 900;
+      font-size: 0.86rem;
     }
 
-    .phone-path{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:16px;
-    }
-    .mission-card{
-      min-height:220px;
-      padding:22px;
-      border-radius:34px;
-      background:#fff;
-      border:1px solid rgba(16,35,61,.08);
-      box-shadow:var(--soft-shadow);
-      position:relative;
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-    }
-    .mission-card::after{
-      content:"";
-      width:128px;
-      height:128px;
-      border-radius:50%;
-      position:absolute;
-      right:-36px;
-      top:-38px;
-      background:rgba(255,229,159,.45);
-      z-index:0;
-    }
-    .mission-card > *{position:relative; z-index:1;}
-    .mission-top{display:flex; align-items:center; justify-content:space-between; gap:10px;}
-    .mission-num{
-      width:48px;
-      height:48px;
-      border-radius:18px;
-      background:#10233d;
-      color:white;
-      display:grid;
-      place-items:center;
-      font-weight:1000;
-      box-shadow:0 10px 18px rgba(16,35,61,.16);
-    }
-    .mission-emoji{font-size:2.6rem; line-height:1}
-    .mission-card h3{font-size:1.35rem; margin:18px 0 7px; line-height:1.05;}
-    .mission-card p{color:#5c6f85; font-weight:850; line-height:1.35; margin:0;}
-    .mission-actions{display:flex; gap:8px; flex-wrap:wrap; margin-top:16px;}
-    .chip{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:.35rem;
-      border:0;
-      min-height:40px;
-      border-radius:999px;
-      padding:.65rem .8rem;
-      background:#f8fafc;
-      color:var(--ink);
-      font-weight:1000;
-      cursor:pointer;
-    }
-    .chip.complete{background:#e6fbf7; color:#087b75;}
-
-    .learning-map{
-      background:
-        radial-gradient(circle at 8% 20%, rgba(223,244,255,.85), transparent 17rem),
-        radial-gradient(circle at 92% 86%, rgba(255,228,239,.85), transparent 16rem),
-        #fff;
-      border:1px solid rgba(16,35,61,.08);
-      border-radius:38px;
-      box-shadow:var(--soft-shadow);
-      padding:24px;
-      overflow:hidden;
-    }
-    .map-track{
-      display:grid;
-      grid-template-columns:repeat(5, 1fr);
-      gap:12px;
-      position:relative;
-    }
-    .level-card{
-      position:relative;
-      min-height:184px;
-      border-radius:30px;
-      padding:18px;
-      background:#fff;
-      border:1px solid rgba(16,35,61,.08);
-      box-shadow:0 10px 18px rgba(16,35,61,.06);
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      transition:transform .18s ease;
-    }
-    .level-card:hover{transform:translateY(-5px)}
-    .level-card::after{
-      content:"➜";
-      position:absolute;
-      right:-17px;
-      top:50%;
-      width:30px;
-      height:30px;
-      border-radius:999px;
-      display:grid;
-      place-items:center;
-      background:#fff3c1;
-      border:1px solid rgba(16,35,61,.08);
-      box-shadow:0 8px 14px rgba(16,35,61,.08);
-      z-index:2;
-    }
-    .level-card:last-child::after{display:none}
-    .level-icon{
-      width:62px;
-      height:62px;
-      border-radius:24px;
-      display:grid;
-      place-items:center;
-      font-size:2rem;
-      background:linear-gradient(135deg, #e6fbf7, #fff3c1);
-      box-shadow:0 10px 20px rgba(16,35,61,.08);
-    }
-    .level-card h3{font-size:1.2rem; margin:14px 0 4px; line-height:1.06;}
-    .level-card p{margin:0; color:#5c6f85; font-weight:850; line-height:1.25;}
-    .progress-line{
-      width:100%;
-      height:10px;
-      border-radius:999px;
-      background:#edf2f7;
-      overflow:hidden;
-      margin-top:12px;
-    }
-    .progress-line span{display:block; height:100%; width:var(--w, 20%); border-radius:999px; background:linear-gradient(90deg, #17b9ac, #ffe59f);}
-
-    .topic-grid{
-      display:grid;
-      grid-template-columns:repeat(4, minmax(0, 1fr));
-      gap:16px;
-    }
-    .subject-card{
-      min-height:250px;
-      border-radius:34px;
-      background:#fff;
-      border:1px solid rgba(16,35,61,.08);
-      box-shadow:var(--soft-shadow);
-      padding:20px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      position:relative;
-      overflow:hidden;
-      transition:transform .18s ease, box-shadow .18s ease;
-    }
-    .subject-card:hover,.subject-card:focus-visible{transform:translateY(-6px); box-shadow:0 20px 35px rgba(16,35,61,.13); outline:none;}
-    .subject-card::before{
-      content:"";
-      position:absolute;
-      inset:auto -40px -70px auto;
-      width:160px;
-      height:160px;
-      border-radius:50%;
-      background:rgba(255,229,159,.5);
-      z-index:0;
-    }
-    .subject-card > *{position:relative; z-index:1}
-    .subject-visual{
-      height:90px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:8px;
-    }
-    .subject-icon{
-      width:78px;
-      height:78px;
-      display:grid;
-      place-items:center;
-      border-radius:28px;
-      background:#fff;
-      font-size:2.7rem;
-      box-shadow:0 12px 22px rgba(16,35,61,.08);
-    }
-    .subject-bubbles{display:flex; gap:6px; align-items:flex-end; height:100%; opacity:.9}
-    .bubble{width:18px; border-radius:999px; background:rgba(16,35,61,.10)}
-    .bubble:nth-child(1){height:34px}
-    .bubble:nth-child(2){height:58px; background:rgba(23,185,172,.18)}
-    .bubble:nth-child(3){height:44px; background:rgba(255,180,94,.25)}
-    .subject-card h3{font-size:1.35rem; margin:14px 0 6px; line-height:1.04;}
-    .subject-card p{margin:0; color:#5c6f85; font-weight:850; line-height:1.35;}
-    .card-footer{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:18px;}
-    .age-tag{font-weight:1000; color:#087b75; background:#e6fbf7; border-radius:999px; padding:.5rem .65rem; font-size:.78rem; white-space:nowrap;}
-    .go{width:44px; height:44px; border-radius:16px; background:#10233d; color:white; display:grid; place-items:center; font-weight:1000; box-shadow:0 10px 16px rgba(16,35,61,.15);}
-    .subject-card[data-theme="quran"]{background:linear-gradient(135deg, #e5fbf6, #fff)}
-    .subject-card[data-theme="duas"]{background:linear-gradient(135deg, #fff1bd, #fff)}
-    .subject-card[data-theme="salah"]{background:linear-gradient(135deg, #e8f3ff, #fff)}
-    .subject-card[data-theme="arabic"]{background:linear-gradient(135deg, #f0e9ff, #fff)}
-    .subject-card[data-theme="stories"]{background:linear-gradient(135deg, #ffe9f1, #fff)}
-    .subject-card[data-theme="manners"]{background:linear-gradient(135deg, #edfae7, #fff)}
-    .subject-card[data-theme="questions"]{background:linear-gradient(135deg, #fff4dc, #fff)}
-    .subject-card[data-theme="practice"]{background:linear-gradient(135deg, #e9fbff, #fff)}
-
-    .playground{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-      align-items:stretch;
-    }
-    .game-board{
-      min-height:360px;
-      border-radius:38px;
-      padding:24px;
-      background:
-        radial-gradient(circle at 12% 14%, rgba(255,229,159,.7), transparent 11rem),
-        radial-gradient(circle at 86% 80%, rgba(223,244,255,.9), transparent 12rem),
-        #fff;
-      border:1px solid rgba(16,35,61,.08);
-      box-shadow:var(--soft-shadow);
-      overflow:hidden;
-    }
-    .tap-grid{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:12px;
-      margin-top:18px;
-    }
-    .tap-card{
-      min-height:116px;
-      border:0;
-      border-radius:28px;
-      background:#f8fafc;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex-direction:column;
-      gap:6px;
-      font-weight:1000;
-      color:#10233d;
-      cursor:pointer;
-      box-shadow:inset 0 0 0 1px rgba(16,35,61,.07);
-      transition:transform .18s ease, background .18s ease;
-    }
-    .tap-card:hover,.tap-card:focus-visible{transform:scale(1.03); background:#fff3c1; outline:none}
-    .tap-card.done{background:#e6fbf7; color:#087b75;}
-    .tap-card .tap-emoji{font-size:2.4rem; line-height:1}
-
-    .whiteboard{
-      min-height:360px;
-      border-radius:38px;
-      padding:24px;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.9), rgba(255,255,255,.72)),
-        repeating-linear-gradient(0deg, transparent 0 33px, rgba(16,35,61,.055) 34px 35px),
-        #fff;
-      border:1px solid rgba(16,35,61,.08);
-      box-shadow:var(--soft-shadow);
-    }
-    .board-box{
-      min-height:165px;
-      border:3px dashed rgba(23,185,172,.35);
-      border-radius:28px;
-      display:grid;
-      place-items:center;
-      text-align:center;
-      padding:20px;
-      color:#49627f;
-      font-weight:1000;
-      margin-top:18px;
-      background:rgba(255,255,255,.58);
-    }
-    .trace-word{
-      font-family:"Noto Naskh Arabic", serif;
-      font-size:clamp(2.6rem, 7vw, 4.6rem);
-      color:#10233d;
-      line-height:1.1;
-      direction:rtl;
+    .mission-card h2 {
+      margin: 7px 0 8px;
+      font-size: 1.45rem;
+      letter-spacing: -0.03em;
     }
 
-    .parents-strip{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:18px;
-      align-items:stretch;
-    }
-    .parent-card{
-      border-radius:38px;
-      background:#10233d;
-      color:white;
-      padding:28px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .parent-card::after{
-      content:"🌙";
-      position:absolute;
-      right:28px;
-      bottom:18px;
-      font-size:8rem;
-      opacity:.12;
-      line-height:1;
-    }
-    .parent-card h2{font-family:"Baloo 2"; font-size:clamp(2rem, 4vw, 3rem); line-height:.96; margin-bottom:10px;}
-    .parent-card p{font-weight:800; line-height:1.55; color:rgba(255,255,255,.86); max-width:670px;}
-    .parent-points{display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; margin-top:18px; position:relative; z-index:1;}
-    .parent-point{background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.16); border-radius:22px; padding:14px; font-weight:1000;}
-    .progress-card{
-      border-radius:38px;
-      background:linear-gradient(135deg, #fff1bd, #fff);
-      border:1px solid rgba(16,35,61,.08);
-      box-shadow:var(--soft-shadow);
-      padding:28px;
-    }
-    .stars{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      margin:16px 0;
-    }
-    .star{
-      width:48px;
-      height:48px;
-      border-radius:18px;
-      display:grid;
-      place-items:center;
-      background:#fff;
-      box-shadow:0 10px 18px rgba(16,35,61,.08);
-      font-size:1.6rem;
-    }
-    .progress-count{font-size:1.05rem; font-weight:1000; color:#087b75;}
-
-    .site-footer{
-      margin-top:38px;
-      border-radius:34px;
-      padding:28px;
-      background:#fff;
-      border:1px solid rgba(16,35,61,.08);
-      color:#49627f;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      box-shadow:0 12px 24px rgba(16,35,61,.06);
-    }
-    .footer-links{display:flex; flex-wrap:wrap; gap:10px; font-weight:1000;}
-    .footer-links a{padding:.6rem .8rem; border-radius:999px; background:#f8fafc;}
-
-    .floating-top{
-      position:fixed;
-      right:18px;
-      bottom:calc(22px + var(--bottom-nav));
-      width:56px;
-      height:56px;
-      border-radius:22px;
-      background:#10233d;
-      color:white;
-      display:grid;
-      place-items:center;
-      font-weight:1000;
-      box-shadow:0 14px 28px rgba(16,35,61,.22);
-      z-index:20;
+    .mission-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-weight: 700;
     }
 
-    .mobile-bottom-nav{
-      display:none;
+    .phone-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 14px 0;
     }
 
-    .arabic-word{
-      font-family:"Noto Naskh Arabic", serif;
-      direction:rtl;
-      unicode-bidi:plaintext;
+    .phone-tile {
+      border-radius: 18px;
+      padding: 12px;
+      background: white;
+      border: 1px solid var(--line);
+      min-height: 82px;
+      display: grid;
+      align-content: center;
+      font-weight: 1000;
+      color: var(--teal);
+      box-shadow: var(--shadow-soft);
+    }
+    .phone-tile span { font-size: 1.5rem; display: block; margin-bottom: 4px; }
+
+    .star-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-radius: 18px;
+      background: var(--gold-soft);
+      border: 1px solid rgba(245, 185, 66, 0.25);
+      padding: 12px 14px;
+      color: #6b4300;
+      font-weight: 1000;
     }
 
-    [data-reveal]{animation:popIn .55s ease both}
-    @keyframes popIn{
-      from{opacity:0; transform:translateY(18px) scale(.98)}
-      to{opacity:1; transform:translateY(0) scale(1)}
+    section { scroll-margin-top: 96px; }
+
+    .section-card {
+      margin: 22px 0;
+      padding: clamp(20px, 3vw, 28px);
     }
 
-    @media (max-width: 1060px){
-      .hero{grid-template-columns:1fr;}
-      .hero-card{min-height:auto;}
-      .hero-side{grid-template-columns:1fr 1fr; grid-template-rows:auto;}
-      .topic-grid{grid-template-columns:repeat(3, 1fr);}
-      .map-track{grid-template-columns:repeat(3, 1fr);}
-      .level-card:nth-child(3)::after{display:none}
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 18px;
     }
 
-    @media (max-width: 820px){
-      :root{--bottom-nav:86px;}
-      .desktop-nav{display:none}
-      .menu-toggle{display:grid; place-items:center;}
-      .header-inner{min-height:68px; width:min(100% - 20px, var(--max));}
-      .brand-mark{width:48px; height:48px; border-radius:18px; font-size:1.55rem;}
-      .page{width:min(100% - 18px, var(--max)); padding-top:12px; padding-bottom:34px;}
-      .hero{gap:16px;}
-      .hero-card{
-        border-radius:32px;
-        padding:24px 18px 20px;
-        background:
-          radial-gradient(circle at 86% 0%, rgba(255,255,255,.45) 0 86px, transparent 88px),
-          linear-gradient(135deg, #60ddcf 0%, #88ddff 50%, #fff1a8 100%);
+    .section-kicker {
+      display: inline-flex;
+      width: fit-content;
+      color: var(--teal);
+      background: var(--teal-soft);
+      border: 1px solid rgba(15, 118, 110, 0.14);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-weight: 1000;
+      margin-bottom: 9px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.65rem, 3vw, 2.45rem);
+      letter-spacing: -0.045em;
+      color: #12314d;
+    }
+
+    .section-subtitle {
+      margin: 9px 0 0;
+      color: var(--muted);
+      font-weight: 700;
+      line-height: 1.65;
+      max-width: 780px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .stat {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .stat b {
+      display: block;
+      color: var(--teal);
+      font-size: 2rem;
+      letter-spacing: -0.04em;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .quick-link {
+      background: linear-gradient(180deg, white, #f7fffd);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 16px 12px;
+      text-align: center;
+      font-weight: 1000;
+      min-height: 118px;
+      display: grid;
+      align-content: center;
+      gap: 7px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .quick-link:hover, .quick-link:focus {
+      transform: translateY(-5px);
+      border-color: rgba(15, 118, 110, 0.34);
+      box-shadow: var(--shadow);
+      outline: none;
+    }
+
+    .quick-link strong {
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+
+    .quick-link small {
+      color: var(--muted);
+      font-weight: 850;
+      line-height: 1.3;
+    }
+
+    .path-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 13px;
+      position: relative;
+    }
+
+    .path-card {
+      padding: 18px;
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+      min-height: 170px;
+      display: grid;
+      align-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .path-card::after {
+      content: "→";
+      position: absolute;
+      right: -5px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: rgba(15, 118, 110, 0.28);
+      font-weight: 1000;
+    }
+
+    .path-card:last-child::after { display: none; }
+
+    .path-card .num {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: var(--teal);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 1000;
+      margin-bottom: 12px;
+    }
+
+    .path-card h3, .room-card h3, .mini-panel h3 {
+      margin: 0 0 7px;
+      letter-spacing: -0.025em;
+    }
+
+    .path-card p, .room-card p, .mini-panel p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .room-card {
+      padding: 18px;
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+      min-height: 210px;
+      display: grid;
+      align-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .room-card:hover, .room-card:focus {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      outline: none;
+    }
+
+    .room-icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      background: var(--sky-soft);
+      border-radius: 18px;
+      font-size: 2rem;
+      margin-bottom: 14px;
+      border: 1px solid rgba(110, 199, 255, 0.22);
+    }
+
+    .room-card .go {
+      display: inline-flex;
+      margin-top: 14px;
+      color: var(--teal);
+      font-weight: 1000;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .mini-panel {
+      padding: 22px;
+      border-radius: 26px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .practice-board {
+      margin-top: 16px;
+      min-height: 160px;
+      border: 3px dashed rgba(15, 118, 110, 0.25);
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: linear-gradient(180deg, white, #f4fffb);
+      color: var(--teal);
+      font-weight: 1000;
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      padding: 20px;
+    }
+
+    .mini-game-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .game-tile {
+      min-height: 74px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 10px;
+      color: var(--teal);
+      font-weight: 1000;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .game-tile:hover, .game-tile:focus {
+      transform: translateY(-3px);
+      background: var(--teal-soft);
+      outline: none;
+    }
+
+    .daily-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .daily-card {
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: white;
+      padding: 15px;
+      box-shadow: var(--shadow-soft);
+      min-height: 130px;
+      display: grid;
+      align-content: center;
+      gap: 7px;
+    }
+
+    .daily-card span {
+      color: var(--muted);
+      font-weight: 900;
+      font-size: 0.84rem;
+    }
+
+    .daily-card b {
+      line-height: 1.42;
+    }
+
+    .parent-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .parent-item {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 13px 14px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-weight: 800;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .parent-item strong {
+      color: var(--teal);
+      min-width: 28px;
+    }
+
+    .footer {
+      max-width: var(--max);
+      margin: 26px auto 84px;
+      padding: 24px 18px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.7;
+      font-weight: 750;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 13px;
+    }
+
+    .footer-links a {
+      color: var(--teal);
+      font-weight: 1000;
+      padding: 8px 10px;
+    }
+
+    .bottom-nav {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 100;
+      background: rgba(255, 253, 246, 0.96);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid var(--line);
+      padding: 8px 6px 10px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 4px;
+    }
+
+    .bottom-nav a {
+      display: grid;
+      place-items: center;
+      gap: 2px;
+      color: var(--teal);
+      font-size: 0.73rem;
+      font-weight: 950;
+    }
+
+    .bottom-nav strong {
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 20px;
+      transform: translateX(-50%);
+      background: #12314d;
+      color: white;
+      border-radius: 999px;
+      padding: 12px 16px;
+      font-weight: 1000;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.25s ease;
+      z-index: 150;
+      text-align: center;
+      max-width: calc(100% - 30px);
+    }
+
+    .toast.show {
+      opacity: 1;
+      bottom: 82px;
+    }
+
+    @media (max-width: 1050px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-card { min-height: auto; }
+      .phone-shell { min-height: 390px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .quick-grid { grid-template-columns: repeat(3, 1fr); }
+      .path-row { grid-template-columns: repeat(2, 1fr); }
+      .path-card::after { display: none; }
+      .rooms-grid { grid-template-columns: repeat(2, 1fr); }
+      .daily-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 720px) {
+      .topbar-inner { align-items: flex-start; flex-direction: column; }
+      .brand { min-width: 0; }
+      .nav {
+        width: 100%;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 5px;
       }
-      .hero-badge{
-        width:100%;
-        justify-content:center;
-        white-space:normal;
-        text-align:center;
-        font-size:.74rem;
-        letter-spacing:.06em;
-        padding:.72rem .8rem;
-      }
-      .hero-title{
-        margin:20px 0 12px;
-        font-size:clamp(2.75rem, 12.6vw, 4.25rem);
-        line-height:.88;
-        letter-spacing:-.05em;
-      }
-      .hero-lead{
-        font-size:1.08rem;
-        line-height:1.55;
-        margin-bottom:14px;
-      }
-      .hero-actions{display:grid; grid-template-columns:1fr; gap:10px; margin-top:16px;}
-      .btn{width:100%; min-height:60px; font-size:1.08rem;}
-      .picture-strip{
-        grid-template-columns:repeat(5, minmax(64px, 1fr));
-        gap:7px;
-        margin-top:16px;
-      }
-      .picture-pill{min-height:66px; border-radius:22px;}
-      .picture-pill span{font-size:1.45rem}
-      .picture-pill small{font-size:.66rem}
-      .mini-road{
-        grid-template-columns:repeat(3, 1fr);
-        gap:8px;
-        padding:12px;
-        border-radius:26px;
-      }
-      .road-step{min-height:68px; border-radius:20px; font-size:.85rem;}
-      .road-step::after{content:"↓"; right:auto; left:50%; top:auto; bottom:-18px; transform:translateX(-50%);}
-      .road-step:nth-child(3)::after{display:none}
-      .road-step:nth-child(4)::after,.road-step:nth-child(5)::after{content:"→"; top:50%; bottom:auto; right:-12px; left:auto; transform:translateY(-50%);}
-      .road-step .emoji{font-size:1.35rem}
-
-      .hero-side{grid-template-columns:1fr; gap:14px;}
-      .start-panel,.topic-panel,.soft-panel{border-radius:30px; padding:18px;}
-      .today-card{grid-template-columns:auto 1fr;}
-      .today-card .tiny-btn{grid-column:1 / -1; width:100%; min-height:46px;}
-      .stat-grid{grid-template-columns:repeat(2, minmax(0, 1fr));}
-      .stat{min-height:86px;}
-      .stat b{font-size:1.75rem}
-      .quick-grid{grid-template-columns:repeat(2, minmax(0, 1fr)); gap:10px;}
-      .quick-card{min-height:112px; border-radius:24px; padding:12px;}
-      .quick-card .big{font-size:1.75rem;}
-      .quick-card strong{font-size:.98rem;}
-      .quick-card small{font-size:.78rem;}
-
-      .section{margin-top:24px;}
-      .section-head{display:block;}
-      .section-title{font-size:clamp(2rem, 9vw, 2.75rem);}
-      .section-lead{font-size:.98rem;}
-      .phone-path{grid-template-columns:1fr; gap:12px;}
-      .mission-card{min-height:180px; border-radius:30px; padding:18px;}
-      .mission-card h3{font-size:1.22rem;}
-      .learning-map{border-radius:32px; padding:16px;}
-      .map-track{grid-template-columns:1fr; gap:10px;}
-      .level-card{min-height:148px; border-radius:26px;}
-      .level-card::after{content:"↓"; right:auto; left:50%; top:auto; bottom:-19px; transform:translateX(-50%);}
-      .level-card:nth-child(3)::after{display:grid}
-      .level-card:last-child::after{display:none}
-      .topic-grid{grid-template-columns:1fr 1fr; gap:12px;}
-      .subject-card{min-height:220px; border-radius:30px; padding:16px;}
-      .subject-icon{width:66px; height:66px; border-radius:24px; font-size:2.2rem;}
-      .subject-visual{height:72px;}
-      .subject-card h3{font-size:1.14rem;}
-      .subject-card p{font-size:.88rem;}
-      .card-footer{margin-top:14px;}
-      .age-tag{font-size:.7rem; padding:.46rem .55rem;}
-      .go{width:40px; height:40px; border-radius:15px;}
-      .playground{grid-template-columns:1fr; gap:14px;}
-      .game-board,.whiteboard{min-height:310px; border-radius:32px; padding:18px;}
-      .tap-card{min-height:96px; border-radius:24px;}
-      .parents-strip{grid-template-columns:1fr; gap:14px;}
-      .parent-card,.progress-card{border-radius:32px; padding:22px;}
-      .parent-points{grid-template-columns:1fr;}
-      .site-footer{display:block; border-radius:28px; padding:22px; margin-bottom:14px;}
-      .footer-links{margin-top:16px;}
-      .floating-top{right:16px; bottom:calc(104px + env(safe-area-inset-bottom)); width:52px; height:52px; border-radius:20px;}
-      .mobile-bottom-nav{
-        position:fixed;
-        left:10px;
-        right:10px;
-        bottom:calc(10px + env(safe-area-inset-bottom));
-        min-height:72px;
-        display:grid;
-        grid-template-columns:repeat(5, 1fr);
-        gap:4px;
-        z-index:31;
-        padding:8px;
-        border-radius:28px;
-        background:rgba(255,255,255,.94);
-        border:1px solid rgba(16,35,61,.10);
-        box-shadow:0 18px 40px rgba(16,35,61,.18);
-        backdrop-filter:blur(16px);
-      }
-      .mobile-bottom-nav a{
-        min-width:0;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        flex-direction:column;
-        gap:2px;
-        border-radius:22px;
-        font-size:.73rem;
-        font-weight:1000;
-        color:#10233d;
-        line-height:1;
-      }
-      .mobile-bottom-nav a:focus-visible,.mobile-bottom-nav a:hover{background:#e6fbf7; outline:none;}
-      .mobile-bottom-nav .nav-emoji{font-size:1.5rem; line-height:1;}
+      .hero { padding-top: 24px; }
+      .hero-actions .btn, .action-row .btn { width: 100%; }
+      .phone-shell { border-width: 8px; border-radius: 30px; }
+      .quick-grid, .stats-grid, .path-row, .rooms-grid, .split, .daily-grid, .mini-game-grid { grid-template-columns: 1fr; }
+      .quick-link { min-height: 104px; }
+      .room-card { min-height: 180px; }
+      .bottom-nav { display: grid; }
+      .footer { margin-bottom: 100px; }
     }
 
-    @media (max-width: 430px){
-      .page{width:calc(100% - 14px);}
-      .hero-card{border-radius:28px; padding:20px 14px 18px;}
-      .hero-title{font-size:clamp(2.35rem, 13vw, 3.42rem);}
-      .hero-lead{font-size:1rem;}
-      .picture-strip{grid-template-columns:repeat(5, 1fr);}
-      .picture-pill{min-height:58px; border-radius:18px;}
-      .picture-pill small{display:none;}
-      .mini-road{grid-template-columns:repeat(2, 1fr)}
-      .road-step:nth-child(2)::after,.road-step:nth-child(4)::after{display:none}
-      .road-step:nth-child(3)::after{display:grid}
-      .road-step:nth-child(5)::after{content:"→"; top:50%; bottom:auto; right:-12px; left:auto; transform:translateY(-50%);}
-      .quick-grid{grid-template-columns:1fr 1fr;}
-      .topic-grid{grid-template-columns:1fr;}
-      .subject-card{min-height:190px;}
-      .tap-grid{grid-template-columns:1fr 1fr; gap:9px;}
-      .tap-card{min-height:90px; font-size:.88rem;}
-      .trace-word{font-size:3rem;}
-      .brand-title strong{font-size:1.03rem;}
-      .brand-title span{font-size:.66rem;}
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      *,*::before,*::after{animation-duration:.001ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.001ms !important;}
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
     }
   </style>
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to learning</a>
 
-  <header class="site-header" id="top">
-    <div class="header-inner">
-      <a class="brand sound-click" href="index.html" aria-label="Al-Hayat Kids Islam Home">
-        <span class="brand-mark" aria-hidden="true">🌙</span>
-        <span class="brand-title">
-          <strong>Al-Hayat Kids Islam</strong>
-          <span>Ages 3–8 • Mobile-first</span>
+<body>
+  <a class="skip-link" href="#start">Skip to learning</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="Al-Hayat Kids Islam Home">
+        <span class="brand-mark">☾</span>
+        <span>
+          Al-Hayat Kids Islam
+          <small>Ages 3–8 • Tap, learn, practice, play</small>
         </span>
       </a>
 
-      <nav class="desktop-nav" aria-label="Main navigation">
-        <a class="sound-click" href="#start">🚀 Start</a>
-        <a class="sound-click" href="#learn">📚 Learn</a>
-        <a class="sound-click" href="#play">🎮 Play</a>
-        <a class="sound-click" href="#practice">✍️ Practice</a>
-        <a class="sound-click" href="#track">⭐ Track</a>
-        <a class="mini-action sound-click" href="parents/index.html">👨‍👩‍👧 Parents</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#start">Start</a>
+        <a href="questions.html">❓ Questions</a>
+        <a href="activities/">🎯 Activities</a>
+        <a href="games/">🎮 Games</a>
+        <a href="practice/">✍️ Practice</a>
+        <a href="progress/">⭐ Progress</a>
+        <a href="parents/">Parents</a>
       </nav>
-
-      <button class="menu-toggle sound-click" type="button" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">☰</button>
     </div>
-    <nav class="mobile-menu" id="mobileMenu" data-open="false" aria-label="Mobile menu">
-      <a class="sound-click" href="#start">🚀 Start</a>
-      <a class="sound-click" href="#learn">📚 Learn</a>
-      <a class="sound-click" href="#play">🎮 Play</a>
-      <a class="sound-click" href="#practice">✍️ Practice</a>
-      <a class="sound-click" href="#track">⭐ Track</a>
-      <a class="sound-click" href="parents/index.html">👨‍👩‍👧 Parents</a>
-    </nav>
   </header>
 
-  <main class="page" id="main">
-    <section class="hero" id="start" aria-labelledby="heroTitle">
-      <div class="hero-card" data-reveal>
-        <div class="hero-badge">🌱 Ages 3–8 • Big pictures • Easy taps • No confusion</div>
-        <h1 class="hero-title" id="heroTitle">Tap, learn, play, <span class="spark">shine.</span></h1>
-        <p class="hero-lead">
-          A bright Islamic learning home where every child can follow simple picture steps: <b>listen</b>, <b>tap</b>, <b>practice</b>, <b>play</b>, and earn a happy star.
-        </p>
+  <section class="hero" id="home">
+    <div class="hero-card">
+      <span class="eyebrow">🌈 Child-friendly Islamic learning</span>
+      <h1>Tap, learn, play, shine.</h1>
+      <p class="hero-text">
+        A bright Islamic learning home for Muslim children. Every child sees one clear step:
+        choose a picture, answer a tiny question, practise a word, play a review game, and earn a happy star.
+      </p>
 
-        <div class="hero-actions" aria-label="Quick actions">
-          <a class="btn btn-primary sound-click" href="#today">🚀 Start Today</a>
-          <a class="btn btn-teal sound-click" href="questions/index.html">❓ Open Q/A</a>
-          <a class="btn btn-sun sound-click" href="#map">🧭 Learning Map</a>
-        </div>
-
-        <div class="picture-strip" aria-label="Learning symbols">
-          <a class="picture-pill sound-click" href="duas/index.html"><span>🤲</span><small>Duas</small></a>
-          <a class="picture-pill sound-click" href="quran/index.html"><span>📖</span><small>Qur’an</small></a>
-          <a class="picture-pill sound-click" href="salah/index.html"><span>🕌</span><small>Salah</small></a>
-          <a class="picture-pill sound-click" href="arabic/index.html"><span>🔤</span><small>Arabic</small></a>
-          <a class="picture-pill sound-click" href="games/index.html"><span>🎮</span><small>Games</small></a>
-        </div>
-
-        <div class="mini-road" aria-label="How a child moves through the website">
-          <a class="road-step sound-click" href="#today"><span class="emoji">🌱</span>Start<small>One task</small></a>
-          <a class="road-step sound-click" href="#learn"><span class="emoji">👂</span>Listen<small>Hear it</small></a>
-          <a class="road-step sound-click" href="#learn"><span class="emoji">👆</span>Tap<small>Choose</small></a>
-          <a class="road-step sound-click" href="#practice"><span class="emoji">✍️</span>Trace<small>Try it</small></a>
-          <a class="road-step sound-click" href="#play"><span class="emoji">🎮</span>Play<small>Review</small></a>
-          <a class="road-step sound-click" href="#track"><span class="emoji">⭐</span>Star<small>Reward</small></a>
-        </div>
+      <div class="hero-actions">
+        <a class="btn primary" href="questions.html">❓ Open 3,000 Questions</a>
+        <a class="btn gold" href="activities/">🎯 Start Activities</a>
+        <a class="btn soft" href="curriculum.html">🧭 Learning Map</a>
+        <button class="btn rose" type="button" id="soundBtn">🔊 Click Sound: On</button>
       </div>
 
-      <aside class="hero-side" aria-label="Quick start panels">
-        <div class="start-panel" data-reveal>
-          <h2 class="panel-title">Today’s happy mission</h2>
-          <div class="today-card" id="todayCard">
-            <div class="today-icon" aria-hidden="true">🤲</div>
-            <div>
-              <strong id="todayTitle">Learn Bismillah</strong>
-              <span id="todayText">Say it, tap it, and earn one star.</span>
-            </div>
-            <button class="tiny-btn sound-click" type="button" id="todayDone">Done ⭐</button>
-          </div>
-          <div class="stat-grid" aria-label="Website highlights">
-            <div class="stat"><div><b>3,000+</b><span>Tiny Q/A</span></div></div>
-            <div class="stat"><div><b>5</b><span>Levels</span></div></div>
-            <div class="stat"><div><b>8+</b><span>Main Topics</span></div></div>
-            <div class="stat"><div><b>📱</b><span>Phone Easy</span></div></div>
+      <div class="hero-chips" aria-label="Main topics">
+        <a class="chip" href="duas.html">🤲 Duas</a>
+        <a class="chip" href="surahs.html">📖 Qur’an</a>
+        <a class="chip" href="prayer-basics.html">🕌 Salah</a>
+        <a class="chip" href="arabic-letters.html">🔤 Arabic</a>
+        <a class="chip" href="prophet-stories.html">🌙 Stories</a>
+        <a class="chip" href="islamic-manners.html">❤️ Manners</a>
+      </div>
+    </div>
+
+    <aside class="phone-demo" aria-label="Mobile learning preview">
+      <div class="phone-shell">
+        <span class="phone-notch" aria-hidden="true"></span>
+        <div class="mission-card">
+          <span class="tiny">Today’s happy mission</span>
+          <h2 id="missionTitle">Learn Bismillah</h2>
+          <p id="missionText">Say it, tap it, practise it, and earn one star.</p>
+          <div class="action-row">
+            <a class="btn primary" href="questions.html">Start Today</a>
           </div>
         </div>
 
-        <div class="topic-panel" data-reveal>
-          <h2>Pick a picture and begin:</h2>
-          <div class="quick-grid">
-            <a class="quick-card dua sound-click" href="duas/index.html"><span class="big">🤲</span><span><strong>Duas</strong><small>Daily words to say</small></span></a>
-            <a class="quick-card quran sound-click" href="quran/index.html"><span class="big">📖</span><span><strong>Qur’an</strong><small>Short Surahs and respect</small></span></a>
-            <a class="quick-card salah sound-click" href="salah/index.html"><span class="big">🕌</span><span><strong>Salah</strong><small>Prayer and wudu basics</small></span></a>
-            <a class="quick-card arabic sound-click" href="arabic/index.html"><span class="big">🔤</span><span><strong>Arabic</strong><small>Letters and words</small></span></a>
-            <a class="quick-card games sound-click" href="games/index.html"><span class="big">🎮</span><span><strong>Games</strong><small>Review through play</small></span></a>
-            <a class="quick-card practice sound-click" href="practice/index.html"><span class="big">✍️</span><span><strong>Practice</strong><small>Trace, type, repeat</small></span></a>
-          </div>
+        <div class="phone-grid">
+          <a class="phone-tile" href="questions.html"><span>❓</span>Q/A</a>
+          <a class="phone-tile" href="activities/"><span>🎯</span>Tap</a>
+          <a class="phone-tile" href="practice/"><span>✍️</span>Do</a>
+          <a class="phone-tile" href="games/"><span>🎮</span>Play</a>
         </div>
-      </aside>
-    </section>
 
-    <section class="section" id="today" aria-labelledby="todayHeading">
+        <div class="star-strip">
+          <span>⭐ Stars</span>
+          <span id="phoneStars">0</span>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <main id="start" class="container">
+    <section class="section-card" aria-labelledby="numbersTitle">
       <div class="section-head">
         <div>
-          <span class="eyebrow">📱 One screen • One task</span>
-          <h2 class="section-title" id="todayHeading">Start with 3 tiny steps</h2>
-          <p class="section-lead">Made for phone screens: the child sees one clear action, completes it, then moves to the next symbol.</p>
+          <span class="section-kicker">Live learning bank</span>
+          <h2 id="numbersTitle">Everything connects to one child path</h2>
+          <p class="section-subtitle">
+            The homepage now sends children directly to the full question bank, activities, games, practice, progress and rewards.
+          </p>
         </div>
+        <a class="btn primary" href="questions.html">Open Bank</a>
       </div>
 
-      <div class="phone-path">
-        <article class="mission-card" data-step-card>
-          <div class="mission-top"><span class="mission-num">1</span><span class="mission-emoji">👂</span></div>
-          <div>
-            <h3>Listen and repeat</h3>
-            <p>Hear a short Islamic word, then say it softly.</p>
-            <div class="mission-actions">
-              <button class="chip sound-click speak-word" type="button" data-say="Bismillah">🔊 Listen</button>
-              <button class="chip complete sound-click mark-done" type="button">Done ⭐</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="mission-card" data-step-card>
-          <div class="mission-top"><span class="mission-num">2</span><span class="mission-emoji">👆</span></div>
-          <div>
-            <h3>Tap the right picture</h3>
-            <p>Choose the picture that matches the lesson.</p>
-            <div class="mission-actions">
-              <a class="chip sound-click" href="questions/index.html">Open Q/A</a>
-              <button class="chip complete sound-click mark-done" type="button">Done ⭐</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="mission-card" data-step-card>
-          <div class="mission-top"><span class="mission-num">3</span><span class="mission-emoji">✍️</span></div>
-          <div>
-            <h3>Trace and play</h3>
-            <p>Trace one word, type one answer, and unlock a badge.</p>
-            <div class="mission-actions">
-              <a class="chip sound-click" href="#practice">Practice</a>
-              <button class="chip complete sound-click mark-done" type="button">Done ⭐</button>
-            </div>
-          </div>
-        </article>
+      <div class="stats-grid">
+        <div class="stat"><b id="totalQuestions">—</b><span>Questions loaded from JSON</span></div>
+        <div class="stat"><b id="totalLevels">5</b><span>Learning levels</span></div>
+        <div class="stat"><b id="totalTopics">—</b><span>Main topics</span></div>
+        <div class="stat"><b id="completedCount">0</b><span>Completed on this device</span></div>
       </div>
     </section>
 
-    <section class="section" id="map" aria-labelledby="mapHeading">
+    <section class="section-card" aria-labelledby="quickTitle">
       <div class="section-head">
         <div>
-          <span class="eyebrow">🧭 Connected learning map</span>
-          <h2 class="section-title" id="mapHeading">A child always knows the next step</h2>
-          <p class="section-lead">Levels are connected like a road. Each level has pictures, practice, play, and a visible reward.</p>
+          <span class="section-kicker">Pick a picture</span>
+          <h2 id="quickTitle">One tap to every main room</h2>
+          <p class="section-subtitle">Big symbols help young children understand where to go without long instructions.</p>
         </div>
       </div>
 
-      <div class="learning-map">
-        <div class="map-track">
-          <a class="level-card sound-click" href="levels/level-1.html">
-            <span class="level-icon">🌱</span>
-            <div><h3>Level 1: I can tap</h3><p>Big symbols, simple Duas, and first Arabic sounds.</p><div class="progress-line"><span style="--w:28%"></span></div></div>
-          </a>
-          <a class="level-card sound-click" href="levels/level-2.html">
-            <span class="level-icon">🌼</span>
-            <div><h3>Level 2: I can choose</h3><p>Picture questions, matching, and daily manners.</p><div class="progress-line"><span style="--w:36%"></span></div></div>
-          </a>
-          <a class="level-card sound-click" href="levels/level-3.html">
-            <span class="level-icon">📖</span>
-            <div><h3>Level 3: I can repeat</h3><p>Short Surahs, key words, and Salah actions.</p><div class="progress-line"><span style="--w:52%"></span></div></div>
-          </a>
-          <a class="level-card sound-click" href="levels/level-4.html">
-            <span class="level-icon">✍️</span>
-            <div><h3>Level 4: I can practice</h3><p>Trace, type, sort, circle, and speak.</p><div class="progress-line"><span style="--w:68%"></span></div></div>
-          </a>
-          <a class="level-card sound-click" href="levels/level-5.html">
-            <span class="level-icon">🏆</span>
-            <div><h3>Level 5: I can shine</h3><p>Review games, badges, and parent celebration.</p><div class="progress-line"><span style="--w:82%"></span></div></div>
-          </a>
-        </div>
+      <div class="quick-grid">
+        <a class="quick-link" href="questions.html"><strong>❓</strong>Questions<small>Full 3,000 bank</small></a>
+        <a class="quick-link" href="activities/"><strong>🎯</strong>Activities<small>Tap, match, choose</small></a>
+        <a class="quick-link" href="games/"><strong>🎮</strong>Games<small>Quiz and review</small></a>
+        <a class="quick-link" href="practice/"><strong>✍️</strong>Practice<small>Whiteboard + typing</small></a>
+        <a class="quick-link" href="progress/"><strong>⭐</strong>Progress<small>Stars and history</small></a>
+        <a class="quick-link" href="badges/"><strong>🏅</strong>Badges<small>Rewards unlocked</small></a>
       </div>
     </section>
 
-    <section class="section" id="learn" aria-labelledby="learnHeading">
+    <section class="section-card" aria-labelledby="pathTitle">
       <div class="section-head">
         <div>
-          <span class="eyebrow">📚 Main learning rooms</span>
-          <h2 class="section-title" id="learnHeading">Big picture cards for little learners</h2>
-          <p class="section-lead">No long menus. Each subject has a clear picture, short text, and a friendly action button.</p>
+          <span class="section-kicker">Simple road map</span>
+          <h2 id="pathTitle">A child always knows the next step</h2>
+          <p class="section-subtitle">Each level moves from recognition to choice, practice, review and confidence.</p>
         </div>
+        <a class="btn soft" href="curriculum.html">View Curriculum</a>
       </div>
 
-      <div class="topic-grid">
-        <a class="subject-card sound-click" data-theme="quran" href="quran/index.html">
-          <div class="subject-visual"><span class="subject-icon">📖</span><span class="subject-bubbles"><i class="bubble"></i><i class="bubble"></i><i class="bubble"></i></span></div>
-          <div><h3>Qur’an Room</h3><p>Short Surahs, respect for the Qur’an, and easy revision.</p></div>
-          <div class="card-footer"><span class="age-tag">Ages 3–8</span><span class="go">→</span></div>
+      <div class="path-row">
+        <a class="path-card" href="curriculum.html#level-1">
+          <div><span class="num">1</span><h3>Tap</h3><p>Big symbols, simple words, first duas and Allah awareness.</p></div>
         </a>
-        <a class="subject-card sound-click" data-theme="duas" href="duas/index.html">
-          <div class="subject-visual"><span class="subject-icon">🤲</span><span class="subject-bubbles"><i class="bubble"></i><i class="bubble"></i><i class="bubble"></i></span></div>
-          <div><h3>Duas Room</h3><p>Morning, eating, sleeping, travelling, and kindness Duas.</p></div>
-          <div class="card-footer"><span class="age-tag">Daily use</span><span class="go">→</span></div>
+        <a class="path-card" href="curriculum.html#level-2">
+          <div><span class="num">2</span><h3>Choose</h3><p>Picture choices, matching cards, manners and daily words.</p></div>
         </a>
-        <a class="subject-card sound-click" data-theme="salah" href="salah/index.html">
-          <div class="subject-visual"><span class="subject-icon">🕌</span><span class="subject-bubbles"><i class="bubble"></i><i class="bubble"></i><i class="bubble"></i></span></div>
-          <div><h3>Salah Room</h3><p>Wudu, prayer times, movements, and respect in Salah.</p></div>
-          <div class="card-footer"><span class="age-tag">Step by step</span><span class="go">→</span></div>
+        <a class="path-card" href="curriculum.html#level-3">
+          <div><span class="num">3</span><h3>Repeat</h3><p>Short Surahs, Salah actions, Arabic sounds and good habits.</p></div>
         </a>
-        <a class="subject-card sound-click" data-theme="arabic" href="arabic/index.html">
-          <div class="subject-visual"><span class="subject-icon">🔤</span><span class="subject-bubbles"><i class="bubble"></i><i class="bubble"></i><i class="bubble"></i></span></div>
-          <div><h3>Arabic Room</h3><p>Letters, sounds, shapes, and first Islamic words.</p></div>
-          <div class="card-footer"><span class="age-tag">Trace + say</span><span class="go">→</span></div>
+        <a class="path-card" href="curriculum.html#level-4">
+          <div><span class="num">4</span><h3>Practise</h3><p>Trace, type, sort, circle, say and explain gently.</p></div>
         </a>
-        <a class="subject-card sound-click" data-theme="stories" href="stories/index.html">
-          <div class="subject-visual"><span class="subject-icon">📚</span><span class="subject-bubbles"><i class="bubble"></i><i class="bubble"></i><i class="bubble"></i></span></div>
-          <div><h3>Story Room</h3><p>Short moral stories with good habits and gentle reflection.</p></div>
-          <div class="card-footer"><span class="age-tag">Read aloud</span><span class="go">→</span></div>
-        </a>
-        <a class="subject-card sound-click" data-theme="manners" href="manners/index.html">
-          <div class="subject-visual"><span class="subject-icon">💚</span><span class="subject-bubbles"><i class="bubble"></i><i class="bubble"></i><i class="bubble"></i></span></div>
-          <div><h3>Manners Room</h3><p>Salam, truth, sharing, cleanliness, family, and kindness.</p></div>
-          <div class="card-footer"><span class="age-tag">Good habits</span><span class="go">→</span></div>
-        </a>
-        <a class="subject-card sound-click" data-theme="questions" href="questions/index.html">
-          <div class="subject-visual"><span class="subject-icon">❓</span><span class="subject-bubbles"><i class="bubble"></i><i class="bubble"></i><i class="bubble"></i></span></div>
-          <div><h3>Q/A Room</h3><p>Tiny questions, picture choices, and quick review cards.</p></div>
-          <div class="card-footer"><span class="age-tag">3,000+</span><span class="go">→</span></div>
-        </a>
-        <a class="subject-card sound-click" data-theme="practice" href="practice/index.html">
-          <div class="subject-visual"><span class="subject-icon">✍️</span><span class="subject-bubbles"><i class="bubble"></i><i class="bubble"></i><i class="bubble"></i></span></div>
-          <div><h3>Practice Room</h3><p>Whiteboard, typing board, tracing, matching, and sorting.</p></div>
-          <div class="card-footer"><span class="age-tag">Hands-on</span><span class="go">→</span></div>
+        <a class="path-card" href="curriculum.html#level-5">
+          <div><span class="num">5</span><h3>Shine</h3><p>Review games, badges, parent celebration and confidence.</p></div>
         </a>
       </div>
     </section>
 
-    <section class="section" id="play" aria-labelledby="playHeading">
+    <section class="section-card" id="learn" aria-labelledby="roomsTitle">
       <div class="section-head">
         <div>
-          <span class="eyebrow">🎮 Play-based review</span>
-          <h2 class="section-title" id="playHeading">Tap games that feel like learning toys</h2>
-          <p class="section-lead">Children can review Duas, Salah, Arabic, and manners through quick tap activities.</p>
+          <span class="section-kicker">Main learning rooms</span>
+          <h2 id="roomsTitle">Big picture cards for little learners</h2>
+          <p class="section-subtitle">No long menus. Every room has a clear picture, short purpose and a friendly action.</p>
         </div>
       </div>
 
-      <div class="playground">
-        <div class="game-board">
-          <span class="eyebrow">👆 Tap and collect stars</span>
-          <h2 class="panel-title">Quick play board</h2>
-          <div class="tap-grid" aria-label="Quick game buttons">
-            <button class="tap-card sound-click" type="button"><span class="tap-emoji">🤲</span>Dua Match</button>
-            <button class="tap-card sound-click" type="button"><span class="tap-emoji">🕌</span>Salah Steps</button>
-            <button class="tap-card sound-click" type="button"><span class="tap-emoji">🔤</span>Letter Tap</button>
-            <button class="tap-card sound-click" type="button"><span class="tap-emoji">⭐</span>Star Review</button>
+      <div class="rooms-grid">
+        <a class="room-card" href="duas.html"><div><span class="room-icon">🤲</span><h3>Duas Room</h3><p>Morning, eating, sleeping, travelling and kindness duas.</p></div><span class="go">Daily use →</span></a>
+        <a class="room-card" href="surahs.html"><div><span class="room-icon">📖</span><h3>Qur’an Room</h3><p>Short Surahs, Qur’an respect and gentle revision.</p></div><span class="go">Read gently →</span></a>
+        <a class="room-card" href="prayer-basics.html"><div><span class="room-icon">🕌</span><h3>Salah Room</h3><p>Wudu, prayer times, movements and respect in prayer.</p></div><span class="go">Step by step →</span></a>
+        <a class="room-card" href="arabic-letters.html"><div><span class="room-icon">🔤</span><h3>Arabic Room</h3><p>Letters, sounds, shapes and first Islamic words.</p></div><span class="go">Trace + say →</span></a>
+        <a class="room-card" href="prophet-stories.html"><div><span class="room-icon">🌙</span><h3>Story Room</h3><p>Short Seerah and moral stories for read-aloud time.</p></div><span class="go">Read aloud →</span></a>
+        <a class="room-card" href="islamic-manners.html"><div><span class="room-icon">❤️</span><h3>Manners Room</h3><p>Salam, truth, sharing, cleanliness and family kindness.</p></div><span class="go">Good habits →</span></a>
+        <a class="room-card" href="ramadan-eid.html"><div><span class="room-icon">🌙</span><h3>Ramadan & Eid</h3><p>Fasting awareness, gratitude, sharing and celebration.</p></div><span class="go">Special days →</span></a>
+        <a class="room-card" href="parents/"><div><span class="room-icon">👨‍👩‍👧</span><h3>Parents Corner</h3><p>Daily routine, safety, guidance and how to use the site.</p></div><span class="go">Guide me →</span></a>
+      </div>
+    </section>
+
+    <section class="section-card" aria-labelledby="dailyTitle">
+      <div class="section-head">
+        <div>
+          <span class="section-kicker">Today’s learning path</span>
+          <h2 id="dailyTitle">Four tiny cards for today</h2>
+          <p class="section-subtitle">These cards are selected from the uploaded question bank. They change gently with the day and help the child start quickly.</p>
+        </div>
+        <a class="btn gold" href="questions.html">Open All Questions</a>
+      </div>
+      <div class="daily-grid" id="dailyCards">
+        <div class="daily-card"><span>Loading</span><b>Opening today’s cards...</b></div>
+      </div>
+    </section>
+
+    <section class="section-card" id="play" aria-labelledby="playTitle">
+      <div class="section-head">
+        <div>
+          <span class="section-kicker">Play-based review</span>
+          <h2 id="playTitle">Tap games that feel like learning toys</h2>
+          <p class="section-subtitle">Children review duas, Salah, Arabic, manners and Qur’an concepts through tiny, cheerful games.</p>
+        </div>
+        <a class="btn primary" href="games/">Open Games</a>
+      </div>
+
+      <div class="split">
+        <div class="mini-panel">
+          <h3>🎮 Quick play board</h3>
+          <p>Tap a tile, answer a short question, collect a star, then move to the next activity.</p>
+          <div class="mini-game-grid">
+            <a class="game-tile" href="games/">🤲 Dua Match</a>
+            <a class="game-tile" href="games/">🕌 Salah Steps</a>
+            <a class="game-tile" href="games/">🔤 Letter Tap</a>
+            <a class="game-tile" href="games/">⭐ Star Review</a>
           </div>
         </div>
 
-        <div class="whiteboard" id="practice">
-          <span class="eyebrow">✍️ Whiteboard + typing board</span>
-          <h2 class="panel-title">Practice one word</h2>
-          <div class="board-box" aria-label="Practice board">
-            <div>
-              <div class="trace-word arabic-word">بِسْمِ الله</div>
-              <p style="margin:8px 0 0; color:#5c6f85; font-weight:1000;">Trace with finger. Then say: Bismillah.</p>
-            </div>
-          </div>
-          <div class="mission-actions">
-            <button class="chip sound-click speak-word" type="button" data-say="Bismillah">🔊 Hear word</button>
-            <a class="chip sound-click" href="practice/index.html">Open practice</a>
-            <button class="chip complete sound-click mark-done" type="button">I did it ⭐</button>
+        <div class="mini-panel">
+          <h3>✍️ Whiteboard + typing board</h3>
+          <p>Use the practice room for tracing, typing, repeating and parent-guided revision.</p>
+          <div class="practice-board" aria-label="Practice word">بِسْمِ الله</div>
+          <div class="action-row">
+            <a class="btn soft" href="practice/">Open Practice</a>
+            <button class="btn gold" type="button" data-done>Done ⭐</button>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="track" aria-labelledby="trackHeading">
-      <div class="parents-strip">
-        <div class="parent-card">
-          <span class="eyebrow" style="background:rgba(255,255,255,.12);color:#ffe59f;border-color:rgba(255,255,255,.15)">👨‍👩‍👧 Parent-friendly</span>
-          <h2 id="trackHeading">Safe, simple, and guided for home learning</h2>
-          <p>Parents can open a level, give the phone to the child for a tiny task, and then celebrate the badge. The homepage keeps the path visible and easy.</p>
-          <div class="parent-points">
-            <div class="parent-point">✅ Less text</div>
-            <div class="parent-point">✅ Big buttons</div>
-            <div class="parent-point">✅ Clear rewards</div>
+    <section class="section-card" aria-labelledby="parentsTitle">
+      <div class="section-head">
+        <div>
+          <span class="section-kicker">Parent-friendly</span>
+          <h2 id="parentsTitle">Safe, simple and guided for home learning</h2>
+          <p class="section-subtitle">Parents can open a level, give one tiny task, and celebrate the child’s star. The learning path remains visible and easy.</p>
+        </div>
+        <a class="btn soft" href="parents/">Parents Guide</a>
+      </div>
+
+      <div class="split">
+        <div class="mini-panel">
+          <h3>✅ Why it works for ages 3–8</h3>
+          <div class="parent-list">
+            <div class="parent-item"><strong>1</strong><span>Less text, more symbols, big cards and clear tap actions.</span></div>
+            <div class="parent-item"><strong>2</strong><span>One small learning goal at a time: question, activity, practice, game, reward.</span></div>
+            <div class="parent-item"><strong>3</strong><span>Progress and badges encourage repetition without pressure.</span></div>
           </div>
         </div>
-
-        <div class="progress-card">
-          <span class="eyebrow">⭐ Learning track</span>
-          <h2 class="panel-title">Stars earned today</h2>
-          <div class="stars" id="starBox" aria-label="Stars earned">
-            <span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
+        <div class="mini-panel">
+          <h3>⭐ Learning track</h3>
+          <p id="progressText">0 stars collected on this device. Tap “Done ⭐” after a task.</p>
+          <div class="practice-board" id="starBoard" style="font-size:2.2rem; min-height:120px;">☆☆☆☆☆</div>
+          <div class="action-row">
+            <a class="btn gold" href="badges/">Open Badges</a>
+            <a class="btn primary" href="progress/">See Progress</a>
           </div>
-          <p class="progress-count" id="progressCount">0 stars collected. Tap “Done ⭐” after a task.</p>
-          <a class="btn btn-sun sound-click" href="track/index.html" style="margin-top:12px; box-shadow:none;">🏆 Open badges</a>
         </div>
       </div>
     </section>
-
-    <footer class="site-footer">
-      <div>
-        <strong>Al-Hayat Kids Islam</strong><br>
-        <span>Mobile-first Islamic learning for children ages 3–8.</span>
-      </div>
-      <div class="footer-links">
-        <a class="sound-click" href="about.html">About</a>
-        <a class="sound-click" href="parents/index.html">Parents</a>
-        <a class="sound-click" href="contact.html">Contact</a>
-        <a class="sound-click" href="privacy-policy.html">Privacy</a>
-      </div>
-    </footer>
   </main>
 
-  <a class="floating-top sound-click" href="#top" aria-label="Back to top">↑</a>
+  <footer class="footer">
+    <strong>Al-Hayat Kids Islam</strong><br />
+    Mobile-first Islamic learning for children ages 3–8. Parent review is recommended for Arabic, fiqh wording and classroom use.
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="parents/">Parents</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </footer>
 
-  <nav class="mobile-bottom-nav" aria-label="Bottom navigation">
-    <a class="sound-click" href="#top"><span class="nav-emoji">🏠</span>Home</a>
-    <a class="sound-click" href="#learn"><span class="nav-emoji">📖</span>Learn</a>
-    <a class="sound-click" href="#play"><span class="nav-emoji">🎮</span>Play</a>
-    <a class="sound-click" href="#practice"><span class="nav-emoji">✍️</span>Do</a>
-    <a class="sound-click" href="#track"><span class="nav-emoji">⭐</span>Track</a>
+  <nav class="bottom-nav" aria-label="Mobile quick navigation">
+    <a href="index.html"><strong>🏠</strong>Home</a>
+    <a href="questions.html"><strong>❓</strong>Q/A</a>
+    <a href="games/"><strong>🎮</strong>Play</a>
+    <a href="practice/"><strong>✍️</strong>Do</a>
+    <a href="progress/"><strong>⭐</strong>Track</a>
   </nav>
 
+  <div class="toast" id="toast">Saved</div>
+
   <script>
-    (function(){
-      const menuButton = document.querySelector('.menu-toggle');
-      const menu = document.getElementById('mobileMenu');
+    const DATA_PATHS = {
+      levels: "assets/data/levels/levels.json",
+      topics: "assets/data/topics/topics.json",
+      questions: [
+        "assets/data/questions/questions-level-1.json",
+        "assets/data/questions/questions-level-2.json",
+        "assets/data/questions/questions-level-3.json",
+        "assets/data/questions/questions-level-4.json",
+        "assets/data/questions/questions-level-5.json"
+      ]
+    };
 
-      if(menuButton && menu){
-        menuButton.addEventListener('click', () => {
-          const isOpen = menu.getAttribute('data-open') === 'true';
-          menu.setAttribute('data-open', String(!isOpen));
-          menuButton.setAttribute('aria-expanded', String(!isOpen));
-          menuButton.textContent = isOpen ? '☰' : '×';
-        });
-        menu.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            menu.setAttribute('data-open','false');
-            menuButton.setAttribute('aria-expanded','false');
-            menuButton.textContent = '☰';
-          });
-        });
+    const STORAGE_KEY = "alHayatKidsIslamProgress";
+    let clickSoundOn = true;
+    let audioContext = null;
+
+    const els = {
+      totalQuestions: document.getElementById("totalQuestions"),
+      totalLevels: document.getElementById("totalLevels"),
+      totalTopics: document.getElementById("totalTopics"),
+      completedCount: document.getElementById("completedCount"),
+      phoneStars: document.getElementById("phoneStars"),
+      progressText: document.getElementById("progressText"),
+      starBoard: document.getElementById("starBoard"),
+      dailyCards: document.getElementById("dailyCards"),
+      missionTitle: document.getElementById("missionTitle"),
+      missionText: document.getElementById("missionText"),
+      soundBtn: document.getElementById("soundBtn"),
+      toast: document.getElementById("toast")
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      updateProgressUI();
+      loadDashboardData();
+      bindFriendlyClicks();
+    });
+
+    async function loadDashboardData() {
+      try {
+        const [levelsData, topicsData, ...questionFiles] = await Promise.all([
+          fetchJson(DATA_PATHS.levels),
+          fetchJson(DATA_PATHS.topics),
+          ...DATA_PATHS.questions.map(fetchJson)
+        ]);
+
+        const levels = levelsData.levels || [];
+        const topics = topicsData.topics || [];
+        const questions = questionFiles.flatMap(file => file.items || []);
+
+        els.totalQuestions.textContent = questions.length.toLocaleString();
+        els.totalLevels.textContent = (levels.length || 5).toLocaleString();
+        els.totalTopics.textContent = (topics.length || uniqueValues(questions, "topicId").length || "8+").toLocaleString();
+        renderDailyCards(questions);
+        renderMission(questions);
+      } catch (error) {
+        console.warn("Dashboard data could not load:", error);
+        els.totalQuestions.textContent = "3,000+";
+        els.totalLevels.textContent = "5";
+        els.totalTopics.textContent = "8+";
+        els.dailyCards.innerHTML = fallbackDailyCards();
+      }
+    }
+
+    async function fetchJson(path) {
+      const response = await fetch(path, { cache: "no-store" });
+      if (!response.ok) throw new Error(`${response.status} — ${path}`);
+      return response.json();
+    }
+
+    function renderDailyCards(questions) {
+      if (!questions.length) {
+        els.dailyCards.innerHTML = fallbackDailyCards();
+        return;
       }
 
-      let audioContext;
-      function playSoftClick(){
-        try{
-          const AudioCtx = window.AudioContext || window.webkitAudioContext;
-          if(!AudioCtx) return;
-          audioContext = audioContext || new AudioCtx();
-          const now = audioContext.currentTime;
-          const osc = audioContext.createOscillator();
-          const gain = audioContext.createGain();
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(660, now);
-          osc.frequency.exponentialRampToValueAtTime(990, now + 0.07);
-          gain.gain.setValueAtTime(0.0001, now);
-          gain.gain.exponentialRampToValueAtTime(0.045, now + 0.015);
-          gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.12);
-          osc.connect(gain);
-          gain.connect(audioContext.destination);
-          osc.start(now);
-          osc.stop(now + 0.13);
-        }catch(e){}
-      }
+      const now = new Date();
+      const seed = now.getFullYear() + now.getMonth() + now.getDate();
+      const start = seed % Math.max(1, questions.length - 5);
+      const today = questions.slice(start, start + 4);
 
-      document.addEventListener('click', (event) => {
-        const target = event.target.closest('.sound-click, button, a');
-        if(target) playSoftClick();
-      }, {passive:true});
+      els.dailyCards.innerHTML = today.map((q, index) => `
+        <a class="daily-card" href="questions.html" aria-label="Open question ${escapeHTML(q.id || index + 1)}">
+          <span>Step ${index + 1} • Level ${escapeHTML(q.level || "")}</span>
+          <b>${escapeHTML(q.symbol || "❓")} ${escapeHTML(q.question || "Open a learning card")}</b>
+        </a>
+      `).join("");
+    }
 
-      const missions = [
-        {icon:'🤲', title:'Say Bismillah', text:'Listen, repeat, and use it before eating.'},
-        {icon:'🕌', title:'Learn one Salah action', text:'Tap the picture and copy the movement safely.'},
-        {icon:'📖', title:'Respect the Qur’an', text:'Choose the right picture and earn a star.'},
-        {icon:'🔤', title:'Trace one Arabic letter', text:'Use your finger and say the sound.'},
-        {icon:'💚', title:'Practice one good manner', text:'Say Salam and smile at home.'}
-      ];
-      const today = missions[new Date().getDate() % missions.length];
-      const todayIcon = document.querySelector('.today-icon');
-      const todayTitle = document.getElementById('todayTitle');
-      const todayText = document.getElementById('todayText');
-      if(todayIcon && todayTitle && todayText){
-        todayIcon.textContent = today.icon;
-        todayTitle.textContent = today.title;
-        todayText.textContent = today.text;
-      }
+    function renderMission(questions) {
+      if (!questions.length) return;
+      const pick = questions[(new Date().getDate() * 7) % questions.length];
+      els.missionTitle.textContent = pick.subtopic ? `Learn: ${pick.subtopic}` : "Learn one tiny lesson";
+      els.missionText.textContent = pick.practice || pick.activity || "Answer, practise, play and earn one star.";
+    }
 
-      const starBox = document.getElementById('starBox');
-      const progressCount = document.getElementById('progressCount');
-      const storageKey = 'alHayatKidsStarsToday';
-      const dateKey = 'alHayatKidsStarsDate';
-      const todayString = new Date().toDateString();
-      if(localStorage.getItem(dateKey) !== todayString){
-        localStorage.setItem(dateKey, todayString);
-        localStorage.setItem(storageKey, '0');
-      }
-      function getStars(){ return Math.min(5, Math.max(0, Number(localStorage.getItem(storageKey) || 0))); }
-      function setStars(value){ localStorage.setItem(storageKey, String(Math.min(5, value))); renderStars(); }
-      function renderStars(){
-        const stars = getStars();
-        if(starBox){
-          starBox.querySelectorAll('.star').forEach((star, index) => {
-            star.textContent = index < stars ? '⭐' : '☆';
-          });
-        }
-        if(progressCount){
-          progressCount.textContent = stars === 0 ? '0 stars collected. Tap “Done ⭐” after a task.' : stars + ' star' + (stars > 1 ? 's' : '') + ' collected today. Wonderful effort!';
-        }
-      }
-      renderStars();
+    function fallbackDailyCards() {
+      return `
+        <a class="daily-card" href="questions.html"><span>Step 1</span><b>🤲 Say Bismillah</b></a>
+        <a class="daily-card" href="questions.html"><span>Step 2</span><b>☝️ Who made us?</b></a>
+        <a class="daily-card" href="practice/"><span>Step 3</span><b>✍️ Trace one Arabic word</b></a>
+        <a class="daily-card" href="games/"><span>Step 4</span><b>🎮 Play one review game</b></a>
+      `;
+    }
 
-      document.getElementById('todayDone')?.addEventListener('click', () => setStars(getStars() + 1));
-      document.querySelectorAll('.mark-done').forEach(button => {
-        button.addEventListener('click', () => {
-          button.textContent = 'Great ⭐';
-          button.disabled = true;
-          button.closest('[data-step-card]')?.classList.add('done');
-          setStars(getStars() + 1);
-        });
+    function updateProgressUI() {
+      const progress = readProgress();
+      const completed = Object.keys(progress.completed || {}).length;
+      const stars = progress.stars || completed || 0;
+
+      els.completedCount.textContent = completed.toLocaleString();
+      els.phoneStars.textContent = stars.toLocaleString();
+      els.progressText.textContent = `${stars.toLocaleString()} stars collected on this device. Keep learning gently.`;
+      els.starBoard.textContent = makeStars(Math.min(5, stars));
+    }
+
+    function readProgress() {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || { stars: 0, completed: {} };
+      } catch {
+        return { stars: 0, completed: {} };
+      }
+    }
+
+    function saveProgress(progress) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    }
+
+    function markTinyTaskDone() {
+      const progress = readProgress();
+      if (!progress.completed) progress.completed = {};
+      const id = `homepage-task-${new Date().toISOString().slice(0, 10)}`;
+
+      if (!progress.completed[id]) {
+        progress.completed[id] = { completedAt: new Date().toISOString(), source: "homepage" };
+        progress.stars = (progress.stars || 0) + 1;
+        saveProgress(progress);
+        updateProgressUI();
+        showToast("Wonderful! ⭐ Star added");
+      } else {
+        showToast("Today’s homepage star is already saved ⭐");
+      }
+    }
+
+    function makeStars(count) {
+      const full = "★".repeat(count);
+      const empty = "☆".repeat(5 - count);
+      return full + empty;
+    }
+
+    function bindFriendlyClicks() {
+      document.querySelectorAll("a, button, .game-tile, .quick-link, .room-card, .path-card").forEach(el => {
+        el.addEventListener("click", () => playClickSound());
       });
 
-      document.querySelectorAll('.tap-card').forEach(card => {
-        card.addEventListener('click', () => {
-          card.classList.toggle('done');
-          if(card.classList.contains('done')) setStars(getStars() + 1);
-        });
+      document.querySelectorAll("[data-done]").forEach(btn => {
+        btn.addEventListener("click", markTinyTaskDone);
       });
 
-      document.querySelectorAll('.speak-word').forEach(button => {
-        button.addEventListener('click', () => {
-          const text = button.getAttribute('data-say') || button.textContent.trim();
-          if('speechSynthesis' in window){
-            window.speechSynthesis.cancel();
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.rate = 0.78;
-            utterance.pitch = 1.08;
-            utterance.volume = 1;
-            window.speechSynthesis.speak(utterance);
-          }
-        });
+      els.soundBtn.addEventListener("click", () => {
+        clickSoundOn = !clickSoundOn;
+        els.soundBtn.textContent = clickSoundOn ? "🔊 Click Sound: On" : "🔇 Click Sound: Off";
+        showToast(clickSoundOn ? "Click sound on" : "Click sound off");
       });
-    })();
+    }
+
+    function playClickSound() {
+      if (!clickSoundOn) return;
+      try {
+        audioContext = audioContext || new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+        oscillator.type = "sine";
+        oscillator.frequency.setValueAtTime(620, audioContext.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(920, audioContext.currentTime + 0.07);
+        gain.gain.setValueAtTime(0.0001, audioContext.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.035, audioContext.currentTime + 0.015);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 0.10);
+        oscillator.connect(gain);
+        gain.connect(audioContext.destination);
+        oscillator.start();
+        oscillator.stop(audioContext.currentTime + 0.11);
+      } catch (error) {
+        // Browsers may block audio until user interaction; silent fallback is fine.
+      }
+    }
+
+    function uniqueValues(items, key) {
+      return [...new Set(items.map(item => item[key]).filter(Boolean))];
+    }
+
+    function escapeHTML(value) {
+      return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      }[char]));
+    }
+
+    function showToast(message) {
+      els.toast.textContent = message;
+      els.toast.classList.add("show");
+      setTimeout(() => els.toast.classList.remove("show"), 1800);
+    }
   </script>
 </body>
 </html>
