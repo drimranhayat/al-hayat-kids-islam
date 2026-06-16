@@ -1,45 +1,1139 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Progress | Al-Hayat Kids Islam</title>
-  <meta name="description" content="Progress tracker with stars, completion, and level badges.">
-  <link rel="stylesheet" href="../styles.css">
-  
-<style>
-  :root{--navy:#17324d;--teal:#0f766e;--gold:#c8912b;--cream:#fff8ec;--card:#ffffff;--ink:#243044;}
-  body{margin:0;font-family:Arial,system-ui,sans-serif;background:linear-gradient(180deg,#fff8ec,#eefaf7);color:var(--ink);}
-  header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e8dcc7;}
-  .wrap{max-width:1180px;margin:auto;padding:18px;}
-  .top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
-  .brand{font-weight:900;color:var(--navy);font-size:1.25rem}.brand span{color:var(--gold)}
-  nav a{display:inline-block;margin:4px;padding:10px 12px;border-radius:999px;background:#f4efe4;text-decoration:none;color:var(--navy);font-weight:700}
-  nav a:hover{background:#dff7f1;transform:translateY(-1px)}
-  .ak-hero{background:linear-gradient(135deg,#17324d,#0f766e);color:white;border-radius:28px;padding:28px;margin:22px 0;box-shadow:0 16px 40px rgba(23,50,77,.18)}
-  .ak-hero h1{margin:0 0 8px;font-size:clamp(2rem,5vw,4rem)}.ak-hero p{font-size:1.1rem;max-width:780px}.ak-stats{display:flex;gap:10px;flex-wrap:wrap}.ak-stats span,.ak-hero button{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:10px 14px;border-radius:999px;color:white;font-weight:800}
-  .ak-filter-panel{background:#fff;border-radius:24px;padding:18px;margin:18px 0;box-shadow:0 12px 30px rgba(0,0,0,.07)}
-  .ak-filter-grid{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:12px}.ak-filter-grid label{font-weight:800;color:var(--navy)} select,input{width:100%;box-sizing:border-box;margin-top:6px;padding:12px;border-radius:14px;border:1px solid #ddd;font-size:1rem}.ak-quick-buttons button,.ak-options button,.ak-complete,.ak-mini-list button{cursor:pointer;border:0;border-radius:999px;background:#eaf7f4;color:var(--navy);padding:10px 14px;margin:6px;font-weight:800}.ak-quick-buttons button:hover,.ak-options button:hover,.ak-complete:hover{background:#ffe7b1}
-  .ak-card-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}.ak-card{background:var(--card);border-radius:24px;padding:18px;box-shadow:0 14px 34px rgba(0,0,0,.08);border:2px solid transparent}.ak-card.is-done{border-color:#42b883;background:#f3fff7}.ak-card-top{display:flex;justify-content:space-between;gap:8px;font-weight:800;color:#557}.ak-icon{font-size:1.8rem}.ak-card h3{color:var(--navy);font-size:1.2rem}.ak-arabic{font-size:1.8rem;font-family:serif;text-align:center;background:#fff8ec;border-radius:18px;padding:12px}.ak-explain,.ak-action{background:#f7fafc;border-radius:16px;padding:10px}.ak-complete{background:#17324d;color:white;width:100%}.ak-count{font-weight:900;color:var(--navy);margin:18px 0}.ak-more,.ak-error{background:#fff3cd;padding:14px;border-radius:16px}.ak-daily{background:#fff;border-radius:22px;padding:16px;margin:18px 0}.ak-badge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.ak-badge{background:white;border-radius:24px;padding:20px;text-align:center;box-shadow:0 14px 34px rgba(0,0,0,.08)}.ak-badge div{font-size:3rem}progress{width:100%;height:18px}
-  .practice-tools{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}.tool{background:white;border-radius:24px;padding:18px;box-shadow:0 14px 34px rgba(0,0,0,.08)}canvas{width:100%;height:240px;border:3px dashed #cbd5e1;border-radius:18px;background:white}
-  @media(max-width:760px){.ak-filter-grid,.practice-tools{grid-template-columns:1fr}nav a{font-size:.9rem}.wrap{padding:12px}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Islamic Learning Progress | Al-Hayat Kids Islam</title>
+  <meta name="description" content="Track Islamic learning progress for kids ages 3 to 8 with stars, badges, completed questions, level progress, topic progress and daily learning path." />
 
+  <style>
+    :root {
+      --cream: #fff8e8;
+      --paper: #fffdf7;
+      --card: #ffffff;
+      --ink: #17324d;
+      --muted: #5e7184;
+      --teal: #0f766e;
+      --teal-dark: #115e59;
+      --mint: #ccfbf1;
+      --gold: #f5b942;
+      --gold-soft: #fff3c4;
+      --rose: #ff7b7b;
+      --sky: #6ec7ff;
+      --green: #22c55e;
+      --line: rgba(23, 50, 77, 0.13);
+      --shadow: 0 18px 45px rgba(23, 50, 77, 0.12);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 8%, rgba(110, 199, 255, 0.25), transparent 30%),
+        radial-gradient(circle at 92% 4%, rgba(245, 185, 66, 0.25), transparent 30%),
+        radial-gradient(circle at 78% 88%, rgba(34, 197, 94, 0.18), transparent 30%),
+        linear-gradient(180deg, var(--cream), var(--paper) 48%, #f0fffb);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    button, input, select { font: inherit; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 253, 247, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 950;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--teal), #22c55e);
+      color: white;
+      box-shadow: 0 12px 24px rgba(15, 118, 110, 0.24);
+      font-size: 1.4rem;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .nav a {
+      padding: 10px 13px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.08);
+      color: var(--teal-dark);
+      font-weight: 900;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .nav a:hover,
+    .nav a:focus {
+      transform: translateY(-2px);
+      background: rgba(15, 118, 110, 0.16);
+      outline: none;
+    }
+
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 42px 18px 18px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .side-card,
+    .panel,
+    .stat-card,
+    .badge-card,
+    .progress-card,
+    .empty-state {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "⭐";
+      position: absolute;
+      right: 24px;
+      top: 20px;
+      font-size: 5rem;
+      opacity: 0.11;
+      transform: rotate(12deg);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: #ecfff7;
+      border: 1px solid rgba(15, 118, 110, 0.16);
+      color: var(--teal-dark);
+      font-weight: 950;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.1rem, 5vw, 4.2rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      color: #12314d;
+    }
+
+    .hero-card p {
+      margin: 18px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 1.75;
+      font-weight: 680;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      border: 0;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 12px 17px;
+      font-weight: 950;
+      font-size: 0.98rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--teal), #22c55e);
+      color: white;
+      box-shadow: 0 14px 24px rgba(15, 118, 110, 0.22);
+    }
+
+    .btn.gold {
+      background: linear-gradient(135deg, #f59e0b, #ffd166);
+      color: #4b3400;
+      box-shadow: 0 14px 24px rgba(245, 158, 11, 0.18);
+    }
+
+    .btn.soft {
+      background: #eef7ff;
+      color: #0b5171;
+      border: 1px solid rgba(11, 81, 113, 0.12);
+    }
+
+    .btn.danger {
+      background: #fff1f1;
+      color: #9f1239;
+      border: 1px solid rgba(244, 63, 94, 0.18);
+    }
+
+    .side-card {
+      padding: 24px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .trophy {
+      min-height: 168px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 243, 196, 0.9), transparent 40%),
+        linear-gradient(135deg, #ecfff7, #fff8df);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 18px;
+    }
+
+    .trophy strong {
+      display: block;
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .trophy span {
+      display: block;
+      font-weight: 950;
+      color: var(--teal-dark);
+      font-size: 1.15rem;
+    }
+
+    .overall-meter {
+      display: grid;
+      gap: 8px;
+    }
+
+    .meter-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-weight: 950;
+    }
+
+    .bar {
+      height: 15px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(23, 50, 77, 0.09);
+      border: 1px solid rgba(23, 50, 77, 0.08);
+    }
+
+    .bar > span {
+      display: block;
+      height: 100%;
+      width: 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--teal), var(--green), var(--gold));
+      transition: width 0.5s ease;
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .stat-card {
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      display: grid;
+      gap: 6px;
+      min-height: 120px;
+      align-content: center;
+    }
+
+    .stat-card b {
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+      color: var(--teal-dark);
+      line-height: 1;
+    }
+
+    .stat-card span {
+      color: var(--muted);
+      font-weight: 850;
+    }
+
+    .panel {
+      padding: 24px;
+      margin-bottom: 22px;
+    }
+
+    .panel-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .panel-title h2 {
+      margin: 0;
+      font-size: clamp(1.35rem, 3vw, 2.05rem);
+      letter-spacing: -0.03em;
+    }
+
+    .status-pill {
+      background: #fff8df;
+      color: #744b00;
+      border: 1px solid rgba(245, 185, 66, 0.34);
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-weight: 950;
+    }
+
+    .filter-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr auto;
+      gap: 12px;
+      align-items: end;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      color: var(--teal-dark);
+      font-weight: 950;
+      font-size: 0.92rem;
+    }
+
+    select, input {
+      width: 100%;
+      border: 1px solid rgba(23, 50, 77, 0.18);
+      border-radius: 15px;
+      padding: 12px 13px;
+      background: white;
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    select:focus, input:focus {
+      outline: 3px solid rgba(15, 118, 110, 0.16);
+      border-color: rgba(15, 118, 110, 0.42);
+    }
+
+    .progress-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .progress-card {
+      border-radius: 22px;
+      padding: 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .progress-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .progress-head h3 {
+      margin: 0;
+      font-size: 1.08rem;
+      line-height: 1.3;
+    }
+
+    .progress-head small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .percent {
+      border-radius: 999px;
+      background: #ecfff7;
+      color: var(--teal-dark);
+      padding: 7px 10px;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+
+    .mini-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .mini-btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 9px 11px;
+      background: #eef7ff;
+      color: #0b5171;
+      font-weight: 950;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .mini-btn:hover { transform: translateY(-2px); }
+
+    .badge-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .badge-card {
+      border-radius: 22px;
+      padding: 18px;
+      text-align: center;
+      display: grid;
+      gap: 8px;
+      opacity: 0.58;
+      filter: grayscale(0.4);
+    }
+
+    .badge-card.earned {
+      opacity: 1;
+      filter: none;
+      border-color: rgba(34, 197, 94, 0.42);
+      background: linear-gradient(180deg, #ffffff, #f0fff5);
+    }
+
+    .badge-icon {
+      font-size: 3rem;
+      line-height: 1;
+    }
+
+    .badge-card h3 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .badge-card p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 780;
+      line-height: 1.45;
+      font-size: 0.9rem;
+    }
+
+    .recent-list,
+    .path-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .recent-item,
+    .path-item {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 18px;
+      padding: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font-weight: 850;
+    }
+
+    .recent-item small,
+    .path-item small {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-weight: 750;
+    }
+
+    .empty-state {
+      padding: 28px;
+      text-align: center;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 760;
+    }
+
+    .empty-state strong {
+      display: block;
+      color: var(--ink);
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+    }
+
+    .footer-note {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 18px 42px;
+      color: var(--muted);
+      text-align: center;
+      font-weight: 720;
+      line-height: 1.7;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      background: #12314d;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      font-weight: 950;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.25s ease;
+      z-index: 100;
+    }
+
+    .toast.show {
+      opacity: 1;
+      bottom: 26px;
+    }
+
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .progress-grid { grid-template-columns: 1fr; }
+      .badge-grid { grid-template-columns: repeat(2, 1fr); }
+      .filter-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 4px;
+      }
+
+      .nav a { white-space: nowrap; }
+      .hero { padding-top: 24px; }
+      .hero-card, .side-card, .panel { padding: 20px; border-radius: 22px; }
+      .hero-actions .btn { width: 100%; }
+      .stats-grid, .badge-grid, .filter-grid { grid-template-columns: 1fr; }
+      .recent-item, .path-item { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
 </head>
+
 <body>
-  <header><div class="wrap top"><div class="brand">Al-Hayat <span>Kids Islam</span></div><nav><a href="../index.html">Home</a><a href="../curriculum.html">Curriculum</a><a href="../activities/">Activities</a><a href="../games/">Games</a><a href="../practice/">Practice</a><a href="../progress/">Progress</a><a href="../badges/">Badges</a><a href="../parents/">Parents</a></nav></div></header>
-  <main class="wrap">
-    
-    
-    <div id="alhayat-bank-app" data-bank-page="progress"></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-icon">☾</span>
+        <span>
+          Al-Hayat Kids Islam
+          <small>Islamic learning for ages 3–8</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="../index.html">🏠 Home</a>
+        <a href="../curriculum.html">📚 Curriculum</a>
+        <a href="../questions.html">❓ Questions</a>
+        <a href="../activities/">🎯 Activities</a>
+        <a href="../games/">🎮 Games</a>
+        <a href="../practice/">✍️ Practice</a>
+        <a href="../progress/">⭐ Progress</a>
+        <a href="../parents/">👨‍👩‍👧 Parents</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-card">
+      <span class="eyebrow">⭐ Child Progress Dashboard</span>
+      <h1>My Islamic Learning Progress</h1>
+      <p>
+        Children can see their stars, completed cards, badges, level progress and topic progress.
+        This page reads progress saved on this device from Questions, Activities, Games and Practice.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="../questions.html">❓ Continue Questions</a>
+        <a class="btn gold" href="../practice/">✍️ Practice More</a>
+        <a class="btn soft" href="../games/">🎮 Play Games</a>
+        <button class="btn danger" id="resetBtn" type="button">🔄 Reset Progress</button>
+      </div>
+    </div>
+
+    <aside class="side-card">
+      <div class="trophy">
+        <div>
+          <strong id="mainBadgeIcon">🌱</strong>
+          <span id="mainBadgeTitle">Little Learner</span>
+        </div>
+      </div>
+      <div class="overall-meter">
+        <div class="meter-top">
+          <span>Overall Progress</span>
+          <span id="overallPercent">0%</span>
+        </div>
+        <div class="bar" aria-hidden="true"><span id="overallBar"></span></div>
+      </div>
+    </aside>
+  </section>
+
+  <main>
+    <section class="stats-grid" aria-label="Progress summary">
+      <div class="stat-card">
+        <b id="totalQuestions">—</b>
+        <span>Total Questions</span>
+      </div>
+      <div class="stat-card">
+        <b id="completedQuestions">0</b>
+        <span>Completed Cards</span>
+      </div>
+      <div class="stat-card">
+        <b id="starCount">0</b>
+        <span>Stars Earned</span>
+      </div>
+      <div class="stat-card">
+        <b id="remainingQuestions">—</b>
+        <span>Still to Explore</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>🔎 View Progress by Level or Topic</h2>
+        <span class="status-pill" id="loadStatus">Loading progress...</span>
+      </div>
+
+      <div class="filter-grid">
+        <label>
+          View
+          <select id="viewFilter">
+            <option value="levels">Levels</option>
+            <option value="topics">Topics</option>
+          </select>
+        </label>
+
+        <label>
+          Search
+          <input id="searchInput" type="search" placeholder="Search level or topic..." />
+        </label>
+
+        <label>
+          Show
+          <select id="statusFilter">
+            <option value="all">All</option>
+            <option value="started">Started</option>
+            <option value="notStarted">Not started</option>
+            <option value="completed">Completed 100%</option>
+          </select>
+        </label>
+
+        <button class="btn primary" id="applyBtn" type="button">✅ Apply</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2 id="progressTitle">📊 Level Progress</h2>
+        <span class="status-pill" id="progressCount">—</span>
+      </div>
+      <div class="progress-grid" id="progressGrid">
+        <div class="empty-state"><strong>Loading...</strong>Please wait while progress opens.</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>🏅 Badges</h2>
+        <span class="status-pill" id="badgeCount">0 earned</span>
+      </div>
+      <div class="badge-grid" id="badgeGrid"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>🧭 Suggested Next Steps</h2>
+        <span class="status-pill">Keep it gentle</span>
+      </div>
+      <div class="path-list" id="nextSteps"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>🕘 Recently Completed</h2>
+        <span class="status-pill" id="recentCount">0 items</span>
+      </div>
+      <div class="recent-list" id="recentList"></div>
+    </section>
   </main>
-  <script src="../assets/js/sound-engine.js"></script>
-  <script src="../assets/js/progress-engine.js"></script>
-  <script src="../assets/js/reward-engine.js"></script>
-  <script src="../assets/js/filter-engine.js"></script>
-  <script src="../assets/js/learning-path.js"></script>
-  <script src="../assets/js/whiteboard.js"></script>
-  <script src="../assets/js/typing-board.js"></script>
-  <script src="../assets/js/question-bank.js"></script>
+
+  <p class="footer-note">
+    Progress is saved only on this device through the browser. If the browser data is cleared,
+    progress may reset. This keeps the learning experience simple and private for children.
+  </p>
+
+  <div class="toast" id="toast">Saved</div>
+
+  <script>
+    const DATA_PATHS = {
+      levels: "../assets/data/levels/levels.json",
+      topics: "../assets/data/topics/topics.json",
+      questions: [
+        "../assets/data/questions/questions-level-1.json",
+        "../assets/data/questions/questions-level-2.json",
+        "../assets/data/questions/questions-level-3.json",
+        "../assets/data/questions/questions-level-4.json",
+        "../assets/data/questions/questions-level-5.json"
+      ]
+    };
+
+    const STORAGE_KEYS = [
+      "alHayatKidsIslamProgress",
+      "alHayatKidsIslamPracticeProgress",
+      "alHayatKidsIslamGameProgress",
+      "alHayatKidsIslamActivitiesProgress"
+    ];
+
+    const badges = [
+      { id: "first-star", icon: "⭐", title: "First Star", text: "Complete 1 card.", need: 1 },
+      { id: "five-stars", icon: "🌟", title: "Shining Start", text: "Complete 5 cards.", need: 5 },
+      { id: "ten-stars", icon: "🏅", title: "Good Effort", text: "Complete 10 cards.", need: 10 },
+      { id: "twenty-five", icon: "🏆", title: "Little Champion", text: "Complete 25 cards.", need: 25 },
+      { id: "fifty", icon: "🌙", title: "Moon Learner", text: "Complete 50 cards.", need: 50 },
+      { id: "hundred", icon: "🕌", title: "Islamic Explorer", text: "Complete 100 cards.", need: 100 },
+      { id: "two-fifty", icon: "📖", title: "Qur’an Friend", text: "Complete 250 cards.", need: 250 },
+      { id: "five-hundred", icon: "💎", title: "Knowledge Star", text: "Complete 500 cards.", need: 500 }
+    ];
+
+    const state = {
+      levels: [],
+      topics: [],
+      questions: [],
+      progress: { stars: 0, completed: {} },
+      view: "levels"
+    };
+
+    const els = {
+      totalQuestions: document.getElementById("totalQuestions"),
+      completedQuestions: document.getElementById("completedQuestions"),
+      starCount: document.getElementById("starCount"),
+      remainingQuestions: document.getElementById("remainingQuestions"),
+      overallPercent: document.getElementById("overallPercent"),
+      overallBar: document.getElementById("overallBar"),
+      mainBadgeIcon: document.getElementById("mainBadgeIcon"),
+      mainBadgeTitle: document.getElementById("mainBadgeTitle"),
+      loadStatus: document.getElementById("loadStatus"),
+      viewFilter: document.getElementById("viewFilter"),
+      searchInput: document.getElementById("searchInput"),
+      statusFilter: document.getElementById("statusFilter"),
+      applyBtn: document.getElementById("applyBtn"),
+      progressTitle: document.getElementById("progressTitle"),
+      progressCount: document.getElementById("progressCount"),
+      progressGrid: document.getElementById("progressGrid"),
+      badgeGrid: document.getElementById("badgeGrid"),
+      badgeCount: document.getElementById("badgeCount"),
+      nextSteps: document.getElementById("nextSteps"),
+      recentList: document.getElementById("recentList"),
+      recentCount: document.getElementById("recentCount"),
+      resetBtn: document.getElementById("resetBtn"),
+      toast: document.getElementById("toast")
+    };
+
+    document.addEventListener("DOMContentLoaded", init);
+
+    async function init() {
+      try {
+        const [levelsData, topicsData, ...questionFiles] = await Promise.all([
+          fetchJson(DATA_PATHS.levels),
+          fetchJson(DATA_PATHS.topics),
+          ...DATA_PATHS.questions.map(fetchJson)
+        ]);
+
+        state.levels = levelsData.levels || [];
+        state.topics = topicsData.topics || [];
+        state.questions = questionFiles.flatMap(file => file.items || []);
+        state.progress = readCombinedProgress();
+
+        bindEvents();
+        renderAll();
+        els.loadStatus.textContent = "Progress loaded";
+        showToast("Progress loaded");
+      } catch (error) {
+        console.error(error);
+        els.loadStatus.textContent = "Could not load progress";
+        els.progressGrid.innerHTML = `
+          <div class="empty-state">
+            <strong>Progress could not load.</strong>
+            Please check that your JSON files are uploaded inside assets/data/.<br>
+            Error: ${escapeHTML(error.message)}
+          </div>
+        `;
+      }
+    }
+
+    async function fetchJson(path) {
+      const response = await fetch(path, { cache: "no-store" });
+      if (!response.ok) throw new Error(`${response.status} — ${path}`);
+      return response.json();
+    }
+
+    function bindEvents() {
+      els.applyBtn.addEventListener("click", renderProgressGrid);
+      els.viewFilter.addEventListener("change", () => {
+        state.view = els.viewFilter.value;
+        renderProgressGrid();
+      });
+      els.searchInput.addEventListener("input", debounce(renderProgressGrid, 180));
+      els.statusFilter.addEventListener("change", renderProgressGrid);
+      els.resetBtn.addEventListener("click", resetProgress);
+    }
+
+    function renderAll() {
+      renderStats();
+      renderProgressGrid();
+      renderBadges();
+      renderNextSteps();
+      renderRecent();
+    }
+
+    function renderStats() {
+      const total = state.questions.length;
+      const completedIds = getCompletedIds();
+      const completed = completedIds.length;
+      const stars = state.progress.stars || completed;
+      const remaining = Math.max(0, total - completed);
+      const percent = total ? Math.round((completed / total) * 100) : 0;
+
+      els.totalQuestions.textContent = total.toLocaleString();
+      els.completedQuestions.textContent = completed.toLocaleString();
+      els.starCount.textContent = stars.toLocaleString();
+      els.remainingQuestions.textContent = remaining.toLocaleString();
+      els.overallPercent.textContent = `${percent}%`;
+      els.overallBar.style.width = `${percent}%`;
+
+      const earned = badges.filter(badge => completed >= badge.need);
+      const bestBadge = earned[earned.length - 1] || { icon: "🌱", title: "Little Learner" };
+      els.mainBadgeIcon.textContent = bestBadge.icon;
+      els.mainBadgeTitle.textContent = bestBadge.title;
+    }
+
+    function renderProgressGrid() {
+      const view = els.viewFilter.value;
+      const search = els.searchInput.value.trim().toLowerCase();
+      const status = els.statusFilter.value;
+      const completedSet = new Set(getCompletedIds());
+
+      let rows = view === "levels" ? buildLevelRows(completedSet) : buildTopicRows(completedSet);
+
+      rows = rows.filter(row => {
+        if (search && !`${row.title} ${row.subtitle}`.toLowerCase().includes(search)) return false;
+        if (status === "started" && row.completed === 0) return false;
+        if (status === "notStarted" && row.completed !== 0) return false;
+        if (status === "completed" && row.percent !== 100) return false;
+        return true;
+      });
+
+      els.progressTitle.textContent = view === "levels" ? "📊 Level Progress" : "📌 Topic Progress";
+      els.progressCount.textContent = `${rows.length} shown`;
+
+      if (!rows.length) {
+        els.progressGrid.innerHTML = `
+          <div class="empty-state">
+            <strong>No progress found here yet.</strong>
+            Try another filter or start a few questions first.
+          </div>
+        `;
+        return;
+      }
+
+      els.progressGrid.innerHTML = rows.map(row => `
+        <article class="progress-card">
+          <div class="progress-head">
+            <div>
+              <h3>${escapeHTML(row.icon)} ${escapeHTML(row.title)}</h3>
+              <small>${escapeHTML(row.subtitle)}</small>
+            </div>
+            <span class="percent">${row.percent}%</span>
+          </div>
+          <div class="bar"><span style="width:${row.percent}%"></span></div>
+          <small><b>${row.completed}</b> completed out of <b>${row.total}</b> cards</small>
+          <div class="mini-actions">
+            <button class="mini-btn" type="button" data-focus="${escapeHTML(row.focusValue)}" data-view="${escapeHTML(view)}">Start here</button>
+            <a class="mini-btn" href="../questions.html">Open Questions</a>
+            <a class="mini-btn" href="../practice/">Practice</a>
+          </div>
+        </article>
+      `).join("");
+
+      document.querySelectorAll("[data-focus]").forEach(button => {
+        button.addEventListener("click", () => {
+          const view = button.dataset.view;
+          const focus = button.dataset.focus;
+          const hint = view === "levels" ? `Level ${focus}` : focus.replaceAll("_", " ");
+          showToast(`Open Questions and search: ${hint}`);
+          setTimeout(() => window.location.href = "../questions.html", 650);
+        });
+      });
+    }
+
+    function buildLevelRows(completedSet) {
+      return state.levels.map(level => {
+        const levelNo = String(level.levelNumber || level.id || "");
+        const questions = state.questions.filter(q => String(q.level) === levelNo);
+        const completed = questions.filter(q => completedSet.has(q.id)).length;
+        const percent = questions.length ? Math.round((completed / questions.length) * 100) : 0;
+        return {
+          icon: level.icon || "🌱",
+          title: `Level ${levelNo}: ${level.title || "Learning Level"}`,
+          subtitle: `${level.ageRange || "Ages 3–8"} • ${level.description || "Child-friendly Islamic learning"}`,
+          total: questions.length,
+          completed,
+          percent,
+          focusValue: levelNo
+        };
+      });
+    }
+
+    function buildTopicRows(completedSet) {
+      return state.topics.map(topic => {
+        const questions = state.questions.filter(q => q.topicId === topic.id);
+        const completed = questions.filter(q => completedSet.has(q.id)).length;
+        const percent = questions.length ? Math.round((completed / questions.length) * 100) : 0;
+        return {
+          icon: topic.icon || "📌",
+          title: topic.title || topic.id,
+          subtitle: topic.description || "Islamic learning topic",
+          total: questions.length,
+          completed,
+          percent,
+          focusValue: topic.id
+        };
+      }).filter(row => row.total > 0);
+    }
+
+    function renderBadges() {
+      const completed = getCompletedIds().length;
+      const earned = badges.filter(badge => completed >= badge.need);
+      els.badgeCount.textContent = `${earned.length} earned`;
+
+      els.badgeGrid.innerHTML = badges.map(badge => {
+        const isEarned = completed >= badge.need;
+        const remaining = Math.max(0, badge.need - completed);
+        return `
+          <article class="badge-card ${isEarned ? "earned" : ""}">
+            <div class="badge-icon">${escapeHTML(badge.icon)}</div>
+            <h3>${escapeHTML(badge.title)}</h3>
+            <p>${escapeHTML(isEarned ? "Earned!" : `${remaining} more to unlock.`)}</p>
+            <p>${escapeHTML(badge.text)}</p>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function renderNextSteps() {
+      const completedSet = new Set(getCompletedIds());
+      const suggestions = state.questions
+        .filter(q => !completedSet.has(q.id))
+        .slice(0, 6);
+
+      if (!suggestions.length) {
+        els.nextSteps.innerHTML = `
+          <div class="empty-state">
+            <strong>Wonderful!</strong>
+            No pending card found. You can revise questions again or play games.
+          </div>
+        `;
+        return;
+      }
+
+      els.nextSteps.innerHTML = suggestions.map((q, index) => `
+        <div class="path-item">
+          <div>
+            ${escapeHTML(q.symbol || "❓")} Step ${index + 1}: ${escapeHTML(q.question || "Learning card")}
+            <small>Level ${escapeHTML(q.level)} • ${escapeHTML(q.topicTitle || "Islamic Learning")}</small>
+          </div>
+          <a class="mini-btn" href="../questions.html">Open</a>
+        </div>
+      `).join("");
+    }
+
+    function renderRecent() {
+      const completedEntries = Object.entries(state.progress.completed || {})
+        .map(([id, data]) => ({ id, completedAt: data?.completedAt || data?.time || "" }))
+        .sort((a, b) => String(b.completedAt).localeCompare(String(a.completedAt)))
+        .slice(0, 8);
+
+      els.recentCount.textContent = `${completedEntries.length} items`;
+
+      if (!completedEntries.length) {
+        els.recentList.innerHTML = `
+          <div class="empty-state">
+            <strong>No completed cards yet.</strong>
+            Start with questions, practice or games to collect stars.
+          </div>
+        `;
+        return;
+      }
+
+      els.recentList.innerHTML = completedEntries.map(entry => {
+        const q = state.questions.find(item => item.id === entry.id);
+        const date = entry.completedAt ? new Date(entry.completedAt) : null;
+        const dateText = date && !Number.isNaN(date.getTime()) ? date.toLocaleDateString() : "Completed";
+        return `
+          <div class="recent-item">
+            <div>
+              ${escapeHTML(q?.symbol || "⭐")} ${escapeHTML(q?.question || entry.id)}
+              <small>${escapeHTML(q?.topicTitle || "Learning card")} • ${escapeHTML(dateText)}</small>
+            </div>
+            <span class="percent">Done</span>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function readCombinedProgress() {
+      const combined = { stars: 0, completed: {} };
+
+      STORAGE_KEYS.forEach(key => {
+        try {
+          const value = JSON.parse(localStorage.getItem(key));
+          if (!value || typeof value !== "object") return;
+
+          if (value.completed && typeof value.completed === "object") {
+            Object.entries(value.completed).forEach(([id, data]) => {
+              combined.completed[id] = data || { completedAt: new Date().toISOString() };
+            });
+          }
+
+          if (Number.isFinite(Number(value.stars))) {
+            combined.stars = Math.max(combined.stars, Number(value.stars));
+          }
+        } catch {
+          // Ignore broken localStorage entries.
+        }
+      });
+
+      combined.stars = Math.max(combined.stars, Object.keys(combined.completed).length);
+      return combined;
+    }
+
+    function getCompletedIds() {
+      return Object.keys(state.progress.completed || {});
+    }
+
+    function resetProgress() {
+      const confirmed = confirm("Reset stars and completed cards saved on this device?");
+      if (!confirmed) return;
+
+      STORAGE_KEYS.forEach(key => localStorage.removeItem(key));
+      state.progress = { stars: 0, completed: {} };
+      renderAll();
+      showToast("Progress reset");
+    }
+
+    function debounce(fn, delay = 200) {
+      let timer;
+      return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), delay);
+      };
+    }
+
+    function escapeHTML(value) {
+      return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "\"": "&quot;",
+        "'": "&#039;"
+      }[char]));
+    }
+
+    function showToast(message) {
+      els.toast.textContent = message;
+      els.toast.classList.add("show");
+      setTimeout(() => els.toast.classList.remove("show"), 1800);
+    }
+  </script>
 </body>
 </html>
