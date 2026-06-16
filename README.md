@@ -89,3 +89,8 @@ Parents and teachers guide pronunciation and memorization.
 ## Recommended action
 
 Upload all files to the root of your GitHub Pages repository. Replace the old Version 1 files with this premium Version 2 set.
+
+
+## Learning Dashboard V3 update
+
+This version changes the website from instruction-first pages into a child-first learning dashboard. The homepage and curriculum page now place age filters, level filters, big course icons, and direct Lesson / Activity / Mini Game buttons near the top. Parent guidance remains available lower on the page for adults, but the child sees clear visual learning paths first. No audio, tracking, backend, microphone, camera, or external media were added.

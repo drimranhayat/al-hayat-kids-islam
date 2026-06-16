@@ -98,3 +98,47 @@
     });
   }
 })();
+
+
+// Learning Dashboard V3: age + level filters and tiny no-audio games
+(function(){
+  const state = { age: 'all', level: 'all' };
+  function applyKidFilters(){
+    document.querySelectorAll('#kid-course-grid .kid-course-card').forEach(card => {
+      const ages = (card.getAttribute('data-age') || '').split(/\s+/);
+      const levels = (card.getAttribute('data-level') || '').split(/\s+/);
+      const ageOK = state.age === 'all' || ages.includes(state.age);
+      const levelOK = state.level === 'all' || levels.includes(state.level);
+      card.hidden = !(ageOK && levelOK);
+    });
+  }
+  document.querySelectorAll('[data-kid-filter]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const group = btn.getAttribute('data-kid-filter');
+      state[group] = btn.getAttribute('data-filter-value') || 'all';
+      document.querySelectorAll(`[data-kid-filter="${group}"]`).forEach(item => item.classList.remove('active'));
+      btn.classList.add('active');
+      applyKidFilters();
+    });
+  });
+
+  document.querySelectorAll('.choice-game').forEach(game => {
+    game.addEventListener('click', e => {
+      const btn = e.target.closest('.choice-btn');
+      if(!btn) return;
+      game.querySelectorAll('.choice-btn').forEach(b => b.classList.remove('correct','wrong'));
+      const result = game.parentElement.querySelector('.game-result');
+      const correct = btn.getAttribute('data-correct') === 'true';
+      btn.classList.add(correct ? 'correct' : 'wrong');
+      if(result) result.textContent = correct ? 'Excellent! You chose the right action. ⭐' : 'Good try. Choose the kind Islamic action. 🌱';
+    });
+  });
+
+  document.querySelectorAll('[data-star-task]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const result = btn.parentElement.querySelector('.task-result');
+      btn.textContent = '⭐⭐⭐ Practice completed';
+      if(result) result.textContent = 'MashaAllah! Now try using it in real life today.';
+    });
+  });
+})();
