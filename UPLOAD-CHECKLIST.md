@@ -35,3 +35,8 @@ Upload these files to the root of your GitHub Pages repository. Replace older fi
 2. Replace YOUR_EMAIL_HERE with your real contact email.
 3. Test the mobile menu, FAQ accordion, filter buttons, back-to-top button, and all internal links.
 4. Keep the first version no-audio and no-tracking for safety and simplicity.
+
+
+## V4 cache note
+
+Replace `index.html`, `curriculum.html`, `styles.css`, and `script.js` together. The HTML now loads `styles.css?v=4.2` and `script.js?v=4.2`, which helps avoid the old messy CSS being shown from browser cache.

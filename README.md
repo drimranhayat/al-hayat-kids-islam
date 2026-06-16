@@ -1,3 +1,9 @@
+# Al-Hayat Kids Islam — Learning Content Dashboard V6
+
+This version fixes the homepage spacing, removes hidden reveal-section blank areas, prevents the sticky header from appearing in the middle of full-page screenshots on desktop, and keeps the first screen focused on child learning.
+
+Replace the website files in the repository root with these extracted files.
+
 # Al-Hayat Kids Islam — Official Website
 
 Official website for **Al-Hayat Kids Islam — Official Website** and future app branding **Al-Hayat Kids Islam — Parent-Guided Islamic Learning**.
@@ -94,3 +100,13 @@ Upload all files to the root of your GitHub Pages repository. Replace the old Ve
 ## Learning Dashboard V3 update
 
 This version changes the website from instruction-first pages into a child-first learning dashboard. The homepage and curriculum page now place age filters, level filters, big course icons, and direct Lesson / Activity / Mini Game buttons near the top. Parent guidance remains available lower on the page for adults, but the child sees clear visual learning paths first. No audio, tracking, backend, microphone, camera, or external media were added.
+
+
+## Learning Content Dashboard V6
+
+This version fixes the messy first-fold problem. The homepage no longer starts with a raw-looking topic line or instruction-heavy text. It now has a clean child-first hero, a polished visual learning shortcut grid, compact age/level filters, and direct course cards with Lesson / Activity / Mini Game buttons. Parent guidance stays lower on the page. CSS and JS references use version query strings to reduce browser/GitHub cache issues.
+
+
+## V6 update
+
+This version adds real Arabic-first lesson content, practice sections, activities, and mini games under all main course buttons. Arabic words are shown in Arabic script, with transliteration minimized. No audio, tracking, backend, camera, or microphone is used.
