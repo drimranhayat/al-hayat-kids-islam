@@ -1,1 +1,498 @@
-
+{
+  "appName": "Al-Hayat Kids Islam",
+  "fileType": "levels",
+  "version": "1.0.0",
+  "targetAgeRange": "3-8",
+  "totalQuestionTarget": 3000,
+  "learningPrinciple": "Gradual Islamic learning through short questions, symbols, practice, activities, games, repetition, and rewards.",
+  "globalLearningCycle": [
+    "recognize",
+    "listen",
+    "choose",
+    "tap",
+    "match",
+    "trace",
+    "type",
+    "practice",
+    "review",
+    "earn_reward",
+    "unlock_next"
+  ],
+  "globalSymbols": {
+    "newLesson": "🌱",
+    "listen": "👂",
+    "tap": "👆",
+    "question": "❓",
+    "practice": "✍️",
+    "game": "🎮",
+    "review": "🔁",
+    "completed": "✅",
+    "star": "⭐",
+    "badge": "🏆",
+    "locked": "🔒",
+    "unlocked": "🔓",
+    "goodHabit": "❤️",
+    "parentHelp": "👨‍👩‍👧",
+    "quran": "📖",
+    "dua": "🤲",
+    "salah": "🕌",
+    "manners": "🌸",
+    "arabic": "🔤"
+  },
+  "levels": [
+    {
+      "id": "level-1",
+      "levelNumber": 1,
+      "title": "Little Muslim Starter",
+      "shortTitle": "Starter",
+      "ageRange": "3-4",
+      "symbol": "🌱",
+      "estimatedQuestions": 400,
+      "difficulty": "very_easy",
+      "childGoal": "I can recognize simple Islamic words, good habits, and basic daily phrases.",
+      "parentGoal": "Help the child love Allah, say simple Islamic words, and build happy daily habits.",
+      "prerequisite": "none",
+      "unlockRule": "available_from_start",
+      "recommendedDailyTasks": 5,
+      "recommendedDailyMinutes": "5-8",
+      "learningStyle": [
+        "picture_based",
+        "tap_to_answer",
+        "listen_and_repeat",
+        "one_screen_one_task",
+        "very_short_questions"
+      ],
+      "mainQuestionTypes": [
+        "tap",
+        "mcq",
+        "yes_no",
+        "listen_choose",
+        "picture_choice",
+        "repeat_after_me"
+      ],
+      "coreSkills": [
+        "recognize Allah as Creator",
+        "say Bismillah",
+        "say Alhamdulillah",
+        "say Salam",
+        "recognize Qur’an",
+        "recognize Masjid",
+        "recognize good manners",
+        "recognize some Arabic letters"
+      ],
+      "topicDistribution": {
+        "allah_and_iman": 60,
+        "quran_basics": 45,
+        "arabic_letters": 70,
+        "daily_duas": 45,
+        "prophet_muhammad": 35,
+        "manners_and_character": 65,
+        "salah_and_wudu_intro": 25,
+        "ramadan_eid_intro": 20,
+        "family_and_daily_life": 35
+      },
+      "learningFlow": [
+        "see_symbol",
+        "hear_word",
+        "tap_correct_answer",
+        "repeat_short_phrase",
+        "earn_star",
+        "unlock_next_card"
+      ],
+      "sampleMilestones": [
+        "I know Allah made me.",
+        "I can say Bismillah before eating.",
+        "I can say Alhamdulillah after something good.",
+        "I can say Assalamu Alaikum.",
+        "I know the Qur’an is Allah’s Book.",
+        "I know Muslims pray.",
+        "I can choose a good manner."
+      ],
+      "badge": {
+        "id": "badge-little-muslim-starter",
+        "name": "Little Muslim Starter",
+        "symbol": "🏆",
+        "earnedWhen": "complete_80_percent_level_tasks"
+      },
+      "completionCriteria": {
+        "minimumQuestionsCompleted": 320,
+        "minimumStars": 250,
+        "minimumTopicCoveragePercent": 70,
+        "reviewRequired": true
+      },
+      "nextLevel": "level-2"
+    },
+    {
+      "id": "level-2",
+      "levelNumber": 2,
+      "title": "Daily Islam Explorer",
+      "shortTitle": "Explorer",
+      "ageRange": "4-5",
+      "symbol": "🌼",
+      "estimatedQuestions": 500,
+      "difficulty": "easy",
+      "childGoal": "I can use simple Islamic words in daily life and answer easy questions about duas, manners, Qur’an, and prayer.",
+      "parentGoal": "Guide the child to connect Islamic phrases with daily actions such as eating, sleeping, greeting, sharing, and cleanliness.",
+      "prerequisite": "level-1",
+      "unlockRule": "unlock_after_level_1_completion_or_parent_unlock",
+      "recommendedDailyTasks": 6,
+      "recommendedDailyMinutes": "7-10",
+      "learningStyle": [
+        "short_question_answer",
+        "tap_and_match",
+        "daily_habit_practice",
+        "simple_audio_repeat",
+        "symbol_guided_learning"
+      ],
+      "mainQuestionTypes": [
+        "mcq",
+        "yes_no",
+        "match",
+        "tap",
+        "complete_word",
+        "listen_choose",
+        "habit_choice"
+      ],
+      "coreSkills": [
+        "understand Bismillah and Alhamdulillah in simple use",
+        "recognize short daily duas",
+        "identify good and bad manners",
+        "know basic respect for Qur’an",
+        "recognize five daily prayers as a Muslim habit",
+        "recognize more Arabic letters and simple Islamic words"
+      ],
+      "topicDistribution": {
+        "allah_and_iman": 60,
+        "quran_basics": 55,
+        "arabic_letters_and_words": 80,
+        "daily_duas": 70,
+        "prophet_muhammad": 45,
+        "manners_and_character": 80,
+        "salah_and_wudu_intro": 45,
+        "ramadan_eid_intro": 25,
+        "family_and_daily_life": 40
+      },
+      "learningFlow": [
+        "review_previous",
+        "learn_new_word",
+        "answer_short_question",
+        "do_small_activity",
+        "practice_phrase",
+        "earn_star",
+        "unlock_next_topic"
+      ],
+      "sampleMilestones": [
+        "I can say Bismillah before eating and drinking.",
+        "I know Alhamdulillah means thanking Allah.",
+        "I can choose kind words.",
+        "I can recognize some daily duas.",
+        "I know Muslims pray five times.",
+        "I know the Qur’an should be respected.",
+        "I can match some Arabic letters with sounds."
+      ],
+      "badge": {
+        "id": "badge-daily-islam-explorer",
+        "name": "Daily Islam Explorer",
+        "symbol": "🏆",
+        "earnedWhen": "complete_80_percent_level_tasks"
+      },
+      "completionCriteria": {
+        "minimumQuestionsCompleted": 400,
+        "minimumStars": 320,
+        "minimumTopicCoveragePercent": 75,
+        "reviewRequired": true
+      },
+      "nextLevel": "level-3"
+    },
+    {
+      "id": "level-3",
+      "levelNumber": 3,
+      "title": "Young Muslim Learner",
+      "shortTitle": "Learner",
+      "ageRange": "5-6",
+      "symbol": "⭐",
+      "estimatedQuestions": 600,
+      "difficulty": "easy_medium",
+      "childGoal": "I can answer short questions about Allah, Qur’an, Prophet Muhammad ﷺ, salah, wudu, duas, manners, and simple stories of Prophets.",
+      "parentGoal": "Help the child move from recognition to understanding and daily practice.",
+      "prerequisite": "level-2",
+      "unlockRule": "unlock_after_level_2_completion_or_parent_unlock",
+      "recommendedDailyTasks": 7,
+      "recommendedDailyMinutes": "10-12",
+      "learningStyle": [
+        "short_qa",
+        "match_and_arrange",
+        "simple_story_questions",
+        "trace_and_type",
+        "daily_practice_tasks"
+      ],
+      "mainQuestionTypes": [
+        "mcq",
+        "true_false",
+        "match",
+        "arrange",
+        "fill_blank",
+        "tap",
+        "trace",
+        "type_short_answer",
+        "picture_question"
+      ],
+      "coreSkills": [
+        "know basic articles of faith in child-friendly form",
+        "know the Qur’an is Allah’s Book",
+        "know Prophet Muhammad ﷺ is the final Prophet",
+        "know five daily prayer names",
+        "know simple wudu steps",
+        "recognize basic Islamic manners",
+        "answer simple questions from Prophets’ stories",
+        "read and recognize selected Arabic words"
+      ],
+      "topicDistribution": {
+        "allah_and_iman": 70,
+        "quran_and_short_surahs": 65,
+        "arabic_letters_and_words": 75,
+        "daily_duas": 75,
+        "prophet_muhammad_and_seerah": 65,
+        "prophets_stories": 65,
+        "salah": 65,
+        "wudu_cleanliness": 45,
+        "manners_and_character": 75,
+        "ramadan_eid_hajj_intro": 35,
+        "family_and_daily_life": 35
+      },
+      "learningFlow": [
+        "warm_up_review",
+        "learn_concept",
+        "answer_question",
+        "play_mini_game",
+        "practice_on_board",
+        "review_mistake",
+        "earn_badge_piece",
+        "unlock_next_lesson"
+      ],
+      "sampleMilestones": [
+        "I know the names of the five daily prayers.",
+        "I can arrange simple wudu steps.",
+        "I know Prophet Muhammad ﷺ is the final Prophet.",
+        "I can answer simple questions about Ramadan.",
+        "I can choose honest and kind actions.",
+        "I can recognize important Islamic words in Arabic.",
+        "I can answer simple questions from Prophets’ stories."
+      ],
+      "badge": {
+        "id": "badge-young-muslim-learner",
+        "name": "Young Muslim Learner",
+        "symbol": "🏆",
+        "earnedWhen": "complete_80_percent_level_tasks"
+      },
+      "completionCriteria": {
+        "minimumQuestionsCompleted": 480,
+        "minimumStars": 390,
+        "minimumTopicCoveragePercent": 75,
+        "reviewRequired": true
+      },
+      "nextLevel": "level-4"
+    },
+    {
+      "id": "level-4",
+      "levelNumber": 4,
+      "title": "Confident Muslim Kid",
+      "shortTitle": "Confident",
+      "ageRange": "6-7",
+      "symbol": "🌟",
+      "estimatedQuestions": 700,
+      "difficulty": "medium",
+      "childGoal": "I can explain simple Islamic ideas, connect lessons with daily life, and complete mixed quizzes, games, and practice tasks.",
+      "parentGoal": "Support the child in understanding meanings, applying manners, and building steady Islamic habits.",
+      "prerequisite": "level-3",
+      "unlockRule": "unlock_after_level_3_completion_or_parent_unlock",
+      "recommendedDailyTasks": 8,
+      "recommendedDailyMinutes": "12-15",
+      "learningStyle": [
+        "concept_questions",
+        "story_reflection",
+        "daily_life_application",
+        "mixed_quizzes",
+        "independent_child_navigation"
+      ],
+      "mainQuestionTypes": [
+        "mcq",
+        "true_false",
+        "fill_blank",
+        "match",
+        "arrange_steps",
+        "short_answer",
+        "scenario_choice",
+        "trace",
+        "type",
+        "review_challenge"
+      ],
+      "coreSkills": [
+        "explain simple meanings of Islamic phrases",
+        "know more about salah and wudu",
+        "understand basic lessons from Seerah",
+        "learn selected short Surahs and their basic message",
+        "answer questions about Ramadan, Eid, Hajj, and Islamic months",
+        "apply Islamic manners in home, school, and play",
+        "complete topic-based review challenges"
+      ],
+      "topicDistribution": {
+        "allah_and_iman": 70,
+        "quran_and_short_surahs": 75,
+        "arabic_words_and_reading": 70,
+        "daily_duas_and_adhkar": 75,
+        "prophet_muhammad_and_seerah": 85,
+        "prophets_stories": 85,
+        "salah": 80,
+        "wudu_cleanliness": 55,
+        "manners_and_character": 90,
+        "parents_family_friends": 45,
+        "ramadan_eid_hajj_months": 60,
+        "masjid_jumuah_places": 25,
+        "mixed_review": 30
+      },
+      "learningFlow": [
+        "choose_topic",
+        "review_symbol_progress",
+        "learn_short_lesson",
+        "answer_mixed_questions",
+        "complete_activity",
+        "do_practice_task",
+        "fix_mistakes",
+        "earn_star_or_badge",
+        "unlock_next_activity"
+      ],
+      "sampleMilestones": [
+        "I can explain why Muslims say Bismillah.",
+        "I can name the five daily prayers in order.",
+        "I can tell a simple lesson from Prophet Ibrahim عليه السلام.",
+        "I can choose Islamic manners in daily situations.",
+        "I can answer basic questions about Ramadan and Eid.",
+        "I can complete a mixed review quiz.",
+        "I can practice Arabic words using the typing board."
+      ],
+      "badge": {
+        "id": "badge-confident-muslim-kid",
+        "name": "Confident Muslim Kid",
+        "symbol": "🏆",
+        "earnedWhen": "complete_80_percent_level_tasks"
+      },
+      "completionCriteria": {
+        "minimumQuestionsCompleted": 560,
+        "minimumStars": 460,
+        "minimumTopicCoveragePercent": 80,
+        "reviewRequired": true
+      },
+      "nextLevel": "level-5"
+    },
+    {
+      "id": "level-5",
+      "levelNumber": 5,
+      "title": "Islam Champion",
+      "shortTitle": "Champion",
+      "ageRange": "7-8",
+      "symbol": "🏆",
+      "estimatedQuestions": 800,
+      "difficulty": "medium_challenge",
+      "childGoal": "I can answer stronger Islamic questions, complete revision challenges, explain simple ideas, and show good Islamic habits confidently.",
+      "parentGoal": "Help the child become confident, balanced, loving, and consistent in Islamic knowledge and daily practice.",
+      "prerequisite": "level-4",
+      "unlockRule": "unlock_after_level_4_completion_or_parent_unlock",
+      "recommendedDailyTasks": 10,
+      "recommendedDailyMinutes": "15-20",
+      "learningStyle": [
+        "independent_learning",
+        "mixed_question_bank",
+        "scenario_based_choice",
+        "short_explanation",
+        "revision_mastery",
+        "badge_challenges"
+      ],
+      "mainQuestionTypes": [
+        "mcq",
+        "true_false",
+        "fill_blank",
+        "match",
+        "arrange",
+        "short_answer",
+        "scenario_choice",
+        "multi_step_activity",
+        "revision_quiz",
+        "final_challenge"
+      ],
+      "coreSkills": [
+        "answer broad Islamic questions across all topics",
+        "understand basic faith, worship, manners, and daily Islamic life",
+        "recall selected short Surahs and duas",
+        "explain lessons from Prophet Muhammad ﷺ and other Prophets",
+        "apply good manners in realistic child situations",
+        "complete mixed quizzes and final badge challenges",
+        "prepare for the next stage of Islamic learning after age 8"
+      ],
+      "topicDistribution": {
+        "allah_and_iman": 80,
+        "quran_and_short_surahs": 90,
+        "arabic_words_and_reading": 70,
+        "daily_duas_and_adhkar": 85,
+        "prophet_muhammad_and_seerah": 95,
+        "prophets_stories": 95,
+        "salah": 90,
+        "wudu_cleanliness": 55,
+        "manners_and_character": 100,
+        "parents_family_friends": 50,
+        "ramadan_eid_hajj_months": 65,
+        "masjid_jumuah_places": 35,
+        "halal_daily_life": 45,
+        "mixed_revision_challenges": 45
+      },
+      "learningFlow": [
+        "select_challenge",
+        "review_previous_learning",
+        "answer_questions",
+        "complete_game",
+        "complete_practice",
+        "explain_simple_answer",
+        "earn_final_stars",
+        "unlock_badge",
+        "move_to_revision_or_next_topic"
+      ],
+      "sampleMilestones": [
+        "I can answer questions about Allah, Qur’an, salah, duas, manners, and Prophets.",
+        "I can explain the meaning of common Islamic phrases simply.",
+        "I can identify good actions in real-life situations.",
+        "I can complete salah and wudu review tasks.",
+        "I can answer questions about Ramadan, Eid, Hajj, and Jumu‘ah.",
+        "I can complete mixed Islamic review challenges.",
+        "I can earn the Islam Champion badge."
+      ],
+      "badge": {
+        "id": "badge-islam-champion",
+        "name": "Islam Champion",
+        "symbol": "🏆",
+        "earnedWhen": "complete_85_percent_level_tasks"
+      },
+      "completionCriteria": {
+        "minimumQuestionsCompleted": 680,
+        "minimumStars": 560,
+        "minimumTopicCoveragePercent": 85,
+        "reviewRequired": true
+      },
+      "nextLevel": null
+    }
+  ],
+  "parentControls": {
+    "allowParentUnlock": true,
+    "allowResetProgress": true,
+    "allowDailyTaskLimit": true,
+    "allowSoundToggle": true,
+    "allowPrintProgressReport": false
+  },
+  "safetyGuidelines": [
+    "Use loving, age-appropriate Islamic language.",
+    "Avoid sectarian disputes and advanced legal disagreement for ages 3-8.",
+    "Avoid fear-heavy presentation.",
+    "Use verified and respectful Islamic content.",
+    "Keep every task short, clear, and child-friendly.",
+    "Use Arabic text carefully and avoid incorrect transliteration replacing Arabic."
+  ]
+}
