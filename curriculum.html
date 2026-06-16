@@ -1,222 +1,58 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Courses, Lessons, Activities and Games | Al-Hayat Kids Islam</title>
-<meta name="description" content="Interactive course dashboard for Al-Hayat Kids Islam with age filters, level filters, Arabic lessons, practice tasks, activities, and mini games.">
-<link rel="canonical" href="https://YOUR_DOMAIN_HERE/curriculum.html">
-<meta name="robots" content="index, follow">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Courses, Lessons, Activities and Games | Al-Hayat Kids Islam">
-<meta property="og:description" content="Interactive course dashboard for Al-Hayat Kids Islam with age filters, level filters, Arabic lessons, practice tasks, activities, and mini games.">
-<meta property="og:url" content="https://YOUR_DOMAIN_HERE/curriculum.html">
-<meta property="og:site_name" content="Al-Hayat Kids Islam">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Courses, Lessons, Activities and Games | Al-Hayat Kids Islam">
-<meta name="twitter:description" content="Interactive course dashboard for Al-Hayat Kids Islam with age filters, level filters, Arabic lessons, practice tasks, activities, and mini games.">
-<meta name="theme-color" content="#0f766e">
-<meta name="color-scheme" content="light">
-<link rel="stylesheet" href="styles.css?v=7.0">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Al-Hayat Kids Islam","alternateName":"الحیات اسلامی اطفال","url":"https://YOUR_DOMAIN_HERE/","description":"A child-friendly Islamic learning course menu with age filters, level filters, lessons, activities, and mini games for Muslim children aged 3 to 8.","inLanguage":["en","ur"],"educationalLevel":"Early childhood ages 3 to 8"}</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curriculum Dashboard | Al-Hayat Kids Islam</title>
+  <meta name="description" content="Complete level-wise Islamic learning dashboard for children ages 3 to 8.">
+  <link rel="canonical" href="https://drimranhayat.github.io/al-hayat-kids-islam/curriculum-dashboard">
+  <link rel="stylesheet" href="styles.css?v=8">
+  
+<style>
+  :root{--navy:#17324d;--teal:#0f766e;--gold:#c8912b;--cream:#fff8ec;--mint:#eefaf7;--card:#fff;--ink:#243044;--soft:#f7fbfa;--shadow:0 14px 34px rgba(23,50,77,.10)}
+  *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,system-ui,sans-serif;background:radial-gradient(circle at top left,#fff4d8 0,#fff8ec 28%,#eefaf7 100%);color:var(--ink);line-height:1.6}.wrap{max-width:1180px;margin:auto;padding:18px}
+  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e9ddc8}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.brand{font-weight:900;color:var(--navy);font-size:1.28rem;text-decoration:none}.brand span{color:var(--gold)}nav{display:flex;flex-wrap:wrap;gap:6px}nav a{display:inline-block;padding:9px 12px;border-radius:999px;background:#f4efe4;text-decoration:none;color:var(--navy);font-weight:800;font-size:.94rem}nav a:hover{background:#dff7f1;transform:translateY(-1px)}
+  .hero,.ak-hero{background:linear-gradient(135deg,#17324d,#0f766e);color:white;border-radius:30px;padding:32px;margin:22px 0;box-shadow:0 18px 45px rgba(23,50,77,.18);position:relative;overflow:hidden}.hero:after,.ak-hero:after{content:'☪︎';position:absolute;right:28px;top:10px;font-size:8rem;opacity:.08}.hero h1,.ak-hero h1{margin:0 0 8px;font-size:clamp(2rem,5vw,4.2rem);line-height:1.05}.hero p,.ak-hero p{font-size:1.1rem;max-width:800px}.pillbar,.ak-stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.pillbar span,.ak-stats span,.ak-hero button{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:10px 14px;border-radius:999px;color:white;font-weight:900}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}.panel,.card,.ak-filter-panel,.ak-daily,.ak-card,.ak-badge{background:white;border-radius:24px;padding:18px;box-shadow:var(--shadow)}.panel h2,.card h2,.card h3{color:var(--navy);margin-top:0}.shortcut{display:block;text-decoration:none;color:var(--navy);background:white;border-radius:24px;padding:20px;box-shadow:var(--shadow);font-weight:900}.shortcut b{display:block;font-size:1.22rem}.shortcut span{color:#556;font-weight:700}.shortcut:hover{transform:translateY(-3px);background:#fff7e5}
+  .ak-filter-grid{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:12px}.ak-filter-grid label{font-weight:900;color:var(--navy)}select,input,textarea{width:100%;box-sizing:border-box;margin-top:6px;padding:12px;border-radius:14px;border:1px solid #d8dfe4;font-size:1rem;background:white}.ak-quick-buttons button,.ak-options button,.ak-complete,.ak-mini-list button,.btn{cursor:pointer;border:0;border-radius:999px;background:#eaf7f4;color:var(--navy);padding:10px 14px;margin:6px 6px 6px 0;font-weight:900;text-decoration:none;display:inline-block}.ak-quick-buttons button:hover,.ak-options button:hover,.ak-complete:hover,.btn:hover{background:#ffe7b1;transform:translateY(-1px)}
+  .ak-card-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(286px,1fr));gap:16px}.ak-card{border:2px solid transparent}.ak-card.is-done{border-color:#42b883;background:#f3fff7}.ak-card-top{display:flex;justify-content:space-between;gap:8px;font-weight:900;color:#52616f;flex-wrap:wrap}.ak-icon{font-size:1.8rem}.ak-card h3{color:var(--navy);font-size:1.18rem}.ak-arabic{font-size:1.65rem;font-family:serif;text-align:center;background:#fff8ec;border-radius:18px;padding:12px}.ak-explain,.ak-action,.ak-trail{background:#f7fafc;border-radius:16px;padding:10px}.ak-options{display:flex;flex-wrap:wrap}.ak-complete{background:#17324d;color:white;width:100%}.ak-count{font-weight:900;color:var(--navy);margin:18px 0}.ak-more,.ak-error{background:#fff3cd;padding:14px;border-radius:16px}.ak-badge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.ak-badge{text-align:center}.ak-badge div{font-size:3rem}progress{width:100%;height:18px}.practice-tools{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}.tool{background:white;border-radius:24px;padding:18px;box-shadow:var(--shadow)}canvas{width:100%;height:240px;border:3px dashed #cbd5e1;border-radius:18px;background:white}.note{background:#fff8ec;border-left:6px solid var(--gold);padding:16px;border-radius:18px;margin:18px 0}footer{margin-top:30px;background:#17324d;color:white}footer a{color:#ffe7b1}.mini-title{color:var(--teal);font-weight:900;text-transform:uppercase;letter-spacing:.08em}.arabic{font-family:serif;font-size:1.6rem;direction:rtl}.hidden{display:none!important}
+  @media(max-width:760px){.ak-filter-grid,.practice-tools{grid-template-columns:1fr}nav a{font-size:.84rem;padding:8px 10px}.wrap{padding:12px}.hero,.ak-hero{padding:22px;border-radius:24px}.ak-card-list{grid-template-columns:1fr}}
+</style>
+
 </head>
-<body class="premium-v2 learning-first clean-v4">
-<header class="site-header" data-header>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="container header-inner">
-    <a class="brand" href="index.html" aria-label="Al-Hayat Kids Islam home">
-      <span class="brand-mark" aria-hidden="true">☾</span>
-      <span class="brand-text"><strong>Al-Hayat Kids Islam</strong><small lang="ur" dir="rtl">الحیات اسلامی اطفال</small></span>
-    </a>
-    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle><span></span><span></span><span></span></button>
-    <nav class="main-nav" aria-label="Main navigation" data-nav-menu>
-      <a class="nav-link" href="index.html">Home</a>
-      <a class="nav-link active" href="curriculum.html#learning-courses">Courses</a>
-      <a class="nav-link" href="duas.html">Duas</a>
-      <a class="nav-link" href="surahs.html">Surahs</a>
-      <a class="nav-link" href="islamic-manners.html">Manners</a>
-      <a class="nav-link" href="arabic-letters.html">Arabic</a>
-      <a class="nav-link" href="parents-corner.html">Parents</a>
-    </nav>
-  </div>
-</header>
+<body>
+<header><div class="wrap top"><a class="brand" href="index.html">Al-Hayat <span>Kids Islam</span></a><nav>
+      <a href="index.html">Home</a><a href="curriculum.html">Curriculum</a><a href="duas.html">Duas</a><a href="surahs.html">Qur’an</a><a href="prayer-basics.html">Salah</a><a href="arabic-letters.html">Arabic</a><a href="activities/">Activities</a><a href="games/">Games</a><a href="practice/">Practice</a><a href="progress/">Progress</a>
+    </nav></div></header>
+<main class="wrap">
 
-<div class="kid-control-bar" aria-label="Kid learning controls">
-  <div class="container kid-control-inner">
-    <button type="button" class="sound-toggle" data-enable-sound aria-pressed="false">🔊 Enable Fun Sounds</button>
-    <div class="progress-pill" aria-live="polite"><span>⭐ Stars:</span> <strong data-star-counter>0</strong></div>
-    <div class="progress-pill"><span>🏅 Badges:</span> <strong data-badge-counter>0</strong></div>
-    <button type="button" class="sound-toggle small" data-speak="Start learning">🔈 Listen</button>
-  </div>
-</div>
-
-<main id="main">
-<section class="clean-page-hero"><div class="container"><p class="eyebrow">Start learning</p><h1>All courses, lessons, practice, activities, and games</h1><p>Choose a course first. Parent notes and curriculum explanations are lower, so children reach learning quickly.</p></div></section>
-<section class="section dashboard-section" id="learning-courses">
-  <div class="container section-head"><p class="eyebrow">Course dashboard</p><h2>Tap a course button</h2><p>Every course has real learning content under Lesson, Practice, Activity, and Game.</p></div>
-  <div class="container smart-filter-panel" role="region" aria-label="Course filters">
-    <div class="filter-group"><strong>Age</strong><button class="filter-btn active" data-kid-filter="age" data-filter-value="all">All</button><button class="filter-btn" data-kid-filter="age" data-filter-value="3-4">Age 3–4</button><button class="filter-btn" data-kid-filter="age" data-filter-value="5-6">Age 5–6</button><button class="filter-btn" data-kid-filter="age" data-filter-value="7-8">Age 7–8</button></div>
-    <div class="filter-group"><strong>Level</strong><button class="filter-btn active" data-kid-filter="level" data-filter-value="all">All</button><button class="filter-btn" data-kid-filter="level" data-filter-value="1">Look</button><button class="filter-btn" data-kid-filter="level" data-filter-value="2">Practice</button><button class="filter-btn" data-kid-filter="level" data-filter-value="3">Use in Life</button></div>
-  </div>
-  <div class="container kid-course-grid" id="kid-course-grid"><article class="kid-course-card filter-item" data-age="3-4 5-6 7-8" data-level="1 2 3" data-category="duas">
-      <div class="course-top"><span class="course-icon" aria-hidden="true">🤲</span><span class="course-tag">Duas</span></div>
-      <h3>Daily Duas</h3>
-      <p>Learn daily Arabic duas for eating, sleeping, waking, study, parents, and gratitude.</p>
-      <div class="course-meta"><span>Age: 3–8</span><span>Levels: 1, 2, 3</span></div>
-      <div class="course-actions course-actions-4" aria-label="Daily Duas learning links">
-        <a class="lesson-btn" href="duas.html#lesson">📘 Lesson</a>
-        <a class="practice-btn" href="duas.html#practice">✍️ Practice</a>
-        <a class="activity-btn" href="duas.html#activity">🧩 Activity</a>
-        <a class="game-btn" href="duas.html#game">🎮 Game</a>
-      </div>
-    </article>
-<article class="kid-course-card filter-item" data-age="5-6 7-8" data-level="1 2 3" data-category="qur’an">
-      <div class="course-top"><span class="course-icon" aria-hidden="true">📖</span><span class="course-tag">Qur’an</span></div>
-      <h3>Short Surahs</h3>
-      <p>Read respectfully with a parent: Al-Fatihah, Al-Ikhlas, Al-Falaq, An-Nas, Al-Kawthar, and Al-Asr.</p>
-      <div class="course-meta"><span>Age: 5–8</span><span>Levels: 1, 2, 3</span></div>
-      <div class="course-actions course-actions-4" aria-label="Short Surahs learning links">
-        <a class="lesson-btn" href="surahs.html#lesson">📘 Lesson</a>
-        <a class="practice-btn" href="surahs.html#practice">✍️ Practice</a>
-        <a class="activity-btn" href="surahs.html#activity">🧩 Activity</a>
-        <a class="game-btn" href="surahs.html#game">🎮 Game</a>
-      </div>
-    </article>
-<article class="kid-course-card filter-item" data-age="3-4 5-6 7-8" data-level="1 2 3" data-category="akhlaq">
-      <div class="course-top"><span class="course-icon" aria-hidden="true">🌸</span><span class="course-tag">Akhlaq</span></div>
-      <h3>Islamic Manners</h3>
-      <p>Practice Salam, Bismillah, truth, sharing, clean habits, forgiveness, and kind words.</p>
-      <div class="course-meta"><span>Age: 3–8</span><span>Levels: 1, 2, 3</span></div>
-      <div class="course-actions course-actions-4" aria-label="Islamic Manners learning links">
-        <a class="lesson-btn" href="islamic-manners.html#lesson">📘 Lesson</a>
-        <a class="practice-btn" href="islamic-manners.html#practice">✍️ Practice</a>
-        <a class="activity-btn" href="islamic-manners.html#activity">🧩 Activity</a>
-        <a class="game-btn" href="islamic-manners.html#game">🎮 Game</a>
-      </div>
-    </article>
-<article class="kid-course-card filter-item" data-age="5-6 7-8" data-level="1 2 3" data-category="stories">
-      <div class="course-top"><span class="course-icon" aria-hidden="true">⭐</span><span class="course-tag">Stories</span></div>
-      <h3>Prophet Stories</h3>
-      <p>Learn authentic child-friendly lessons from the Prophets without invented details.</p>
-      <div class="course-meta"><span>Age: 5–8</span><span>Levels: 1, 2, 3</span></div>
-      <div class="course-actions course-actions-4" aria-label="Prophet Stories learning links">
-        <a class="lesson-btn" href="prophet-stories.html#lesson">📘 Lesson</a>
-        <a class="practice-btn" href="prophet-stories.html#practice">✍️ Practice</a>
-        <a class="activity-btn" href="prophet-stories.html#activity">🧩 Activity</a>
-        <a class="game-btn" href="prophet-stories.html#game">🎮 Game</a>
-      </div>
-    </article>
-<article class="kid-course-card filter-item" data-age="3-4 5-6 7-8" data-level="1 2" data-category="arabic">
-      <div class="course-top"><span class="course-icon" aria-hidden="true">ا</span><span class="course-tag">Arabic</span></div>
-      <h3>Arabic Letters</h3>
-      <p>Recognize Arabic letters, trace shapes, and connect letters with simple Islamic words.</p>
-      <div class="course-meta"><span>Age: 3–8</span><span>Levels: 1, 2</span></div>
-      <div class="course-actions course-actions-4" aria-label="Arabic Letters learning links">
-        <a class="lesson-btn" href="arabic-letters.html#lesson">📘 Lesson</a>
-        <a class="practice-btn" href="arabic-letters.html#practice">✍️ Practice</a>
-        <a class="activity-btn" href="arabic-letters.html#activity">🧩 Activity</a>
-        <a class="game-btn" href="arabic-letters.html#game">🎮 Game</a>
-      </div>
-    </article>
-<article class="kid-course-card filter-item" data-age="5-6 7-8" data-level="1 2 3" data-category="salah">
-      <div class="course-top"><span class="course-icon" aria-hidden="true">🕌</span><span class="course-tag">Salah</span></div>
-      <h3>Prayer Basics</h3>
-      <p>Learn the five prayers, clean clothes, wudu awareness, Qiblah, and prayer actions.</p>
-      <div class="course-meta"><span>Age: 5–8</span><span>Levels: 1, 2, 3</span></div>
-      <div class="course-actions course-actions-4" aria-label="Prayer Basics learning links">
-        <a class="lesson-btn" href="prayer-basics.html#lesson">📘 Lesson</a>
-        <a class="practice-btn" href="prayer-basics.html#practice">✍️ Practice</a>
-        <a class="activity-btn" href="prayer-basics.html#activity">🧩 Activity</a>
-        <a class="game-btn" href="prayer-basics.html#game">🎮 Game</a>
-      </div>
-    </article>
-<article class="kid-course-card filter-item" data-age="3-4 5-6 7-8" data-level="1 2 3" data-category="seasons">
-      <div class="course-top"><span class="course-icon" aria-hidden="true">🌙</span><span class="course-tag">Seasons</span></div>
-      <h3>Ramadan & Eid</h3>
-      <p>Understand Ramadan, suhoor, iftar, Qur’an, charity, Eid al-Fitr, Eid al-Adha, and Hajj awareness.</p>
-      <div class="course-meta"><span>Age: 3–8</span><span>Levels: 1, 2, 3</span></div>
-      <div class="course-actions course-actions-4" aria-label="Ramadan & Eid learning links">
-        <a class="lesson-btn" href="ramadan-eid.html#lesson">📘 Lesson</a>
-        <a class="practice-btn" href="ramadan-eid.html#practice">✍️ Practice</a>
-        <a class="activity-btn" href="ramadan-eid.html#activity">🧩 Activity</a>
-        <a class="game-btn" href="ramadan-eid.html#game">🎮 Game</a>
-      </div>
-    </article>
-<article class="kid-course-card filter-item" data-age="3-4 5-6 7-8" data-level="1 2 3" data-category="belief">
-      <div class="course-top"><span class="course-icon" aria-hidden="true">☝️</span><span class="course-tag">Belief</span></div>
-      <h3>Allah & Iman</h3>
-      <p>Learn lovingly: Allah made me, Allah is One, gratitude, and simple articles of faith.</p>
-      <div class="course-meta"><span>Age: 3–8</span><span>Levels: 1, 2, 3</span></div>
-      <div class="course-actions course-actions-4" aria-label="Allah & Iman learning links">
-        <a class="lesson-btn" href="curriculum.html#iman-lesson">📘 Lesson</a>
-        <a class="practice-btn" href="curriculum.html#iman-practice">✍️ Practice</a>
-        <a class="activity-btn" href="curriculum.html#iman-activity">🧩 Activity</a>
-        <a class="game-btn" href="curriculum.html#iman-game">🎮 Game</a>
-      </div>
-    </article>
-<article class="kid-course-card filter-item" data-age="3-4 5-6 7-8" data-level="1 2 3" data-category="habits">
-      <div class="course-top"><span class="course-icon" aria-hidden="true">💚</span><span class="course-tag">Habits</span></div>
-      <h3>Good Deeds</h3>
-      <p>Small daily actions: help parents, share toys, care for animals, smile, and avoid waste.</p>
-      <div class="course-meta"><span>Age: 3–8</span><span>Levels: 1, 2, 3</span></div>
-      <div class="course-actions course-actions-4" aria-label="Good Deeds learning links">
-        <a class="lesson-btn" href="curriculum.html#good-deeds-lesson">📘 Lesson</a>
-        <a class="practice-btn" href="curriculum.html#good-deeds-practice">✍️ Practice</a>
-        <a class="activity-btn" href="curriculum.html#good-deeds-activity">🧩 Activity</a>
-        <a class="game-btn" href="curriculum.html#good-deeds-game">🎮 Game</a>
-      </div>
-    </article></div>
+<section class="hero">
+  <p class="mini-title">Structured Islamic learning path</p>
+  <h1>Complete Islamic Curriculum Dashboard</h1>
+  <p>Explore all 3,000 structured short questions and answers by level, topic, activity, game, and practice.</p>
+  <div class="pillbar"><span>❓ 3,000 Q/A</span><span>🌱 Gradual levels</span><span>👆 Child-friendly symbols</span><span>⭐ Stars and badges</span></div>
+</section>
+<section class="grid">
+  <a class="shortcut" href="activities/"><b>🎯 Activities</b><span>Question → task → next card</span></a>
+  <a class="shortcut" href="games/"><b>🎮 Games</b><span>Mini challenges from the same bank</span></a>
+  <a class="shortcut" href="practice/"><b>✍️ Practice</b><span>Whiteboard, typing, tracing</span></a>
+  <a class="shortcut" href="progress/"><b>⭐ Progress</b><span>Completed cards, stars, badges</span></a>
 </section>
 
-<section class="section" id="iman-lesson"><div class="container section-head"><p class="eyebrow">Allah & Iman</p><h2>☝️ Lesson</h2></div><div class="container arabic-card-grid"><article class="arabic-lesson-card"><span class="age-pill">Age 3+</span><div class="arabic-large" lang="ar" dir="rtl">اللهُ رَبِّي</div><h3>Allah is my Lord</h3><p>A loving first belief sentence for young learners.</p></article><article class="arabic-lesson-card"><span class="age-pill">Age 5+</span><div class="arabic-large" lang="ar" dir="rtl">اللهُ أَحَدٌ</div><h3>Allah is One</h3><p>Simple belief in Allah’s Oneness.</p></article><article class="arabic-lesson-card"><span class="age-pill">Age 7+</span><div class="arabic-large" lang="ar" dir="rtl">آمَنْتُ بِاللهِ</div><h3>I believe in Allah</h3><p>A gentle starting point for Iman.</p></article><article class="arabic-lesson-card"><span class="age-pill">Age 7+</span><div class="arabic-large" lang="ar" dir="rtl">الْمَلَائِكَة</div><h3>Angels</h3><p>One of the simple articles of faith for older children.</p></article><article class="arabic-lesson-card"><span class="age-pill">Age 7+</span><div class="arabic-large" lang="ar" dir="rtl">الْكُتُب</div><h3>Books</h3><p>Allah sent guidance through His Books.</p></article><article class="arabic-lesson-card"><span class="age-pill">Age 7+</span><div class="arabic-large" lang="ar" dir="rtl">الرُّسُل</div><h3>Messengers</h3><p>Allah sent noble Messengers.</p></article></div></section>
-<section class="section soft" id="iman-practice"><div class="container section-head"><p class="eyebrow">Practice</p><h2>Tap and remember</h2></div><div class="container practice-board"><button type="button" class="tap-card" data-reveal-text="اللهُ أَحَدٌ"><span>☝️</span><b>Allah is One</b><small>Tap to check</small></button><button type="button" class="tap-card" data-reveal-text="آمَنْتُ بِاللهِ"><span>🤲</span><b>I believe in Allah</b><small>Tap to check</small></button><button type="button" class="tap-card" data-reveal-text="Say: Allah made me and I thank Allah."><span>🌱</span><b>Allah made me</b><small>Tap to check</small></button></div><p class="container practice-result" aria-live="polite"></p></section>
-<section class="section" id="iman-activity"><div class="container section-head"><p class="eyebrow">Activity</p><h2>Use it today</h2></div><div class="container activity-checklist"><label class="check-card"><input type="checkbox" data-check-task><span>Say one Arabic word from this lesson</span></label><label class="check-card"><input type="checkbox" data-check-task><span>Do one real-life action connected to it</span></label><label class="check-card"><input type="checkbox" data-check-task><span>Tell a parent what you learned</span></label></div><div class="container"><button type="button" class="task-btn" data-star-task>⭐ Mark today’s activity done</button><p class="task-result" aria-live="polite"></p></div></section>
-<section class="section soft" id="iman-game"><div class="container mini-game-panel"><div class="course-top"><span class="course-icon" aria-hidden="true">🎮</span><span class="course-tag">Mini Game</span></div><h2>Which Arabic phrase means Allah is One?</h2><div class="choice-game"><button type="button" class="choice-btn" data-correct="true">اللهُ أَحَدٌ</button><button type="button" class="choice-btn" data-correct="false">الصَّدَقَةُ</button><button type="button" class="choice-btn" data-correct="false">الفجر</button></div><p class="game-result" aria-live="polite"></p></div></section>
-
-
-<section class="section" id="good-deeds-lesson"><div class="container section-head"><p class="eyebrow">Good Deeds</p><h2>💚 Lesson</h2></div><div class="container arabic-card-grid"><article class="arabic-lesson-card"><span class="age-pill">Age 3+</span><div class="arabic-large" lang="ar" dir="rtl">بِرُّ الْوَالِدَيْنِ</div><h3>Kindness to parents</h3><p>Help, listen, and speak gently.</p></article><article class="arabic-lesson-card"><span class="age-pill">Age 4+</span><div class="arabic-large" lang="ar" dir="rtl">الصِّدْقُ</div><h3>Truthfulness</h3><p>Tell the truth.</p></article><article class="arabic-lesson-card"><span class="age-pill">Age 3+</span><div class="arabic-large" lang="ar" dir="rtl">الرِّفْقُ</div><h3>Gentleness</h3><p>Be gentle with people and animals.</p></article><article class="arabic-lesson-card"><span class="age-pill">Age 3+</span><div class="arabic-large" lang="ar" dir="rtl">النَّظَافَةُ</div><h3>Cleanliness</h3><p>Keep body, clothes, and place clean.</p></article><article class="arabic-lesson-card"><span class="age-pill">Age 5+</span><div class="arabic-large" lang="ar" dir="rtl">الشُّكْرُ</div><h3>Gratitude</h3><p>Thank Allah and thank people.</p></article><article class="arabic-lesson-card"><span class="age-pill">Age 5+</span><div class="arabic-large" lang="ar" dir="rtl">الصَّدَقَةُ</div><h3>Charity</h3><p>Give and help with a parent.</p></article></div></section>
-<section class="section soft" id="good-deeds-practice"><div class="container section-head"><p class="eyebrow">Practice</p><h2>Tap and remember</h2></div><div class="container practice-board"><button type="button" class="tap-card" data-reveal-text="بِرُّ الْوَالِدَيْنِ"><span>👨‍👩‍👧</span><b>Help parents</b><small>Tap to check</small></button><button type="button" class="tap-card" data-reveal-text="الصِّدْقُ"><span>🌟</span><b>Tell the truth</b><small>Tap to check</small></button><button type="button" class="tap-card" data-reveal-text="النَّظَافَةُ"><span>💧</span><b>Keep clean</b><small>Tap to check</small></button></div><p class="container practice-result" aria-live="polite"></p></section>
-<section class="section" id="good-deeds-activity"><div class="container section-head"><p class="eyebrow">Activity</p><h2>Use it today</h2></div><div class="container activity-checklist"><label class="check-card"><input type="checkbox" data-check-task><span>Say one Arabic word from this lesson</span></label><label class="check-card"><input type="checkbox" data-check-task><span>Do one real-life action connected to it</span></label><label class="check-card"><input type="checkbox" data-check-task><span>Tell a parent what you learned</span></label></div><div class="container"><button type="button" class="task-btn" data-star-task>⭐ Mark today’s activity done</button><p class="task-result" aria-live="polite"></p></div></section>
-<section class="section soft" id="good-deeds-game"><div class="container mini-game-panel"><div class="course-top"><span class="course-icon" aria-hidden="true">🎮</span><span class="course-tag">Mini Game</span></div><h2>Which is a good deed?</h2><div class="choice-game"><button type="button" class="choice-btn" data-correct="true">Help parents kindly</button><button type="button" class="choice-btn" data-correct="false">Waste water</button><button type="button" class="choice-btn" data-correct="false">Speak rudely</button></div><p class="game-result" aria-live="polite"></p></div></section>
-
-<section class="section parent-notes-lower soft"><div class="container accordion-grid"><details class="parent-detail"><summary>Curriculum note for parents</summary><p>The learning dashboard is for children. Detailed sequencing, safety, and parent guidance can stay lower on the site so children are not blocked by reading-heavy introductions.</p></details><details class="parent-detail"><summary>Authenticity rule</summary><p>No fabricated Qur’an, Hadith, duas, or Prophet story details should be published. Arabic text should be reviewed before final app release.</p></details></div></section>
-
-<section class="section complete-content-map-v7" id="complete-content-map-v7">
-  <div class="container section-head"><p class="eyebrow">Complete content map</p><h2>More learning tracks for ages 3–8</h2><p>Each track can grow into lessons, practice, activity, mini game, whiteboard, typing board, stars, and badges.</p></div>
-  <div class="container content-map-grid">
-    <a href="curriculum.html#iman-lesson" data-age="3-4 5-6 7-8" data-level="1 2 3"><span>☝️</span><b>Allah & Iman</b><small>Allah made me • Allah is One • gratitude</small></a>
-    <a href="duas.html#lesson" data-age="3-4 5-6 7-8" data-level="1 2 3"><span>🤲</span><b>Daily Duas</b><small>Food • sleep • study • parents</small></a>
-    <a href="surahs.html#lesson" data-age="5-6 7-8" data-level="1 2 3"><span>📖</span><b>Short Surahs</b><small>Al-Fatihah • Ikhlas • Falaq • Nas</small></a>
-    <a href="islamic-manners.html#lesson" data-age="3-4 5-6 7-8" data-level="1 2 3"><span>🌸</span><b>Akhlaq</b><small>Salam • truth • sharing • kindness</small></a>
-    <a href="prophet-stories.html#lesson" data-age="5-6 7-8" data-level="1 2 3"><span>⭐</span><b>Prophet Stories</b><small>Adam • Nuh • Ibrahim • Musa • Muhammad ﷺ</small></a>
-    <a href="arabic-letters.html#lesson" data-age="3-4 5-6 7-8" data-level="1 2"><span>ا</span><b>Arabic Letters</b><small>Recognize • trace • match</small></a>
-    <a href="prayer-basics.html#lesson" data-age="5-6 7-8" data-level="1 2 3"><span>🕌</span><b>Salah Basics</b><small>Five prayers • clean clothes • wudu awareness</small></a>
-    <a href="ramadan-eid.html#lesson" data-age="3-4 5-6 7-8" data-level="1 2 3"><span>🌙</span><b>Ramadan & Eid</b><small>Good deeds • charity • Eid • Hajj awareness</small></a>
-    <a href="curriculum.html#good-deeds-lesson" data-age="3-4 5-6 7-8" data-level="1 2 3"><span>💚</span><b>Good Deeds</b><small>Help parents • share • care for animals</small></a>
-    <a href="curriculum.html#family" data-age="3-4 5-6 7-8" data-level="1 2 3"><span>👨‍👩‍👧</span><b>Family & Parents</b><small>Love • respect • helpful habits</small></a>
-    <a href="curriculum.html#masjid" data-age="5-6 7-8" data-level="1 2 3"><span>🧎</span><b>Masjid Manners</b><small>Clean • quiet • respectful</small></a>
-    <a href="curriculum.html#quiz" data-age="5-6 7-8" data-level="2 3"><span>❓</span><b>Islamic Quiz</b><small>Visual questions • stars • badges</small></a>
-  </div>
-</section>
+<div id="alhayat-bank-app" data-bank-page="curriculum" data-title="Complete Islamic Curriculum Dashboard" data-description="Explore all 3,000 structured short questions and answers by level, topic, activity, game, and practice."></div>
 
 </main>
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <section>
-      <h2>Al-Hayat Kids Islam</h2>
-      <p lang="ur" dir="rtl" class="urdu-name">الحیات اسلامی اطفال</p>
-      <p>Safe Islamic learning for young Muslim children. A parent-guided, optional-sound learning version for Muslim children aged 3–8.</p>
-    </section>
-    <section>
-      <h2>Explore Learning</h2>
-      <div class="footer-links"><a href="curriculum.html">Start Learning</a><a href="duas.html">Daily Duas</a><a href="surahs.html">Short Surahs</a><a href="islamic-manners.html">Manners</a><a href="prophet-stories.html">Prophet Stories</a><a href="arabic-letters.html">Arabic Letters</a><a href="prayer-basics.html">Salah Basics</a><a href="ramadan-eid.html">Ramadan & Eid</a><a href="parents-corner.html">Parents</a><a href="safety-privacy.html">Safety</a></div>
-    </section>
-    <section>
-      <h2>Safety Promise</h2>
-      <p>No ads, no login, no tracking scripts, no child chat, no microphone, no camera, and no unsafe external media. Optional sounds are generated locally in the browser.</p>
-    </section>
-  </div>
-  <div class="container footer-bottom"><span>© <span data-year></span> Al-Hayat Kids Islam. All rights reserved.</span><a href="privacy-policy.html">Privacy Policy</a></div>
-</footer>
-<button class="back-to-top" type="button" aria-label="Back to top" data-back-to-top>↑</button>
-<script src="script.js?v=7.0" defer></script>
+<footer><div class="wrap"><strong>Al-Hayat Kids Islam</strong><p>Safe, parent-guided Islamic learning for children ages 3–8. No child chat, no login, no ads, and no tracking scripts.</p><p><a href="safety-privacy.html">Safety</a> · <a href="privacy-policy.html">Privacy</a> · <a href="contact.html">Contact</a></p></div></footer>
+
+  <script src="assets/js/sound-engine.js"></script>
+  <script src="assets/js/progress-engine.js"></script>
+  <script src="assets/js/reward-engine.js"></script>
+  <script src="assets/js/filter-engine.js"></script>
+  <script src="assets/js/learning-path.js"></script>
+  <script src="assets/js/whiteboard.js"></script>
+  <script src="assets/js/typing-board.js"></script>
+  <script src="assets/js/question-bank.js"></script>
+
+<script src="script.js?v=8"></script>
+</body>
+</html>
