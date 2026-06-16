@@ -1,257 +1,369 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Al-Hayat Kids Islam — Rich Interactive Kids Learning Dashboard</title>
-<meta name="description" content="A child-first Islamic learning dashboard for ages 3 to 8 with Arabic words, visual lessons, practice tasks, activities, and mini games.">
-<link rel="canonical" href="https://YOUR_DOMAIN_HERE/">
-<meta name="robots" content="index, follow">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Al-Hayat Kids Islam — Rich Interactive Kids Learning Dashboard">
-<meta property="og:description" content="A child-first Islamic learning dashboard for ages 3 to 8 with Arabic words, visual lessons, practice tasks, activities, and mini games.">
-<meta property="og:url" content="https://YOUR_DOMAIN_HERE/">
-<meta property="og:site_name" content="Al-Hayat Kids Islam">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Al-Hayat Kids Islam — Rich Interactive Kids Learning Dashboard">
-<meta name="twitter:description" content="A child-first Islamic learning dashboard for ages 3 to 8 with Arabic words, visual lessons, practice tasks, activities, and mini games.">
-<meta name="theme-color" content="#0f766e">
-<meta name="color-scheme" content="light">
-<link rel="stylesheet" href="styles.css?v=7.0">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Al-Hayat Kids Islam","alternateName":"الحیات اسلامی اطفال","url":"https://YOUR_DOMAIN_HERE/","description":"A clean child-first Islamic learning dashboard for Muslim children aged 3 to 8 with visual courses, age and level filters, lessons, activities, and mini games.","inLanguage":["en","ur"],"educationalLevel":"Early childhood ages 3 to 8"}</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Al-Hayat Kids Islam | Islamic Learning for Children Ages 3–8</title>
+  <meta name="description" content="Al-Hayat Kids Islam is a safe, structured Islamic learning dashboard for children ages 3–8 with 3,000 short questions, activities, games, practice, stars, badges, and parent guidance." />
+  <meta name="keywords" content="Islam for kids, Islamic learning for children, kids duas, short surahs for kids, Islamic manners, Salah for kids, Arabic letters for kids, Muslim children learning" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Al-Hayat Kids Islam" />
+  <meta property="og:description" content="Structured Islamic learning for children ages 3–8: questions, activities, practice, games, stars, badges, and gradual learning paths." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0f766e" />
+  <link rel="canonical" href="https://drimranhayat.github.io/al-hayat-kids-islam/" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root{
+      --navy:#17324d;
+      --teal:#0f766e;
+      --gold:#c8912b;
+      --cream:#fff8ec;
+      --mint:#e8fbf5;
+      --rose:#fff0f3;
+      --sky:#eef7ff;
+      --card:#ffffff;
+      --ink:#243044;
+      --muted:#5d6b7a;
+      --line:#e7dcc9;
+      --shadow:0 18px 45px rgba(23,50,77,.13);
+      --radius:26px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial,system-ui,-apple-system,"Segoe UI",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left,rgba(200,145,43,.18),transparent 28rem),
+        radial-gradient(circle at top right,rgba(15,118,110,.14),transparent 25rem),
+        linear-gradient(180deg,#fff8ec 0%,#f6fffc 48%,#eef7ff 100%);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .skip-link{position:absolute;left:-999px;top:8px;background:var(--navy);color:#fff;padding:10px 14px;border-radius:12px;z-index:20}
+    .skip-link:focus{left:12px}
+    .wrap{max-width:1180px;margin:auto;padding:18px}
+    .site-header{
+      position:sticky;top:0;z-index:15;
+      background:rgba(255,255,255,.9);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(231,220,201,.9);
+    }
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:950;color:var(--navy);font-size:1.15rem}
+    .brand-mark{display:grid;place-items:center;width:46px;height:46px;border-radius:18px;background:linear-gradient(135deg,var(--navy),var(--teal));color:#fff;box-shadow:0 8px 20px rgba(15,118,110,.25)}
+    .brand small{display:block;color:var(--gold);font-weight:850;font-size:.82rem;line-height:1.1}
+    .brand-ar{font-family:Georgia,serif;font-size:.95rem;color:var(--teal);font-weight:900}
+    .main-nav{display:flex;gap:6px;flex-wrap:wrap;align-items:center;justify-content:flex-end}
+    .main-nav a,.sound-toggle{
+      text-decoration:none;border:0;cursor:pointer;
+      padding:10px 12px;border-radius:999px;
+      background:#f5efe4;color:var(--navy);font-weight:850;font-size:.94rem;
+      transition:.18s ease;
+    }
+    .main-nav a:hover,.sound-toggle:hover{background:#dff7f1;transform:translateY(-1px)}
+    .sound-toggle{background:#17324d;color:#fff}
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center;padding:34px 0 18px}
+    .hero-card{
+      background:linear-gradient(135deg,#17324d,#0f766e);
+      color:#fff;border-radius:36px;padding:34px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+    }
+    .hero-card:after{content:"";position:absolute;right:-80px;top:-80px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.12)}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 12px;font-weight:900}
+    h1{font-size:clamp(2.25rem,6vw,5rem);line-height:1;margin:16px 0 14px;letter-spacing:-.04em}
+    h2{color:var(--navy);font-size:clamp(1.55rem,3vw,2.45rem);line-height:1.12;margin:0 0 12px}
+    h3{color:var(--navy);line-height:1.2;margin:0 0 8px}
+    .hero-card p{font-size:1.1rem;max-width:760px;margin:0 0 20px;color:#eefdf9}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;border:0;cursor:pointer;border-radius:999px;padding:12px 16px;font-weight:950;transition:.18s ease}
+    .btn-primary{background:#fff;color:var(--navy)}
+    .btn-secondary{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.3)}
+    .btn-gold{background:#ffe4a6;color:#4c3607}
+    .btn:hover{transform:translateY(-2px);filter:brightness(1.03)}
+    .hero-side{display:grid;gap:14px}
+    .stat-panel,.quick-card,.promise-card,.section-card{
+      background:rgba(255,255,255,.9);border:1px solid rgba(231,220,201,.95);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)
+    }
+    .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .stat{background:linear-gradient(180deg,#fff,#f7fffc);border-radius:22px;padding:16px;text-align:center;border:1px solid #e6f0eb}
+    .stat strong{display:block;font-size:1.8rem;color:var(--teal);line-height:1}
+    .stat span{font-weight:850;color:var(--navy);font-size:.92rem}
+    .symbol-strip{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .symbol-strip span{background:#fff7df;border:1px solid #f2daa4;border-radius:999px;padding:7px 10px;font-weight:900}
+    .section{padding:30px 0}
+    .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+    .section-head p{max-width:760px;color:var(--muted);margin:0;font-weight:650}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+    .learning-card{position:relative;overflow:hidden;background:#fff;border:1px solid #e7dcc9;border-radius:26px;padding:20px;box-shadow:0 14px 34px rgba(23,50,77,.09);min-height:190px}
+    .learning-card .icon{font-size:2.4rem;display:inline-grid;place-items:center;width:60px;height:60px;border-radius:22px;background:#f2fffb;margin-bottom:12px}
+    .learning-card p{color:var(--muted);font-weight:650;margin:0 0 14px}
+    .card-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+    .mini-link{display:inline-flex;text-decoration:none;background:#f4efe4;border-radius:999px;padding:8px 10px;font-weight:900;color:var(--navy);font-size:.9rem}
+    .mini-link:hover{background:#dff7f1}
+    .path{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;counter-reset:path}
+    .step{background:#fff;border:1px solid #e6ede9;border-radius:24px;padding:18px;box-shadow:0 10px 26px rgba(0,0,0,.05)}
+    .step:before{counter-increment:path;content:counter(path);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;font-weight:950;margin-bottom:10px}
+    .filter-preview{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+    .filter-pill{background:#fff;border:1px solid #e7dcc9;border-radius:22px;padding:16px;font-weight:900;color:var(--navy)}
+    .filter-pill small{display:block;color:var(--muted);font-weight:700;margin-top:4px}
+    .dashboard-shell{background:#fff;border:1px solid #e7dcc9;border-radius:34px;padding:18px;box-shadow:var(--shadow)}
+    .dashboard-note{padding:18px;border-radius:24px;background:linear-gradient(135deg,#fff6dd,#eafff7);margin-bottom:12px}
+    .dashboard-note p{margin:0;color:var(--muted);font-weight:700}
+    .ak-hero{background:linear-gradient(135deg,#17324d,#0f766e);color:white;border-radius:28px;padding:28px;margin:18px 0;box-shadow:0 16px 40px rgba(23,50,77,.18)}
+    .ak-hero h1{margin:0 0 8px;font-size:clamp(2rem,5vw,4rem)}
+    .ak-hero p{font-size:1.05rem;max-width:820px}
+    .ak-stats{display:flex;gap:10px;flex-wrap:wrap}
+    .ak-stats span,.ak-hero button{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:10px 14px;border-radius:999px;color:white;font-weight:850}
+    .ak-filter-panel{background:#fff;border-radius:24px;padding:18px;margin:18px 0;box-shadow:0 12px 30px rgba(0,0,0,.07)}
+    .ak-filter-grid{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:12px}
+    .ak-filter-grid label{font-weight:850;color:var(--navy)}
+    select,input{width:100%;box-sizing:border-box;margin-top:6px;padding:12px;border-radius:14px;border:1px solid #ddd;font-size:1rem}
+    .ak-quick-buttons button,.ak-options button,.ak-complete,.ak-mini-list button{cursor:pointer;border:0;border-radius:999px;background:#eaf7f4;color:var(--navy);padding:10px 14px;margin:6px;font-weight:850}
+    .ak-quick-buttons button:hover,.ak-options button:hover,.ak-complete:hover{background:#ffe7b1}
+    .ak-card-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+    .ak-card{background:#fff;border-radius:24px;padding:18px;box-shadow:0 14px 34px rgba(0,0,0,.08);border:2px solid transparent}
+    .ak-card.is-done{border-color:#42b883;background:#f3fff7}
+    .ak-card-top{display:flex;justify-content:space-between;gap:8px;font-weight:850;color:#557}
+    .ak-icon{font-size:1.8rem}.ak-card h3{font-size:1.15rem}.ak-arabic{font-size:1.8rem;font-family:Georgia,serif;text-align:center;background:#fff8ec;border-radius:18px;padding:12px}.ak-explain,.ak-action{background:#f7fafc;border-radius:16px;padding:10px}.ak-complete{background:#17324d;color:white;width:100%}.ak-count{font-weight:950;color:var(--navy);margin:18px 0}.ak-more,.ak-error{background:#fff3cd;padding:14px;border-radius:16px}.ak-daily{background:#fff;border-radius:22px;padding:16px;margin:18px 0}
+    .footer{background:#17324d;color:#eefdf9;margin-top:40px}.footer .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}.footer a{color:#fff;text-decoration:none;font-weight:850}.footer-links{display:flex;gap:8px;flex-wrap:wrap}.footer-links a{background:rgba(255,255,255,.12);padding:8px 10px;border-radius:999px}
+    .back-top{position:fixed;right:16px;bottom:16px;width:46px;height:46px;border-radius:50%;border:0;background:var(--navy);color:#fff;font-size:1.3rem;box-shadow:0 10px 28px rgba(0,0,0,.2);cursor:pointer}
+    @media(max-width:860px){.hero{grid-template-columns:1fr}.ak-filter-grid{grid-template-columns:1fr}.footer .wrap{grid-template-columns:1fr}.main-nav{justify-content:flex-start}.hero-card{padding:24px}.stats{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){.wrap{padding:12px}.main-nav a,.sound-toggle{font-size:.86rem;padding:8px 10px}.stats{grid-template-columns:1fr}.hero-actions .btn{width:100%}}
+  </style>
 </head>
-<body class="premium-v2 learning-first clean-v4">
-<header class="site-header" data-header>
+<body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="container header-inner">
-    <a class="brand" href="index.html" aria-label="Al-Hayat Kids Islam home">
-      <span class="brand-mark" aria-hidden="true">☾</span>
-      <span class="brand-text"><strong>Al-Hayat Kids Islam</strong><small lang="ur" dir="rtl">الحیات اسلامی اطفال</small></span>
-    </a>
-    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle><span></span><span></span><span></span></button>
-    <nav class="main-nav" aria-label="Main navigation" data-nav-menu>
-      <a class="nav-link active" href="index.html">Home</a>
-      <a class="nav-link" href="curriculum.html#learning-courses">Courses</a>
-      <a class="nav-link" href="duas.html">Duas</a>
-      <a class="nav-link" href="surahs.html">Surahs</a>
-      <a class="nav-link" href="islamic-manners.html">Manners</a>
-      <a class="nav-link" href="arabic-letters.html">Arabic</a>
-      <a class="nav-link" href="parents-corner.html">Parents</a>
-    </nav>
-  </div>
-</header>
 
-<div class="kid-control-bar" aria-label="Kid learning controls">
-  <div class="container kid-control-inner">
-    <button type="button" class="sound-toggle" data-enable-sound aria-pressed="false">🔊 Enable Fun Sounds</button>
-    <div class="progress-pill" aria-live="polite"><span>⭐ Stars:</span> <strong data-star-counter>0</strong></div>
-    <div class="progress-pill"><span>🏅 Badges:</span> <strong data-badge-counter>0</strong></div>
-    <button type="button" class="sound-toggle small" data-speak="Start learning">🔈 Listen</button>
-  </div>
-</div>
-
-<main id="main">
-<section class="clean-hero decorative-section compact-hero">
-  <div class="container clean-hero-grid">
-    <div class="clean-hero-copy">
-      <p class="eyebrow">Start learning • Age 3–8</p>
-      <h1>Pick a course. Tap a task. Learn Islam with joy.</h1>
-      <p class="hero-tagline">A child-first Islamic learning dashboard with Arabic words, visual lessons, whiteboards, typing boards, practice tasks, activities, mini games, stars, and badges.</p>
-      <div class="big-start-actions clean-actions">
-        <a class="btn btn-primary" href="#learning-dashboard">🚀 Start Learning</a>
-        <a class="btn btn-soft" href="curriculum.html#learning-courses">🧩 All Courses</a>
-        <a class="btn btn-outline" href="parents-corner.html">👨‍👩‍👧 Parent Guide</a>
-      </div>
-      <div class="mini-trust-row"><span>No ads</span><span>No login</span><span>No tracking</span><span>Optional fun sounds</span><span>English word voice</span></div>
+  <header class="site-header">
+    <div class="wrap topbar">
+      <a class="brand" href="index.html" aria-label="Al-Hayat Kids Islam Home">
+        <span class="brand-mark">☾</span>
+        <span>Al-Hayat Kids Islam <small class="brand-ar">الحیات اسلامی اطفال</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="curriculum.html">Curriculum</a>
+        <a href="activities/">Activities</a>
+        <a href="games/">Games</a>
+        <a href="practice/">Practice</a>
+        <a href="progress/">Progress</a>
+        <a href="badges/">Badges</a>
+        <a href="parents/">Parents</a>
+        <button class="sound-toggle" type="button" data-sound-toggle>🔊 Sounds</button>
+      </nav>
     </div>
-    <aside class="start-card today-card" aria-label="Today learning path">
-      <h2>Today’s Learning Path</h2>
-      <p class="daily-hint">Auto-updates every day from the full curriculum.</p>
-      <div data-daily-path>
-        <a class="today-task" href="duas.html#lesson"><span>🤲</span><b>Learn a Dua</b><small lang="ar" dir="rtl">بِسْمِ اللهِ</small></a>
-      </div>
-    </aside>
-  </div>
-</section>
+  </header>
 
-<section class="learning-shortcuts" aria-label="Quick learning menu">
-  <div class="container">
-    <p class="shortcut-label">Choose what you want to learn</p>
-    <div class="shortcut-grid">
-      <a href="duas.html#lesson"><span>🤲</span><b>Daily Duas</b><small lang="ar" dir="rtl">بِسْمِ اللهِ</small></a>
-      <a href="surahs.html#lesson"><span>📖</span><b>Short Surahs</b><small lang="ar" dir="rtl">الفاتحة • الإخلاص</small></a>
-      <a href="islamic-manners.html#lesson"><span>🌸</span><b>Manners</b><small lang="ar" dir="rtl">السَّلَامُ عَلَيْكُمْ</small></a>
-      <a href="prophet-stories.html#lesson"><span>⭐</span><b>Prophets</b><small lang="ar" dir="rtl">آدم • نوح • إبراهيم</small></a>
-      <a href="arabic-letters.html#lesson"><span>ا</span><b>Arabic Letters</b><small lang="ar" dir="rtl">ا ب ت ث</small></a>
-      <a href="prayer-basics.html#lesson"><span>🕌</span><b>Salah Basics</b><small lang="ar" dir="rtl">الفجر • الظهر</small></a>
-      <a href="ramadan-eid.html#lesson"><span>🌙</span><b>Ramadan & Eid</b><small lang="ar" dir="rtl">رَمَضَان • عِيد</small></a>
-      <a href="curriculum.html#learning-courses"><span>🧩</span><b>All Courses</b><small>Age + level</small></a>
-    </div>
-  </div>
-</section>
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-card">
+        <span class="eyebrow">🌱 Start learning • Ages 3–8</span>
+        <h1 id="hero-title">Learn Islam with joy, symbols, stars, and daily practice.</h1>
+        <p>A safe child-first Islamic learning dashboard with 3,000 short questions, Arabic words, duas, Surahs, manners, Salah, Prophet stories, activities, mini games, whiteboard practice, typing board practice, stars, badges, and parent guidance.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#learning-bank">🚀 Start Today</a>
+          <a class="btn btn-secondary" href="activities/">🎯 Activities</a>
+          <a class="btn btn-secondary" href="games/">🎮 Games</a>
+          <a class="btn btn-gold" href="parents/">👨‍👩‍👧 Parent Guide</a>
+        </div>
+        <div class="symbol-strip" aria-label="Learning symbols">
+          <span>🌱 New</span><span>👆 Tap</span><span>✍️ Practice</span><span>🎮 Game</span><span>⭐ Star</span><span>🏆 Badge</span><span>🔓 Next</span>
+        </div>
+      </div>
 
-<section class="section progress-section soft" id="my-progress">
-  <div class="container progress-dashboard" data-progress-dashboard>
-    <div>
-      <p class="eyebrow">My learning track</p>
-      <h2>Stars, badges, and next steps</h2>
-      <p>Complete lessons, practices, activities, whiteboards, typing boards, and mini games. Your progress stays only in this browser.</p>
-    </div>
-    <div class="progress-big-card">
-      <span class="big-star">⭐</span>
-      <strong data-star-counter>0</strong>
-      <small>Learning stars</small>
-    </div>
-    <div class="badge-shelf" data-badge-shelf aria-live="polite"></div>
-  </div>
-</section>
-
-<section class="section dashboard-section" id="learning-dashboard">
-  <div class="container section-head learning-head">
-    <p class="eyebrow">Learning dashboard</p>
-    <h2>Choose age, level, then a course</h2>
-    <p class="small-reading">The child sees big symbols and simple buttons. Parent notes are lower on the page, so the first view stays playful and active.</p>
-  </div>
-  <div class="container smart-filter-panel" role="region" aria-label="Course filters">
-    <div class="filter-group"><strong>Age</strong><button class="filter-btn active" data-kid-filter="age" data-filter-value="all">All</button><button class="filter-btn" data-kid-filter="age" data-filter-value="3-4">Age 3–4</button><button class="filter-btn" data-kid-filter="age" data-filter-value="5-6">Age 5–6</button><button class="filter-btn" data-kid-filter="age" data-filter-value="7-8">Age 7–8</button></div>
-    <div class="filter-group"><strong>Level</strong><button class="filter-btn active" data-kid-filter="level" data-filter-value="all">All</button><button class="filter-btn" data-kid-filter="level" data-filter-value="1">Look</button><button class="filter-btn" data-kid-filter="level" data-filter-value="2">Practice</button><button class="filter-btn" data-kid-filter="level" data-filter-value="3">Use in Life</button></div>
-  </div>
-  <div class="container kid-course-grid" id="kid-course-grid">
-    <article class="kid-course-card filter-item" data-age="3-4 5-6 7-8" data-level="1 2 3" data-category="duas">
-      <div class="course-top"><span class="course-icon" aria-hidden="true">🤲</span><span class="course-tag">Duas</span></div>
-      <h3>Daily Duas</h3>
-      <p>Learn daily Arabic duas for eating, sleeping, waking, study, parents, and gratitude.</p>
-      <div class="course-meta"><span>Age: 3–8</span><span>Levels: 1, 2, 3</span></div>
-      <div class="course-actions course-actions-4" aria-label="Daily Duas learning links">
-        <a class="lesson-btn" href="duas.html#lesson">📘 Lesson</a>
-        <a class="practice-btn" href="duas.html#practice">✍️ Practice</a>
-        <a class="activity-btn" href="duas.html#activity">🧩 Activity</a>
-        <a class="game-btn" href="duas.html#game">🎮 Game</a>
-      </div>
-    </article>
-<article class="kid-course-card filter-item" data-age="5-6 7-8" data-level="1 2 3" data-category="qur’an">
-      <div class="course-top"><span class="course-icon" aria-hidden="true">📖</span><span class="course-tag">Qur’an</span></div>
-      <h3>Short Surahs</h3>
-      <p>Read respectfully with a parent: Al-Fatihah, Al-Ikhlas, Al-Falaq, An-Nas, Al-Kawthar, and Al-Asr.</p>
-      <div class="course-meta"><span>Age: 5–8</span><span>Levels: 1, 2, 3</span></div>
-      <div class="course-actions course-actions-4" aria-label="Short Surahs learning links">
-        <a class="lesson-btn" href="surahs.html#lesson">📘 Lesson</a>
-        <a class="practice-btn" href="surahs.html#practice">✍️ Practice</a>
-        <a class="activity-btn" href="surahs.html#activity">🧩 Activity</a>
-        <a class="game-btn" href="surahs.html#game">🎮 Game</a>
-      </div>
-    </article>
-<article class="kid-course-card filter-item" data-age="3-4 5-6 7-8" data-level="1 2 3" data-category="akhlaq">
-      <div class="course-top"><span class="course-icon" aria-hidden="true">🌸</span><span class="course-tag">Akhlaq</span></div>
-      <h3>Islamic Manners</h3>
-      <p>Practice Salam, Bismillah, truth, sharing, clean habits, forgiveness, and kind words.</p>
-      <div class="course-meta"><span>Age: 3–8</span><span>Levels: 1, 2, 3</span></div>
-      <div class="course-actions course-actions-4" aria-label="Islamic Manners learning links">
-        <a class="lesson-btn" href="islamic-manners.html#lesson">📘 Lesson</a>
-        <a class="practice-btn" href="islamic-manners.html#practice">✍️ Practice</a>
-        <a class="activity-btn" href="islamic-manners.html#activity">🧩 Activity</a>
-        <a class="game-btn" href="islamic-manners.html#game">🎮 Game</a>
-      </div>
-    </article>
-<article class="kid-course-card filter-item" data-age="5-6 7-8" data-level="1 2 3" data-category="stories">
-      <div class="course-top"><span class="course-icon" aria-hidden="true">⭐</span><span class="course-tag">Stories</span></div>
-      <h3>Prophet Stories</h3>
-      <p>Learn authentic child-friendly lessons from the Prophets without invented details.</p>
-      <div class="course-meta"><span>Age: 5–8</span><span>Levels: 1, 2, 3</span></div>
-      <div class="course-actions course-actions-4" aria-label="Prophet Stories learning links">
-        <a class="lesson-btn" href="prophet-stories.html#lesson">📘 Lesson</a>
-        <a class="practice-btn" href="prophet-stories.html#practice">✍️ Practice</a>
-        <a class="activity-btn" href="prophet-stories.html#activity">🧩 Activity</a>
-        <a class="game-btn" href="prophet-stories.html#game">🎮 Game</a>
-      </div>
-    </article>
-<article class="kid-course-card filter-item" data-age="3-4 5-6 7-8" data-level="1 2" data-category="arabic">
-      <div class="course-top"><span class="course-icon" aria-hidden="true">ا</span><span class="course-tag">Arabic</span></div>
-      <h3>Arabic Letters</h3>
-      <p>Recognize Arabic letters, trace shapes, and connect letters with simple Islamic words.</p>
-      <div class="course-meta"><span>Age: 3–8</span><span>Levels: 1, 2</span></div>
-      <div class="course-actions course-actions-4" aria-label="Arabic Letters learning links">
-        <a class="lesson-btn" href="arabic-letters.html#lesson">📘 Lesson</a>
-        <a class="practice-btn" href="arabic-letters.html#practice">✍️ Practice</a>
-        <a class="activity-btn" href="arabic-letters.html#activity">🧩 Activity</a>
-        <a class="game-btn" href="arabic-letters.html#game">🎮 Game</a>
-      </div>
-    </article>
-<article class="kid-course-card filter-item" data-age="5-6 7-8" data-level="1 2 3" data-category="salah">
-      <div class="course-top"><span class="course-icon" aria-hidden="true">🕌</span><span class="course-tag">Salah</span></div>
-      <h3>Prayer Basics</h3>
-      <p>Learn the five prayers, clean clothes, wudu awareness, Qiblah, and prayer actions.</p>
-      <div class="course-meta"><span>Age: 5–8</span><span>Levels: 1, 2, 3</span></div>
-      <div class="course-actions course-actions-4" aria-label="Prayer Basics learning links">
-        <a class="lesson-btn" href="prayer-basics.html#lesson">📘 Lesson</a>
-        <a class="practice-btn" href="prayer-basics.html#practice">✍️ Practice</a>
-        <a class="activity-btn" href="prayer-basics.html#activity">🧩 Activity</a>
-        <a class="game-btn" href="prayer-basics.html#game">🎮 Game</a>
-      </div>
-    </article>
-<article class="kid-course-card filter-item" data-age="3-4 5-6 7-8" data-level="1 2 3" data-category="seasons">
-      <div class="course-top"><span class="course-icon" aria-hidden="true">🌙</span><span class="course-tag">Seasons</span></div>
-      <h3>Ramadan & Eid</h3>
-      <p>Understand Ramadan, suhoor, iftar, Qur’an, charity, Eid al-Fitr, Eid al-Adha, and Hajj awareness.</p>
-      <div class="course-meta"><span>Age: 3–8</span><span>Levels: 1, 2, 3</span></div>
-      <div class="course-actions course-actions-4" aria-label="Ramadan & Eid learning links">
-        <a class="lesson-btn" href="ramadan-eid.html#lesson">📘 Lesson</a>
-        <a class="practice-btn" href="ramadan-eid.html#practice">✍️ Practice</a>
-        <a class="activity-btn" href="ramadan-eid.html#activity">🧩 Activity</a>
-        <a class="game-btn" href="ramadan-eid.html#game">🎮 Game</a>
-      </div>
-    </article>
-<article class="kid-course-card filter-item" data-age="3-4 5-6 7-8" data-level="1 2 3" data-category="belief">
-      <div class="course-top"><span class="course-icon" aria-hidden="true">☝️</span><span class="course-tag">Belief</span></div>
-      <h3>Allah & Iman</h3>
-      <p>Learn lovingly: Allah made me, Allah is One, gratitude, and simple articles of faith.</p>
-      <div class="course-meta"><span>Age: 3–8</span><span>Levels: 1, 2, 3</span></div>
-      <div class="course-actions course-actions-4" aria-label="Allah & Iman learning links">
-        <a class="lesson-btn" href="curriculum.html#iman-lesson">📘 Lesson</a>
-        <a class="practice-btn" href="curriculum.html#iman-practice">✍️ Practice</a>
-        <a class="activity-btn" href="curriculum.html#iman-activity">🧩 Activity</a>
-        <a class="game-btn" href="curriculum.html#iman-game">🎮 Game</a>
-      </div>
-    </article>
-<article class="kid-course-card filter-item" data-age="3-4 5-6 7-8" data-level="1 2 3" data-category="habits">
-      <div class="course-top"><span class="course-icon" aria-hidden="true">💚</span><span class="course-tag">Habits</span></div>
-      <h3>Good Deeds</h3>
-      <p>Small daily actions: help parents, share toys, care for animals, smile, and avoid waste.</p>
-      <div class="course-meta"><span>Age: 3–8</span><span>Levels: 1, 2, 3</span></div>
-      <div class="course-actions course-actions-4" aria-label="Good Deeds learning links">
-        <a class="lesson-btn" href="curriculum.html#good-deeds-lesson">📘 Lesson</a>
-        <a class="practice-btn" href="curriculum.html#good-deeds-practice">✍️ Practice</a>
-        <a class="activity-btn" href="curriculum.html#good-deeds-activity">🧩 Activity</a>
-        <a class="game-btn" href="curriculum.html#good-deeds-game">🎮 Game</a>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section class="section parent-notes-lower soft">
-  <div class="container accordion-grid">
-    <details class="parent-detail"><summary>For parents: how to use this site</summary><p>Let the child choose one course. Use one lesson, one practice, or one mini game for 5 minutes. Praise effort and use the same word in real life.</p></details>
-    <details class="parent-detail"><summary>Safety promise</summary><p>Optional sounds, no recordings, no ads, no login, no tracking, no camera, no microphone, and no chat in this static website version.</p></details>
-  </div>
-</section>
-</main>
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <section>
-      <h2>Al-Hayat Kids Islam</h2>
-      <p lang="ur" dir="rtl" class="urdu-name">الحیات اسلامی اطفال</p>
-      <p>Safe Islamic learning for young Muslim children. A parent-guided, optional-sound learning version for Muslim children aged 3–8.</p>
+      <aside class="hero-side" aria-label="Learning summary">
+        <div class="stat-panel">
+          <h2>Learning System</h2>
+          <div class="stats">
+            <div class="stat"><strong>3,000</strong><span>Short Q/A</span></div>
+            <div class="stat"><strong>5</strong><span>Levels</span></div>
+            <div class="stat"><strong>3–8</strong><span>Age Range</span></div>
+            <div class="stat"><strong>100%</strong><span>Structured</span></div>
+          </div>
+        </div>
+        <div class="quick-card">
+          <h3>Today’s Learning Path</h3>
+          <p>Auto-updated daily from the full question bank. The child follows symbols and earns stars after each completed task.</p>
+          <a class="btn btn-primary" href="#learning-bank">🌞 Open Today’s Cards</a>
+        </div>
+        <div class="promise-card">
+          <h3>Safety Promise</h3>
+          <p>No ads, no login, no tracking, no child chat, no camera, no microphone. Progress stays in this browser.</p>
+        </div>
+      </aside>
     </section>
-    <section>
-      <h2>Explore Learning</h2>
-      <div class="footer-links"><a href="curriculum.html">Start Learning</a><a href="duas.html">Daily Duas</a><a href="surahs.html">Short Surahs</a><a href="islamic-manners.html">Manners</a><a href="prophet-stories.html">Prophet Stories</a><a href="arabic-letters.html">Arabic Letters</a><a href="prayer-basics.html">Salah Basics</a><a href="ramadan-eid.html">Ramadan & Eid</a><a href="parents-corner.html">Parents</a><a href="safety-privacy.html">Safety</a></div>
+
+    <section class="section" id="explore">
+      <div class="section-head">
+        <div>
+          <h2>Choose what you want to learn</h2>
+          <p>Big symbols help the child decide independently. Every card connects question, answer, activity, practice, game, star, and next task.</p>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="learning-card">
+          <span class="icon">🤲</span>
+          <h3>Daily Duas</h3>
+          <p>Bismillah, Alhamdulillah, eating, sleeping, waking, parents, knowledge, and gratitude.</p>
+          <div class="card-links"><a class="mini-link" href="duas.html">Lesson</a><a class="mini-link" href="practice/">Practice</a><a class="mini-link" href="games/">Game</a></div>
+        </article>
+        <article class="learning-card">
+          <span class="icon">📖</span>
+          <h3>Qur’an & Short Surahs</h3>
+          <p>Respect for Qur’an, Al-Fatihah, Al-Ikhlas, Al-Falaq, An-Nas, Al-Kawthar, and simple meanings.</p>
+          <div class="card-links"><a class="mini-link" href="surahs.html">Lesson</a><a class="mini-link" href="activities/">Activity</a><a class="mini-link" href="practice/">Practice</a></div>
+        </article>
+        <article class="learning-card">
+          <span class="icon">🌸</span>
+          <h3>Islamic Manners</h3>
+          <p>Salam, truth, kindness, sharing, clean habits, respect for parents, mercy, and good words.</p>
+          <div class="card-links"><a class="mini-link" href="islamic-manners.html">Lesson</a><a class="mini-link" href="activities/">Activity</a><a class="mini-link" href="games/">Game</a></div>
+        </article>
+        <article class="learning-card">
+          <span class="icon">☝️</span>
+          <h3>Allah & Iman</h3>
+          <p>Allah made me, Allah is One, gratitude, angels, prophets, books, Jannah, and loving belief.</p>
+          <div class="card-links"><a class="mini-link" href="curriculum.html">Curriculum</a><a class="mini-link" href="#learning-bank">Questions</a></div>
+        </article>
+        <article class="learning-card">
+          <span class="icon">🕌</span>
+          <h3>Salah & Wudu</h3>
+          <p>Five prayers, prayer names, wudu steps, clean clothes, Qiblah, prayer manners, and review tasks.</p>
+          <div class="card-links"><a class="mini-link" href="prayer-basics.html">Lesson</a><a class="mini-link" href="practice/">Practice</a><a class="mini-link" href="games/">Game</a></div>
+        </article>
+        <article class="learning-card">
+          <span class="icon">🔤</span>
+          <h3>Arabic Letters</h3>
+          <p>Arabic alphabet, sounds, tracing, typing, simple Islamic words, and visual recognition cards.</p>
+          <div class="card-links"><a class="mini-link" href="arabic-letters.html">Lesson</a><a class="mini-link" href="practice/">Trace</a><a class="mini-link" href="activities/">Activity</a></div>
+        </article>
+        <article class="learning-card">
+          <span class="icon">🌙</span>
+          <h3>Ramadan, Eid & Hajj</h3>
+          <p>Ramadan, fasting awareness, Qur’an, charity, Eid al-Fitr, Eid al-Adha, Hajj, and Islamic months.</p>
+          <div class="card-links"><a class="mini-link" href="ramadan-eid.html">Lesson</a><a class="mini-link" href="games/">Game</a></div>
+        </article>
+        <article class="learning-card">
+          <span class="icon">⭐</span>
+          <h3>Prophets & Seerah</h3>
+          <p>Child-safe lessons from Prophet Muhammad ﷺ and Prophets’ stories without invented details.</p>
+          <div class="card-links"><a class="mini-link" href="prophet-stories.html">Stories</a><a class="mini-link" href="activities/">Activity</a></div>
+        </article>
+      </div>
     </section>
-    <section>
-      <h2>Safety Promise</h2>
-      <p>No ads, no login, no tracking scripts, no child chat, no microphone, no camera, and no unsafe external media. Optional sounds are generated locally in the browser.</p>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Gradual learning path</h2>
+          <p>The child moves from recognition to daily-life use. Each task unlocks the next step through simple symbols.</p>
+        </div>
+      </div>
+      <div class="path">
+        <article class="step"><h3>Recognize</h3><p>See the symbol, picture, Arabic word, or Islamic phrase.</p></article>
+        <article class="step"><h3>Choose</h3><p>Answer a short MCQ, tap task, yes/no, or picture question.</p></article>
+        <article class="step"><h3>Practice</h3><p>Trace, type, repeat, match, arrange, or complete a mini activity.</p></article>
+        <article class="step"><h3>Play</h3><p>Use a game card to review the same idea in a joyful way.</p></article>
+        <article class="step"><h3>Earn</h3><p>Get stars and badges, then unlock the next connected task.</p></article>
+      </div>
     </section>
-  </div>
-  <div class="container footer-bottom"><span>© <span data-year></span> Al-Hayat Kids Islam. All rights reserved.</span><a href="privacy-policy.html">Privacy Policy</a></div>
-</footer>
-<button class="back-to-top" type="button" aria-label="Back to top" data-back-to-top>↑</button>
-<script src="script.js?v=7.0" defer></script>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Powerful filter system</h2>
+          <p>Use the live dashboard below to filter the 3,000-question bank by level, topic, question type, and search word.</p>
+        </div>
+      </div>
+      <div class="filter-preview">
+        <div class="filter-pill">Age <small>3–4, 4–5, 5–6, 6–7, 7–8</small></div>
+        <div class="filter-pill">Level <small>Starter to Champion</small></div>
+        <div class="filter-pill">Topic <small>Duas, Salah, Qur’an, Manners, Arabic</small></div>
+        <div class="filter-pill">Type <small>MCQ, match, tap, trace, type, review</small></div>
+        <div class="filter-pill">Progress <small>New, completed, stars, badges</small></div>
+      </div>
+    </section>
+
+    <section class="section" id="learning-bank" aria-labelledby="bank-title">
+      <div class="section-head">
+        <div>
+          <h2 id="bank-title">Live 3,000-question learning dashboard</h2>
+          <p>This section loads from your new JSON files in <strong>/assets/data/</strong> and uses the new JavaScript engines in <strong>/assets/js/</strong>.</p>
+        </div>
+        <a class="btn btn-gold" href="progress/">⭐ View Progress</a>
+      </div>
+      <div class="dashboard-shell">
+        <div class="dashboard-note">
+          <h3>Child route: ❓ Question → 👆 Answer → 🎯 Activity → ✍️ Practice → 🎮 Game → ⭐ Star → 🔓 Next</h3>
+          <p>If this area shows “Content could not load,” check that <code>/assets/data/levels/levels.json</code>, <code>/assets/data/topics/topics.json</code>, and all five question JSON files are uploaded with real content.</p>
+        </div>
+        <div id="alhayat-bank-app" data-bank-page="home"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <article class="section-card">
+          <h2>For parents</h2>
+          <p>Let the child choose one symbol. Keep learning short: 5–15 minutes. Praise effort, repeat the same Islamic word in real life, and use the progress page to see completed cards.</p>
+          <a class="btn btn-primary" href="parents/">Open Parent Guide</a>
+        </article>
+        <article class="section-card">
+          <h2>Quick pages</h2>
+          <p>Open dedicated pages for activities, games, practice, progress, and badges.</p>
+          <div class="card-links">
+            <a class="mini-link" href="activities/">🎯 Activities</a>
+            <a class="mini-link" href="games/">🎮 Games</a>
+            <a class="mini-link" href="practice/">✍️ Practice</a>
+            <a class="mini-link" href="progress/">⭐ Progress</a>
+            <a class="mini-link" href="badges/">🏆 Badges</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>
+        <h2>Al-Hayat Kids Islam</h2>
+        <p>Safe, joyful, structured Islamic learning for young Muslim children ages 3–8.</p>
+        <p>© <span id="year"></span> Al-Hayat Kids Islam. All rights reserved.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="about.html">About</a>
+        <a href="curriculum.html">Curriculum</a>
+        <a href="parents/">Parents</a>
+        <a href="safety-privacy.html">Safety</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-top" type="button" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script src="assets/js/sound-engine.js"></script>
+  <script src="assets/js/progress-engine.js"></script>
+  <script src="assets/js/reward-engine.js"></script>
+  <script src="assets/js/filter-engine.js"></script>
+  <script src="assets/js/learning-path.js"></script>
+  <script src="assets/js/whiteboard.js"></script>
+  <script src="assets/js/typing-board.js"></script>
+  <script src="assets/js/question-bank.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.addEventListener('click', function (event) {
+      const interactive = event.target.closest('a, button');
+      if (interactive && window.AlHayatSound && typeof window.AlHayatSound.beep === 'function') {
+        window.AlHayatSound.beep('click');
+      }
+    });
+  </script>
+</body>
+</html>
