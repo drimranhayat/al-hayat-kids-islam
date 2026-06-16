@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>3,000 Islamic Questions for Kids | Al-Hayat Kids Islam</title>
+  <meta name="description" content="Explore 3,000 child-friendly Islamic questions for Muslim children ages 3 to 8 with levels, topics, activities, practice, games, stars and progress tracking." />
+  <meta name="keywords" content="Islamic questions for kids, Muslim kids quiz, Islamic studies for children, duas for kids, Quran for kids, salah for kids, Islamic manners for children" />
+
+  <style>
+    :root {
+      --bg: #fff8e8;
+      --bg-soft: #fffdf7;
+      --ink: #17324d;
+      --muted: #5d7185;
+      --brand: #0f766e;
+      --brand-dark: #115e59;
+      --gold: #f5b942;
+      --rose: #ff7b7b;
+      --sky: #6ec7ff;
+      --mint: #9af0c5;
+      --card: #ffffff;
+      --line: rgba(23, 50, 77, 0.12);
+      --shadow: 0 18px 45px rgba(23, 50, 77, 0.12);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(110, 199, 255, 0.24), transparent 32%),
+        radial-gradient(circle at top right, rgba(245, 185, 66, 0.22), transparent 30%),
+        linear-gradient(180deg, #fff8e8 0%, #fffdf7 45%, #f1fffb 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 253, 247, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--brand), #22c55e);
+      color: white;
+      box-shadow: 0 12px 26px rgba(15, 118, 110, 0.24);
+      font-size: 1.35rem;
+    }
+
+    .brand small {
+      display: block;
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 2px;
+      font-size: 0.76rem;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .nav a {
+      padding: 10px 13px;
+      border-radius: 999px;
+      font-weight: 800;
+      color: var(--brand-dark);
+      background: rgba(15, 118, 110, 0.08);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .nav a:hover,
+    .nav a:focus {
+      transform: translateY(-2px);
+      background: rgba(15, 118, 110, 0.16);
+      outline: none;
+    }
+
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 42px 18px 22px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .side-card,
+    .panel,
+    .question-card {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-xl);
+    }
+
+    .hero-card {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "⭐";
+      position: absolute;
+      right: 22px;
+      top: 16px;
+      font-size: 4rem;
+      opacity: 0.12;
+      transform: rotate(14deg);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ecfff7;
+      color: var(--brand-dark);
+      border: 1px solid rgba(15, 118, 110, 0.16);
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.1rem, 5vw, 4.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      color: #12314d;
+    }
+
+    .hero-card p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 780px;
+      margin: 18px 0 0;
+      font-weight: 650;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 12px 17px;
+      font-weight: 900;
+      font-size: 0.98rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--brand), #22c55e);
+      color: white;
+      box-shadow: 0 14px 24px rgba(15, 118, 110, 0.22);
+    }
+
+    .btn.gold {
+      background: linear-gradient(135deg, #f59e0b, #ffd166);
+      color: #4b3400;
+      box-shadow: 0 14px 24px rgba(245, 158, 11, 0.18);
+    }
+
+    .btn.soft {
+      background: #f0fbff;
+      color: #0b5171;
+      border: 1px solid rgba(11, 81, 113, 0.12);
+    }
+
+    .side-card {
+      padding: 24px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .big-symbol {
+      min-height: 160px;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at top left, rgba(154, 240, 197, 0.58), transparent 34%),
+        linear-gradient(135deg, #e8fffb, #fff7db);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 20px;
+      border: 1px solid var(--line);
+    }
+
+    .big-symbol strong {
+      display: block;
+      font-size: 3rem;
+      margin-bottom: 8px;
+    }
+
+    .big-symbol span {
+      display: block;
+      font-weight: 900;
+      color: var(--brand-dark);
+      font-size: 1.1rem;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .mini-stat {
+      border-radius: 18px;
+      padding: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .mini-stat b {
+      display: block;
+      font-size: 1.45rem;
+      color: var(--brand-dark);
+    }
+
+    .mini-stat span {
+      font-weight: 800;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    .panel {
+      padding: 24px;
+      margin-bottom: 22px;
+    }
+
+    .panel-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .panel-title h2 {
+      margin: 0;
+      font-size: clamp(1.4rem, 3vw, 2.05rem);
+      letter-spacing: -0.03em;
+    }
+
+    .status-pill {
+      background: #fff8df;
+      color: #744b00;
+      border: 1px solid rgba(245, 185, 66, 0.36);
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-weight: 900;
+    }
+
+    .filter-grid {
+      display: grid;
+      grid-template-columns: 1.2fr repeat(4, 0.75fr);
+      gap: 12px;
+      align-items: end;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      font-weight: 900;
+      color: var(--brand-dark);
+      font-size: 0.92rem;
+    }
+
+    input,
+    select {
+      width: 100%;
+      border: 1px solid rgba(23, 50, 77, 0.18);
+      border-radius: 15px;
+      padding: 12px 13px;
+      font: inherit;
+      background: white;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    input:focus,
+    select:focus {
+      outline: 3px solid rgba(15, 118, 110, 0.18);
+      border-color: rgba(15, 118, 110, 0.4);
+    }
+
+    .quick-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 16px;
+    }
+
+    .tag-btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 999px;
+      padding: 9px 12px;
+      font-weight: 900;
+      color: var(--brand-dark);
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .tag-btn:hover {
+      transform: translateY(-2px);
+      background: #ecfff7;
+    }
+
+    .path-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .path-item {
+      border-radius: 18px;
+      padding: 14px;
+      background: linear-gradient(135deg, #ffffff, #f3fffb);
+      border: 1px solid var(--line);
+      font-weight: 850;
+      min-height: 92px;
+      display: grid;
+      align-content: center;
+      gap: 5px;
+    }
+
+    .path-item span {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .question-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .question-card {
+      padding: 18px;
+      border-radius: 24px;
+      display: grid;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .question-card.done {
+      border-color: rgba(34, 197, 94, 0.5);
+      background: linear-gradient(180deg, #ffffff, #f0fff5);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .topic-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #ecfff7;
+      color: var(--brand-dark);
+      font-weight: 900;
+      font-size: 0.82rem;
+    }
+
+    .level-badge {
+      display: inline-flex;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #fff3c4;
+      color: #6b4300;
+      font-weight: 900;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+
+    .question-text {
+      font-size: 1.08rem;
+      font-weight: 950;
+      line-height: 1.45;
+      color: #122b45;
+      margin: 0;
+    }
+
+    .arabic {
+      direction: rtl;
+      text-align: right;
+      font-size: 1.45rem;
+      font-weight: 900;
+      background: #f8fbff;
+      border: 1px dashed rgba(23, 50, 77, 0.15);
+      border-radius: 16px;
+      padding: 11px;
+    }
+
+    .option-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .option {
+      border: 1px solid rgba(23, 50, 77, 0.12);
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 10px 11px;
+      font-weight: 850;
+      cursor: pointer;
+      text-align: left;
+      transition: 0.2s ease;
+    }
+
+    .option:hover {
+      transform: translateX(3px);
+      background: #f1fffb;
+    }
+
+    .option.correct {
+      border-color: rgba(34, 197, 94, 0.65);
+      background: #edfff4;
+    }
+
+    .option.wrong {
+      border-color: rgba(239, 68, 68, 0.55);
+      background: #fff1f1;
+    }
+
+    .answer-box {
+      display: none;
+      border-radius: 17px;
+      padding: 13px;
+      background: #fff8df;
+      border: 1px solid rgba(245, 185, 66, 0.34);
+      line-height: 1.6;
+      color: #4c3900;
+      font-weight: 750;
+    }
+
+    .answer-box.show { display: block; }
+
+    .micro {
+      background: #f7fbff;
+      border: 1px solid rgba(23, 50, 77, 0.1);
+      border-radius: 16px;
+      padding: 12px;
+      color: var(--muted);
+      font-weight: 750;
+      line-height: 1.55;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .small-btn {
+      border: none;
+      cursor: pointer;
+      padding: 9px 11px;
+      border-radius: 999px;
+      font-weight: 900;
+      background: #ecfff7;
+      color: var(--brand-dark);
+      transition: 0.2s ease;
+    }
+
+    .small-btn:hover { transform: translateY(-2px); }
+    .small-btn.star { background: #fff3c4; color: #6b4300; }
+    .small-btn.answer { background: #eef7ff; color: #0b5171; }
+
+    .loading,
+    .empty {
+      text-align: center;
+      padding: 42px 18px;
+      font-weight: 900;
+      color: var(--muted);
+    }
+
+    .footer-note {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 22px 18px 40px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 650;
+      text-align: center;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      background: #12314d;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-weight: 900;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.25s ease;
+      z-index: 100;
+    }
+
+    .toast.show {
+      opacity: 1;
+      bottom: 26px;
+    }
+
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+      .filter-grid { grid-template-columns: 1fr 1fr; }
+      .path-list { grid-template-columns: repeat(2, 1fr); }
+      .question-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 4px;
+      }
+
+      .nav a { white-space: nowrap; }
+      .hero { padding-top: 24px; }
+
+      .hero-card,
+      .side-card,
+      .panel {
+        padding: 20px;
+        border-radius: 22px;
+      }
+
+      .hero-actions .btn { width: 100%; }
+      .filter-grid,
+      .path-list,
+      .question-grid,
+      .mini-grid { grid-template-columns: 1fr; }
+      .question-card { border-radius: 20px; }
+      .card-top { flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-icon">☾</span>
+        <span>
+          Al-Hayat Kids Islam
+          <small>Islamic learning for ages 3–8</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">🏠 Home</a>
+        <a href="curriculum.html">📚 Curriculum</a>
+        <a href="questions.html">❓ Questions</a>
+        <a href="activities/">🎯 Activities</a>
+        <a href="games/">🎮 Games</a>
+        <a href="practice/">✍️ Practice</a>
+        <a href="progress/">⭐ Progress</a>
+        <a href="parents/">👨‍👩‍👧 Parents</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-card">
+      <span class="eyebrow">🌟 Full Question Bank Connected</span>
+      <h1>3,000 Islamic Questions for Kids</h1>
+      <p>
+        A child-friendly Islamic learning bank with levels, topics, short questions,
+        simple answers, practice tasks, activities, games, stars and progress tracking.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn primary" href="#questionBank">❓ Start Questions</a>
+        <button class="btn gold" id="randomBtn" type="button">🎲 Random Question</button>
+        <button class="btn soft" id="resetProgressBtn" type="button">🔄 Reset Stars</button>
+      </div>
+    </div>
+
+    <aside class="side-card">
+      <div class="big-symbol">
+        <div>
+          <strong>❓ ⭐ 🎮</strong>
+          <span>Question → Practice → Game → Star</span>
+        </div>
+      </div>
+
+      <div class="mini-grid">
+        <div class="mini-stat">
+          <b id="totalQuestions">—</b>
+          <span>Total Questions</span>
+        </div>
+        <div class="mini-stat">
+          <b id="visibleQuestions">—</b>
+          <span>Showing Now</span>
+        </div>
+        <div class="mini-stat">
+          <b id="doneQuestions">0</b>
+          <span>Completed</span>
+        </div>
+        <div class="mini-stat">
+          <b id="starCount">0</b>
+          <span>Stars</span>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <main id="questionBank">
+    <section class="panel">
+      <div class="panel-title">
+        <h2>🔎 Find the right learning card</h2>
+        <span class="status-pill" id="loadStatus">Loading question bank...</span>
+      </div>
+
+      <div class="filter-grid">
+        <label>
+          Search
+          <input id="searchInput" type="search" placeholder="Search: Allah, Salah, Qur’an, Dua, manners..." />
+        </label>
+
+        <label>
+          Level
+          <select id="levelFilter">
+            <option value="">All Levels</option>
+          </select>
+        </label>
+
+        <label>
+          Topic
+          <select id="topicFilter">
+            <option value="">All Topics</option>
+          </select>
+        </label>
+
+        <label>
+          Type
+          <select id="typeFilter">
+            <option value="">All Types</option>
+          </select>
+        </label>
+
+        <label>
+          Difficulty
+          <select id="difficultyFilter">
+            <option value="">All Difficulty</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="quick-tags" id="quickTags"></div>
+
+      <div class="hero-actions">
+        <button class="btn primary" id="applyFiltersBtn" type="button">✅ Apply Filters</button>
+        <button class="btn soft" id="clearFiltersBtn" type="button">🧹 Clear Filters</button>
+        <button class="btn gold" id="loadMoreBtn" type="button">⬇️ Show More</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>🧭 Today’s Small Learning Path</h2>
+        <span class="status-pill">Short daily path</span>
+      </div>
+      <div class="path-list" id="dailyPath">
+        <div class="loading">Loading today’s learning path...</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>❓ Question Cards</h2>
+        <span class="status-pill" id="resultCount">Loading...</span>
+      </div>
+
+      <div class="question-grid" id="questionGrid">
+        <div class="loading">Please wait. The 3,000-question bank is opening...</div>
+      </div>
+    </section>
+  </main>
+
+  <p class="footer-note">
+    Parent note: these cards are designed for gentle Islamic learning. Please review Arabic,
+    school policy and age suitability before using in a formal classroom.
+  </p>
+
+  <div class="toast" id="toast">Saved</div>
+
+  <script>
+    const DATA_PATHS = {
+      levels: "assets/data/levels/levels.json",
+      topics: "assets/data/topics/topics.json",
+      questions: [
+        "assets/data/questions/questions-level-1.json",
+        "assets/data/questions/questions-level-2.json",
+        "assets/data/questions/questions-level-3.json",
+        "assets/data/questions/questions-level-4.json",
+        "assets/data/questions/questions-level-5.json"
+      ]
+    };
+
+    const state = {
+      allQuestions: [],
+      filteredQuestions: [],
+      topics: [],
+      levels: [],
+      visibleLimit: 48,
+      progress: readProgress()
+    };
+
+    const els = {
+      totalQuestions: document.getElementById("totalQuestions"),
+      visibleQuestions: document.getElementById("visibleQuestions"),
+      doneQuestions: document.getElementById("doneQuestions"),
+      starCount: document.getElementById("starCount"),
+      loadStatus: document.getElementById("loadStatus"),
+      searchInput: document.getElementById("searchInput"),
+      levelFilter: document.getElementById("levelFilter"),
+      topicFilter: document.getElementById("topicFilter"),
+      typeFilter: document.getElementById("typeFilter"),
+      difficultyFilter: document.getElementById("difficultyFilter"),
+      quickTags: document.getElementById("quickTags"),
+      applyFiltersBtn: document.getElementById("applyFiltersBtn"),
+      clearFiltersBtn: document.getElementById("clearFiltersBtn"),
+      loadMoreBtn: document.getElementById("loadMoreBtn"),
+      randomBtn: document.getElementById("randomBtn"),
+      resetProgressBtn: document.getElementById("resetProgressBtn"),
+      dailyPath: document.getElementById("dailyPath"),
+      questionGrid: document.getElementById("questionGrid"),
+      resultCount: document.getElementById("resultCount"),
+      toast: document.getElementById("toast")
+    };
+
+    document.addEventListener("DOMContentLoaded", init);
+
+    async function init() {
+      try {
+        els.loadStatus.textContent = "Loading JSON files...";
+
+        const [levelsData, topicsData, ...questionFiles] = await Promise.all([
+          fetchJson(DATA_PATHS.levels),
+          fetchJson(DATA_PATHS.topics),
+          ...DATA_PATHS.questions.map(fetchJson)
+        ]);
+
+        state.levels = levelsData.levels || [];
+        state.topics = topicsData.topics || [];
+        state.allQuestions = questionFiles.flatMap(file => file.items || []);
+        state.filteredQuestions = [...state.allQuestions];
+
+        buildFilters(topicsData);
+        renderStats();
+        renderDailyPath();
+        renderQuestions();
+
+        els.loadStatus.textContent = "Question bank loaded";
+        showToast("Question bank loaded successfully");
+      } catch (error) {
+        console.error(error);
+        els.loadStatus.textContent = "Could not load questions";
+        els.questionGrid.innerHTML = `
+          <div class="empty">
+            <h3>Questions could not load.</h3>
+            <p>Please check that all JSON files are uploaded correctly inside <b>assets/data/questions/</b>.</p>
+            <p>Error: ${escapeHTML(error.message)}</p>
+          </div>
+        `;
+      }
+    }
+
+    async function fetchJson(path) {
+      const response = await fetch(path, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`${response.status} — ${path}`);
+      }
+      return response.json();
+    }
+
+    function buildFilters(topicsData) {
+      state.levels.forEach(level => {
+        const option = document.createElement("option");
+        option.value = level.levelNumber;
+        option.textContent = `Level ${level.levelNumber}: ${level.title} (${level.ageRange})`;
+        els.levelFilter.appendChild(option);
+      });
+
+      state.topics.forEach(topic => {
+        const option = document.createElement("option");
+        option.value = topic.id;
+        option.textContent = `${topic.icon || "📌"} ${topic.title}`;
+        els.topicFilter.appendChild(option);
+      });
+
+      const questionTypes = topicsData.filters?.questionTypes || uniqueValues(state.allQuestions, "type");
+      questionTypes.forEach(type => {
+        const option = document.createElement("option");
+        option.value = type;
+        option.textContent = labelize(type);
+        els.typeFilter.appendChild(option);
+      });
+
+      const difficulties = topicsData.filters?.difficulty || uniqueValues(state.allQuestions, "difficulty");
+      difficulties.forEach(diff => {
+        const option = document.createElement("option");
+        option.value = diff;
+        option.textContent = labelize(diff);
+        els.difficultyFilter.appendChild(option);
+      });
+
+      const quickTopics = [
+        ["allah_iman", "☝️ Allah & Iman"],
+        ["quran_surahs", "📖 Qur’an"],
+        ["daily_duas_adhkar", "🤲 Duas"],
+        ["salah", "🕌 Salah"],
+        ["manners_character", "❤️ Manners"],
+        ["arabic_letters_words", "🔤 Arabic"],
+        ["prophet_seerah", "ﷺ Seerah"]
+      ];
+
+      els.quickTags.innerHTML = quickTopics.map(([id, label]) => {
+        return `<button class="tag-btn" type="button" data-topic="${escapeHTML(id)}">${escapeHTML(label)}</button>`;
+      }).join("");
+
+      els.quickTags.querySelectorAll("[data-topic]").forEach(button => {
+        button.addEventListener("click", () => {
+          els.topicFilter.value = button.dataset.topic;
+          applyFilters();
+        });
+      });
+
+      els.applyFiltersBtn.addEventListener("click", applyFilters);
+      els.clearFiltersBtn.addEventListener("click", clearFilters);
+      els.loadMoreBtn.addEventListener("click", showMore);
+      els.randomBtn.addEventListener("click", showRandomQuestion);
+      els.resetProgressBtn.addEventListener("click", resetProgress);
+
+      [els.searchInput, els.levelFilter, els.topicFilter, els.typeFilter, els.difficultyFilter].forEach(input => {
+        input.addEventListener("input", debounce(applyFilters, 180));
+        input.addEventListener("change", applyFilters);
+      });
+    }
+
+    function applyFilters() {
+      const search = els.searchInput.value.trim().toLowerCase();
+      const level = els.levelFilter.value;
+      const topic = els.topicFilter.value;
+      const type = els.typeFilter.value;
+      const difficulty = els.difficultyFilter.value;
+
+      state.filteredQuestions = state.allQuestions.filter(q => {
+        if (level && String(q.level) !== String(level)) return false;
+        if (topic && q.topicId !== topic) return false;
+        if (type && q.type !== type) return false;
+        if (difficulty && q.difficulty !== difficulty) return false;
+
+        if (search) {
+          const blob = [
+            q.id,
+            q.question,
+            q.answer,
+            q.topicTitle,
+            q.subtopic,
+            q.arabic,
+            q.simpleExplanation,
+            q.activity,
+            q.practice,
+            q.game
+          ].join(" ").toLowerCase();
+
+          if (!blob.includes(search)) return false;
+        }
+
+        return true;
+      });
+
+      state.visibleLimit = 48;
+      renderStats();
+      renderDailyPath();
+      renderQuestions();
+    }
+
+    function clearFilters() {
+      els.searchInput.value = "";
+      els.levelFilter.value = "";
+      els.topicFilter.value = "";
+      els.typeFilter.value = "";
+      els.difficultyFilter.value = "";
+      state.filteredQuestions = [...state.allQuestions];
+      state.visibleLimit = 48;
+      renderStats();
+      renderDailyPath();
+      renderQuestions();
+      showToast("Filters cleared");
+    }
+
+    function showMore() {
+      state.visibleLimit += 48;
+      renderQuestions();
+      showToast("More cards opened");
+    }
+
+    function showRandomQuestion() {
+      const list = state.filteredQuestions.length ? state.filteredQuestions : state.allQuestions;
+      if (!list.length) return;
+
+      const random = list[Math.floor(Math.random() * list.length)];
+      els.searchInput.value = random.id;
+      applyFilters();
+
+      setTimeout(() => {
+        document.getElementById("questionBank").scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+
+    function renderStats() {
+      const completedCount = Object.keys(state.progress.completed || {}).length;
+      els.totalQuestions.textContent = state.allQuestions.length.toLocaleString();
+      els.visibleQuestions.textContent = state.filteredQuestions.length.toLocaleString();
+      els.doneQuestions.textContent = completedCount.toLocaleString();
+      els.starCount.textContent = (state.progress.stars || 0).toLocaleString();
+      els.resultCount.textContent = `${state.filteredQuestions.length.toLocaleString()} cards found`;
+    }
+
+    function renderDailyPath() {
+      const list = state.filteredQuestions.length ? state.filteredQuestions : state.allQuestions;
+      if (!list.length) {
+        els.dailyPath.innerHTML = `<div class="empty">No daily path available yet.</div>`;
+        return;
+      }
+
+      const today = new Date();
+      const seed = today.getFullYear() + today.getMonth() + today.getDate();
+      const start = seed % Math.max(1, list.length - 8);
+      const daily = list.slice(start, start + 8);
+
+      els.dailyPath.innerHTML = daily.map((q, index) => `
+        <div class="path-item">
+          <span>Step ${index + 1} • Level ${escapeHTML(q.level)}</span>
+          ${escapeHTML(q.symbol || "❓")} ${escapeHTML(q.subtopic || q.topicTitle || "Learning task")}
+        </div>
+      `).join("");
+    }
+
+    function renderQuestions() {
+      if (!state.filteredQuestions.length) {
+        els.questionGrid.innerHTML = `
+          <div class="empty">
+            <h3>No cards found.</h3>
+            <p>Try another level, topic or search word.</p>
+          </div>
+        `;
+        return;
+      }
+
+      const visible = state.filteredQuestions.slice(0, state.visibleLimit);
+
+      els.questionGrid.innerHTML = visible.map(q => questionCard(q)).join("");
+
+      els.loadMoreBtn.style.display =
+        state.filteredQuestions.length > state.visibleLimit ? "inline-flex" : "none";
+
+      bindCardEvents();
+    }
+
+    function questionCard(q) {
+      const isDone = Boolean(state.progress.completed?.[q.id]);
+      const topicIcon = q.symbol || findTopicIcon(q.topicId) || "❓";
+      const options = Array.isArray(q.options) ? q.options : [];
+
+      return `
+        <article class="question-card ${isDone ? "done" : ""}" data-card-id="${escapeHTML(q.id)}">
+          <div class="card-top">
+            <span class="topic-badge">${escapeHTML(topicIcon)} ${escapeHTML(q.topicTitle || "Islamic Learning")}</span>
+            <span class="level-badge">Level ${escapeHTML(q.level)} • Age ${escapeHTML(q.ageRange || "")}</span>
+          </div>
+
+          <p class="question-text">${escapeHTML(q.question)}</p>
+
+          ${q.arabic ? `<div class="arabic">${escapeHTML(q.arabic)}</div>` : ""}
+
+          ${options.length ? `
+            <div class="option-list">
+              ${options.map(option => `
+                <button class="option" type="button" data-option="${escapeHTML(option)}" data-answer="${escapeHTML(q.answer)}">
+                  ${escapeHTML(option)}
+                </button>
+              `).join("")}
+            </div>
+          ` : ""}
+
+          <div class="answer-box" id="answer-${safeId(q.id)}">
+            <b>Answer:</b> ${escapeHTML(q.answer || "")}
+            ${q.simpleExplanation ? `<br><b>Meaning:</b> ${escapeHTML(q.simpleExplanation)}` : ""}
+          </div>
+
+          <div class="micro">
+            <b>🎯 Activity:</b> ${escapeHTML(q.activity || "Say the answer and repeat it.")}
+          </div>
+
+          <div class="micro">
+            <b>✍️ Practice:</b> ${escapeHTML(q.practice || "Practice the key word.")}
+          </div>
+
+          <div class="micro">
+            <b>🎮 Game:</b> ${escapeHTML(q.game || "Play a quick revision game.")}
+          </div>
+
+          <div class="card-actions">
+            <button class="small-btn answer" type="button" data-show-answer="${escapeHTML(q.id)}">👀 Show Answer</button>
+            <button class="small-btn star" type="button" data-complete="${escapeHTML(q.id)}">⭐ Mark Complete</button>
+            ${q.nextId ? `<button class="small-btn" type="button" data-next="${escapeHTML(q.nextId)}">➡️ Next</button>` : ""}
+          </div>
+        </article>
+      `;
+    }
+
+    function bindCardEvents() {
+      document.querySelectorAll("[data-show-answer]").forEach(button => {
+        button.addEventListener("click", () => {
+          const id = button.dataset.showAnswer;
+          const box = document.getElementById(`answer-${safeId(id)}`);
+          if (box) box.classList.toggle("show");
+        });
+      });
+
+      document.querySelectorAll("[data-complete]").forEach(button => {
+        button.addEventListener("click", () => {
+          const id = button.dataset.complete;
+          completeQuestion(id);
+        });
+      });
+
+      document.querySelectorAll("[data-next]").forEach(button => {
+        button.addEventListener("click", () => {
+          els.searchInput.value = button.dataset.next;
+          applyFilters();
+        });
+      });
+
+      document.querySelectorAll("[data-option]").forEach(button => {
+        button.addEventListener("click", () => {
+          const selected = normalize(button.dataset.option);
+          const correct = normalize(button.dataset.answer);
+
+          button.parentElement.querySelectorAll(".option").forEach(option => {
+            option.classList.remove("correct", "wrong");
+          });
+
+          if (selected === correct) {
+            button.classList.add("correct");
+            showToast("Correct! ⭐");
+          } else {
+            button.classList.add("wrong");
+            showToast("Try again gently");
+          }
+        });
+      });
+    }
+
+    function completeQuestion(id) {
+      if (!state.progress.completed) state.progress.completed = {};
+
+      if (!state.progress.completed[id]) {
+        state.progress.completed[id] = { completedAt: new Date().toISOString() };
+        state.progress.stars = (state.progress.stars || 0) + 1;
+        saveProgress();
+        renderStats();
+        renderQuestions();
+        showToast("Completed! ⭐ Star added");
+      } else {
+        showToast("Already completed");
+      }
+    }
+
+    function resetProgress() {
+      const confirmed = confirm("Reset all stars and completed cards on this device?");
+      if (!confirmed) return;
+
+      state.progress = { stars: 0, completed: {} };
+      saveProgress();
+      renderStats();
+      renderQuestions();
+      showToast("Progress reset");
+    }
+
+    function readProgress() {
+      try {
+        return JSON.parse(localStorage.getItem("alHayatKidsIslamProgress")) || { stars: 0, completed: {} };
+      } catch {
+        return { stars: 0, completed: {} };
+      }
+    }
+
+    function saveProgress() {
+      localStorage.setItem("alHayatKidsIslamProgress", JSON.stringify(state.progress));
+    }
+
+    function findTopicIcon(topicId) {
+      const topic = state.topics.find(t => t.id === topicId);
+      return topic?.icon || "";
+    }
+
+    function uniqueValues(items, key) {
+      return [...new Set(items.map(item => item[key]).filter(Boolean))].sort();
+    }
+
+    function labelize(value) {
+      return String(value || "")
+        .replaceAll("_", " ")
+        .replace(/\b\w/g, letter => letter.toUpperCase());
+    }
+
+    function safeId(value) {
+      return String(value || "").replace(/[^a-zA-Z0-9_-]/g, "-");
+    }
+
+    function normalize(value) {
+      return String(value || "").trim().toLowerCase();
+    }
+
+    function escapeHTML(value) {
+      return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      }[char]));
+    }
+
+    function debounce(fn, delay = 200) {
+      let timer;
+      return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), delay);
+      };
+    }
+
+    function showToast(message) {
+      els.toast.textContent = message;
+      els.toast.classList.add("show");
+      setTimeout(() => els.toast.classList.remove("show"), 1800);
+    }
+  </script>
+</body>
+</html>
