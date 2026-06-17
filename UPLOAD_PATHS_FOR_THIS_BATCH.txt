@@ -1,0 +1,23 @@
+Al-Hayat Kids Islam — Updated Files Package
+
+Upload / replace these exact paths in GitHub:
+
+1. activities/index.html
+2. games/index.html
+3. practice/index.html
+4. age-3-4.html
+5. age-5-6.html
+6. age-7-8.html
+7. about.html
+8. parents-corner.html
+9. safety-privacy.html
+10. privacy-policy.html
+11. terms.html
+12. faq.html
+13. contact.html
+
+IMPORTANT:
+- Folder pages must be uploaded inside their folders. Do not upload games/index.html as games.html.
+- Root pages must be placed beside index.html.
+- After committing, open raw GitHub file to confirm the new code replaced the old file.
+- Then test live URLs in a private/incognito window.
